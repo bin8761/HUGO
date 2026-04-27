@@ -18,8 +18,23 @@
     padding-left: 4px;
   }
 </style>
+{{ $url := .Get 0 }}
+{{ $contributors := slice }}
+{{ with try (resources.GetRemote $url) }}
+  {{ with .Err }}
+    {{ warnf "ghcontributors: cannot fetch %q: %s" $url . }}
+  {{ else with .Value }}
+    {{ with try (transform.Unmarshal .) }}
+      {{ with .Err }}
+        {{ warnf "ghcontributors: cannot parse JSON from %q: %s" $url . }}
+      {{ else }}
+        {{ $contributors = .Value }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
 <div class="ghContributors">
-  {{ $url := .Get 0 }} {{ range getJSON $url }}
+  {{ range $contributors }}
   <div>
     <img
       src="{{.avatar_url}}"
