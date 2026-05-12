@@ -1,6 +1,6 @@
----
+﻿---
 title: "Worklog Tuần 2"
-date: 2024-01-01
+date: 2026-04-23
 weight: 1
 chapter: false
 pre: " <b> 1.2. </b> "
@@ -12,48 +12,23 @@ pre: " <b> 1.2. </b> "
 
 ### Mục tiêu tuần 2:
 
-* Kết nối, làm quen với các thành viên trong First Cloud Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Làm các bài lab để hiểu cách hoạt động và cách sử dụng các dịch vụ AWS.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu |
+| --- | --- | --- | --- | --- |
+| 1 | - Làm bài lab Granting authorization for an application to access AWS services with an IAM role | 23/04/2026 | 23/04/2026 | <https://000048.awsstudygroup.com/> |
+| 2 | - Làm bài lab Get started with AWS Cloud 9 | 24/04/2026 | 24/04/2026 | <https://000049.awsstudygroup.com/> |
+| 3 | - Làm bài lab STARTING WITH AMAZON S3 | 25/04/2026 | 25/04/2026 | <https://000057.awsstudygroup.com/> |
+| 4 | - Làm bài lab Amazon Relational Database Service (Amazon RDS) | 26/04/2026 | 26/04/2026 | <https://000005.awsstudygroup.com/> |
+| 5 | - Làm bài lab AMAZON LIGHTSAIL WORKSHOP - COST OPTIMIZATION ON AWS | 27/04/2026 | 27/04/2026 | <https://000045.awsstudygroup.com/> |
+| 6 | - Làm bài lab Amazon Lightsail Container - Run apps on Lightsail Container | 28/04/2026 | 03/05/2026 | <https://000046.awsstudygroup.com/> |
 
 
 ### Kết quả đạt được tuần 2:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Đã hoàn thành các bài lab và hiểu được cấu trúc cơ bản khi muốn triển khai trên AWS.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Đã củng cố kiến thức về các dịch vụ cơ bản của AWS thông qua thực hành.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* Đã hoàn thành 6 bài lab nền tảng, bao gồm IAM Role, Cloud9, Amazon S3, Amazon RDS, Amazon Lightsail và Lightsail Container.

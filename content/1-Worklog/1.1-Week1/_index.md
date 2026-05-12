@@ -1,6 +1,6 @@
 ---
 title: "Week 1 Worklog"
-date: 2024-01-01
+date: 2026-04-17
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
@@ -12,46 +12,31 @@ pre: " <b> 1.1. </b> "
 
 ### Week 1 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Learn the basic AWS services.
+* Study and practice basic AWS services through learning materials and labs.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| 1 | - Watched AWS knowledge videos on the AWS Study Group channel | 17/04/2026 | 17/04/2026 | <https://www.youtube.com/@AWSStudyGroup/videos> |
+| 1 | - Started creating an AWS account | 17/04/2026 | 17/04/2026 | <https://aws.amazon.com/console/> |
+| 2 | - Started getting familiar with AWS services through lab exercises | 18/04/2026 | 18/04/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 3 | - Completed the lab: Cost Management with AWS Budget | 19/04/2026 | 19/04/2026 | <https://000007.awsstudygroup.com/> |
+| 4 | - Completed the lab: AWS Identity and Access Management (IAM) Access Control | 20/04/2026 | 20/04/2026 | <https://000002.awsstudygroup.com/> |
+| 5 | - Completed the lab: Amazon VPC and AWS Site-to-Site VPN Workshop Overview | 21/04/2026 | 21/04/2026 | <https://000003.awsstudygroup.com/> |
+| 6 | - Completed the lab: Introduction to Amazon EC2 | 22/04/2026 | 22/04/2026 | <https://000004.awsstudygroup.com/> |
 
 
 ### Week 1 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Successfully created an AWS account and accessed the AWS Console.
 
-* Successfully created and configured an AWS Free Tier account.
+* Learned the basic AWS services through videos and study materials.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+* Completed foundational labs:
+  * Cost Management with AWS Budget
+  * AWS Identity and Access Management (IAM) Access Control
+  * Amazon VPC and AWS Site-to-Site VPN Workshop Overview
+  * Introduction to Amazon EC2
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* Built initial familiarity with AWS learning flow by combining theory and hands-on labs.
