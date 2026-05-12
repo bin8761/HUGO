@@ -1,7 +1,7 @@
 ﻿---
-title: "Week 2 Worklog"
+title: "Week 2 Worklog - Hands-on Labs"
 date: 2026-04-23
-weight: 1
+weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---

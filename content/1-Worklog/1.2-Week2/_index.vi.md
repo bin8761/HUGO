@@ -1,7 +1,7 @@
 ﻿---
-title: "Worklog Tuần 2"
+title: "Worklog Tuần 2 - Làm các bài Lab"
 date: 2026-04-23
-weight: 1
+weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
