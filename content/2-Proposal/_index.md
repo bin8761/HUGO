@@ -1,14 +1,10 @@
----
+﻿---
 title: "Proposal"
 date: 2024-01-01
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
-
 In this section, you need to summarize the contents of the workshop that you **plan** to conduct.
 
 # IoT Weather Platform for Lab Research
@@ -18,7 +14,7 @@ In this section, you need to summarize the contents of the workshop that you **p
 The IoT Weather Platform is designed for the ITea Lab team in Ho Chi Minh City to enhance weather data collection and analysis. It supports up to 5 weather stations, with potential scalability to 10-15, utilizing Raspberry Pi edge devices with ESP32 sensors to transmit data via MQTT. The platform leverages AWS Serverless services to deliver real-time monitoring, predictive analytics, and cost efficiency, with access restricted to 5 lab members via Amazon Cognito.
 
 ### 2. Problem Statement
-### What’s the Problem?
+### Whatâ€™s the Problem?
 Current weather stations require manual data collection, becoming unmanageable with multiple units. There is no centralized system for real-time data or analytics, and third-party platforms are costly and overly complex.
 
 ### The Solution
@@ -53,7 +49,7 @@ The platform employs a serverless AWS architecture to manage data from 5 Raspber
 
 ### 4. Technical Implementation
 **Implementation Phases**
-This project has two parts—setting up weather edge stations and building the weather platform—each following 4 phases:
+This project has two partsâ€”setting up weather edge stations and building the weather platformâ€”each following 4 phases:
 - Build Theory and Draw Architecture: Research Raspberry Pi setup with ESP32 sensors and design the AWS serverless architecture (1 month pre-internship)
 - Calculate Price and Check Practicality: Use AWS Pricing Calculator to estimate costs and adjust if needed (Month 1).
 - Fix Architecture for Cost or Solution Fit: Tweak the design (e.g., optimize Lambda with Next.js) to stay cost-effective and usable (Month 2).

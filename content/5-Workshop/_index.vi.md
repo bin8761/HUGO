@@ -1,4 +1,4 @@
----
+﻿---
 title: "Workshop"
 date: 2024-01-01
 weight: 5
@@ -6,28 +6,23 @@ chapter: false
 pre: " <b> 5. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
+# Äáº£m báº£o truy cáº­p Hybrid an toĂ n Ä‘áº¿n S3 báº±ng cĂ¡ch sá»­ dá»¥ng VPC endpoint
 
+#### Tá»•ng quan
 
-# Đảm bảo truy cập Hybrid an toàn đến S3 bằng cách sử dụng VPC endpoint
+**AWS PrivateLink** cung cáº¥p káº¿t ná»‘i riĂªng tÆ° Ä‘áº¿n cĂ¡c dá»‹ch vá»¥ aws tá»« VPCs hoáº·c trung tĂ¢m dá»¯ liá»‡u (on-premise) mĂ  khĂ´ng lĂ m lá»™ lÆ°u lÆ°á»£ng truy cáº­p ra ngoĂ i public internet.
 
-#### Tổng quan
+Trong bĂ i lab nĂ y, chĂºng ta sáº½ há»c cĂ¡ch táº¡o, cáº¥u hĂ¬nh, vĂ  kiá»ƒm tra VPC endpoints Ä‘á»ƒ cho phĂ©p workload cá»§a báº¡n tiáº¿p cáº­n cĂ¡c dá»‹ch vá»¥ AWS mĂ  khĂ´ng cáº§n Ä‘i qua Internet cĂ´ng cá»™ng.
 
-**AWS PrivateLink** cung cấp kết nối riêng tư đến các dịch vụ aws từ VPCs hoặc trung tâm dữ liệu (on-premise) mà không làm lộ lưu lượng truy cập ra ngoài public internet.
+ChĂºng ta sáº½ táº¡o hai loáº¡i endpoints Ä‘á»ƒ truy cáº­p Ä‘áº¿n Amazon S3: gateway vpc endpoint vĂ  interface vpc endpoint. Hai loáº¡i vpc endpoints nĂ y mang Ä‘áº¿n nhiá»u lá»£i Ă­ch tĂ¹y thuá»™c vĂ o viá»‡c báº¡n truy cáº­p Ä‘áº¿n S3 tá»« mĂ´i trÆ°á»ng cloud hay tá»« trung tĂ¢m dá»¯ liá»‡u (on-premise).
++ **Gateway** - Táº¡o gateway endpoint Ä‘á»ƒ gá»­i lÆ°u lÆ°á»£ng Ä‘áº¿n Amazon S3 hoáº·c DynamoDB using private IP addresses. Báº¡n Ä‘iá»u hÆ°á»›ng lÆ°u lÆ°á»£ng tá»« VPC cá»§a báº¡n Ä‘áº¿n gateway endpoint báº±ng cĂ¡c báº£ng Ä‘á»‹nh tuyáº¿n (route tables)
++ **Interface** - Táº¡o interface endpoint Ä‘á»ƒ gá»­i lÆ°u lÆ°á»£ng Ä‘áº¿n cĂ¡c dá»‹ch vá»¥ Ä‘iá»ƒm cuá»‘i (endpoints) sá»­ dá»¥ng Network Load Balancer Ä‘á»ƒ phĂ¢n phá»‘i lÆ°u lÆ°á»£ng. LÆ°u lÆ°á»£ng dĂ nh cho dá»‹ch vá»¥ Ä‘iá»ƒm cuá»‘i Ä‘Æ°á»£c resolved báº±ng DNS.
 
-Trong bài lab này, chúng ta sẽ học cách tạo, cấu hình, và kiểm tra VPC endpoints để cho phép workload của bạn tiếp cận các dịch vụ AWS mà không cần đi qua Internet công cộng.
+#### Ná»™i dung
 
-Chúng ta sẽ tạo hai loại endpoints để truy cập đến Amazon S3: gateway vpc endpoint và interface vpc endpoint. Hai loại vpc endpoints này mang đến nhiều lợi ích tùy thuộc vào việc bạn truy cập đến S3 từ môi trường cloud hay từ trung tâm dữ liệu (on-premise).
-+ **Gateway** - Tạo gateway endpoint để gửi lưu lượng đến Amazon S3 hoặc DynamoDB using private IP addresses. Bạn điều hướng lưu lượng từ VPC của bạn đến gateway endpoint bằng các bảng định tuyến (route tables)
-+ **Interface** - Tạo interface endpoint để gửi lưu lượng đến các dịch vụ điểm cuối (endpoints) sử dụng Network Load Balancer để phân phối lưu lượng. Lưu lượng dành cho dịch vụ điểm cuối được resolved bằng DNS.
-
-#### Nội dung
-
-1. [Tổng quan về workshop](5.1-Workshop-overview/)
-2. [Chuẩn bị](5.2-Prerequiste/)
-3. [Truy cập đến S3 từ VPC](5.3-S3-vpc/)
-4. [Truy cập đến S3 từ TTDL On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (làm thêm)](5.5-Policy/)
-6. [Dọn dẹp tài nguyên](5.6-Cleanup/)
+1. [Tá»•ng quan vá» workshop](5.1-Workshop-overview/)
+2. [Chuáº©n bá»‹](5.2-Prerequiste/)
+3. [Truy cáº­p Ä‘áº¿n S3 tá»« VPC](5.3-S3-vpc/)
+4. [Truy cáº­p Ä‘áº¿n S3 tá»« TTDL On-premises](5.4-S3-onprem/)
+5. [VPC Endpoint Policies (lĂ m thĂªm)](5.5-Policy/)
+6. [Dá»n dáº¹p tĂ i nguyĂªn](5.6-Cleanup/)

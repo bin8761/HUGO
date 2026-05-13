@@ -1,0 +1,9 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+{{ $noticeType := .Get 0 }}
+{{ if eq $noticeType "warning" }}
+{{ .Inner }}
+{{ else }}
+<div class="notices {{ $noticeType }}"{{ if eq (len .Params) 2 }} id="{{ .Get 1 }}"{{ end }}>
+  {{ .Inner }}
+</div>
+{{ end }}

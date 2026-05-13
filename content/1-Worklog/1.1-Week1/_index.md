@@ -1,15 +1,10 @@
----
+﻿---
 title: "Week 1 Worklog - AWS Fundamentals"
 date: 2026-04-17
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
-
 ### Week 1 Objectives:
 
 * Learn the basic AWS services.
@@ -40,3 +35,4 @@ pre: " <b> 1.1. </b> "
   * Introduction to Amazon EC2
 
 * Built initial familiarity with AWS learning flow by combining theory and hands-on labs.
+

@@ -1,25 +1,21 @@
----
+﻿---
 title: "Blog 3"
 date: 2024-01-01
 weight: 1
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
-
 # Getting Started with Healthcare Data Lakes: Using Microservices
 
 Data lakes can help hospitals and healthcare facilities turn data into business insights, maintain business continuity, and protect patient privacy. A **data lake** is a centralized, managed, and secure repository to store all your data, both in its raw and processed forms for analysis. Data lakes allow you to break down data silos and combine different types of analytics to gain insights and make better business decisions.
 
-This blog post is part of a larger series on getting started with setting up a healthcare data lake. In my final post of the series, *“Getting Started with Healthcare Data Lakes: Diving into Amazon Cognito”*, I focused on the specifics of using Amazon Cognito and Attribute Based Access Control (ABAC) to authenticate and authorize users in the healthcare data lake solution. In this blog, I detail how the solution evolved at a foundational level, including the design decisions I made and the additional features used. You can access the code samples for the solution in this Git repo for reference.
+This blog post is part of a larger series on getting started with setting up a healthcare data lake. In my final post of the series, *â€œGetting Started with Healthcare Data Lakes: Diving into Amazon Cognitoâ€*, I focused on the specifics of using Amazon Cognito and Attribute Based Access Control (ABAC) to authenticate and authorize users in the healthcare data lake solution. In this blog, I detail how the solution evolved at a foundational level, including the design decisions I made and the additional features used. You can access the code samples for the solution in this Git repo for reference.
 
 ---
 
 ## Architecture Guidance
 
-The main change since the last presentation of the overall architecture is the decomposition of a single service into a set of smaller services to improve maintainability and flexibility. Integrating a large volume of diverse healthcare data often requires specialized connectors for each format; by keeping them encapsulated separately as microservices, we can add, remove, and modify each connector without affecting the others. The microservices are loosely coupled via publish/subscribe messaging centered in what I call the “pub/sub hub.”
+The main change since the last presentation of the overall architecture is the decomposition of a single service into a set of smaller services to improve maintainability and flexibility. Integrating a large volume of diverse healthcare data often requires specialized connectors for each format; by keeping them encapsulated separately as microservices, we can add, remove, and modify each connector without affecting the others. The microservices are loosely coupled via publish/subscribe messaging centered in what I call the â€œpub/sub hub.â€
 
 This solution represents what I would consider another reasonable sprint iteration from my last post. The scope is still limited to the ingestion and basic parsing of **HL7v2 messages** formatted in **Encoding Rules 7 (ER7)** through a REST interface.
 
@@ -72,7 +68,7 @@ Provides foundational data and communication layer, including:
 - **Amazon SNS** topic as the *hub*  
 - **Amazon S3** bucket for artifacts such as Lambda code
 
-> Only allow indirect write access to the data lake through a Lambda function → ensures consistency.
+> Only allow indirect write access to the data lake through a Lambda function â†’ ensures consistency.
 
 ---
 
@@ -89,8 +85,8 @@ Provides foundational data and communication layer, including:
 
 ## Staging ER7 Microservice
 
-- Lambda “trigger” subscribed to the pub/sub hub, filtering messages by attribute  
-- Step Functions Express Workflow to convert ER7 → JSON  
+- Lambda â€œtriggerâ€ subscribed to the pub/sub hub, filtering messages by attribute  
+- Step Functions Express Workflow to convert ER7 â†’ JSON  
 - Two Lambdas:  
   1. Fix ER7 formatting (newline, carriage return)  
   2. Parsing logic  
@@ -124,3 +120,4 @@ Outputs:
     Value: !GetAtt Catalog.Arn
     Export:
       Name: !Sub ${AWS::StackName}-CatalogArn
+

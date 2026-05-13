@@ -5,11 +5,6 @@ weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
-
 ### Week 2 Objectives:
 
 * Complete lab exercises to understand how AWS services work and how to use them.
@@ -32,3 +27,4 @@ pre: " <b> 1.2. </b> "
 * Strengthened foundational knowledge of AWS services through hands-on practice.
 
 * Completed 6 core labs, covering IAM Role, Cloud9, Amazon S3, Amazon RDS, Amazon Lightsail, and Lightsail Container.
+

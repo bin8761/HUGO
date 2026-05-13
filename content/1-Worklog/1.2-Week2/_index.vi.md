@@ -5,11 +5,6 @@ weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
-
 ### Mục tiêu tuần 2:
 
 * Làm các bài lab để hiểu cách hoạt động và cách sử dụng các dịch vụ AWS.
@@ -32,3 +27,4 @@ pre: " <b> 1.2. </b> "
 * Đã củng cố kiến thức về các dịch vụ cơ bản của AWS thông qua thực hành.
 
 * Đã hoàn thành 6 bài lab nền tảng, bao gồm IAM Role, Cloud9, Amazon S3, Amazon RDS, Amazon Lightsail và Lightsail Container.
+

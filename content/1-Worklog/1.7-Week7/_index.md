@@ -5,11 +5,6 @@ weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
-{{% notice warning %}} 
-â ï¸ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
-
-
 ### Week 7 Objectives:
 
 * Connect and get acquainted with members of First Cloud Journey.
@@ -55,4 +50,5 @@ pre: " <b> 1.7. </b> "
 
 * Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
 * ...
+
 
