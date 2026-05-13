@@ -1,28 +1,27 @@
 ﻿---
-title: "Workshop"
+title: "Xưởng"
 date: 2024-01-01
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
+# Bảo mật quyền truy cập kết hợp vào S3 bằng cách sử dụng Điểm cuối VPC
 
-# Äáº£m báº£o truy cáº­p Hybrid an toĂ n Ä‘áº¿n S3 báº±ng cĂ¡ch sá»­ dá»¥ng VPC endpoint
+#### Tổng quan
 
-#### Tá»•ng quan
+**AWS PrivateLink** cung cấp kết nối riêng tư tới các dịch vụ AWS từ VPC và mạng tại chỗ của bạn mà không làm lộ lưu lượng truy cập của bạn ra Internet Công cộng.
 
-**AWS PrivateLink** cung cáº¥p káº¿t ná»‘i riĂªng tÆ° Ä‘áº¿n cĂ¡c dá»‹ch vá»¥ aws tá»« VPCs hoáº·c trung tĂ¢m dá»¯ liá»‡u (on-premise) mĂ  khĂ´ng lĂ m lá»™ lÆ°u lÆ°á»£ng truy cáº­p ra ngoĂ i public internet.
+Trong phòng thực hành này, bạn sẽ tìm hiểu cách tạo, đặt cấu hình và kiểm tra các điểm cuối VPC cho phép khối lượng công việc của bạn tiếp cận các dịch vụ AWS mà không cần truyền qua Internet công cộng.
 
-Trong bĂ i lab nĂ y, chĂºng ta sáº½ há»c cĂ¡ch táº¡o, cáº¥u hĂ¬nh, vĂ  kiá»ƒm tra VPC endpoints Ä‘á»ƒ cho phĂ©p workload cá»§a báº¡n tiáº¿p cáº­n cĂ¡c dá»‹ch vá»¥ AWS mĂ  khĂ´ng cáº§n Ä‘i qua Internet cĂ´ng cá»™ng.
+Bạn sẽ tạo hai loại điểm cuối để truy cập Amazon S3: điểm cuối Gateway VPC và điểm cuối Interface VPC. Hai loại điểm cuối VPC này mang lại những lợi ích khác nhau tùy thuộc vào việc bạn đang truy cập Amazon S3 từ đám mây hay vị trí tại chỗ của mình
++ **Cổng** - Tạo điểm cuối cổng để gửi lưu lượng truy cập đến Amazon S3 hoặc DynamoDB bằng địa chỉ IP riêng. Bạn định tuyến lưu lượng truy cập từ VPC đến điểm cuối cổng bằng bảng lộ trình.
++ **Giao diện** - Tạo điểm cuối giao diện để gửi lưu lượng truy cập đến các dịch vụ điểm cuối sử dụng Network Load Balancer để phân phối lưu lượng truy cập. Lưu lượng truy cập dành cho dịch vụ điểm cuối được giải quyết bằng DNS.
 
-ChĂºng ta sáº½ táº¡o hai loáº¡i endpoints Ä‘á»ƒ truy cáº­p Ä‘áº¿n Amazon S3: gateway vpc endpoint vĂ  interface vpc endpoint. Hai loáº¡i vpc endpoints nĂ y mang Ä‘áº¿n nhiá»u lá»£i Ă­ch tĂ¹y thuá»™c vĂ o viá»‡c báº¡n truy cáº­p Ä‘áº¿n S3 tá»« mĂ´i trÆ°á»ng cloud hay tá»« trung tĂ¢m dá»¯ liá»‡u (on-premise).
-+ **Gateway** - Táº¡o gateway endpoint Ä‘á»ƒ gá»­i lÆ°u lÆ°á»£ng Ä‘áº¿n Amazon S3 hoáº·c DynamoDB using private IP addresses. Báº¡n Ä‘iá»u hÆ°á»›ng lÆ°u lÆ°á»£ng tá»« VPC cá»§a báº¡n Ä‘áº¿n gateway endpoint báº±ng cĂ¡c báº£ng Ä‘á»‹nh tuyáº¿n (route tables)
-+ **Interface** - Táº¡o interface endpoint Ä‘á»ƒ gá»­i lÆ°u lÆ°á»£ng Ä‘áº¿n cĂ¡c dá»‹ch vá»¥ Ä‘iá»ƒm cuá»‘i (endpoints) sá»­ dá»¥ng Network Load Balancer Ä‘á»ƒ phĂ¢n phá»‘i lÆ°u lÆ°á»£ng. LÆ°u lÆ°á»£ng dĂ nh cho dá»‹ch vá»¥ Ä‘iá»ƒm cuá»‘i Ä‘Æ°á»£c resolved báº±ng DNS.
+#### Nội dung
 
-#### Ná»™i dung
-
-1. [Tá»•ng quan vá» workshop](5.1-Workshop-overview/)
-2. [Chuáº©n bá»‹](5.2-Prerequiste/)
-3. [Truy cáº­p Ä‘áº¿n S3 tá»« VPC](5.3-S3-vpc/)
-4. [Truy cáº­p Ä‘áº¿n S3 tá»« TTDL On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (lĂ m thĂªm)](5.5-Policy/)
-6. [Dá»n dáº¹p tĂ i nguyĂªn](5.6-Cleanup/)
+1. [Tổng quan về hội thảo](5.1-Tổng quan về hội thảo)
+2. [Điều kiện tiên quyết](5.2-Điều kiện tiên quyết/)
+3. [Truy cập S3 từ VPC](5.3-S3-vpc/)
+4. [Truy cập S3 từ tại chỗ](5.4-S3-onprem/)
+5. [Chính sách điểm cuối VPC (Tiền thưởng)](5.5-Chính sách/)
+6. [Dọn dẹp](5.6-Dọn dẹp/)

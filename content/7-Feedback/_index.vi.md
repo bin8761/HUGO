@@ -1,40 +1,43 @@
 ﻿---
-title: "Chia sáº», Ä‘Ă³ng gĂ³p Ă½ kiáº¿n"
+title: "Chia sẻ và phản hồi"
 date: 2024-01-01
 weight: 7
 chapter: false
 pre: " <b> 7. </b> "
 ---
->Táº¡i Ä‘Ă¢y báº¡n cĂ³ thá»ƒ tá»± do Ä‘Ă³ng gĂ³p Ă½ kiáº¿n cĂ¡ nhĂ¢n vá» nhá»¯ng tráº£i nghiá»‡m khi tham gia chÆ°Æ¡ng trĂ¬nh First Cloud Journey, giĂºp team FCJ cáº£i thiá»‡n nhá»¯ng váº¥n Ä‘á» cĂ²n thiáº¿u sĂ³t dá»±a trĂªn cĂ¡c háº¡ng má»¥c sau:
 
-### ÄĂ¡nh giĂ¡ chung
+> Tại đây, bạn có thể thoải mái chia sẻ quan điểm cá nhân về trải nghiệm tham gia chương trình First Cloud Journey. Điều này sẽ giúp đội ngũ FCJ cải thiện mọi khuyết điểm dựa trên các khía cạnh sau:
 
-**1. MĂ´i trÆ°á»ng lĂ m viá»‡c**  
-MĂ´i trÆ°á»ng lĂ m viá»‡c ráº¥t thĂ¢n thiá»‡n vĂ  cá»Ÿi má»Ÿ. CĂ¡c thĂ nh viĂªn trong FCJ luĂ´n sáºµn sĂ ng há»— trá»£ khi mĂ¬nh gáº·p khĂ³ khÄƒn, ká»ƒ cáº£ ngoĂ i giá» lĂ m viá»‡c. KhĂ´ng gian lĂ m viá»‡c gá»n gĂ ng, thoáº£i mĂ¡i, giĂºp mĂ¬nh táº­p trung tá»‘t hÆ¡n. Tuy nhiĂªn, mĂ¬nh nghÄ© cĂ³ thá»ƒ bá»• sung thĂªm má»™t sá»‘ buá»•i giao lÆ°u hoáº·c team bonding Ä‘á»ƒ má»i ngÆ°á»i hiá»ƒu nhau hÆ¡n.
+### Đánh giá tổng thể
 
-**2. Sá»± há»— trá»£ cá»§a mentor / team admin**  
-Mentor hÆ°á»›ng dáº«n ráº¥t chi tiáº¿t, giáº£i thĂ­ch rĂµ rĂ ng khi mĂ¬nh chÆ°a hiá»ƒu vĂ  luĂ´n khuyáº¿n khĂ­ch mĂ¬nh Ä‘áº·t cĂ¢u há»i. Team admin há»— trá»£ cĂ¡c thá»§ tá»¥c, tĂ i liá»‡u vĂ  táº¡o Ä‘iá»u kiá»‡n Ä‘á»ƒ mĂ¬nh lĂ m viá»‡c thuáº­n lá»£i. MĂ¬nh Ä‘Ă¡nh giĂ¡ cao viá»‡c mentor cho phĂ©p mĂ¬nh thá»­ vĂ  tá»± xá»­ lĂ½ váº¥n Ä‘á» thay vĂ¬ chá»‰ Ä‘Æ°a Ä‘Ă¡p Ă¡n.
+**1. Môi trường làm việc**  
+Môi trường làm việc rất thân thiện và cởi mở. Các thành viên FCJ luôn sẵn sàng giúp đỡ bất cứ khi nào tôi gặp khó khăn, kể cả ngoài giờ làm việc. Không gian làm việc gọn gàng, thoải mái, giúp tôi tập trung tốt hơn. Tuy nhiên, tôi nghĩ sẽ thật tuyệt nếu có nhiều hoạt động tụ tập xã hội hoặc hoạt động gắn kết nhóm hơn để củng cố các mối quan hệ.
 
-**3. Sá»± phĂ¹ há»£p giá»¯a cĂ´ng viá»‡c vĂ  chuyĂªn ngĂ nh há»c**  
-CĂ´ng viá»‡c mĂ¬nh Ä‘Æ°á»£c giao phĂ¹ há»£p vá»›i kiáº¿n thá»©c mĂ¬nh Ä‘Ă£ há»c á»Ÿ trÆ°á»ng, Ä‘á»“ng thá»i má»Ÿ rá»™ng thĂªm nhá»¯ng máº£ng má»›i mĂ  mĂ¬nh chÆ°a tá»«ng Ä‘Æ°á»£c tiáº¿p cáº­n. Nhá» váº­y, mĂ¬nh vá»«a cá»§ng cá»‘ kiáº¿n thá»©c ná»n táº£ng, vá»«a há»c thĂªm ká»¹ nÄƒng thá»±c táº¿.
+**2. Hỗ trợ từ Mentor / Quản trị viên nhóm**  
+Thầy hướng dẫn rất chi tiết, giải thích rõ ràng khi tôi chưa hiểu và luôn khuyến khích tôi đặt câu hỏi. Đội ngũ admin hỗ trợ các công việc hành chính, cung cấp các tài liệu cần thiết, tạo điều kiện thuận lợi để tôi làm việc hiệu quả. Tôi đặc biệt đánh giá cao việc người cố vấn cho phép tôi tự mình thử và giải quyết vấn đề thay vì chỉ đưa ra câu trả lời.
 
-**4. CÆ¡ há»™i há»c há»i & phĂ¡t triá»ƒn ká»¹ nÄƒng**  
-Trong quĂ¡ trĂ¬nh thá»±c táº­p, mĂ¬nh há»c Ä‘Æ°á»£c nhiá»u ká»¹ nÄƒng má»›i nhÆ° sá»­ dá»¥ng cĂ´ng cá»¥ quáº£n lĂ½ dá»± Ă¡n, ká»¹ nÄƒng lĂ m viá»‡c nhĂ³m, vĂ  cáº£ cĂ¡ch giao tiáº¿p chuyĂªn nghiá»‡p trong mĂ´i trÆ°á»ng cĂ´ng ty. Mentor cÅ©ng chia sáº» nhiá»u kinh nghiá»‡m thá»±c táº¿ giĂºp mĂ¬nh Ä‘á»‹nh hÆ°á»›ng tá»‘t hÆ¡n cho sá»± nghiá»‡p.
+**3. Mức độ liên quan của công việc với chuyên ngành học thuật**  
+Những nhiệm vụ được giao rất phù hợp với kiến ​​thức tôi học được ở trường đại học, đồng thời giới thiệu cho tôi những lĩnh vực mới mà tôi chưa từng gặp trước đây. Điều này cho phép tôi vừa củng cố kiến ​​thức nền tảng vừa đạt được các kỹ năng thực tế.
 
-**5. VÄƒn hĂ³a & tinh tháº§n Ä‘á»“ng Ä‘á»™i**  
-VÄƒn hĂ³a cĂ´ng ty ráº¥t tĂ­ch cá»±c: má»i ngÆ°á»i tĂ´n trá»ng láº«n nhau, lĂ m viá»‡c nghiĂªm tĂºc nhÆ°ng váº«n vui váº». Khi cĂ³ dá»± Ă¡n gáº¥p, má»i ngÆ°á»i cĂ¹ng nhau cá»‘ gáº¯ng, há»— trá»£ khĂ´ng phĂ¢n biá»‡t vá»‹ trĂ­. Äiá»u nĂ y giĂºp mĂ¬nh cáº£m tháº¥y mĂ¬nh lĂ  má»™t pháº§n cá»§a táº­p thá»ƒ, dĂ¹ chá»‰ lĂ  thá»±c táº­p sinh.
+**4. Cơ hội học tập & phát triển kỹ năng**  
+Trong thời gian thực tập, tôi đã học được nhiều kỹ năng mới như sử dụng các công cụ quản lý dự án, kỹ năng làm việc nhóm và giao tiếp chuyên nghiệp trong môi trường công ty. Người cố vấn cũng chia sẻ những kinh nghiệm thực tế quý giá giúp tôi lên kế hoạch tốt hơn cho con đường sự nghiệp của mình.
 
-**6. ChĂ­nh sĂ¡ch / phĂºc lá»£i cho thá»±c táº­p sinh**  
-CĂ´ng ty cĂ³ há»— trá»£ phá»¥ cáº¥p thá»±c táº­p vĂ  táº¡o Ä‘iá»u kiá»‡n vá» thá»i gian linh hoáº¡t khi cáº§n thiáº¿t. NgoĂ i ra, viá»‡c Ä‘Æ°á»£c tham gia cĂ¡c buá»•i Ä‘Ă o táº¡o ná»™i bá»™ lĂ  má»™t Ä‘iá»ƒm cá»™ng lá»›n.
+**5. Văn hóa Công ty & Tinh thần đồng đội**  
+Văn hóa công ty rất tích cực: mọi người tôn trọng lẫn nhau, làm việc nghiêm túc nhưng vẫn giữ mọi thứ vui vẻ. Khi có dự án cấp bách, mọi người cùng nhau làm việc và hỗ trợ lẫn nhau bất kể vị trí của họ. Điều này khiến tôi cảm thấy mình là một phần thực sự của nhóm, ngay cả khi còn là thực tập sinh.
 
+**6. Chính sách/Quyền lợi Thực tập**  
+Công ty cung cấp trợ cấp thực tập và cung cấp giờ làm việc linh hoạt khi cần thiết. Ngoài ra, có cơ hội tham gia các buổi đào tạo nội bộ là một điểm cộng lớn.
 
-### Má»™t sá»‘ cĂ¢u há»i khĂ¡c
-- Äiá»u báº¡n **hĂ i lĂ²ng nháº¥t** trong thá»i gian thá»±c táº­p?  
-- Äiá»u báº¡n nghÄ© cĂ´ng ty **cáº§n cáº£i thiá»‡n** cho cĂ¡c thá»±c táº­p sinh sau?  
-- Náº¿u giá»›i thiá»‡u cho báº¡n bĂ¨, báº¡n cĂ³ **khuyĂªn há» thá»±c táº­p á»Ÿ Ä‘Ă¢y khĂ´ng**? VĂ¬ sao?  
+---
 
+### Câu hỏi bổ sung
+- Bạn thấy điều gì **thỏa mãn nhất** trong thời gian thực tập?  
+- Bạn nghĩ công ty **nên cải thiện điều gì** cho các thực tập sinh trong tương lai?  
+- Nếu giới thiệu cho bạn bè, bạn có **gợi ý họ thực tập ở đây** không? Tại sao hoặc tại sao không?  
 
-### Äá» xuáº¥t & mong muá»‘n
-- Báº¡n cĂ³ Ä‘á» xuáº¥t gĂ¬ Ä‘á»ƒ cáº£i thiá»‡n tráº£i nghiá»‡m trong ká»³ thá»±c táº­p?  
-- Báº¡n cĂ³ muá»‘n tiáº¿p tá»¥c chÆ°Æ¡ng trĂ¬nh nĂ y trong tÆ°Æ¡ng lai?
-- GĂ³p Ă½ khĂ¡c (tá»± do chia sáº»):
+---
+
+### Đề xuất & Kỳ vọng
+- Bạn có đề xuất gì để cải thiện trải nghiệm thực tập không?  
+- Bạn có muốn tiếp tục chương trình này trong tương lai không?  
+- Bất kỳ ý kiến ​​​​khác (chia sẻ miễn phí):

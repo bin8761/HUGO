@@ -1,43 +1,40 @@
 ﻿---
-title: "CĂ¡c events Ä‘Ă£ tham gia"
+title: "Sự kiện đã tham gia"
 date: 2024-01-01
 weight: 4
 chapter: false
 pre: " <b> 4. </b> "
 ---
 
-> Trong pháº§n nĂ y, cĂ¡c báº¡n cáº§n liá»‡t kĂª vĂ  mĂ´ táº£ chi tiáº¿t cĂ¡c sá»± kiá»‡n (event) mĂ  mĂ¬nh Ä‘Ă£ tham gia trong suá»‘t quĂ¡ trĂ¬nh thá»±c táº­p hoáº·c lĂ m viá»‡c. 
+> Trong phần này, bạn nên liệt kê và mô tả chi tiết các sự kiện bạn đã tham gia trong thời gian thực tập hoặc trải nghiệm làm việc.  
 > 
-> Má»—i sá»± kiá»‡n nĂªn Ä‘Æ°á»£c trĂ¬nh bĂ y theo Ä‘á»‹nh dáº¡ng Event 1, Event 2, Event 3â€¦, kĂ¨m theo cĂ¡c thĂ´ng tin:
-> * TĂªn sá»± kiá»‡n
-> * Thá»i gian tá»• chá»©c
-> * Äá»‹a Ä‘iá»ƒm (náº¿u cĂ³)
-> * Vai trĂ² cá»§a báº¡n trong sá»± kiá»‡n (ngÆ°á»i tham dá»±, há»— trá»£ tá»• chá»©c, diá»…n giáº£, v.v.)
-> * MĂ´ táº£ ngáº¯n gá»n ná»™i dung vĂ  hoáº¡t Ä‘á»™ng chĂ­nh trong sá»± kiá»‡n
-> * Káº¿t quáº£ hoáº·c giĂ¡ trá»‹ Ä‘áº¡t Ä‘Æ°á»£c (bĂ i há»c, ká»¹ nÄƒng má»›i, Ä‘Ă³ng gĂ³p cho nhĂ³m/dá»± Ă¡n)
-> * Viá»‡c liá»‡t kĂª nĂ y giĂºp thá»ƒ hiá»‡n rĂµ sá»± tham gia thá»±c táº¿ cá»§a báº¡n, cÅ©ng nhÆ° cĂ¡c ká»¹ nÄƒng má»m vĂ  kinh nghiá»‡m báº¡n Ä‘Ă£ tĂ­ch lÅ©y qua tá»«ng sá»± kiá»‡n.
+> Mỗi sự kiện phải được trình bày theo định dạng Sự kiện 1, Sự kiện 2, Sự kiện 3… cùng với các chi tiết sau:
+> * Tên sự kiện
+> * Ngày và giờ
+> * Vị trí (nếu có)
+> * Vai trò của bạn trong sự kiện (người tham dự, hỗ trợ sự kiện, diễn giả, v.v.)
+> * Mô tả ngắn gọn về nội dung và hoạt động chính của sự kiện
+> * Kết quả hoặc giá trị đạt được (bài học kinh nghiệm, kỹ năng mới, đóng góp cho nhóm/dự án)
+> * Danh sách này giúp chứng minh sự tham gia thực tế của bạn cũng như các kỹ năng và kinh nghiệm mềm mà bạn có được từ mỗi sự kiện.
 
+Trong thời gian thực tập, tôi đã tham gia hai sự kiện. Mỗi buổi học là một trải nghiệm đáng nhớ, mang đến những kiến ​​thức mới mẻ, thú vị, bổ ích cùng những món quà và khoảnh khắc tuyệt vời.
 
-Trong quĂ¡ trĂ¬nh thá»±c táº­p, em Ä‘Ă£ tham gia 2 events, vá»›i má»—i event lĂ  má»™t tráº£i nghiá»‡m Ä‘Ă¡ng nhá»› vá»›i nhá»¯ng kiáº¿n thá»©c má»›i, hay vĂ  bá»• Ă­ch, cĂ¹ng vá»›i Ä‘Ă³ lĂ  nhá»©ng mĂ³n quĂ  vĂ  nhá»¯ng khoáº£nh kháº¯c ráº¥t tuyá»‡t vá»i.
+### [Sự kiện 1](4.1-Sự kiện1/)  
+ **Tên sự kiện:** Hội thảo hiện đại hóa App-DB do GenAI cung cấp  
 
-### [Event 1](4.1-Event1/)
-&emsp;**TĂªn sá»± kiá»‡n:** GenAI-powered App-DB Modernization workshop
+ **Ngày & Giờ:** 09:00, ngày 13 tháng 8 năm 2025  
 
-&emsp;**Thá»i gian:** 09:00 ngĂ y 13/08/2025
+ **Vị trí:** Tầng 26, Tòa nhà Bitexco, 02 Hải Triều, Phường Sài Gòn, TP.HCM  
 
-&emsp;**Äá»‹a Ä‘iá»ƒm:** Táº§ng 26, tĂ²a nhĂ  Bitexco, sá»‘ 02 Ä‘Æ°á»ng Háº£i Triá»u, phÆ°á»ng SĂ i GĂ²n, thĂ nh phá»‘ Há»“ ChĂ­ Minh
+ **Vai trò:** Người tham dự  
 
-&emsp;**Vai trĂ² trong sá»± kiá»‡n:** NgÆ°á»i tham dá»± 
+---
 
+### [Sự kiện 2](4.2-Sự kiện2/)  
+ **Tên sự kiện:** Hội thảo hiện đại hóa App-DB do GenAI cung cấp  
 
+ **Ngày & Giờ:** 09:00, ngày 13 tháng 8 năm 2025  
 
-### [Event 2](4.2-Event2/)
-&emsp;**TĂªn sá»± kiá»‡n:** GenAI-powered App-DB Modernization workshop
+ **Vị trí:** Tầng 26, Tòa nhà Bitexco, 02 Hải Triều, Phường Sài Gòn, TP.HCM  
 
-&emsp;**Thá»i gian:** 09:00 ngĂ y 13/08/2025
-
-&emsp;**Äá»‹a Ä‘iá»ƒm:** Táº§ng 26, tĂ²a nhĂ  Bitexco, sá»‘ 02 Ä‘Æ°á»ng Háº£i Triá»u, phÆ°á»ng SĂ i GĂ²n, thĂ nh phá»‘ Há»“ ChĂ­ Minh
-
-&emsp;**Vai trĂ² trong sá»± kiá»‡n:** NgÆ°á»i tham dá»± 
-
-
+ **Vai trò:** Người tham dự

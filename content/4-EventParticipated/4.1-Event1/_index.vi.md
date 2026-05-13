@@ -1,122 +1,122 @@
 ﻿---
-title: "Event 1"
+title: "Sự kiện 1"
 date: 2024-01-01
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-# BĂ i thu hoáº¡ch â€œGenAI-powered App-DB Modernization workshopâ€
+# Báo cáo tóm tắt: “Hội thảo hiện đại hóa App-DB do GenAI cung cấp”
 
-### Má»¥c ÄĂ­ch Cá»§a Sá»± Kiá»‡n
+### Mục tiêu sự kiện
 
-- Chia sáº» best practices trong thiáº¿t káº¿ á»©ng dá»¥ng hiá»‡n Ä‘áº¡i
-- Giá»›i thiá»‡u phÆ°Æ¡ng phĂ¡p DDD vĂ  event-driven architecture
-- HÆ°á»›ng dáº«n lá»±a chá»n compute services phĂ¹ há»£p
-- Giá»›i thiá»‡u cĂ´ng cá»¥ AI há»— trá»£ development lifecycle
+- Chia sẻ các phương pháp hay nhất trong thiết kế ứng dụng hiện đại
+- Giới thiệu Thiết kế hướng miền (DDD) và kiến ​​trúc hướng sự kiện
+- Cung cấp hướng dẫn về cách chọn dịch vụ điện toán phù hợp
+- Trình bày các công cụ AI để hỗ trợ vòng đời phát triển
 
-### Danh SĂ¡ch Diá»…n Giáº£
+### Loa
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+- **Jignesh Shah** â€“ Giám đốc, Cơ sở dữ liệu nguồn mở
+- **Erica Liu** â€“ Chuyên gia Sr. GTM, AppMod
+- **Fabrianne Effendi** â€“ PGS. Chuyên gia SA, Dịch vụ web Amazon không có máy chủ
 
-### Ná»™i Dung Ná»•i Báº­t
+### Điểm nổi bật chính
 
-#### ÄÆ°a ra cĂ¡c áº£nh hÆ°á»Ÿng tiĂªu cá»±c cá»§a kiáº¿n trĂºc á»©ng dá»¥ng cÅ©
+#### Xác định những hạn chế của kiến ​​trúc ứng dụng cũ
 
-- Thá»i gian release sáº£n pháº©m lĂ¢u â†’ Máº¥t doanh thu/bá» lá»¡ cÆ¡ há»™i
-- Hoáº¡t Ä‘á»™ng kĂ©m hiá»‡u quáº£ â†’ Máº¥t nÄƒng suáº¥t, tá»‘n kĂ©m chi phĂ­
-- KhĂ´ng tuĂ¢n thá»§ cĂ¡c quy Ä‘á»‹nh vá» báº£o máº­t â†’ Máº¥t an ninh, uy tĂ­n
+- Chu kỳ phát hành sản phẩm dài †’ Mất doanh thu/bỏ lỡ cơ hội  
+- Hoạt động kém hiệu quả †’ Năng suất giảm, chi phí cao hơn  
+- Không tuân thủ các quy định về bảo mật †’ Vi phạm an ninh, mất uy tín  
 
-#### Chuyá»ƒn Ä‘á»•i sang kiáº¿n trĂºc á»©ng dá»¥ng má»›i - Microservice Architecture
+#### Chuyển sang kiến ​​trúc ứng dụng hiện đại – Microservices
 
-Chuyá»ƒn Ä‘á»•i thĂ nh há»‡ thá»‘ng modular â€“ tá»«ng chá»©c nÄƒng lĂ  má»™t **dá»‹ch vá»¥ Ä‘á»™c láº­p** giao tiáº¿p vá»›i nhau qua **sá»± kiá»‡n** vá»›i 3 trá»¥ cá»™t cá»‘t lĂµi:
+Di chuyển sang hệ thống mô-đun — mỗi chức năng là một **dịch vụ độc lập** giao tiếp qua **sự kiện**, được xây dựng trên ba trụ cột cốt lõi:
 
-- **Queue Management**: Xá»­ lĂ½ tĂ¡c vá»¥ báº¥t Ä‘á»“ng bá»™
-- **Caching Strategy:** Tá»‘i Æ°u performance
-- **Message Handling:** Giao tiáº¿p linh hoáº¡t giá»¯a services
+- **Quản lý hàng đợi**: Xử lý các tác vụ không đồng bộ  
+- **Chiến lược bộ nhớ đệm**: Tối ưu hóa hiệu suất  
+- **Xử lý tin nhắn**: Giao tiếp giữa các dịch vụ linh hoạt  
 
-#### Domain-Driven Design (DDD)
+#### Thiết kế hướng tên miền (DDD)
 
-- **PhÆ°Æ¡ng phĂ¡p 4 bÆ°á»›c**: XĂ¡c Ä‘á»‹nh domain events â†’ sáº¯p xáº¿p timeline â†’ identify actors â†’ xĂ¡c Ä‘á»‹nh bounded contexts
-- **Case study bookstore**: Minh há»a cĂ¡ch Ă¡p dá»¥ng DDD thá»±c táº¿
-- **Context mapping**: 7 patterns tĂ­ch há»£p bounded contexts
+- **Phương pháp bốn bước**: Xác định các sự kiện trong miền â†' sắp xếp dòng thời gian â†' xác định các tác nhân â†' xác định bối cảnh bị giới hạn  
+- **Nghiên cứu điển hình về hiệu sách**: Trình bày ứng dụng DDD trong thế giới thực  
+- **Ánh xạ ngữ cảnh**: 7 mẫu để tích hợp các ngữ cảnh bị giới hạn  
 
-#### Event-Driven Architecture
+#### Kiến trúc hướng sự kiện
 
-- **3 patterns tĂ­ch há»£p**: Publish/Subscribe, Point-to-point, Streaming
-- **Lá»£i Ă­ch**: Loose coupling, scalability, resilience
-- **So sĂ¡nh sync vs async**: Hiá»ƒu rĂµ trade-offs (sá»± Ä‘Ă¡nh Ä‘á»•i)
+- **3 mẫu tích hợp**: Xuất bản/Đăng ký, Điểm-điểm, Truyền phát  
+- **Lợi ích**: Khớp nối lỏng lẻo, khả năng mở rộng, khả năng phục hồi  
+- **So sánh đồng bộ hóa và không đồng bộ**: Tìm hiểu sự cân bằng  
 
-#### Compute Evolution
+#### Tính toán tiến hóa
 
-- **Shared Responsibility Model**: Tá»« EC2 â†’ ECS â†’ Fargate â†’ Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lá»±a chá»n phĂ¹ há»£p
+- **Mô hình chia sẻ trách nhiệm**: EC2 â†’ ECS â†’ Fargate â†’ Lambda  
+- **Lợi ích không cần máy chủ**: Không cần quản lý máy chủ, tự động mở rộng quy mô, trả theo giá trị  
+- **Chức năng và Vùng chứa**: Tiêu chí lựa chọn phù hợp  
 
-#### Amazon Q Developer
+#### Nhà phát triển Amazon Q
 
-- **SDLC automation**: Tá»« planning Ä‘áº¿n maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+- **Tự động hóa SDLC**: Từ lập kế hoạch đến bảo trì  
+- **Chuyển đổi mã**: Nâng cấp Java, hiện đại hóa .NET  
+- **Tác nhân chuyển đổi AWS**: Di chuyển VMware, Mainframe, .NET  
 
-### Nhá»¯ng GĂ¬ Há»c ÄÆ°á»£c
+### Bài học chính
 
-#### TÆ° Duy Thiáº¿t Káº¿
+#### Tư duy thiết kế
 
-- **Business-first approach**: LuĂ´n báº¯t Ä‘áº§u tá»« business domain, khĂ´ng pháº£i technology
-- **Ubiquitous language**: Importance cá»§a common vocabulary giá»¯a business vĂ  tech teams
-- **Bounded contexts**: CĂ¡ch identify vĂ  manage complexity trong large systems
+- **Phương pháp tiếp cận ưu tiên doanh nghiệp**: Luôn bắt đầu từ lĩnh vực kinh doanh, không phải công nghệ  
+- **Ngôn ngữ phổ biến**: Tầm quan trọng của vốn từ vựng chung giữa các nhóm kinh doanh và công nghệ  
+- **Bối cảnh bị giới hạn**: Xác định và quản lý độ phức tạp trong các hệ thống lớn  
 
-#### Kiáº¿n TrĂºc Ká»¹ Thuáº­t
+#### Kiến trúc kỹ thuật
 
-- **Event storming technique**: PhÆ°Æ¡ng phĂ¡p thá»±c táº¿ Ä‘á»ƒ mĂ´ hĂ¬nh hĂ³a quy trĂ¬nh kinh doanh
-- Sá»­ dá»¥ng **Event-driven communication** thay vĂ¬ synchronous calls
-- **Integration patterns**: Hiá»ƒu khi nĂ o dĂ¹ng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chá»n tá»« VM â†’ containers â†’ serverless
+- **Kỹ thuật gây bão sự kiện**: Phương pháp thực tế để lập mô hình quy trình kinh doanh  
+- Sử dụng **giao tiếp theo sự kiện** thay vì cuộc gọi đồng bộ  
+- **Mẫu tích hợp**: Khi nào nên sử dụng đồng bộ hóa, không đồng bộ, pub/sub, phát trực tuyến  
+- **Tính toán phổ**: Tiêu chí để lựa chọn giữa VM, container và serverless  
 
-#### Chiáº¿n LÆ°á»£c Hiá»‡n Äáº¡i HĂ³a
+#### Chiến lược hiện đại hóa
 
-- **Phased approach**: KhĂ´ng rush, pháº£i cĂ³ roadmap rĂµ rĂ ng
-- **7Rs framework**: Nhiá»u con Ä‘Æ°á»ng khĂ¡c nhau tĂ¹y thuá»™c vĂ o Ä‘áº·c Ä‘iá»ƒm cá»§a má»—i á»©ng dá»¥ng
-- **ROI measurement**: Cost reduction + business agility
+- **Phương pháp tiếp cận theo từng giai đoạn**: Không vội vàng - tuân theo lộ trình rõ ràng  
+- **Khung 7Rs**: Nhiều lộ trình hiện đại hóa tùy thuộc vào ứng dụng  
+- **Đo lường ROI**: Giảm chi phí + tính linh hoạt trong kinh doanh  
 
-### á»¨ng Dá»¥ng VĂ o CĂ´ng Viá»‡c
+### Nộp đơn xin việc
 
-- **Ăp dá»¥ng DDD** cho project hiá»‡n táº¡i: Event storming sessions vá»›i business team
-- **Refactor microservices**: Sá»­ dá»¥ng bounded contexts Ä‘á»ƒ identify service boundaries
-- **Implement event-driven patterns**: Thay tháº¿ má»™t sá»‘ sync calls báº±ng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho má»™t sá»‘ use cases phĂ¹ há»£p
-- **Try Amazon Q Developer**: Integrate vĂ o development workflow Ä‘á»ƒ boost productivity
+- **Áp dụng DDD** cho các dự án hiện tại: Các buổi sự kiện gây bão với đội ngũ kinh doanh  
+- **Tái cấu trúc các vi dịch vụ**: Sử dụng ngữ cảnh giới hạn để xác định ranh giới dịch vụ  
+- **Triển khai các mẫu hướng sự kiện**: Thay thế một số cuộc gọi đồng bộ hóa bằng tin nhắn không đồng bộ  
+- **Áp dụng serverless**: Thí điểm AWS Lambda cho các trường hợp sử dụng phù hợp  
+- **Dùng thử Amazon Q Developer**: Tích hợp vào quy trình làm việc của nhà phát triển để tăng năng suất  
 
-### Tráº£i nghiá»‡m trong event
+### Trải nghiệm sự kiện
 
-Tham gia workshop **â€œGenAI-powered App-DB Modernizationâ€** lĂ  má»™t tráº£i nghiá»‡m ráº¥t bá»• Ă­ch, giĂºp tĂ´i cĂ³ cĂ¡i nhĂ¬n toĂ n diá»‡n vá» cĂ¡ch hiá»‡n Ä‘áº¡i hĂ³a á»©ng dá»¥ng vĂ  cÆ¡ sá»Ÿ dá»¯ liá»‡u báº±ng cĂ¡c phÆ°Æ¡ng phĂ¡p vĂ  cĂ´ng cá»¥ hiá»‡n Ä‘áº¡i. Má»™t sá»‘ tráº£i nghiá»‡m ná»•i báº­t:
+Việc tham dự hội thảo **“Hiện đại hóa App-DB do GenAI hỗ trợ”** là vô cùng quý giá, mang lại cho tôi cái nhìn toàn diện về việc hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ tiên tiến. Những kinh nghiệm chính bao gồm:
 
-#### Há»c há»i tá»« cĂ¡c diá»…n giáº£ cĂ³ chuyĂªn mĂ´n cao
-- CĂ¡c diá»…n giáº£ Ä‘áº¿n tá»« AWS vĂ  cĂ¡c tá»• chá»©c cĂ´ng nghá»‡ lá»›n Ä‘Ă£ chia sáº» **best practices** trong thiáº¿t káº¿ á»©ng dá»¥ng hiá»‡n Ä‘áº¡i.
-- Qua cĂ¡c case study thá»±c táº¿, tĂ´i hiá»ƒu rĂµ hÆ¡n cĂ¡ch Ă¡p dá»¥ng **Domain-Driven Design (DDD)** vĂ  **Event-Driven Architecture** vĂ o cĂ¡c project lá»›n.
+#### Học từ những diễn giả có tay nghề cao
+- Các chuyên gia từ AWS và các tổ chức công nghệ lớn đã chia sẻ **các biện pháp thực hành tốt nhất** trong thiết kế ứng dụng hiện đại.  
+- Thông qua các nghiên cứu điển hình trong thế giới thực, tôi đã hiểu sâu hơn về việc áp dụng **DDD** và **Kiến trúc hướng sự kiện** cho các dự án lớn.  
 
-#### Tráº£i nghiá»‡m ká»¹ thuáº­t thá»±c táº¿
-- Tham gia cĂ¡c phiĂªn trĂ¬nh bĂ y vá» **event storming** giĂºp tĂ´i hĂ¬nh dung cĂ¡ch **mĂ´ hĂ¬nh hĂ³a quy trĂ¬nh kinh doanh** thĂ nh cĂ¡c domain events.
-- Há»c cĂ¡ch **phĂ¢n tĂ¡ch microservices** vĂ  xĂ¡c Ä‘á»‹nh **bounded contexts** Ä‘á»ƒ quáº£n lĂ½ sá»± phá»©c táº¡p cá»§a há»‡ thá»‘ng lá»›n.
-- Hiá»ƒu rĂµ trade-offs giá»¯a **synchronous vĂ  asynchronous communication** cÅ©ng nhÆ° cĂ¡c pattern tĂ­ch há»£p nhÆ° **pub/sub, point-to-point, streaming**.
+#### Tiếp xúc kỹ thuật thực hành
+- Việc tham gia vào các phiên **tập trung sự kiện** đã giúp tôi hình dung ra cách **mô hình hóa quy trình kinh doanh** thành các sự kiện trong miền.  
+- Đã tìm hiểu cách **phân tách các vi dịch vụ** và xác định **ngữ cảnh bị giới hạn** để quản lý độ phức tạp của hệ thống lớn.  
+- Hiểu được sự cân bằng giữa **giao tiếp đồng bộ và không đồng bộ** và các mô hình tích hợp như **pub/sub, point-to-point, streaming**.  
 
-#### á»¨ng dá»¥ng cĂ´ng cá»¥ hiá»‡n Ä‘áº¡i
-- Trá»±c tiáº¿p tĂ¬m hiá»ƒu vá» **Amazon Q Developer**, cĂ´ng cá»¥ AI há»— trá»£ SDLC tá»« láº­p káº¿ hoáº¡ch Ä‘áº¿n maintenance.
-- Há»c cĂ¡ch **tá»± Ä‘á»™ng hĂ³a code transformation** vĂ  pilot serverless vá»›i **AWS Lambda**, tá»« Ä‘Ă³ nĂ¢ng cao nÄƒng suáº¥t phĂ¡t triá»ƒn.
+#### Tận dụng các công cụ hiện đại
+- Đã khám phá **Amazon Q Developer**, một công cụ AI hỗ trợ SDLC từ khâu lập kế hoạch đến bảo trì.  
+- Đã học cách **tự động chuyển đổi mã** và thí điểm serverless với **AWS Lambda** để cải thiện năng suất.  
 
-#### Káº¿t ná»‘i vĂ  trao Ä‘á»•i
-- Workshop táº¡o cÆ¡ há»™i trao Ä‘á»•i trá»±c tiáº¿p vá»›i cĂ¡c chuyĂªn gia, Ä‘á»“ng nghiá»‡p vĂ  team business, giĂºp **nĂ¢ng cao ngĂ´n ngá»¯ chung (ubiquitous language)** giá»¯a business vĂ  tech.
-- Qua cĂ¡c vĂ­ dá»¥ thá»±c táº¿, tĂ´i nháº­n ra táº§m quan trá»ng cá»§a **business-first approach**, luĂ´n báº¯t Ä‘áº§u tá»« nhu cáº§u kinh doanh thay vĂ¬ chá»‰ táº­p trung vĂ o cĂ´ng nghá»‡.
+#### Kết nối và thảo luận
+- Hội thảo mang đến cơ hội trao đổi ý tưởng với các chuyên gia, đồng nghiệp và nhóm kinh doanh, nâng cao **ngôn ngữ phổ biến** giữa kinh doanh và công nghệ.  
+- Các ví dụ thực tế đã củng cố tầm quan trọng của **cách tiếp cận ưu tiên doanh nghiệp** thay vì chỉ tập trung vào công nghệ.  
 
-#### BĂ i há»c rĂºt ra
-- Viá»‡c Ă¡p dá»¥ng DDD vĂ  event-driven patterns giĂºp giáº£m **coupling**, tÄƒng **scalability** vĂ  **resilience** cho há»‡ thá»‘ng.
-- Chiáº¿n lÆ°á»£c hiá»‡n Ä‘áº¡i hĂ³a cáº§n **phased approach** vĂ  Ä‘o lÆ°á»ng **ROI**, khĂ´ng nĂªn vá»™i vĂ ng chuyá»ƒn Ä‘á»•i toĂ n bá»™ há»‡ thá»‘ng.
-- CĂ¡c cĂ´ng cá»¥ AI nhÆ° Amazon Q Developer cĂ³ thá»ƒ **boost productivity** náº¿u Ä‘Æ°á»£c tĂ­ch há»£p vĂ o workflow phĂ¡t triá»ƒn hiá»‡n táº¡i.
+#### Bài học kinh nghiệm
+- Việc áp dụng DDD và các mẫu theo hướng sự kiện giúp giảm **khớp nối** đồng thời cải thiện **khả năng mở rộng** và **khả năng phục hồi**.  
+- Hiện đại hóa đòi hỏi **cách tiếp cận theo từng giai đoạn** với **đo lường ROI**; quá trình gấp rút có thể gặp rủi ro.  
+- Các công cụ AI như Amazon Q Developer có thể **tăng năng suất** đáng kể khi được tích hợp vào quy trình làm việc hiện tại.  
 
-#### Má»™t sá»‘ hĂ¬nh áº£nh khi tham gia sá»± kiá»‡n
-* ThĂªm cĂ¡c hĂ¬nh áº£nh cá»§a cĂ¡c báº¡n táº¡i Ä‘Ă¢y
-> Tá»•ng thá»ƒ, sá»± kiá»‡n khĂ´ng chá»‰ cung cáº¥p kiáº¿n thá»©c ká»¹ thuáº­t mĂ  cĂ²n giĂºp tĂ´i thay Ä‘á»•i cĂ¡ch tÆ° duy vá» thiáº¿t káº¿ á»©ng dá»¥ng, hiá»‡n Ä‘áº¡i hĂ³a há»‡ thá»‘ng vĂ  phá»‘i há»£p hiá»‡u quáº£ hÆ¡n giá»¯a cĂ¡c team.
+#### Một số hình ảnh sự kiện
+*Thêm ảnh sự kiện của bạn tại đây*  
 
+> Nhìn chung, sự kiện không chỉ cung cấp kiến ​​thức kỹ thuật mà còn giúp tôi định hình lại tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và hợp tác giữa các nhóm.

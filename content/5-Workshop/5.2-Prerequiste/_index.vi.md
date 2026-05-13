@@ -1,13 +1,13 @@
----
-title : "Các bước chuẩn bị"
+﻿---
+title : "Prerequiste"
 date : 2024-01-01 
-weight : 2
+weight : 2 
 chapter : false
 pre : " <b> 5.2. </b> "
 ---
 
-#### IAM permissions
-Gắn IAM permission policy sau vào tài khoản aws user của bạn để triển khai và dọn dẹp tài nguyên trong workshop này.
+#### Quyền IAM
+Thêm chính sách cấp phép IAM sau vào tài khoản người dùng của bạn để triển khai và dọn dẹp hội thảo này.
 ```
 {
     "Version": "2012-10-17",
@@ -216,27 +216,27 @@ Gắn IAM permission policy sau vào tài khoản aws user của bạn để tri
 
 ```
 
-#### Khởi tạo tài nguyên bằng CloudFormation
+#### Cung cấp tài nguyên bằng CloudFormation
 
-Trong lab này, chúng ta sẽ dùng N.Virginia region (us-east-1).
+Trong phòng thí nghiệm này, chúng tôi sẽ sử dụng **vùng N.Virginia (us-east-1)**.
 
-Để chuẩn bị cho môi trường làm workshop, chúng ta deploy CloudFormation template sau (click link): [PrivateLinkWorkshop ](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/quickcreate?templateURL=https://s3.us-east-1.amazonaws.com/reinvent-endpoints-builders-session/Nested.yaml&stackName=PLCloudSetup). Để nguyên các lựa chọn mặc định.
+Để chuẩn bị môi trường hội thảo, hãy triển khai **Mẫu CloudFormation** này (nhấp vào liên kết): [PrivateLinkWorkshop ](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/quickcreate?templateURL=https://s3.us-east-1.amazonaws.com/reinvent-endpoints-builders-session/Nested.yaml&stackName=PLCloudSetup). Chấp nhận tất cả các giá trị mặc định khi triển khai mẫu. 
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack1.png)
+![tạo ngăn xếp](/images/5-Workshop/5.2-Điều kiện tiên quyết/create-stack1.png)
 
-+ Lựa chọn 2 mục acknowledgement 
-+ Chọn Create stack
++ Đánh dấu vào 2 ô xác nhận
++ Chọn **Tạo ngăn xếp**
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack2.png)
+![tạo ngăn xếp](/images/5-Workshop/5.2-Điều kiện tiên quyết/create-stack2.png)
 
-Quá trình triển khai CloudFormation cần khoảng 15 phút để hoàn thành.
+Quá trình triển khai **ClouddFormation** cần khoảng 15 phút để hoàn thành.
 
-![complete](/images/5-Workshop/5.2-Prerequisite/complete.png)
+![complete](/images/5-Workshop/5.2-Precondition/complete.png)
 
-+ 2 VPCs đã được tạo
++ **2 VPC** đã được tạo
 
-![vpcs](/images/5-Workshop/5.2-Prerequisite/vpcs.png)
+![vpcs](/images/5-Workshop/5.2-Điều kiện tiên quyết/vpcs.png)
 
-+ 3 EC2s đã được tạo
++ **3 EC2** đã được tạo
 
-![EC2](/images/5-Workshop/5.2-Prerequisite/ec2.png)
+![EC2](/images/5-Workshop/5.2-Điều kiện tiên quyết/ec2.png)

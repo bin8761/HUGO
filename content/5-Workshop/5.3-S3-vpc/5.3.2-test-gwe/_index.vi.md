@@ -1,82 +1,82 @@
----
-title : "Kiểm tra Gateway Endpoint"
+﻿---
+title : "Test the Gateway Endpoint"
 date : 2024-01-01 
 weight : 2
 chapter : false
 pre : " <b> 5.3.2 </b> "
 ---
 
-#### Tạo S3 bucket
+#### Tạo nhóm S3
 
-1. Đi đến S3 management console
-2. Trong Bucket console, chọn **Create bucket**
+1. Điều hướng tới **Bảng điều khiển quản lý S3**
+2. Trong bảng điều khiển Nhóm, chọn **Tạo nhóm**
 
-![Create bucket](/images/5-Workshop/5.3-S3-vpc/create-bucket.png)
+![Tạo nhóm](/images/5-Workshop/5.3-S3-vpc/create-bucket.png)
 
-3. Trong Create bucket console
-+ Đặt tên bucket: chọn 1 tên mà không bị trùng trong phạm vi toàn cầu (gợi ý: lab\<số-lab\>\<tên-bạn\>)
+3. Trong **bảng điều khiển Tạo nhóm**
++ **Đặt tên cho nhóm**: chọn tên chưa được đặt cho bất kỳ nhóm nào trên toàn cầu (gợi ý: số phòng thí nghiệm và tên của bạn)
 
-![Bucket name](/images/5-Workshop/5.3-S3-vpc/bucket-name.png)
+![Tên nhóm](/images/5-Workshop/5.3-S3-vpc/bucket-name.png)
 
++ Để nguyên các trường khác (mặc định)
++ Cuộn xuống và chọn **Tạo nhóm**
 
-+ Giữ nguyên giá trị của các fields khác (default)
-+ Kéo chuột xuống và chọn **Create bucket**
+![Tạo](/images/5-Workshop/5.3-S3-vpc/create-button.png) 
 
-![Create](/images/5-Workshop/5.3-S3-vpc/create-button.png)    
++ Tạo thành công nhóm S3.
 
-+ Tạo thành công S3 bucket
+![Thành công](/images/5-Workshop/5.3-S3-vpc/bucket-success.png)
 
-![Success](/images/5-Workshop/5.3-S3-vpc/bucket-success.png)
+#### Kết nối với EC2 bằng trình quản lý phiên
 
-#### Kết nối với EC2 bằng session manager
++ Đối với hội thảo này, bạn sẽ sử dụng **Trình quản lý phiên AWS** để truy cập một số phiên bản **EC2**. **Trình quản lý phiên** là chức năng **AWS Systems Manager** được quản lý toàn phần, cho phép bạn quản lý **phiên bản Amazon EC2** và máy ảo (VM) tại chỗ thông qua trình bao tương tác dựa trên trình duyệt chỉ bằng một cú nhấp chuột. Trình quản lý phiên cung cấp khả năng quản lý phiên bản an toàn và có thể kiểm tra mà không cần mở cổng vào, duy trì máy chủ pháo đài hoặc quản lý khóa SSH.
 
-+ Trong workshop này, bạn sẽ dùng AWS Session Manager để kết nối đến các EC2 instances. Session Manager là 1 tính năng trong dịch vụ Systems Manager được quản lý hoàn toàn bởi AWS. System manager cho phép bạn quản lý Amazon EC2 instances và các máy ảo on-premises (VMs)thông qua 1 browser-based shell. Session Manager cung cấp khả năng quản lý phiên bản an toàn và có thể kiểm tra mà không cần mở cổng vào, duy trì máy chủ bastion host hoặc quản lý khóa SSH.
++ Hành trình đám mây đầu tiên [Lab](https://000058.awsstudygroup.com/1-introduce/) để hiểu sâu hơn về Trình quản lý phiên.
 
-+ First cloud journey [Lab](https://000058.awsstudygroup.com/1-introduce/) để hiểu sâu hơn về Session manager.
+1. Trong **Bảng điều khiển quản lý AWS**, bắt đầu nhập ```Systems Manager``` vào hộp tìm kiếm nhanh và nhấn **Enter**:
 
-1. Trong AWS Management Console, gõ Systems Manager trong ô tìm kiếm và nhấn Enter:
+![quản lý hệ thống](/images/5-Workshop/5.3-S3-vpc/sm.png)
 
-![system manager](/images/5-Workshop/5.3-S3-vpc/sm.png)
+2. Từ menu **Trình quản lý hệ thống**, tìm **Quản lý nút** ở menu bên trái và nhấp vào **Trình quản lý phiên**:
 
-2. Từ **Systems Manager** menu, tìm **Node Management** ở thanh bên trái và chọn **Session Manager**:
+![quản lý hệ thống](/images/5-Workshop/5.3-S3-vpc/sm1.png)
 
-![system manager](/images/5-Workshop/5.3-S3-vpc/sm1.png)
-
-3. Click Start Session, và chọn EC2 instance tên **Test-Gateway-Endpoint**. 
+3. Nhấp vào **Bắt đầu phiên** và chọn **phiên bản EC2** có tên **Test-Gateway-Endpoint**. 
 {{% notice info %}}
-Phiên bản EC2 này đã chạy trong "VPC cloud" và sẽ được dùng để kiểm tra khả năng kết nối với Amazon S3 thông qua điểm cuối Cổng mà bạn vừa tạo (s3-gwe). {{% /notice %}}
+Phiên bản EC2 này hiện đang chạy trong "VPC Cloud" và sẽ được dùng để kiểm tra khả năng kết nối với Amazon S3 thông qua điểm cuối Gateway mà bạn vừa tạo (s3-gwe). {{% /notice %}}
 
-![Start session](/images/5-Workshop/5.3-S3-vpc/start-session.png)
+![Bắt đầu phiên](/images/5-Workshop/5.3-S3-vpc/start-session.png)
 
-Session Manager sẽ mở browser tab mới với shell prompt: sh-4.2 $
+**Trình quản lý phiên** sẽ mở một tab trình duyệt mới với dấu nhắc shell: sh-4.2 $
 
-![Success](/images/5-Workshop/5.3-S3-vpc/start-session-success.png)
+![Thành công](/images/5-Workshop/5.3-S3-vpc/start-session-success.png)
 
-Bạn đã bắt đầu phiên kết nối đến EC2 trong VPC Cloud thành công. Trong bước tiếp theo, chúng ta sẽ tạo một  S3 bucket và một tệp trong đó.
-#### Create a file and upload to s3 bucket
+Bạn đã bắt đầu phiên thành công - kết nối với phiên bản EC2 trên đám mây VPC. Trong bước tiếp theo, chúng ta sẽ tạo vùng lưu trữ S3 và một tệp trong đó. 
 
-1. Đổi về ssm-user's thư mục bằng lệnh "cd ~" 
+#### Tạo một tập tin và tải lên thùng s3
 
-![Change user's dir](/images/5-Workshop/5.3-S3-vpc/cli1.png)
+1. Thay đổi thư mục chính của ssm-user bằng cách gõ ```cd ~``` trong CLI
 
-2. Tạo 1 file để kiểm tra bằng lệnh "fallocate -l 1G testfile.xyz", 1 file tên "testfile.xyz" có kích thước 1GB sẽ được tạo.
+![Thay đổi thư mục của người dùng](/images/5-Workshop/5.3-S3-vpc/cli1.png)
 
-![Create file](/images/5-Workshop/5.3-S3-vpc/cli-file.png)
+2. Tạo một tệp mới để sử dụng cho việc kiểm tra bằng lệnh ```fallocate -l 1G testfile.xyz```, lệnh này sẽ tạo một tệp có kích thước 1GB có tên là "testfile.xyz".
 
-3. Tải file mình vừa tạo lên S3 với lệnh "aws s3 cp testfile.xyz s3://your-bucket-name". Thay your-bucket-name bằng tên S3 bạn đã tạo.
+![Tạo tập tin](/images/5-Workshop/5.3-S3-vpc/cli-file.png)
 
-![Uploaded](/images/5-Workshop/5.3-S3-vpc/uploaded.png)
+3. Tải tệp lên vùng lưu trữ S3 bằng lệnh ```aws s3 cp testfile.xyz s3://your-bucket-name```. Thay thế your-bucket-name bằng tên của nhóm S3 mà bạn đã tạo trước đó.
 
-Bạn đã tải thành công tệp lên bộ chứa S3 của mình. Bây giờ bạn có thể kết thúc session.
+![Đã tải lên](/images/5-Workshop/5.3-S3-vpc/uploaded.png)
 
-#### Kiểm tra object trong S3 bucket
+Bạn đã tải thành công tệp lên nhóm S3 của mình. Bây giờ bạn có thể chấm dứt phiên.
 
-1. Đi đến S3 console.  
-2. Click tên s3 bucket của bạn
-3. Trong Bucket console, bạn sẽ thấy tệp bạn đã tải lên S3 bucket của mình
+#### Kiểm tra đối tượng trong nhóm S3
 
-![Check S3](/images/5-Workshop/5.3-S3-vpc/check-s3-bucket.png)
+1. Điều hướng đến bảng điều khiển S3.  
+2. Nhấp vào tên nhóm s3 của bạn
+3. Trong bảng điều khiển Bucket, bạn sẽ thấy tệp bạn đã tải lên bộ chứa S3 của mình
 
-#### Tóm tắt
+![Kiểm tra S3](/images/5-Workshop/5.3-S3-vpc/check-s3-bucket.png)
 
-Chúc mừng bạn đã hoàn thành truy cập S3 từ VPC. Trong phần này, bạn đã tạo gateway endpoint cho Amazon S3 và sử dụng AWS CLI để tải file lên. Quá trình tải lên hoạt động vì gateway endpoint cho phép giao tiếp với S3 mà không cần Internet gateway gắn vào "VPC Cloud". Điều này thể hiện chức năng của gateway endpoint như một đường dẫn an toàn đến S3 mà không cần đi qua pub    lic Internet.
+#### Phần tóm tắt
+
+Chúc mừng bạn đã hoàn thành quyền truy cập vào S3 từ VPC. Trong phần này, bạn đã tạo điểm cuối Cổng cho Amazon S3 và sử dụng AWS CLI để tải đối tượng lên. Quá trình tải lên thành công vì điểm cuối của Cổng cho phép liên lạc với S3 mà không cần Cổng Internet được gắn vào "VPC Cloud". Điều này thể hiện chức năng của điểm cuối Gateway như một đường dẫn an toàn đến S3 mà không cần truy cập Internet Công cộng.

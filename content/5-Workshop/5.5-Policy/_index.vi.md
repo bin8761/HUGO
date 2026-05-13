@@ -1,42 +1,45 @@
----
+﻿---
 title : "VPC Endpoint Policies"
 date : 2024-01-01
 weight : 5
 chapter : false
-pre : " <b> 5.5 </b> "
+pre : " <b> 5.5. </b> "
 ---
 
-Khi bạn tạo một Interface Endpoint  hoặc cổng, bạn có thể đính kèm một chính sách điểm cuối để kiểm soát quyền truy cập vào dịch vụ mà bạn đang kết nối. Chính sách VPC Endpoint là chính sách tài nguyên IAM mà bạn đính kèm vào điểm cuối. Nếu bạn không đính kèm chính sách khi tạo điểm cuối, thì AWS sẽ đính kèm chính sách mặc định cho bạn để cho phép toàn quyền truy cập vào dịch vụ thông qua điểm cuối.
+Khi tạo một giao diện hoặc điểm cuối cổng, bạn có thể đính kèm chính sách điểm cuối vào đó để kiểm soát quyền truy cập vào dịch vụ mà bạn đang kết nối. Chính sách điểm cuối VPC là chính sách tài nguyên IAM mà bạn đính kèm vào điểm cuối. Nếu bạn không đính kèm chính sách khi tạo điểm cuối, AWS sẽ đính kèm chính sách mặc định cho bạn để cho phép bạn có toàn quyền truy cập vào dịch vụ thông qua điểm cuối.
 
-Bạn có thể tạo chính sách chỉ hạn chế quyền truy cập vào các S3 bucket cụ thể. Điều này hữu ích nếu bạn chỉ muốn một số Bộ chứa S3 nhất định có thể truy cập được thông qua điểm cuối.
+Bạn có thể tạo chính sách chỉ hạn chế quyền truy cập vào các nhóm S3 cụ thể. Điều này hữu ích nếu bạn chỉ muốn một số Nhóm S3 nhất định có thể truy cập được thông qua điểm cuối.
 
-Trong phần này, bạn sẽ tạo chính sách VPC Endpoint hạn chế quyền truy cập vào S3 bucket được chỉ định trong chính sách VPC Endpoint.
+Trong phần này, bạn sẽ tạo chính sách điểm cuối VPC hạn chế quyền truy cập vào nhóm S3 được chỉ định trong chính sách điểm cuối VPC.
 
-![endpoint diagram](/images/5-Workshop/5.5-Policy/s3-bucket-policy.png)
+![sơ đồ điểm cuối](/images/5-Workshop/5.5-Policy/s3-bucket-policy.png)
 
-#### Kết nối tới EC2 và xác minh kết nối tới S3. 
+#### Kết nối với phiên bản EC2 và xác minh kết nối với S3
 
-1. Bắt đầu một phiên AWS Session Manager mới trên máy chủ có tên là Test-Gateway-Endpoint. Từ phiên này, xác minh rằng bạn có thể liệt kê nội dung của bucket mà bạn đã tạo trong Phần 1: Truy cập S3 từ VPC.
+1. Bắt đầu phiên Trình quản lý phiên AWS mới trên phiên bản có tên Test-Gateway-Endpoint. Từ phiên này, hãy xác minh rằng bạn có thể liệt kê nội dung của nhóm bạn đã tạo trong Phần 1: Truy cập S3 từ VPC:
 
 ```
-aws s3 ls s3://<your-bucket-name>
+aws s3 ls s3://\<your-bucket-name\>
 ```
 ![test](/images/5-Workshop/5.5-Policy/test1.png)
 
-Nội dung của bucket bao gồm hai tệp có dung lượng 1GB đã được tải lên trước đó.
+Nội dung nhóm bao gồm hai tệp 1 GB được tải lên trước đó.
 
-2. Tạo một bucket S3 mới; tuân thủ mẫu đặt tên mà bạn đã sử dụng trong Phần 1, nhưng thêm '-2' vào tên. Để các trường khác là mặc định và nhấp vào **Create**.
+2. Tạo nhóm S3 mới; hãy làm theo mẫu đặt tên bạn đã sử dụng ở Phần 1, nhưng thêm '-2' vào tên. Để các trường khác làm mặc định và nhấp vào tạo
 
-![create bucket](/images/5-Workshop/5.5-Policy/create-bucket.png)
+![tạo nhóm](/images/5-Workshop/5.5-Policy/create-bucket.png)
 
-3. Tạo bucket thành công.
+Tạo nhóm thành công
 
-![Success](/images/5-Workshop/5.5-Policy/create-bucket-success.png)
+![Thành công](/images/5-Workshop/5.5-Policy/create-bucket-success.png)
 
-Policy mặc định cho phép truy cập vào tất cả các S3 Buckets thông qua VPC endpoint.
+3. Điều hướng đến: Dịch vụ > VPC > Điểm cuối, sau đó chọn điểm cuối Gateway VPC mà bạn đã tạo trước đó. Nhấp vào tab Chính sách. Nhấp vào Chỉnh sửa chính sách.
 
-4. Trong giao diện **Edit Policy**, sao chép và dán theo policy sau, thay thế yourbucketname-2 với tên bucket thứ hai của bạn. Policy này sẽ cho phép truy cập đến bucket mới thông qua VPC endpoint, nhưng không cho phép truy cập đến các bucket còn lại. Chọn **Save** để kích hoạt policy.
+![chính sách](/images/5-Workshop/5.5-Policy/policy1.png)
 
+Chính sách mặc định cho phép truy cập vào tất cả Bộ chứa S3 thông qua điểm cuối VPC.
+
+4. Trong bảng điều khiển Chỉnh sửa chính sách, hãy sao chép và dán chính sách sau, sau đó thay thế yourbucketname-2 bằng tên nhóm thứ 2 của bạn. Chính sách này sẽ cho phép truy cập thông qua điểm cuối VPC vào bộ chứa mới của bạn chứ không phải bất kỳ bộ chứa nào khác trong Amazon S3. Nhấp vào Lưu để áp dụng chính sách.
 
 ```
 {
@@ -57,39 +60,38 @@ Policy mặc định cho phép truy cập vào tất cả các S3 Buckets thông
 }
 ```
 
-![custom policy](/images/5-Workshop/5.5-Policy/policy2.png)
+![chính sách tùy chỉnh](/images/5-Workshop/5.5-Policy/policy2.png)
 
-Cấu hình policy thành công.
+Tùy chỉnh chính sách thành công
 
-![success](/images/5-Workshop/5.5-Policy/success.png)
+![thành công](/static/images/5-Workshop/5.5-Policy/success.png)
 
-5. Từ session của bạn trên Test-Gateway-Endpoint instance, kiểm tra truy cập đến S3 bucket bạn tạo ở bước đầu
-
+5. Từ phiên của bạn trên phiên bản Test-Gateway-Endpoint, hãy kiểm tra quyền truy cập vào nhóm S3 mà bạn đã tạo trong Phần 1: Truy cập S3 từ VPC
 ```
 aws s3 ls s3://<yourbucketname>
 ```
 
-Câu lệnh trả về lỗi bởi vì truy cập vào S3 bucket không có quyền trong VPC endpoint policy.
+Lệnh này sẽ trả về lỗi vì chính sách điểm cuối VPC mới của bạn không cho phép quyền truy cập vào nhóm này:
 
-![error](/images/5-Workshop/5.5-Policy/error.png)
+![error](/static/images/5-Workshop/5.5-Policy/error.png)
 
-6. Trở lại home directory của bạn trên EC2 instance ```cd~```
+6. Quay trở lại thư mục chính trên phiên bản EC2 của bạn ` cd~ `
 
-+ Tạo file ```fallocate -l 1G test-bucket2.xyz ```
-+ Sao chép file lên bucket thứ  2 ```aws s3 cp test-bucket2.xyz s3://<your-2nd-bucket-name>```
++ Tạo một tập tin ```fallocate -l 1G test-bucket2.xyz ```
++ Sao chép tệp vào nhóm thứ 2 ```aws s3 cp test-bucket2.xyz s3://<your-2nd-bucket-name>```
 
-![success](/images/5-Workshop/5.5-Policy/test2.png)
+![thành công](/static/images/5-Workshop/5.5-Policy/test2.png)
 
-Thao tác này được cho phép bởi VPC endpoint policy.
+Hoạt động này thành công vì nó được chính sách điểm cuối VPC cho phép.
 
-![success](/images/5-Workshop/5.5-Policy/test2-success.png)
+![thành công](/static/images/5-Workshop/5.5-Policy/test2-success.png)
 
-Sau đó chúng ta kiểm tra truy cập vào S3 bucket đầu tiên
++ Sau đó, chúng tôi kiểm tra quyền truy cập vào nhóm đầu tiên bằng cách sao chép tệp vào nhóm thứ 1 `aws s3 cp test-bucket2.xyz s3://<your-1st-bucket-name>`
 
- ```aws s3 cp test-bucket2.xyz s3://<your-1st-bucket-name>```
+![fail](/static/images/5-Workshop/5.5-Policy/test2-fail.png)
 
- ![fail](/images/5-Workshop/5.5-Policy/test2-fail.png)
+Lệnh này sẽ trả về lỗi vì chính sách điểm cuối VPC mới của bạn không cho phép quyền truy cập vào bộ chứa này.
 
- Câu lệnh xảy ra lỗi bởi vì bucket không có quyền truy cập bởi VPC endpoint policy.
+#### Tóm tắt phần 3:
 
-Trong phần này, bạn đã tạo chính sách VPC Endpoint cho Amazon S3 và sử dụng AWS CLI để kiểm tra chính sách. Các hoạt động AWS CLI liên quan đến bucket S3 ban đầu của bạn thất bại vì bạn áp dụng một chính sách chỉ cho phép truy cập đến bucket thứ hai mà bạn đã tạo. Các hoạt động AWS CLI nhắm vào bucket thứ hai của bạn thành công vì chính sách cho phép chúng. Những chính sách này có thể hữu ích trong các tình huống khi bạn cần kiểm soát quyền truy cập vào tài nguyên thông qua VPC Endpoint.
+Trong phần này, bạn đã tạo chính sách điểm cuối VPC cho Amazon S3 và sử dụng AWS CLI để kiểm tra chính sách. Các hành động AWS CLI nhắm mục tiêu đến bộ chứa S3 ban đầu của bạn không thành công vì bạn đã áp dụng chính sách chỉ cho phép truy cập vào bộ chứa thứ hai mà bạn đã tạo. Các hành động AWS CLI được nhắm mục tiêu cho nhóm thứ hai của bạn đã thành công vì chính sách đã cho phép các hành động đó. Các chính sách này có thể hữu ích trong trường hợp bạn cần kiểm soát quyền truy cập vào tài nguyên thông qua điểm cuối VPC.

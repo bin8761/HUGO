@@ -1,104 +1,111 @@
 ﻿---
-title: "Báº£n Ä‘á» xuáº¥t"
+title: "Đề xuất"
 date: 2024-01-01
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-Táº¡i pháº§n nĂ y, báº¡n cáº§n tĂ³m táº¯t cĂ¡c ná»™i dung trong workshop mĂ  báº¡n **dá»± tĂ­nh** sáº½ lĂ m.
+Trong phần này, bạn cần tóm tắt nội dung hội thảo mà bạn **dự định** tiến hành.
 
-# IoT Weather Platform for Lab Research  
-## Giáº£i phĂ¡p AWS Serverless há»£p nháº¥t cho giĂ¡m sĂ¡t thá»i tiáº¿t thá»i gian thá»±c  
+# Nền tảng thời tiết IoT cho nghiên cứu trong phòng thí nghiệm
+## Giải pháp máy chủ AWS thống nhất để theo dõi thời tiết theo thời gian thực
 
-### 1. TĂ³m táº¯t Ä‘iá»u hĂ nh  
-IoT Weather Platform Ä‘Æ°á»£c thiáº¿t káº¿ dĂ nh cho nhĂ³m *ITea Lab* táº¡i TP. Há»“ ChĂ­ Minh nháº±m nĂ¢ng cao kháº£ nÄƒng thu tháº­p vĂ  phĂ¢n tĂ­ch dá»¯ liá»‡u thá»i tiáº¿t. Ná»n táº£ng há»— trá»£ tá»‘i Ä‘a 5 tráº¡m thá»i tiáº¿t, cĂ³ kháº£ nÄƒng má»Ÿ rá»™ng lĂªn 10â€“15 tráº¡m, sá»­ dá»¥ng thiáº¿t bá»‹ biĂªn Raspberry Pi káº¿t há»£p cáº£m biáº¿n ESP32 Ä‘á»ƒ truyá»n dá»¯ liá»‡u qua MQTT. Ná»n táº£ng táº­n dá»¥ng cĂ¡c dá»‹ch vá»¥ AWS Serverless Ä‘á»ƒ cung cáº¥p giĂ¡m sĂ¡t thá»i gian thá»±c, phĂ¢n tĂ­ch dá»± Ä‘oĂ¡n vĂ  tiáº¿t kiá»‡m chi phĂ­, vá»›i quyá»n truy cáº­p giá»›i háº¡n cho 5 thĂ nh viĂªn phĂ²ng lab thĂ´ng qua Amazon Cognito.  
+### 1. Tóm tắt điều hành
+Nền tảng thời tiết IoT được thiết kế cho nhóm ITea Lab tại Thành phố Hồ Chí Minh để tăng cường thu thập và phân tích dữ liệu thời tiết. Nó hỗ trợ tối đa 5 trạm thời tiết, với khả năng mở rộng lên 10-15, sử dụng các thiết bị biên Raspberry Pi có cảm biến ESP32 để truyền dữ liệu qua MQTT. Nền tảng này tận dụng các dịch vụ AWS Serverless để cung cấp khả năng giám sát theo thời gian thực, phân tích dự đoán và tiết kiệm chi phí, với quyền truy cập được giới hạn ở 5 thành viên phòng thí nghiệm thông qua Amazon Cognito.
 
-### 2. TuyĂªn bá»‘ váº¥n Ä‘á»  
-*Váº¥n Ä‘á» hiá»‡n táº¡i*  
-CĂ¡c tráº¡m thá»i tiáº¿t hiá»‡n táº¡i yĂªu cáº§u thu tháº­p dá»¯ liá»‡u thá»§ cĂ´ng, khĂ³ quáº£n lĂ½ khi cĂ³ nhiá»u tráº¡m. KhĂ´ng cĂ³ há»‡ thá»‘ng táº­p trung cho dá»¯ liá»‡u hoáº·c phĂ¢n tĂ­ch thá»i gian thá»±c, vĂ  cĂ¡c ná»n táº£ng bĂªn thá»© ba thÆ°á»ng tá»‘n kĂ©m vĂ  quĂ¡ phá»©c táº¡p.  
+### 2. Tuyên bố vấn đề
+### Vấn đề là gì?
+Các trạm thời tiết hiện tại yêu cầu thu thập dữ liệu thủ công, trở nên khó quản lý với nhiều đơn vị. Không có hệ thống tập trung cho dữ liệu hoặc phân tích thời gian thực và nền tảng của bên thứ ba rất tốn kém và quá phức tạp.
 
-*Giáº£i phĂ¡p*  
-Ná»n táº£ng sá»­ dá»¥ng AWS IoT Core Ä‘á»ƒ tiáº¿p nháº­n dá»¯ liá»‡u MQTT, AWS Lambda vĂ  API Gateway Ä‘á»ƒ xá»­ lĂ½, Amazon S3 Ä‘á»ƒ lÆ°u trá»¯ (bao gá»“m data lake), vĂ  AWS Glue Crawlers cĂ¹ng cĂ¡c tĂ¡c vá»¥ ETL Ä‘á»ƒ trĂ­ch xuáº¥t, chuyá»ƒn Ä‘á»•i, táº£i dá»¯ liá»‡u tá»« S3 data lake sang má»™t S3 bucket khĂ¡c Ä‘á»ƒ phĂ¢n tĂ­ch. AWS Amplify vá»›i Next.js cung cáº¥p giao diá»‡n web, vĂ  Amazon Cognito Ä‘áº£m báº£o quyá»n truy cáº­p an toĂ n. TÆ°Æ¡ng tá»± nhÆ° Thingsboard vĂ  CoreIoT, ngÆ°á»i dĂ¹ng cĂ³ thá»ƒ Ä‘Äƒng kĂ½ thiáº¿t bá»‹ má»›i vĂ  quáº£n lĂ½ káº¿t ná»‘i, nhÆ°ng ná»n táº£ng nĂ y hoáº¡t Ä‘á»™ng á»Ÿ quy mĂ´ nhá» hÆ¡n vĂ  phá»¥c vá»¥ má»¥c Ä‘Ă­ch sá»­ dá»¥ng ná»™i bá»™. CĂ¡c tĂ­nh nÄƒng chĂ­nh bao gá»“m báº£ng Ä‘iá»u khiá»ƒn thá»i gian thá»±c, phĂ¢n tĂ­ch xu hÆ°á»›ng vĂ  chi phĂ­ váº­n hĂ nh tháº¥p.  
+### Giải pháp
+Nền tảng này sử dụng AWS IoT Core để thu thập dữ liệu MQTT, AWS Lambda và API Gateway để xử lý, Amazon S3 để lưu trữ (bao gồm hồ dữ liệu), cũng như các công việc AWS Glue Crawler và ETL để trích xuất, chuyển đổi và tải dữ liệu từ hồ dữ liệu S3 sang bộ chứa S3 khác để phân tích. AWS Amplify with Next.js cung cấp giao diện web và Amazon Cognito đảm bảo quyền truy cập an toàn. Tương tự như Thingsboard và CoreIoT, người dùng có thể đăng ký thiết bị mới và quản lý kết nối, mặc dù nền tảng này hoạt động ở quy mô nhỏ hơn và được thiết kế cho mục đích sử dụng cá nhân. Các tính năng chính bao gồm bảng điều khiển thời gian thực, phân tích xu hướng và chi phí vận hành thấp.
 
-*Lá»£i Ă­ch vĂ  hoĂ n vá»‘n Ä‘áº§u tÆ° (ROI)*  
-Giáº£i phĂ¡p táº¡o ná»n táº£ng cÆ¡ báº£n Ä‘á»ƒ cĂ¡c thĂ nh viĂªn phĂ²ng lab phĂ¡t triá»ƒn má»™t ná»n táº£ng IoT lá»›n hÆ¡n, Ä‘á»“ng thá»i cung cáº¥p nguá»“n dá»¯ liá»‡u cho nhá»¯ng ngÆ°á»i nghiĂªn cá»©u AI phá»¥c vá»¥ huáº¥n luyá»‡n mĂ´ hĂ¬nh hoáº·c phĂ¢n tĂ­ch. Ná»n táº£ng giáº£m bá»›t bĂ¡o cĂ¡o thá»§ cĂ´ng cho tá»«ng tráº¡m thĂ´ng qua há»‡ thá»‘ng táº­p trung, Ä‘Æ¡n giáº£n hĂ³a quáº£n lĂ½ vĂ  báº£o trĂ¬, Ä‘á»“ng thá»i cáº£i thiá»‡n Ä‘á»™ tin cáº­y dá»¯ liá»‡u. Chi phĂ­ hĂ ng thĂ¡ng Æ°á»›c tĂ­nh 0,66 USD (theo AWS Pricing Calculator), tá»•ng cá»™ng 7,92 USD cho 12 thĂ¡ng. Táº¥t cáº£ thiáº¿t bá»‹ IoT Ä‘Ă£ Ä‘Æ°á»£c trang bá»‹ tá»« há»‡ thá»‘ng tráº¡m thá»i tiáº¿t hiá»‡n táº¡i, khĂ´ng phĂ¡t sinh chi phĂ­ phĂ¡t triá»ƒn thĂªm. Thá»i gian hoĂ n vá»‘n 6â€“12 thĂ¡ng nhá» tiáº¿t kiá»‡m Ä‘Ă¡ng ká»ƒ thá»i gian thao tĂ¡c thá»§ cĂ´ng.  
+### Lợi ích và lợi tức đầu tư
+Giải pháp này thiết lập nguồn tài nguyên nền tảng cho các thành viên phòng thí nghiệm để phát triển nền tảng IoT lớn hơn, đóng vai trò là tài nguyên nghiên cứu và cung cấp nền tảng dữ liệu cho những người đam mê AI để đào tạo hoặc phân tích mô hình. Nó giảm bớt việc báo cáo thủ công cho từng trạm thông qua nền tảng tập trung, đơn giản hóa việc quản lý và bảo trì, đồng thời cải thiện độ tin cậy của dữ liệu. Chi phí hàng tháng là 0,66 USD cho mỗi Bộ tính giá AWS, với tổng chi phí trong 12 tháng là 7,92 USD. Tất cả chi phí thiết bị IoT đều được chi trả bởi việc thiết lập trạm thời tiết hiện có, loại bỏ các chi phí phát triển bổ sung. Khoảng thời gian hòa vốn từ 6-12 tháng đạt được nhờ tiết kiệm đáng kể thời gian nhờ giảm bớt công việc thủ công.
 
-### 3. Kiáº¿n trĂºc giáº£i phĂ¡p  
-Ná»n táº£ng Ă¡p dá»¥ng kiáº¿n trĂºc AWS Serverless Ä‘á»ƒ quáº£n lĂ½ dá»¯ liá»‡u tá»« 5 tráº¡m dá»±a trĂªn Raspberry Pi, cĂ³ thá»ƒ má»Ÿ rá»™ng lĂªn 15 tráº¡m. Dá»¯ liá»‡u Ä‘Æ°á»£c tiáº¿p nháº­n qua AWS IoT Core, lÆ°u trá»¯ trong S3 data lake vĂ  xá»­ lĂ½ bá»Ÿi AWS Glue Crawlers vĂ  ETL jobs Ä‘á»ƒ chuyá»ƒn Ä‘á»•i vĂ  táº£i vĂ o má»™t S3 bucket khĂ¡c cho má»¥c Ä‘Ă­ch phĂ¢n tĂ­ch. Lambda vĂ  API Gateway xá»­ lĂ½ bá»• sung, trong khi Amplify vá»›i Next.js cung cáº¥p báº£ng Ä‘iá»u khiá»ƒn Ä‘Æ°á»£c báº£o máº­t bá»Ÿi Cognito.  
+### 3. Kiến trúc giải pháp
+Nền tảng này sử dụng kiến ​​trúc AWS không có máy chủ để quản lý dữ liệu từ 5 trạm dựa trên Raspberry Pi, có thể mở rộng lên 15. Dữ liệu được nhập qua AWS IoT Core, được lưu trữ trong hồ dữ liệu S3 và được xử lý bởi AWS Glue Crawler và các tác vụ ETL để chuyển đổi và tải dữ liệu đó vào một bộ chứa S3 khác để phân tích. Lambda và API Gateway xử lý quá trình xử lý bổ sung, trong khi Amplify with Next.js lưu trữ bảng thông tin, được bảo mật bằng Cognito. Kiến trúc được trình bày chi tiết dưới đây:
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+![Kiến trúc trạm thời tiết IoT](/images/2-Proposal/edge_architecture.jpeg)
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+![Kiến trúc nền tảng thời tiết IoT](/images/2-Proposal/platform_architecture.jpeg)
 
-*Dá»‹ch vá»¥ AWS sá»­ dá»¥ng*  
-- *AWS IoT Core*: Tiáº¿p nháº­n dá»¯ liá»‡u MQTT tá»« 5 tráº¡m, má»Ÿ rá»™ng lĂªn 15.  
-- *AWS Lambda*: Xá»­ lĂ½ dá»¯ liá»‡u vĂ  kĂ­ch hoáº¡t Glue jobs (2 hĂ m).  
-- *Amazon API Gateway*: Giao tiáº¿p vá»›i á»©ng dá»¥ng web.  
-- *Amazon S3*: LÆ°u trá»¯ dá»¯ liá»‡u thĂ´ (data lake) vĂ  dá»¯ liá»‡u Ä‘Ă£ xá»­ lĂ½ (2 bucket).  
-- *AWS Glue*: Crawlers láº­p chá»‰ má»¥c dá»¯ liá»‡u, ETL jobs chuyá»ƒn Ä‘á»•i vĂ  táº£i dá»¯ liá»‡u.  
-- *AWS Amplify*: LÆ°u trá»¯ giao diá»‡n web Next.js.  
-- *Amazon Cognito*: Quáº£n lĂ½ quyá»n truy cáº­p cho ngÆ°á»i dĂ¹ng phĂ²ng lab.  
+### Dịch vụ AWS đã sử dụng
+- **AWS IoT Core**: Nhập dữ liệu MQTT từ 5 trạm, có thể mở rộng lên 15.
+- **AWS Lambda**: Xử lý dữ liệu và kích hoạt công việc Glue (hai chức năng).
+- **Cổng API của Amazon**: Tạo điều kiện giao tiếp với ứng dụng web.
+- **Amazon S3**: Lưu trữ dữ liệu thô trong hồ dữ liệu và kết quả đầu ra được xử lý (hai nhóm).
+- **AWS Glue**: Dữ liệu danh mục của trình thu thập thông tin và các công việc ETL chuyển đổi và tải dữ liệu đó.
+- **AWS Amplify**: Lưu trữ giao diện web Next.js.
+- **Amazon Cognito**: Đảm bảo quyền truy cập cho người dùng phòng thí nghiệm.
 
-*Thiáº¿t káº¿ thĂ nh pháº§n*  
-- *Thiáº¿t bá»‹ biĂªn*: Raspberry Pi thu tháº­p vĂ  lá»c dá»¯ liá»‡u cáº£m biáº¿n, gá»­i tá»›i IoT Core.  
-- *Tiáº¿p nháº­n dá»¯ liá»‡u*: AWS IoT Core nháº­n tin nháº¯n MQTT tá»« thiáº¿t bá»‹ biĂªn.  
-- *LÆ°u trá»¯ dá»¯ liá»‡u*: Dá»¯ liá»‡u thĂ´ lÆ°u trong S3 data lake; dá»¯ liá»‡u Ä‘Ă£ xá»­ lĂ½ lÆ°u á»Ÿ má»™t S3 bucket khĂ¡c.  
-- *Xá»­ lĂ½ dá»¯ liá»‡u*: AWS Glue Crawlers láº­p chá»‰ má»¥c dá»¯ liá»‡u; ETL jobs chuyá»ƒn Ä‘á»•i Ä‘á»ƒ phĂ¢n tĂ­ch.  
-- *Giao diá»‡n web*: AWS Amplify lÆ°u trá»¯ á»©ng dá»¥ng Next.js cho báº£ng Ä‘iá»u khiá»ƒn vĂ  phĂ¢n tĂ­ch thá»i gian thá»±c.  
-- *Quáº£n lĂ½ ngÆ°á»i dĂ¹ng*: Amazon Cognito giá»›i háº¡n 5 tĂ i khoáº£n hoáº¡t Ä‘á»™ng.  
+### Thiết kế thành phần
+- **Thiết bị biên**: Raspberry Pi thu thập và lọc dữ liệu cảm biến, gửi dữ liệu đó đến IoT Core.
+- **Nhập dữ liệu**: AWS IoT Core nhận tin nhắn MQTT từ các thiết bị biên.
+- **Lưu trữ dữ liệu**: Dữ liệu thô được lưu trữ trong hồ dữ liệu S3; dữ liệu đã xử lý được lưu trữ trong một nhóm S3 khác.
+- **Xử lý dữ liệu**: AWS Glue Crawler lập danh mục dữ liệu và các tác vụ ETL chuyển đổi dữ liệu đó để phân tích.
+- **Giao diện web**: AWS Amplify lưu trữ ứng dụng Next.js cho bảng thông tin và phân tích theo thời gian thực.
+- **Quản lý người dùng**: Amazon Cognito quản lý quyền truy cập của người dùng, cho phép tối đa 5 tài khoản đang hoạt động.
 
-### 4. Triá»ƒn khai ká»¹ thuáº­t  
-*CĂ¡c giai Ä‘oáº¡n triá»ƒn khai*  
-Dá»± Ă¡n gá»“m 2 pháº§n â€” thiáº¿t láº­p tráº¡m thá»i tiáº¿t biĂªn vĂ  xĂ¢y dá»±ng ná»n táº£ng thá»i tiáº¿t â€” má»—i pháº§n tráº£i qua 4 giai Ä‘oáº¡n:  
-1. *NghiĂªn cá»©u vĂ  váº½ kiáº¿n trĂºc*: NghiĂªn cá»©u Raspberry Pi vá»›i cáº£m biáº¿n ESP32 vĂ  thiáº¿t káº¿ kiáº¿n trĂºc AWS Serverless (1 thĂ¡ng trÆ°á»›c ká»³ thá»±c táº­p).  
-2. *TĂ­nh toĂ¡n chi phĂ­ vĂ  kiá»ƒm tra tĂ­nh kháº£ thi*: Sá»­ dá»¥ng AWS Pricing Calculator Ä‘á»ƒ Æ°á»›c tĂ­nh vĂ  Ä‘iá»u chá»‰nh (ThĂ¡ng 1).  
-3. *Äiá»u chá»‰nh kiáº¿n trĂºc Ä‘á»ƒ tá»‘i Æ°u chi phĂ­/giáº£i phĂ¡p*: Tinh chá»‰nh (vĂ­ dá»¥ tá»‘i Æ°u Lambda vá»›i Next.js) Ä‘á»ƒ Ä‘áº£m báº£o hiá»‡u quáº£ (ThĂ¡ng 2).  
-4. *PhĂ¡t triá»ƒn, kiá»ƒm thá»­, triá»ƒn khai*: Láº­p trĂ¬nh Raspberry Pi, AWS services vá»›i CDK/SDK vĂ  á»©ng dá»¥ng Next.js, sau Ä‘Ă³ kiá»ƒm thá»­ vĂ  Ä‘Æ°a vĂ o váº­n hĂ nh (ThĂ¡ng 2â€“3).  
+### 4. Triển khai kỹ thuật
+**Các giai đoạn thực hiện**
+Dự án này có hai phần—thiết lập các trạm biên thời tiết và xây dựng nền tảng thời tiết—mỗi phần gồm 4 giai đoạn sau:
+- Xây dựng lý thuyết và kiến ​​trúc vẽ: Nghiên cứu thiết lập Raspberry Pi với cảm biến ESP32 và thiết kế kiến ​​trúc serverless AWS (1 tháng trước khi thực tập)
+- Tính giá và kiểm tra tính thực tiễn: Sử dụng Công cụ tính giá AWS để ước tính chi phí và điều chỉnh nếu cần (Tháng 1).
+- Khắc phục Kiến trúc để đảm bảo chi phí hoặc Phù hợp với giải pháp: Tinh chỉnh thiết kế (ví dụ: tối ưu hóa Lambda với Next.js) để duy trì hiệu quả về mặt chi phí và có thể sử dụng được (Tháng 2).
+- Phát triển, thử nghiệm và triển khai: Viết mã thiết lập Raspberry Pi, dịch vụ AWS bằng CDK/SDK và ứng dụng Next.js, sau đó thử nghiệm và phát hành vào sản xuất (Tháng 2-3).
 
-*YĂªu cáº§u ká»¹ thuáº­t*  
-- *Tráº¡m thá»i tiáº¿t biĂªn*: Cáº£m biáº¿n (nhiá»‡t Ä‘á»™, Ä‘á»™ áº©m, lÆ°á»£ng mÆ°a, tá»‘c Ä‘á»™ giĂ³), vi Ä‘iá»u khiá»ƒn ESP32, Raspberry Pi lĂ m thiáº¿t bá»‹ biĂªn. Raspberry Pi cháº¡y Raspbian, sá»­ dá»¥ng Docker Ä‘á»ƒ lá»c dá»¯ liá»‡u vĂ  gá»­i 1 MB/ngĂ y/tráº¡m qua MQTT qua Wi-Fi.  
-- *Ná»n táº£ng thá»i tiáº¿t*: Kiáº¿n thá»©c thá»±c táº¿ vá» AWS Amplify (lÆ°u trá»¯ Next.js), Lambda (giáº£m thiá»ƒu do Next.js xá»­ lĂ½), AWS Glue (ETL), S3 (2 bucket), IoT Core (gateway vĂ  rules), vĂ  Cognito (5 ngÆ°á»i dĂ¹ng). Sá»­ dá»¥ng AWS CDK/SDK Ä‘á»ƒ láº­p trĂ¬nh (vĂ­ dá»¥ IoT Core rules tá»›i S3). Next.js giĂºp giáº£m táº£i Lambda cho á»©ng dá»¥ng web fullstack.  
+**Yêu cầu kỹ thuật**
+- Trạm biên thời tiết: Các cảm biến (nhiệt độ, độ ẩm, lượng mưa, tốc độ gió), bộ vi điều khiển (ESP32) và Raspberry Pi làm thiết bị biên. Raspberry Pi chạy Raspbian, xử lý Docker để lọc và gửi 1 MB/ngày mỗi trạm qua MQTT qua Wi-Fi.
+- Nền tảng thời tiết: Kiến thức thực tế về AWS Amplify (lưu trữ Next.js), Lambda (mức sử dụng tối thiểu do Next.js), AWS Glue (ETL), S3 (hai nhóm), IoT Core (cổng và quy tắc) và Cognito (5 người dùng). Sử dụng AWS CDK/SDK để mã hóa các tương tác (ví dụ: quy tắc IoT Core thành S3). Next.js giảm khối lượng công việc Lambda cho ứng dụng web fullstack.
 
-### 5. Lá»™ trĂ¬nh & Má»‘c triá»ƒn khai  
-- *TrÆ°á»›c thá»±c táº­p (ThĂ¡ng 0)*: 1 thĂ¡ng lĂªn káº¿ hoáº¡ch vĂ  Ä‘Ă¡nh giĂ¡ tráº¡m cÅ©.  
-- *Thá»±c táº­p (ThĂ¡ng 1â€“3)*:  
-    - ThĂ¡ng 1: Há»c AWS vĂ  nĂ¢ng cáº¥p pháº§n cá»©ng.  
-    - ThĂ¡ng 2: Thiáº¿t káº¿ vĂ  Ä‘iá»u chá»‰nh kiáº¿n trĂºc.  
-    - ThĂ¡ng 3: Triá»ƒn khai, kiá»ƒm thá»­, Ä‘Æ°a vĂ o sá»­ dá»¥ng.  
-- *Sau triá»ƒn khai*: NghiĂªn cá»©u thĂªm trong vĂ²ng 1 nÄƒm.  
+### 5. Dòng thời gian & các cột mốc quan trọng
+**Dòng thời gian của dự án**
+- Trước khi thực tập (Tháng 0): 1 tháng để lập kế hoạch và đánh giá trạm cũ.
+- Thực tập (Tháng 1-3): 3 tháng.
+    - Tháng 1: Nghiên cứu AWS và nâng cấp phần cứng.
+    - Tháng 2: Thiết kế và điều chỉnh kiến ​​trúc.
+    - Tháng 3: Triển khai, thử nghiệm và triển khai.
+- Sau khi ra mắt: Tối đa 1 năm cho nghiên cứu.
 
-### 6. Æ¯á»›c tĂ­nh ngĂ¢n sĂ¡ch  
-CĂ³ thá»ƒ xem chi phĂ­ trĂªn [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01)  
-Hoáº·c táº£i [tá»‡p Æ°á»›c tĂ­nh ngĂ¢n sĂ¡ch](../attachments/budget_estimation.pdf).  
+### 6. Dự toán ngân sách
+Bạn có thể tìm thấy ước tính ngân sách trên [Công cụ tính giá AWS](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01).  
+Hoặc bạn có thể tải xuống [Tệp dự toán ngân sách](../attachments/budget_estimation.pdf).
 
-*Chi phĂ­ háº¡ táº§ng*  
-- AWS Lambda: 0,00 USD/thĂ¡ng (1.000 request, 512 MB lÆ°u trá»¯).  
-- S3 Standard: 0,15 USD/thĂ¡ng (6 GB, 2.100 request, 1 GB quĂ©t).  
-- Truyá»n dá»¯ liá»‡u: 0,02 USD/thĂ¡ng (1 GB vĂ o, 1 GB ra).  
-- AWS Amplify: 0,35 USD/thĂ¡ng (256 MB, request 500 ms).  
-- Amazon API Gateway: 0,01 USD/thĂ¡ng (2.000 request).  
-- AWS Glue ETL Jobs: 0,02 USD/thĂ¡ng (2 DPU).  
-- AWS Glue Crawlers: 0,07 USD/thĂ¡ng (1 crawler).  
-- MQTT (IoT Core): 0,08 USD/thĂ¡ng (5 thiáº¿t bá»‹, 45.000 tin nháº¯n).  
+### Chi phí cơ sở hạ tầng
+- Dịch vụ AWS:
+    - AWS Lambda: 0,00 USD/tháng (1.000 yêu cầu, dung lượng lưu trữ 512 MB).
+    - Tiêu chuẩn S3: 0,15 USD/tháng (6 GB, 2.100 yêu cầu, 1 GB được quét).
+    - Truyền dữ liệu: 0,02 USD/tháng (1 GB gửi vào, 1 GB gửi đi).
+    - AWS Amplify: 0,35 USD/tháng (yêu cầu 256 MB, 500 ms).
+    - Cổng API Amazon: 0,01 USD/tháng (2.000 yêu cầu).
+    - Công việc AWS Glue ETL: 0,02 USD/tháng (2 DPU).
+    - Trình thu thập keo AWS: 0,07 USD/tháng (1 trình thu thập thông tin).
+    - MQTT (IoT Core): 0,08 USD/tháng (5 thiết bị, 45.000 tin nhắn).
 
-*Tá»•ng*: 0,7 USD/thĂ¡ng, 8,40 USD/12 thĂ¡ng  
-- *Pháº§n cá»©ng*: 265 USD má»™t láº§n (Raspberry Pi 5 vĂ  cáº£m biáº¿n).  
+Tổng cộng: 0,7 USD/tháng, 8,40 USD/12 tháng
 
-### 7. ÄĂ¡nh giĂ¡ rá»§i ro  
-*Ma tráº­n rá»§i ro*  
-- Máº¥t máº¡ng: áº¢nh hÆ°á»Ÿng trung bĂ¬nh, xĂ¡c suáº¥t trung bĂ¬nh.  
-- Há»ng cáº£m biáº¿n: áº¢nh hÆ°á»Ÿng cao, xĂ¡c suáº¥t tháº¥p.  
-- VÆ°á»£t ngĂ¢n sĂ¡ch: áº¢nh hÆ°á»Ÿng trung bĂ¬nh, xĂ¡c suáº¥t tháº¥p.  
+- Phần cứng: $265 một lần (Raspberry Pi 5 và cảm biến).
 
-*Chiáº¿n lÆ°á»£c giáº£m thiá»ƒu*  
-- Máº¡ng: LÆ°u trá»¯ cá»¥c bá»™ trĂªn Raspberry Pi vá»›i Docker.  
-- Cáº£m biáº¿n: Kiá»ƒm tra Ä‘á»‹nh ká»³, dá»± phĂ²ng linh kiá»‡n.  
-- Chi phĂ­: Cáº£nh bĂ¡o ngĂ¢n sĂ¡ch AWS, tá»‘i Æ°u dá»‹ch vá»¥.  
+### 7. Đánh giá rủi ro
+#### Ma trận rủi ro
+- Mất mạng: Tác động trung bình, xác suất trung bình.
+- Lỗi cảm biến: Tác động cao, xác suất thấp.
+- Vượt chi phí: Tác động trung bình, xác suất thấp.
 
-*Káº¿ hoáº¡ch dá»± phĂ²ng*  
-- Quay láº¡i thu tháº­p thá»§ cĂ´ng náº¿u AWS gáº·p sá»± cá»‘.  
-- Sá»­ dá»¥ng CloudFormation Ä‘á»ƒ khĂ´i phá»¥c cáº¥u hĂ¬nh liĂªn quan Ä‘áº¿n chi phĂ­.  
+#### Chiến lược giảm thiểu
+- Mạng: Bộ nhớ cục bộ trên Raspberry Pi với Docker.
+- Cảm biến: Kiểm tra thường xuyên và thay thế phụ tùng.
+- Chi phí: Cảnh báo và tối ưu hóa ngân sách AWS.
 
-### 8. Káº¿t quáº£ ká»³ vá»ng  
-*Cáº£i tiáº¿n ká»¹ thuáº­t*: Dá»¯ liá»‡u vĂ  phĂ¢n tĂ­ch thá»i gian thá»±c thay tháº¿ quy trĂ¬nh thá»§ cĂ´ng. CĂ³ thá»ƒ má»Ÿ rá»™ng tá»›i 10â€“15 tráº¡m.  
-*GiĂ¡ trá»‹ dĂ i háº¡n*: Ná»n táº£ng dá»¯ liá»‡u 1 nÄƒm cho nghiĂªn cá»©u AI, cĂ³ thá»ƒ tĂ¡i sá»­ dá»¥ng cho cĂ¡c dá»±Â Ă¡nÂ tÆ°Æ¡ngÂ lai.
+#### kế hoạch dự phòng
+- Hoàn nguyên về phương pháp thủ công nếu AWS không thành công.
+- Sử dụng CloudFormation để khôi phục liên quan đến chi phí.
+
+### 8. Kết quả mong đợi
+#### Cải tiến kỹ thuật: 
+Dữ liệu và phân tích thời gian thực thay thế các quy trình thủ công.  
+Có thể mở rộng tới 10-15 trạm.
+#### Giá trị lâu dài
+Nền tảng dữ liệu 1 năm cho nghiên cứu AI.  
+Có thể tái sử dụng cho các dự án trong tương lai.

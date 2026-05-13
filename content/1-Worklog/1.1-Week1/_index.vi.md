@@ -1,40 +1,37 @@
 ﻿---
-title: "Worklog Tuáº§n 1 - TĂ¬m hiá»ƒu AWS"
+title: "Nhật ký công việc Tuần 1 - Nguyên tắc cơ bản của AWS"
 date: 2026-04-17
 weight: 1
 chapter: false
 pre: " <b> 1.1. </b> "
 ---
-### Má»¥c tiĂªu tuáº§n 1:
+### Mục tiêu tuần 1:
 
-* TĂ¬m hiá»ƒu cĂ¡c dá»‹ch vá»¥ cÆ¡ báº£n cá»§a AWS.
-* Há»c vĂ  dĂ¹ng thá»­ cĂ¡c dá»‹ch vá»¥ cÆ¡ báº£n cá»§a AWS thĂ´ng qua tĂ i liá»‡u vĂ  bĂ i lab.
+* Tìm hiểu các dịch vụ AWS cơ bản.
+* Nghiên cứu và thực hành các dịch vụ AWS cơ bản thông qua tài liệu học tập và phòng thí nghiệm.
 
-### CĂ¡c cĂ´ng viá»‡c cáº§n triá»ƒn khai trong tuáº§n nĂ y:
-| Thá»© | CĂ´ng viá»‡c | NgĂ y báº¯t Ä‘áº§u | NgĂ y hoĂ n thĂ nh | Nguá»“n tĂ i liá»‡u |
+### Các công việc cần thực hiện trong tuần này:
+| Ngày | Nhiệm vụ | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
 | --- | --- | --- | --- | --- |
-| 1 | - Xem cĂ¡c video kiáº¿n thá»©c AWS trĂªn kĂªnh AWS Study Group | 17/04/2026 | 17/04/2026 | <https://www.youtube.com/@AWSStudyGroup/videos> |
-| 1 | - Báº¯t Ä‘áº§u táº¡o tĂ i khoáº£n AWS | 17/04/2026 | 17/04/2026 | <https://aws.amazon.com/console/> |
-| 2 | - Báº¯t Ä‘áº§u lĂ m quen vá»›i cĂ¡c dá»‹ch vá»¥ AWS theo cĂ¡c bĂ i lab | 18/04/2026 | 18/04/2026 | <https://cloudjourney.awsstudygroup.com/> |
-| 3 | - LĂ m bĂ i lab Cost Management with AWS Budget | 19/04/2026 | 19/04/2026 | <https://000007.awsstudygroup.com/> |
-| 4 | - LĂ m bĂ i lab AWS Identity and Access Management (IAM) Access Control | 20/04/2026 | 20/04/2026 | <https://000002.awsstudygroup.com/> |
-| 5 | - LĂ m bĂ i lab Amazon VPC and AWS Site-to-Site VPN Workshop Overview | 21/04/2026 | 21/04/2026 | <https://000003.awsstudygroup.com/> |
-| 6 | - LĂ m bĂ i lab Introduction to Amazon EC2 | 22/04/2026 | 22/04/2026 | <https://000004.awsstudygroup.com/> |
+| 1 | - Đã xem video kiến ​​thức AWS trên kênh AWS Study Group | 17/04/2026 | 17/04/2026 | <https://www.youtube.com/@AWSStudyGroup/videos> |
+| 1 | - Bắt đầu tạo tài khoản AWS | 17/04/2026 | 17/04/2026 | <https://aws.amazon.com/console/> |
+| 2 | - Bắt đầu làm quen với các dịch vụ AWS thông qua các bài tập trong lab | 18/04/2026 | 18/04/2026 | <https://cloudjourney.awsstudygroup.com/> |
+| 3 | - Hoàn thành lab: Quản lý chi phí với AWS Budget | 19/04/2026 | 19/04/2026 | <https://000007.awsstudygroup.com/> |
+| 4 | - Đã hoàn thành bài lab: Kiểm soát truy cập AWS Identity and Access Management (IAM) | 20/04/2026 | 20/04/2026 | <https://000002.awsstudygroup.com/> |
+| 5 | - Đã hoàn thành phòng thí nghiệm: Tổng quan về Hội thảo VPN Site-to-Site của Amazon VPC và AWS | 21/04/2026 | 21/04/2026 | <https://000003.awsstudygroup.com/> |
+| 6 | - Hoàn thành lab: Giới thiệu về Amazon EC2 | 22/04/2026 | 22/04/2026 | <https://000004.awsstudygroup.com/> |
 
 
-### Káº¿t quáº£ Ä‘áº¡t Ä‘Æ°á»£c tuáº§n 1:
+### Thành tích tuần 1:
 
-* ÄĂ£ táº¡o Ä‘Æ°á»£c tĂ i khoáº£n AWS vĂ  truy cáº­p Ä‘Æ°á»£c AWS Console.
+* Đã tạo thành công tài khoản AWS và truy cập Bảng điều khiển AWS.
 
-* ÄĂ£ tĂ¬m hiá»ƒu cĂ¡c dá»‹ch vá»¥ cÆ¡ báº£n cá»§a AWS thĂ´ng qua video vĂ  tĂ i liá»‡u há»c táº­p.
+* Tìm hiểu các dịch vụ AWS cơ bản thông qua video và tài liệu học tập.
 
-* ÄĂ£ hoĂ n thĂ nh cĂ¡c bĂ i lab cÆ¡ báº£n:
-  * Cost Management with AWS Budget
-  * AWS Identity and Access Management (IAM) Access Control
-  * Amazon VPC and AWS Site-to-Site VPN Workshop Overview
-  * Introduction to Amazon EC2
+* Các phòng thí nghiệm cơ bản đã hoàn thành:
+  * Quản lý chi phí với AWS Budget
+  * Kiểm soát truy cập AWS Identity and Access Management (IAM)
+  * Tổng quan về hội thảo VPN Site-to-Site của Amazon VPC và AWS
+  * Giới thiệu về Amazon EC2
 
-* BÆ°á»›c Ä‘áº§u lĂ m quen vá»›i luá»“ng há»c AWS theo hĂ¬nh thá»©c lĂ½ thuyáº¿t káº¿t há»£p thá»±c hĂ nh lab.
-
-
-
+* Xây dựng sự làm quen ban đầu với quy trình học tập AWS bằng cách kết hợp các phòng thí nghiệm lý thuyết và thực hành.

@@ -1,37 +1,35 @@
 ﻿---
-title: "Nháº­t kĂ½ cĂ´ng viá»‡c"
+title: "nhật ký công việc"
 date: 2024-01-01
 weight: 1
 chapter: false
 pre: " <b> 1. </b> "
 ---
 
-**Trong trang nĂ y** báº¡n sáº½ cáº§n giá»›i thiá»‡u worklog cá»§a báº¡n **nhÆ° tháº¿ nĂ o**? Báº¡n hoĂ n thĂ nh chÆ°Æ¡ng trĂ¬nh trong vĂ²ng **bao nhiĂªu tuáº§n**? Báº¡n **Ä‘Ă£ lĂ m gĂ¬** trong cĂ¡c tuáº§n Ä‘Ă³?
+**Trên trang này**, bạn sẽ cần giới thiệu nhật ký công việc của mình. **Làm thế nào** bạn đã hoàn thành nó? Bạn mất bao nhiêu tuần để hoàn thành chương trình? **Bạn đã làm gì** trong những tuần đó?
 
+Thông thường, và theo tiêu chuẩn, nhật ký công việc được thực hiện trong khoảng 3 tháng (trong suốt thời gian thực tập) với nội dung hàng tuần như sau:
 
-ThĂ´ng thÆ°á»ng vĂ  cÅ©ng lĂ  tiĂªu chuáº©n, má»™t worklog Ä‘Æ°á»£c thá»±c hiá»‡n trong khoáº£ng 3 thĂ¡ng (trong suá»‘t thá»i gian thá»±c táº­p) vá»›i ná»™i dung cĂ¡c tuáº§n nhÆ° sau:
+**Tuần 1:** [Các nguyên tắc cơ bản của AWS](1,1 tuần1/)
 
-**Tuáº§n 1:** [TĂ¬m hiá»ƒu AWS](1.1-week1/)
+**Tuần 2:** [Phòng thí nghiệm thực hành](1,2 tuần2/)
 
-**Tuáº§n 2:** [LĂ m cĂ¡c bĂ i Lab](1.2-week2/)
+**Tuần 3:** [Làm nhiệm vụ B...](1,3-tuần3/)
 
-**Tuáº§n 3:** [LĂ m cĂ´ng viá»‡c B...](1.3-week3/)
+**Tuần 4:** [Làm task C...](1.4-week4/)
 
-**Tuáº§n 4:** [LĂ m cĂ´ng viá»‡c C...](1.4-week4/)
+**Tuần 5:** [Làm nhiệm vụ D...](1,5-week5/)
 
-**Tuáº§n 5:** [LĂ m cĂ´ng viá»‡c D...](1.5-week5/)
+**Tuần 6:** [Làm task E...](1.6-week6/)
 
-**Tuáº§n 6:** [LĂ m cĂ´ng viá»‡c E...](1.6-week6/)
+**Tuần 7:** [Làm nhiệm vụ G...](1,7-week7/)
 
-**Tuáº§n 7:** [LĂ m cĂ´ng viá»‡c G...](1.7-week7/)
+**Tuần 8:** [Làm nhiệm vụ H...](1,8-week8/)
 
-**Tuáº§n 8:** [LĂ m cĂ´ng viá»‡c H...](1.8-week8/)
+**Tuần 9:** [Làm nhiệm vụ I...](1.9-week9/)
 
-**Tuáº§n 9:** [LĂ m cĂ´ng viá»‡c I...](1.9-week9/)
+**Tuần 10:** [Làm nhiệm vụ L...](1.10-week10/)
 
-**Tuáº§n 10:** [LĂ m cĂ´ng viá»‡c L...](1.10-week10/)
+**Tuần 11:** [Làm nhiệm vụ M...](1.11-week11/)
 
-**Tuáº§n 11:** [LĂ m cĂ´ng viá»‡c M...](1.11-week11/)
-
-**Tuáº§n 12:** [LĂ m cĂ´ng viá»‡c N...](1.12-week12/)
-
+**Tuần 12:** [Làm nhiệm vụ N...](1.12-week12/)

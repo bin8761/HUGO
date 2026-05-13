@@ -1,40 +1,40 @@
 ﻿---
-title : "Táº¡o má»™t S3 Interface endpoint"
+title : "Create an S3 Interface endpoint"
 date : 2024-01-01
 weight : 2
 chapter : false
 pre : " <b> 5.4.2 </b> "
 ---
 
-Trong pháº§n nĂ y, báº¡n sáº½ táº¡o vĂ  kiá»ƒm tra Interface Endpoint  S3 báº±ng cĂ¡ch sá»­ dá»¥ng mĂ´i trÆ°á»ng truyá»n thá»‘ng mĂ´ phá»ng.
+Trong phần này, bạn sẽ tạo và kiểm tra điểm cuối giao diện S3 bằng môi trường mô phỏng tại chỗ được triển khai như một phần của hội thảo này.
 
-1. Quay láº¡i Amazon VPC menu. Trong thanh Ä‘iá»u hÆ°á»›ng bĂªn trĂ¡i, chá»n Endpoints, sau Ä‘Ă³ click Create Endpoint.
+1. Quay lại menu Amazon VPC. Trong ngăn điều hướng, chọn Điểm cuối, sau đó bấm vào Tạo điểm cuối.
 
-2. Trong Create endpoint console:
-+ Äáº·t tĂªn interface endpoint
-+ Trong Service category, chá»n **aws services** 
+2. Trong bảng điều khiển Tạo điểm cuối:
++ Đặt tên cho điểm cuối giao diện
++ Trong danh mục Dịch vụ, chọn **dịch vụ aws** 
 
 ![name](/images/5-Workshop/5.4-S3-onprem/s3-interface-endpoint1.png)
 
-3.  Trong Search box, gĂµ S3 vĂ  nháº¥n Enter. Chá»n endpoint cĂ³ tĂªn com.amazonaws.us-east-1.s3. Äáº£m báº£o ráº±ng cá»™t Type cĂ³ giĂ¡ trá»‹ Interface.
+3.  Trong hộp Tìm kiếm, nhập S3 và nhấn Enter. Chọn điểm cuối có tên com.amazonaws.us-east-1.s3. Đảm bảo rằng cột Loại cho biết Giao diện.
 
 ![service](/images/5-Workshop/5.4-S3-onprem/s3-interface-endpoint2.png)
 
-4. Äá»‘i vá»›i VPC, chá»n VPC Cloud tá»« drop-down.
-+ Má»Ÿ rá»™ng **Additional settings** vĂ  Ä‘áº£m báº£o ráº±ng Enable DNS name *khĂ´ng* Ä‘Æ°á»£c chá»n (sáº½ sá»­ dá»¥ng Ä‘iá»u nĂ y trong pháº§n tiáº¿p theo cá»§a workshop)
+4. Đối với VPC, chọn VPC Cloud từ trình đơn thả xuống.
++ Mở rộng **Cài đặt bổ sung** và đảm bảo rằng *không* chọn Bật tên DNS (chúng tôi sẽ sử dụng tùy chọn này trong phần tiếp theo của hội thảo)
 
 ![vpc](/images/5-Workshop/5.4-S3-onprem/s3-interface-endpoint3.png)
 
-5. Chá»n 2 subnets trong AZs sau: us-east-1a and us-east-1b
+5. Chọn 2 subnet trong các AZ sau: us-east-1a và us-east-1b
 
-![subnets](/images/5-Workshop/5.4-S3-onprem/s3-interface-endpoint4.png)
+![mạng con](/images/5-Workshop/5.4-S3-onprem/s3-interface-endpoint4.png)
 
-6. Äá»‘i vá»›i Security group, chá»n SGforS3Endpoint:
+6. Đối với nhóm Security chọn SGforS3Endpoint:
 
 ![sg](/images/5-Workshop/5.4-S3-onprem/s3-interface-endpoint5.png)
 
-7. Giá»¯ default policy - full access vĂ  click Create endpoint
+7. Giữ chính sách mặc định - toàn quyền truy cập và nhấp vào Tạo điểm cuối
 
-![success](/images/5-Workshop/5.4-S3-onprem/s3-interface-endpoint-success.png)
+![thành công](/images/5-Workshop/5.4-S3-onprem/s3-interface-endpoint-success.png)
 
-ChĂºc má»«ng báº¡n Ä‘Ă£ táº¡o thĂ nh cĂ´ng S3 interface endpoint. á» bÆ°á»›c tiáº¿p theo, chĂºng ta sáº½ kiá»ƒm tra interface endpoint.
+Chúc mừng bạn đã tạo thành công endpoint giao diện S3. Trong bước tiếp theo, chúng tôi sẽ kiểm tra điểm cuối giao diện.

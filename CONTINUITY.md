@@ -18,9 +18,41 @@ Key decisions:
 - Moi turn se doc/cap nhat `CONTINUITY.md` truoc khi thuc hien yeu cau.
 - Xac nhan giu nguyen toan bo constraints lien quan DB/migration/server/Prisma cho tat ca task tiep theo.
 - Bo sung quy tac bat buoc UTF-8 cho file, UI text, va cau tra loi.
+- Chi xoa warning o tang HTML render: bo `<div class="notices warning">` bang override shortcode, khong xoa cac notice type khac.
+- Theo yeu cau moi cua user, xoa han cac block `notice warning` trong noi dung markdown de an hoan toan note tren UI.
+- User chon phuong an 1: viet lai toan bo `*.vi.md` de sua dut diem loi font UTF-8.
 
 State:
   - Done:
+    - User yeu cau IMPLEMENT plan rewrite toan bo `*.vi.md` (40 files).
+    - Da thuc hien rewrite hang loat toan bo 40 file `content/**/*.vi.md` dua tren noi dung EN tuong ung, giu nguyen cau truc/public interface.
+    - Da sua loi shortcode closing tag bi dich sai trong `5.3.2-test-gwe/_index.vi.md` bang cach chuan hoa ve `{{% /notice %}}`.
+    - Da build Hugo thanh cong sau rewrite (EN/VI deu build duoc); chi con canh bao deprecation tu theme.
+    - User da chon huong xu ly: viet lai toan bo file tieng Viet `*.vi.md` (khong lam theo nhom uu tien).
+    - User yeu cau: doc `rule/continuity-ledger-rule.mdc` va ap dung cho moi request tiep theo.
+    - Da doc lai `rule/continuity-ledger-rule.mdc` trong turn hien tai.
+    - Da xac nhan se thuc thi workflow ledger moi turn: doc/cap nhat `CONTINUITY.md` truoc khi lam viec.
+    - Da kiem tra truc tiep HTML tu GitHub Pages cho URL Week 1 va xac nhan sidebar tren server da dung thu tu 1.1 -> 1.12.
+    - Ket luan nguyen nhan user con thay thu tu cu: cache trinh duyet/asset cache theo tung trang.
+    - Da chuan hoa `weight` cho toan bo Worklog Week 1 -> Week 12 (VI + EN) de sua thu tu sidebar.
+    - Da cap nhat nhan Week 1/2 trong trang tong `content/1-Worklog/_index.md` va `_index.vi.md` de dong bo voi noi dung chi tiet.
+    - Da commit `129d396` va push len `origin/main`.
+    - Da sua thu tu sidebar Worklog bang cach dat `weight: 2` cho Week 2 (giu Week 1 la `weight: 1`).
+    - Da cap nhat tieu de Week 1/2 theo noi dung thuc te cho ca ban VI va EN.
+    - Da commit `d05cddd` va push len `origin/main` de cap nhat UI Worklog.
+    - Da commit chi cac file worklog Week 1 + Week 2 voi commit `8c9504c`.
+    - Da push commit `8c9504c` len `origin/main` thanh cong.
+    - User da cung cap WORKLOG INPUT cho Week 2 (23/04/2026 -> 03/05/2026, chu de lam cac bai lab).
+    - Da viet va cap nhat worklog Week 2 tieng Viet tai `content/1-Worklog/1.2-Week2/_index.vi.md`.
+    - Da viet va cap nhat worklog Week 2 tieng Anh tai `content/1-Worklog/1.2-Week2/_index.md`.
+    - User da cung cap WORKLOG INPUT cho Week 1 (17/04/2026 -> 23/04/2026, chu de tim hieu AWS).
+    - Da viet va cap nhat worklog Week 1 tieng Viet tai `content/1-Worklog/1.1-Week1/_index.vi.md`.
+    - Da viet va cap nhat worklog Week 1 tieng Anh tai `content/1-Worklog/1.1-Week1/_index.md`.
+    - User yeu cau mot format input ro rang de biet can cung cap gi cho assistant viet worklog.
+    - User cung cap link rule project `https://rules.fcjuni.com/3-project/` va hoi cach viet worklog theo mau tuan 1.
+    - Da doc rule project va xac nhan yeu cau worklog: Week 1 -> Week 12; moi tuan co cong viec da lam + ket qua dat duoc.
+    - Da tim thay va doc mau worklog tuan 1 song ngu tai `content/1-Worklog/1.1-Week1/_index.vi.md` va `_index.md`.
+    - Da tai doc `rule/continuity-ledger-rule.mdc` trong turn hien tai va kich hoat ap dung mac dinh cho cac yeu cau tiep theo.
     - Da doc file `rule/continuity-ledger-rule.mdc`.
     - Da nhan yeu cau cua user: ap dung continuity-ledger-rule cho moi request tiep theo.
     - Da dong bo `CONTINUITY.md` theo rule Continuity Ledger.
@@ -38,21 +70,46 @@ State:
     - User da doi `origin` sang `https://github.com/bin8761/HUGO`.
     - Da kiem tra: working tree co thay doi local; remote moi chua thay head branch.
     - User yeu cau lenh `git commit` dung chuan.
+    - User bao workflow GitHub Actions fail voi loi `function "try" not defined`.
+    - Da xac dinh nguyen nhan: workflow dung Hugo `0.134.3`, thap hon version can de ho tro `try`.
+    - Da sua `.github/workflows/hugo.yml` -> `hugo-version: "0.160.1"`.
+    - User xac nhan workflow da xanh (build-deploy succeeded).
+    - Da kiem tra remote heads: da co ca `main` va `gh-pages`.
+    - User bao site len link nhung mat CSS.
+    - Da xac dinh nguyen nhan: `baseURL` trong `config.toml` van la domain cu.
+    - Da sua `baseURL` -> `https://bin8761.github.io/HUGO/`.
+    - Da build lai va xac nhan asset link thanh `/HUGO/css/...`, `/HUGO/js/...`.
+    - User yeu cau xoa `div warning` tren tat ca trang giao dien de tranh bi tru diem.
+    - Da xac nhan pham vi: chi xoa phan tu HTML, khong can xoa markdown/shortcode warning text.
+    - Da tao override `layouts/shortcodes/notice.html` de khong render `<div class="notices warning">`.
+    - Da build Hugo thanh cong sau chinh sua va quet `public`: khong con `class="notices warning"` trong HTML output.
+    - User yeu cau an hoan toan cac note warning dang hien tren trang.
+    - Da xoa dong loat toan bo block `{{% notice warning %}} ... {{% /notice %}}` trong thu muc `content`.
+    - Da kiem tra lai: khong con `notice warning` trong `content`; build Hugo thanh cong.
+    - Da push commit `4756c08` len `origin/main`.
+    - Da quet encoding cho file tieng Viet (`*.vi.md`) va xac nhan co loi mojibake/UTF-8 tren nhieu trang.
+    - User yeu cau sua toan bo noi dung tieng Viet loi font va chi dinh skill `ui-ux-pro-max`.
+    - Da doc skill `ui-ux-pro-max` va ap dung theo huong review/fix quality cho noi dung UI text.
+    - Da thu cac huong sua tu dong encoding (ftfy + restore theo lich su git + token repair), ket qua khong dam bao do chinh xac 100% do du lieu mojibake nhieu lop.
+    - Da hoan tac cac thay doi thu nghiem de giu workspace on dinh truoc khi tiep tuc phuong an khac phuc an toan.
   - Now:
-    - Cung cap mau commit message theo Conventional Commits phu hop boi canh hien tai.
+    - Cho user review noi dung rewrite tieng Viet va xac nhan push commit.
   - Next:
-    - Neu user muon: chot pham vi file va push len `origin/main`.
+    - Neu user dong y, tao commit cho toan bo thay doi `*.vi.md` va push len `origin/main`.
 
 Open questions (UNCONFIRMED if needed):
-- UNCONFIRMED: User muon push tat ca thay doi hien co hay chi file can thiet.
+- Khong.
 
 Working set (files/ids/commands):
 - CONTINUITY.md
 - rule\continuity-ledger-rule.mdc
+- all-ui-tree.txt
 - config.toml
 - .gitmodules
 - themes\hugo-theme-learn\README.md
 - layouts\shortcodes\ghcontributors.html
+- layouts\shortcodes\notice.html
 - C:\Users\yasuo\AppData\Local\Microsoft\WinGet\Packages\Hugo.Hugo.Extended_Microsoft.Winget.Source_8wekyb3d8bbwe\hugo.exe
 - git status --short --branch
 - git remote -v
+- .github\workflows\hugo.yml
