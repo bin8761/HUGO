@@ -24,6 +24,14 @@ Key decisions:
 
 State:
   - Done:
+    - Da sua loi link hong tren trang chu tieng Viet (`content/_index.vi.md`) do URL co dau/khoang trang; doi ve URL dung theo thu muc that.
+    - Da doi ten muc 1 sang `Nhật kí làm việc` trong `content/1-Worklog/_index.vi.md`.
+    - Da sua cac link tuan con trong `content/1-Worklog/_index.vi.md` ve dung duong dan `1.x-Weekx/`.
+    - Da build Hugo thanh cong sau khi sua link (khong loi build).
+    - Da xac dinh cac file can sua de Viet hoa sidebar theo man hinh user: `menu.html` (khung), `menu-footer.html` (Last Updated/Team), `config.toml` + cac `_index.vi.md` (ten muc), va i18n cho `More/Clear History`.
+    - Da tim theo `all-ui-tree.txt` cho `div.highlightable ps-container ps-theme-default`; ket luan class `ps-*` la runtime class, source template la `menu.html`.
+    - Da tra cuu `all-ui-tree.txt` va xac dinh file chua code giao dien sidebar (markup + style) trong theme.
+    - Da commit rewrite tieng Viet voi commit `9c45dae` va push thanh cong len `origin/main`.
     - User yeu cau IMPLEMENT plan rewrite toan bo `*.vi.md` (40 files).
     - Da thuc hien rewrite hang loat toan bo 40 file `content/**/*.vi.md` dua tren noi dung EN tuong ung, giu nguyen cau truc/public interface.
     - Da sua loi shortcode closing tag bi dich sai trong `5.3.2-test-gwe/_index.vi.md` bang cach chuan hoa ve `{{% /notice %}}`.
@@ -93,9 +101,9 @@ State:
     - Da thu cac huong sua tu dong encoding (ftfy + restore theo lich su git + token repair), ket qua khong dam bao do chinh xac 100% do du lieu mojibake nhieu lop.
     - Da hoan tac cac thay doi thu nghiem de giu workspace on dinh truoc khi tiep tuc phuong an khac phuc an toan.
   - Now:
-    - Cho user review noi dung rewrite tieng Viet va xac nhan push commit.
+    - Da fix xong van de link khong vao duoc muc 1 o ban tieng Viet.
   - Next:
-    - Neu user dong y, tao commit cho toan bo thay doi `*.vi.md` va push len `origin/main`.
+    - Neu user dong y, commit/push ban fix link + label.
 
 Open questions (UNCONFIRMED if needed):
 - Khong.
