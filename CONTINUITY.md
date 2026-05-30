@@ -1,123 +1,50 @@
-Goal (incl. success criteria):
-- Doc va ap dung `rule/continuity-ledger-rule.mdc` cho moi yeu cau trong phien lam viec nay.
-- Duy tri `CONTINUITY.md` la nguon su that ve Goal/Constraints/Decisions/State.
+﻿# CONTINUITY
 
-Constraints/Assumptions:
-- Apply all rules under C:\Users\yasuo\Desktop\fcj-workshop-template\rule.
-- Update the ledger every turn; replies begin with Ledger Snapshot (Goal + Now/Next + Open Questions).
-- Apply continuity-ledger-rule.mdc for every request.
-- Work only within C:\Users\yasuo\Desktop\fcj-workshop-template.
-- Replies are in Vietnamese.
-- Do not run DB or migration or server commands autonomously; ask the user to run.
-- Do not run Prisma CLI; the user will run all Prisma CLI commands.
-- When the user provides Implementation/Task/TDD structure, that is approval to proceed.
-- All written content must follow UTF-8 standard: file content, UI text labels/buttons, and assistant replies.
+- Goal (incl. success criteria):
+  - Chỉnh sửa worklog chi tiết tuần 3 và tiêu đề ngoài theo dữ liệu trong `format-worklog.yaml`.
+  - Duy trì áp dụng `rule/continuity-ledger-rule.mdc` cho mọi yêu cầu tiếp theo.
+  - Success: Nội dung tuần 3 (VI/EN nếu có) khớp dữ liệu nguồn và phần tiêu đề ngoài được cập nhật đúng.
 
-Key decisions:
-- Bat dau ap dung continuity-ledger-rule ngay tu turn hien tai.
-- Moi turn se doc/cap nhat `CONTINUITY.md` truoc khi thuc hien yeu cau.
-- Xac nhan giu nguyen toan bo constraints lien quan DB/migration/server/Prisma cho tat ca task tiep theo.
-- Bo sung quy tac bat buoc UTF-8 cho file, UI text, va cau tra loi.
-- Chi xoa warning o tang HTML render: bo `<div class="notices warning">` bang override shortcode, khong xoa cac notice type khac.
-- Theo yeu cau moi cua user, xoa han cac block `notice warning` trong noi dung markdown de an hoan toan note tren UI.
-- User chon phuong an 1: viet lai toan bo `*.vi.md` de sua dut diem loi font UTF-8.
+- Constraints/Assumptions:
+  - Chỉ dùng thông tin đã xác nhận trong ngữ cảnh hiện tại; thiếu thông tin thì đánh dấu `UNCONFIRMED`.
+  - Ledger canonical nằm tại `CONTINUITY.md`.
 
-State:
+- Key decisions:
+  - Tuân thủ quy trình đọc/cập nhật `CONTINUITY.md` ở đầu mỗi lượt.
+  - Nguồn sự thật cho tuần 3 là `format-worklog.yaml`.
+
+- State:
   - Done:
-    - Da sua loi link hong tren trang chu tieng Viet (`content/_index.vi.md`) do URL co dau/khoang trang; doi ve URL dung theo thu muc that.
-    - Da doi ten muc 1 sang `Nhật kí làm việc` trong `content/1-Worklog/_index.vi.md`.
-    - Da sua cac link tuan con trong `content/1-Worklog/_index.vi.md` ve dung duong dan `1.x-Weekx/`.
-    - Da build Hugo thanh cong sau khi sua link (khong loi build).
-    - Da xac dinh cac file can sua de Viet hoa sidebar theo man hinh user: `menu.html` (khung), `menu-footer.html` (Last Updated/Team), `config.toml` + cac `_index.vi.md` (ten muc), va i18n cho `More/Clear History`.
-    - Da tim theo `all-ui-tree.txt` cho `div.highlightable ps-container ps-theme-default`; ket luan class `ps-*` la runtime class, source template la `menu.html`.
-    - Da tra cuu `all-ui-tree.txt` va xac dinh file chua code giao dien sidebar (markup + style) trong theme.
-    - Da commit rewrite tieng Viet voi commit `9c45dae` va push thanh cong len `origin/main`.
-    - User yeu cau IMPLEMENT plan rewrite toan bo `*.vi.md` (40 files).
-    - Da thuc hien rewrite hang loat toan bo 40 file `content/**/*.vi.md` dua tren noi dung EN tuong ung, giu nguyen cau truc/public interface.
-    - Da sua loi shortcode closing tag bi dich sai trong `5.3.2-test-gwe/_index.vi.md` bang cach chuan hoa ve `{{% /notice %}}`.
-    - Da build Hugo thanh cong sau rewrite (EN/VI deu build duoc); chi con canh bao deprecation tu theme.
-    - User da chon huong xu ly: viet lai toan bo file tieng Viet `*.vi.md` (khong lam theo nhom uu tien).
-    - User yeu cau: doc `rule/continuity-ledger-rule.mdc` va ap dung cho moi request tiep theo.
-    - Da doc lai `rule/continuity-ledger-rule.mdc` trong turn hien tai.
-    - Da xac nhan se thuc thi workflow ledger moi turn: doc/cap nhat `CONTINUITY.md` truoc khi lam viec.
-    - Da kiem tra truc tiep HTML tu GitHub Pages cho URL Week 1 va xac nhan sidebar tren server da dung thu tu 1.1 -> 1.12.
-    - Ket luan nguyen nhan user con thay thu tu cu: cache trinh duyet/asset cache theo tung trang.
-    - Da chuan hoa `weight` cho toan bo Worklog Week 1 -> Week 12 (VI + EN) de sua thu tu sidebar.
-    - Da cap nhat nhan Week 1/2 trong trang tong `content/1-Worklog/_index.md` va `_index.vi.md` de dong bo voi noi dung chi tiet.
-    - Da commit `129d396` va push len `origin/main`.
-    - Da sua thu tu sidebar Worklog bang cach dat `weight: 2` cho Week 2 (giu Week 1 la `weight: 1`).
-    - Da cap nhat tieu de Week 1/2 theo noi dung thuc te cho ca ban VI va EN.
-    - Da commit `d05cddd` va push len `origin/main` de cap nhat UI Worklog.
-    - Da commit chi cac file worklog Week 1 + Week 2 voi commit `8c9504c`.
-    - Da push commit `8c9504c` len `origin/main` thanh cong.
-    - User da cung cap WORKLOG INPUT cho Week 2 (23/04/2026 -> 03/05/2026, chu de lam cac bai lab).
-    - Da viet va cap nhat worklog Week 2 tieng Viet tai `content/1-Worklog/1.2-Week2/_index.vi.md`.
-    - Da viet va cap nhat worklog Week 2 tieng Anh tai `content/1-Worklog/1.2-Week2/_index.md`.
-    - User da cung cap WORKLOG INPUT cho Week 1 (17/04/2026 -> 23/04/2026, chu de tim hieu AWS).
-    - Da viet va cap nhat worklog Week 1 tieng Viet tai `content/1-Worklog/1.1-Week1/_index.vi.md`.
-    - Da viet va cap nhat worklog Week 1 tieng Anh tai `content/1-Worklog/1.1-Week1/_index.md`.
-    - User yeu cau mot format input ro rang de biet can cung cap gi cho assistant viet worklog.
-    - User cung cap link rule project `https://rules.fcjuni.com/3-project/` va hoi cach viet worklog theo mau tuan 1.
-    - Da doc rule project va xac nhan yeu cau worklog: Week 1 -> Week 12; moi tuan co cong viec da lam + ket qua dat duoc.
-    - Da tim thay va doc mau worklog tuan 1 song ngu tai `content/1-Worklog/1.1-Week1/_index.vi.md` va `_index.md`.
-    - Da tai doc `rule/continuity-ledger-rule.mdc` trong turn hien tai va kich hoat ap dung mac dinh cho cac yeu cau tiep theo.
-    - Da doc file `rule/continuity-ledger-rule.mdc`.
-    - Da nhan yeu cau cua user: ap dung continuity-ledger-rule cho moi request tiep theo.
-    - Da dong bo `CONTINUITY.md` theo rule Continuity Ledger.
-    - Da xac nhan voi user: constraints DB/Prisma/server can duoc giu nguyen.
-    - Da them constraint moi ve chuan UTF-8.
-    - Da thu thap thong tin de huong dan chay du an: du an Hugo, theme `hugo-theme-learn` la git submodule.
-    - Da kiem tra tuong thich voi Hugo v0.160.1 bang build thuc te.
-    - Phat hien loi parse template: function `getJSON` khong con duoc ho tro trong `layouts/shortcodes/ghcontributors.html`.
-    - User da yeu cau sua loi tuong thich ngay.
-    - Da sua `layouts/shortcodes/ghcontributors.html` sang `resources.GetRemote` + `transform.Unmarshal` (co fallback warning).
-    - Da build thanh cong voi Hugo v0.160.1 (khong con loi `getJSON`).
-    - User xac nhan muon lenh de chay thu local.
-    - Da kiem tra git status/remote de chuan bi push len GitHub.
-    - User yeu cau lenh doi `origin`.
-    - User da doi `origin` sang `https://github.com/bin8761/HUGO`.
-    - Da kiem tra: working tree co thay doi local; remote moi chua thay head branch.
-    - User yeu cau lenh `git commit` dung chuan.
-    - User bao workflow GitHub Actions fail voi loi `function "try" not defined`.
-    - Da xac dinh nguyen nhan: workflow dung Hugo `0.134.3`, thap hon version can de ho tro `try`.
-    - Da sua `.github/workflows/hugo.yml` -> `hugo-version: "0.160.1"`.
-    - User xac nhan workflow da xanh (build-deploy succeeded).
-    - Da kiem tra remote heads: da co ca `main` va `gh-pages`.
-    - User bao site len link nhung mat CSS.
-    - Da xac dinh nguyen nhan: `baseURL` trong `config.toml` van la domain cu.
-    - Da sua `baseURL` -> `https://bin8761.github.io/HUGO/`.
-    - Da build lai va xac nhan asset link thanh `/HUGO/css/...`, `/HUGO/js/...`.
-    - User yeu cau xoa `div warning` tren tat ca trang giao dien de tranh bi tru diem.
-    - Da xac nhan pham vi: chi xoa phan tu HTML, khong can xoa markdown/shortcode warning text.
-    - Da tao override `layouts/shortcodes/notice.html` de khong render `<div class="notices warning">`.
-    - Da build Hugo thanh cong sau chinh sua va quet `public`: khong con `class="notices warning"` trong HTML output.
-    - User yeu cau an hoan toan cac note warning dang hien tren trang.
-    - Da xoa dong loat toan bo block `{{% notice warning %}} ... {{% /notice %}}` trong thu muc `content`.
-    - Da kiem tra lai: khong con `notice warning` trong `content`; build Hugo thanh cong.
-    - Da push commit `4756c08` len `origin/main`.
-    - Da quet encoding cho file tieng Viet (`*.vi.md`) va xac nhan co loi mojibake/UTF-8 tren nhieu trang.
-    - User yeu cau sua toan bo noi dung tieng Viet loi font va chi dinh skill `ui-ux-pro-max`.
-    - Da doc skill `ui-ux-pro-max` va ap dung theo huong review/fix quality cho noi dung UI text.
-    - Da thu cac huong sua tu dong encoding (ftfy + restore theo lich su git + token repair), ket qua khong dam bao do chinh xac 100% do du lieu mojibake nhieu lop.
-    - Da hoan tac cac thay doi thu nghiem de giu workspace on dinh truoc khi tiep tuc phuong an khac phuc an toan.
+    - Đã đọc `rule/continuity-ledger-rule.mdc`.
+    - Đã khởi tạo `CONTINUITY.md` theo format yêu cầu.
+    - Đã đọc skill `ui-ux-pro-max` theo yêu cầu người dùng.
+    - Đã xác định vị trí worklog tuần 3: `content/1-Worklog/1.3-Week3/`.
+    - Đã cập nhật tiêu đề ngoài và nội dung chi tiết tuần 3 trong:
+      - `content/1-Worklog/1.3-Week3/_index.vi.md`
+      - `content/1-Worklog/1.3-Week3/_index.md`
+    - Đã kiểm tra lại nội dung sau chỉnh sửa bằng đọc file trực tiếp.
+    - Đã cập nhật tiêu đề tuần 3 ở trang danh sách Worklog:
+      - `content/1-Worklog/_index.vi.md` (`Tuần 3: Làm các bài Lab`)
+      - `content/1-Worklog/_index.md` (`Week 3: Lab Practice`)
+    - Đã xác minh lại bằng `rg` các chuỗi tiêu đề và nội dung tuần 3.
+    - Đã loại bỏ phần lặp `Tiêu đề tuần/Week Title` trong nội dung tuần 3 để tránh trùng với `title` trang.
+    - Đã xóa dòng Day 4 bị thiếu nội dung trong bảng tuần 3 và đánh số lại ngày liên tục (1..5) ở cả VI/EN.
   - Now:
-    - Da fix xong van de link khong vao duoc muc 1 o ban tieng Viet.
+    - Đã tinh chỉnh bảng task theo phản hồi người dùng.
   - Next:
-    - Neu user dong y, commit/push ban fix link + label.
+    - Chờ người dùng xác nhận hiển thị bảng đã đúng.
 
-Open questions (UNCONFIRMED if needed):
-- Khong.
+- Open questions (`UNCONFIRMED` if needed):
+  - Không.
 
-Working set (files/ids/commands):
-- CONTINUITY.md
-- rule\continuity-ledger-rule.mdc
-- all-ui-tree.txt
-- config.toml
-- .gitmodules
-- themes\hugo-theme-learn\README.md
-- layouts\shortcodes\ghcontributors.html
-- layouts\shortcodes\notice.html
-- C:\Users\yasuo\AppData\Local\Microsoft\WinGet\Packages\Hugo.Hugo.Extended_Microsoft.Winget.Source_8wekyb3d8bbwe\hugo.exe
-- git status --short --branch
-- git remote -v
-- .github\workflows\hugo.yml
+- Working set (files/ids/commands):
+  - `rule/continuity-ledger-rule.mdc`
+  - `CONTINUITY.md`
+  - `format-worklog.yaml`
+  - `content/1-Worklog/1.3-Week3/_index.vi.md`
+  - `content/1-Worklog/1.3-Week3/_index.md`
+  - `content/1-Worklog/_index.vi.md`
+  - `content/1-Worklog/_index.md`
+  - `Get-Content -LiteralPath ...\\1.3-Week3\\_index.vi.md`
+  - `Get-Content -LiteralPath ...\\1.3-Week3\\_index.md`
+  - `rg -n "Week 3|Tuần 3|Làm các bài Lab|Lab Practice|title:" ...`
