@@ -19,10 +19,10 @@ pre: " <b> 4. </b> "
 
 Trong thời gian thực tập, tôi đã tham gia hai sự kiện. Mỗi buổi học là một trải nghiệm đáng nhớ, mang đến những kiến ​​thức mới mẻ, thú vị, bổ ích cùng những món quà và khoảnh khắc tuyệt vời.
 
-### [Sự kiện 1](4.1-Sự kiện1/)  
- **Tên sự kiện:** Hội thảo hiện đại hóa App-DB do GenAI cung cấp  
+### [Sự kiện 1](4.1-Event1/)  
+ **Tên sự kiện:** FCAJ Community Day SG  
 
- **Ngày & Giờ:** 09:00, ngày 13 tháng 8 năm 2025  
+ **Ngày & Giờ:** 30/5/2026  
 
  **Vị trí:** Tầng 26, Tòa nhà Bitexco, 02 Hải Triều, Phường Sài Gòn, TP.HCM  
 
@@ -30,7 +30,7 @@ Trong thời gian thực tập, tôi đã tham gia hai sự kiện. Mỗi buổi
 
 ---
 
-### [Sự kiện 2](4.2-Sự kiện2/)  
+### [Sự kiện 2](4.2-Event2/)  
  **Tên sự kiện:** Hội thảo hiện đại hóa App-DB do GenAI cung cấp  
 
  **Ngày & Giờ:** 09:00, ngày 13 tháng 8 năm 2025  

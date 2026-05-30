@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-# Báo cáo tóm tắt: “Hội thảo hiện đại hóa App-DB do GenAI cung cấp”
+# Báo cáo tóm tắt: "FCAJ Community Day SG"
 
 ### Mục tiêu sự kiện
 

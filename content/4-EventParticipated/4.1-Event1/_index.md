@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-# Summary Report: â€œGenAI-powered App-DB Modernization workshopâ€
+# Summary Report: "FCAJ Community Day SG"
 
 ### Event Objectives
 
