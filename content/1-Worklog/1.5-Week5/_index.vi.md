@@ -7,7 +7,7 @@ pre: " <b> 1.5. </b> "
 ---
 ### Khoảng thời gian:
 
-* Từ 18/05/2026 đến 27/05/2026
+* Từ 18/05/2026 đến 22/05/2026
 
 ### Mục tiêu tuần 5:
 
@@ -18,8 +18,8 @@ pre: " <b> 1.5. </b> "
 | Day | Task | Start Date | Completion Date | Reference Material |
 | --- | --- | --- | --- | --- |
 | 1 | Bắt đầu Brainstorming ý tưởng để có doc tổng quan | 18/05/2026 | 19/05/2026 |  |
-| 3 | Bắt đầu phân chia các module để triển khai | 20/05/2026 | 22/05/2026 |  |
-| 4 | Bắt đầu quyết định kiến trúc, công nghệ sử dụng và triển khai Foundation của dự án | 23/05/2026 | 27/05/2026 |  |
+| 3 | Bắt đầu phân chia các module để triển khai | 20/05/2026 | 20/05/2026 |  |
+| 4 | Bắt đầu quyết định kiến trúc, công nghệ sử dụng và triển khai Foundation của dự án | 21/05/2026 | 22/05/2026 |  |
 
 ### Kết quả đạt được:
 

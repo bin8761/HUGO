@@ -7,7 +7,7 @@ pre: " <b> 1.5. </b> "
 ---
 ### Date Range:
 
-* From 18/05/2026 to 27/05/2026
+* From 18/05/2026 to 22/05/2026
 
 ### Week 5 Objectives:
 
@@ -18,8 +18,8 @@ pre: " <b> 1.5. </b> "
 | Day | Task | Start Date | Completion Date | Reference Material |
 | --- | --- | --- | --- | --- |
 | 1 | Start brainstorming ideas to produce an overview document | 18/05/2026 | 19/05/2026 |  |
-| 3 | Start splitting modules for implementation | 20/05/2026 | 22/05/2026 |  |
-| 4 | Start deciding the architecture, technology choices, and project foundation implementation | 23/05/2026 | 27/05/2026 |  |
+| 3 | Start splitting modules for implementation | 20/05/2026 | 20/05/2026 |  |
+| 4 | Start deciding the architecture, technology choices, and project foundation implementation | 21/05/2026 | 22/05/2026 |  |
 
 ### Achievements:
 
