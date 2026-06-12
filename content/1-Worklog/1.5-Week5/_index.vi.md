@@ -11,7 +11,7 @@ pre: " <b> 1.5. </b> "
 
 ### Mục tiêu tuần 5:
 
-* Làm các bài Lab để hiểu cách hoạt động và cách dùng các dịch vụ AWS.
+* Làm rõ dự án sẽ dùng cái gì, kiến trúc là gì và triển khai ra sao.
 
 ### Các công việc trong tuần:
 
@@ -23,6 +23,6 @@ pre: " <b> 1.5. </b> "
 
 ### Kết quả đạt được:
 
-* Đã làm các bài lab và hiểu được cấu trúc cơ bản khi muốn triển khai AWS.
-* Đã tìm hiểu về các dịch vụ cơ bản của AWS.
-* Đã làm các bài lab cơ bản.
+* Đã chốt được dự án sẽ làm những module nào.
+* Đã chốt các công nghệ và kiến trúc cho dự án.
+* Đã triển khai xong Foundation cho dự án và Auth.

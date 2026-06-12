@@ -11,7 +11,7 @@ pre: " <b> 1.5. </b> "
 
 ### Week 5 Objectives:
 
-* Complete lab exercises to understand how AWS services work and how to use them.
+* Clarify what the project will use, what the architecture is, and how it will be implemented.
 
 ### Tasks This Week:
 
@@ -23,8 +23,8 @@ pre: " <b> 1.5. </b> "
 
 ### Achievements:
 
-* Completed lab exercises and understood the basic structure for AWS deployment.
-* Learned foundational AWS services.
-* Completed core beginner lab exercises.
+* Finalized which modules the project will include.
+* Finalized the project architecture and technology choices.
+* Completed the project foundation and auth setup.
 
 
