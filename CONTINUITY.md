@@ -1,43 +1,43 @@
-# CONTINUITY
+﻿# CONTINUITY
 
 - Goal (incl. success criteria):
-  - Chỉnh worklog tuần theo nội dung `format-worklog.yaml`, dùng `all-ui-tree.txt` để xác định đúng file đích.
-  - Success: file tuần hiện tại và entry danh sách Worklog khớp với dữ liệu authoritative trong `format-worklog.yaml` ở cả VI/EN nếu file tồn tại.
+  - Chinh worklog tuan theo noi dung `format-worklog.yaml`, dung `all-ui-tree.txt` de xac dinh dung file dich.
+  - Success: file tuan hien tai va entry danh sach Worklog khop voi du lieu authoritative trong `format-worklog.yaml` o ca VI/EN neu file ton tai.
 
 - Constraints/Assumptions:
-  - Chỉ dùng thông tin đã xác nhận trong ngữ cảnh hiện tại; thiếu thông tin thì ghi `UNCONFIRMED`.
-  - Ledger canonical nằm tại `CONTINUITY.md`.
-  - Không dựa vào lịch sử chat nếu chưa được phản ánh trong ledger.
+  - Chi dung thong tin da xac nhan trong ngu canh hien tai; thieu thong tin thi ghi `UNCONFIRMED`.
+  - Ledger canonical nam tai `CONTINUITY.md`.
+  - Khong dua vao lich su chat neu chua duoc phan anh trong ledger.
 
 - Key decisions:
-  - Đọc `CONTINUITY.md` và cập nhật nó ở đầu mỗi lượt.
-  - Ưu tiên sửa content worklog trước, rồi đồng bộ entry trên trang danh sách.
+  - Doc `CONTINUITY.md` va cap nhat no o dau moi luot.
+  - Uu tien sua content worklog truoc, roi dong bo entry tren trang danh sach.
 
 - State:
   - Done:
-    - Đã đọc `rule/continuity-ledger-rule.mdc`.
-    - Đã đọc `format-worklog.yaml`.
-    - Đã đọc `all-ui-tree.txt`.
-    - Đã xác định authoritative hiện tại là `Week: 7`.
-    - Đã cập nhật `content/1-Worklog/1.7-Week7/_index.vi.md`.
-    - Đã cập nhật `content/1-Worklog/1.7-Week7/_index.md`.
-    - Đã cập nhật entry tuần 7 trong `content/1-Worklog/_index.vi.md`.
-    - Đã cập nhật entry tuần 7 trong `content/1-Worklog/_index.md`.
-    - Đã xác minh lại nội dung và bảng tuần 7 bằng đọc file và grep.
+    - Da doc `rule/continuity-ledger-rule.mdc`.
+    - Da doc `format-worklog.yaml`.
+    - Da doc `all-ui-tree.txt`.
+    - Da xac dinh authoritative hien tai la `Week: 8`.
+    - Da cap nhat `content/1-Worklog/1.8-Week8/_index.vi.md`.
+    - Da cap nhat `content/1-Worklog/1.8-Week8/_index.md`.
+    - Da cap nhat entry tuan 8 trong `content/1-Worklog/_index.vi.md`.
+    - Da cap nhat entry tuan 8 trong `content/1-Worklog/_index.md`.
+    - Da xac minh lai noi dung va bang tuan 8 bang doc file va grep.
   - Now:
-    - Chờ yêu cầu tiếp theo của người dùng.
+    - Cho yeu cau tiep theo cua nguoi dung.
   - Next:
-    - Với mỗi lượt mới, đọc lại `CONTINUITY.md` rồi cập nhật nếu trạng thái thay đổi.
+    - Voi moi luot moi, doc lai `CONTINUITY.md` roi cap nhat neu trang thai thay doi.
 
 - Open questions (`UNCONFIRMED` if needed):
-  - Không.
+  - Khong.
 
 - Working set (files/ids/commands):
   - `rule/continuity-ledger-rule.mdc`
   - `CONTINUITY.md`
   - `format-worklog.yaml`
   - `all-ui-tree.txt`
-  - `content/1-Worklog/1.7-Week7/_index.vi.md`
-  - `content/1-Worklog/1.7-Week7/_index.md`
+  - `content/1-Worklog/1.8-Week8/_index.vi.md`
+  - `content/1-Worklog/1.8-Week8/_index.md`
   - `content/1-Worklog/_index.vi.md`
   - `content/1-Worklog/_index.md`

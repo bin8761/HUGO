@@ -24,7 +24,7 @@ Typically, and as a standard, a worklog is carried out over about 3 months (thro
 
 **Week 7:** [Lab Practice](1.7-week7/)
 
-**Week 8:** [Doing task H...](1.8-week8/)
+**Week 8:** [Lab Practice](1.8-week8/)
 
 **Week 9:** [Doing task I...](1.9-week9/)
 
@@ -33,4 +33,3 @@ Typically, and as a standard, a worklog is carried out over about 3 months (thro
 **Week 11:** [Doing task M...](1.11-week11/)
 
 **Week 12:** [Doing task N...](1.12-week12/)
-
