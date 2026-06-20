@@ -1,38 +1,34 @@
-﻿# CONTINUITY
+# CONTINUITY
 
 - Goal (incl. success criteria):
-  - Chỉnh sửa worklog chi tiết tuần 3 và tiêu đề ngoài theo dữ liệu trong `format-worklog.yaml`.
-  - Duy trì áp dụng `rule/continuity-ledger-rule.mdc` cho mọi yêu cầu tiếp theo.
-  - Success: Nội dung tuần 3 (VI/EN nếu có) khớp dữ liệu nguồn và phần tiêu đề ngoài được cập nhật đúng.
+  - Chỉnh worklog tuần theo nội dung `format-worklog.yaml`, dùng `all-ui-tree.txt` để xác định đúng file đích.
+  - Success: file tuần hiện tại và entry danh sách Worklog khớp với dữ liệu authoritative trong `format-worklog.yaml` ở cả VI/EN nếu file tồn tại.
 
 - Constraints/Assumptions:
-  - Chỉ dùng thông tin đã xác nhận trong ngữ cảnh hiện tại; thiếu thông tin thì đánh dấu `UNCONFIRMED`.
+  - Chỉ dùng thông tin đã xác nhận trong ngữ cảnh hiện tại; thiếu thông tin thì ghi `UNCONFIRMED`.
   - Ledger canonical nằm tại `CONTINUITY.md`.
+  - Không dựa vào lịch sử chat nếu chưa được phản ánh trong ledger.
 
 - Key decisions:
-  - Tuân thủ quy trình đọc/cập nhật `CONTINUITY.md` ở đầu mỗi lượt.
-  - Nguồn sự thật cho tuần 3 là `format-worklog.yaml`.
+  - Đọc `CONTINUITY.md` và cập nhật nó ở đầu mỗi lượt.
+  - Ưu tiên sửa content worklog trước, rồi đồng bộ entry trên trang danh sách.
 
 - State:
   - Done:
     - Đã đọc `rule/continuity-ledger-rule.mdc`.
-    - Đã khởi tạo `CONTINUITY.md` theo format yêu cầu.
-    - Đã đọc skill `ui-ux-pro-max` theo yêu cầu người dùng.
-    - Đã xác định vị trí worklog tuần 3: `content/1-Worklog/1.3-Week3/`.
-    - Đã cập nhật tiêu đề ngoài và nội dung chi tiết tuần 3 trong:
-      - `content/1-Worklog/1.3-Week3/_index.vi.md`
-      - `content/1-Worklog/1.3-Week3/_index.md`
-    - Đã kiểm tra lại nội dung sau chỉnh sửa bằng đọc file trực tiếp.
-    - Đã cập nhật tiêu đề tuần 3 ở trang danh sách Worklog:
-      - `content/1-Worklog/_index.vi.md` (`Tuần 3: Làm các bài Lab`)
-      - `content/1-Worklog/_index.md` (`Week 3: Lab Practice`)
-    - Đã xác minh lại bằng `rg` các chuỗi tiêu đề và nội dung tuần 3.
-    - Đã loại bỏ phần lặp `Tiêu đề tuần/Week Title` trong nội dung tuần 3 để tránh trùng với `title` trang.
-    - Đã xóa dòng Day 4 bị thiếu nội dung trong bảng tuần 3 và đánh số lại ngày liên tục (1..5) ở cả VI/EN.
+    - Đã đọc `format-worklog.yaml`.
+    - Đã đọc `all-ui-tree.txt`.
+    - Đã xác định authoritative hiện tại là `Week: 6`.
+    - Đã cập nhật `content/1-Worklog/1.6-Week6/_index.vi.md`.
+    - Đã cập nhật `content/1-Worklog/1.6-Week6/_index.md`.
+    - Đã cập nhật entry tuần 6 trong `content/1-Worklog/_index.vi.md`.
+    - Đã cập nhật entry tuần 6 trong `content/1-Worklog/_index.md`.
+    - Đã xác minh nội dung đã khớp với YAML bằng đọc file và grep.
+    - Đã xóa các hàng trống khỏi bảng tuần 6 ở cả VI/EN để giao diện gọn hơn.
   - Now:
-    - Đã tinh chỉnh bảng task theo phản hồi người dùng.
+    - Chờ yêu cầu tiếp theo của người dùng.
   - Next:
-    - Chờ người dùng xác nhận hiển thị bảng đã đúng.
+    - Với mỗi lượt mới, đọc lại `CONTINUITY.md` rồi cập nhật nếu trạng thái thay đổi.
 
 - Open questions (`UNCONFIRMED` if needed):
   - Không.
@@ -41,10 +37,8 @@
   - `rule/continuity-ledger-rule.mdc`
   - `CONTINUITY.md`
   - `format-worklog.yaml`
-  - `content/1-Worklog/1.3-Week3/_index.vi.md`
-  - `content/1-Worklog/1.3-Week3/_index.md`
+  - `all-ui-tree.txt`
+  - `content/1-Worklog/1.6-Week6/_index.vi.md`
+  - `content/1-Worklog/1.6-Week6/_index.md`
   - `content/1-Worklog/_index.vi.md`
   - `content/1-Worklog/_index.md`
-  - `Get-Content -LiteralPath ...\\1.3-Week3\\_index.vi.md`
-  - `Get-Content -LiteralPath ...\\1.3-Week3\\_index.md`
-  - `rg -n "Week 3|Tuần 3|Làm các bài Lab|Lab Practice|title:" ...`

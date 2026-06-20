@@ -21,7 +21,7 @@ Thông thường, và theo tiêu chuẩn, nhật ký công việc được thự
 
 **Tuần 5:** [Làm các bài Lab](1.5-Week5/)
 
-**Tuần 6:** [Làm task E...](1.6-Week6/)
+**Tuần 6:** [Làm các bài Lab](1.6-Week6/)
 
 **Tuần 7:** [Làm nhiệm vụ G...](1.7-Week7/)
 
