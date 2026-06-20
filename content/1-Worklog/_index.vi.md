@@ -27,7 +27,7 @@ Thong thuong, va theo tieu chuan, nhat ky cong viec duoc thuc hien trong khoang 
 
 **Tuan 8:** [Lam cac bai Lab](1.8-Week8/)
 
-**Tuan 9:** [Lam nhiem vu I...](1.9-Week9/)
+**Tuan 9:** [Lam cac bai Lab](1.9-Week9/)
 
 **Tuan 10:** [Lam nhiem vu L...](1.10-Week10/)
 

@@ -24,10 +24,15 @@
     - Da cap nhat entry tuan 8 trong `content/1-Worklog/_index.vi.md`.
     - Da cap nhat entry tuan 8 trong `content/1-Worklog/_index.md`.
     - Da xac minh lai noi dung va bang tuan 8 bang doc file va grep.
+    - Da commit thay doi tuan 8 voi `08e4556`.
+    - Da push `08e4556` len `origin/main`.
+    - Da chinh worklog week 9 theo `format-worklog.yaml` cho ca VI/EN.
+    - Da dong bo nhan week 9 tren trang Worklog tong.
+    - Da xac minh lai bang `rg` va `git diff` rang khong con nhan week 9 cu trong file lien quan.
   - Now:
-    - Cho yeu cau tiep theo cua nguoi dung.
+    - Cho xac nhan cuoi cung / hoan tat cac buoc theo goal hien tai.
   - Next:
-    - Voi moi luot moi, doc lai `CONTINUITY.md` roi cap nhat neu trang thai thay doi.
+    - Neu khong co gi can sua them, dong goal va cap nhat trang thai hoan tat.
 
 - Open questions (`UNCONFIRMED` if needed):
   - Khong.
@@ -37,7 +42,7 @@
   - `CONTINUITY.md`
   - `format-worklog.yaml`
   - `all-ui-tree.txt`
-  - `content/1-Worklog/1.8-Week8/_index.vi.md`
-  - `content/1-Worklog/1.8-Week8/_index.md`
+  - `content/1-Worklog/1.9-Week9/_index.vi.md`
+  - `content/1-Worklog/1.9-Week9/_index.md`
   - `content/1-Worklog/_index.vi.md`
   - `content/1-Worklog/_index.md`
