@@ -18,13 +18,12 @@
     - Đã đọc `rule/continuity-ledger-rule.mdc`.
     - Đã đọc `format-worklog.yaml`.
     - Đã đọc `all-ui-tree.txt`.
-    - Đã xác định authoritative hiện tại là `Week: 6`.
-    - Đã cập nhật `content/1-Worklog/1.6-Week6/_index.vi.md`.
-    - Đã cập nhật `content/1-Worklog/1.6-Week6/_index.md`.
-    - Đã cập nhật entry tuần 6 trong `content/1-Worklog/_index.vi.md`.
-    - Đã cập nhật entry tuần 6 trong `content/1-Worklog/_index.md`.
-    - Đã xác minh nội dung đã khớp với YAML bằng đọc file và grep.
-    - Đã xóa các hàng trống khỏi bảng tuần 6 ở cả VI/EN để giao diện gọn hơn.
+    - Đã xác định authoritative hiện tại là `Week: 7`.
+    - Đã cập nhật `content/1-Worklog/1.7-Week7/_index.vi.md`.
+    - Đã cập nhật `content/1-Worklog/1.7-Week7/_index.md`.
+    - Đã cập nhật entry tuần 7 trong `content/1-Worklog/_index.vi.md`.
+    - Đã cập nhật entry tuần 7 trong `content/1-Worklog/_index.md`.
+    - Đã xác minh lại nội dung và bảng tuần 7 bằng đọc file và grep.
   - Now:
     - Chờ yêu cầu tiếp theo của người dùng.
   - Next:
@@ -38,7 +37,7 @@
   - `CONTINUITY.md`
   - `format-worklog.yaml`
   - `all-ui-tree.txt`
-  - `content/1-Worklog/1.6-Week6/_index.vi.md`
-  - `content/1-Worklog/1.6-Week6/_index.md`
+  - `content/1-Worklog/1.7-Week7/_index.vi.md`
+  - `content/1-Worklog/1.7-Week7/_index.md`
   - `content/1-Worklog/_index.vi.md`
   - `content/1-Worklog/_index.md`
