@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Proposal"
 date: 2024-01-01
 weight: 2
@@ -7,105 +7,144 @@ pre: " <b> 2. </b> "
 ---
 In this section, you need to summarize the contents of the workshop that you **plan** to conduct.
 
-# IoT Weather Platform for Lab Research
-## A Unified AWS Serverless Solution for Real-Time Weather Monitoring
+# Enterprise Asset Management Proposal
+## Unified AWS platform for asset tracking, assignment, maintenance, and reporting
 
 ### 1. Executive Summary
-The IoT Weather Platform is designed for the ITea Lab team in Ho Chi Minh City to enhance weather data collection and analysis. It supports up to 5 weather stations, with potential scalability to 10-15, utilizing Raspberry Pi edge devices with ESP32 sensors to transmit data via MQTT. The platform leverages AWS Serverless services to deliver real-time monitoring, predictive analytics, and cost efficiency, with access restricted to 5 lab members via Amazon Cognito.
+The Enterprise Asset Management proposal describes an internal system for admin and employee users to manage assets in a single centralized workflow. The platform covers asset tracking, assignment, return, transfer, maintenance, reporting, attachment uploads, OTP email notifications, and auditable history in one place.
+
+The solution uses React + Vite on AWS Amplify Hosting for the frontend, Node.js + Express on AWS Elastic Beanstalk behind an Application Load Balancer for the backend, and Amazon RDS for MySQL through Prisma for persistent data. Supporting services include Amazon S3 private buckets for files, Amazon SES for OTP and notifications, AWS Secrets Manager and Systems Manager Parameter Store for configuration, plus CloudWatch, CloudTrail, and Session Manager for operations and audit.
 
 ### 2. Problem Statement
-### Whatâ€™s the Problem?
-Current weather stations require manual data collection, becoming unmanageable with multiple units. There is no centralized system for real-time data or analytics, and third-party platforms are costly and overly complex.
+### What's the Problem?
+Asset operations are currently fragmented across manual processes, ad hoc files, and separate communication channels. Admin and employee workflows need clear role separation, but without a single system it is difficult to track who owns which asset, who received it, when it was returned, or whether maintenance is still pending.
 
 ### The Solution
-The platform uses AWS IoT Core to ingest MQTT data, AWS Lambda and API Gateway for processing, Amazon S3 for storage (including a data lake), and AWS Glue Crawlers and ETL jobs to extract, transform, and load data from the S3 data lake to another S3 bucket for analysis. AWS Amplify with Next.js provides the web interface, and Amazon Cognito ensures secure access. Similar to Thingsboard and CoreIoT, users can register new devices and manage connections, though this platform operates on a smaller scale and is designed for private use. Key features include real-time dashboards, trend analysis, and low operational costs.
+The platform centralizes asset records, assignment, return, transfer, maintenance, feedback, notifications, and attachment handling in one internal system. Role-aware screens let admins manage the full asset lifecycle while employees can focus on self-service actions such as viewing assigned assets, submitting requests, and checking status updates. This removes duplicated records and makes the workflow auditable from end to end.
 
 ### Benefits and Return on Investment
-The solution establishes a foundational resource for lab members to develop a larger IoT platform, serving as a study resource, and provides a data foundation for AI enthusiasts for model training or analysis. It reduces manual reporting for each station via a centralized platform, simplifying management and maintenance, and improves data reliability. Monthly costs are $0.66 USD per the AWS Pricing Calculator, with a 12-month total of $7.92 USD. All IoT equipment costs are covered by the existing weather station setup, eliminating additional development expenses. The break-even period of 6-12 months is achieved through significant time savings from reduced manual work.
+The result is faster asset processing, fewer handoff mistakes, and a single source of truth for operational history. Centralized records improve reporting quality, make file attachments and audit trails easier to retrieve, and reduce the time spent reconciling scattered spreadsheets or chat messages. The internal team also gets a more stable MVP foundation for future expansion without changing the core workflow.
 
 ### 3. Solution Architecture
-The platform employs a serverless AWS architecture to manage data from 5 Raspberry Pi-based stations, scalable to 15. Data is ingested via AWS IoT Core, stored in an S3 data lake, and processed by AWS Glue Crawlers and ETL jobs to transform and load it into another S3 bucket for analysis. Lambda and API Gateway handle additional processing, while Amplify with Next.js hosts the dashboard, secured by Cognito. The architecture is detailed below:
+The solution uses a layered AWS architecture built for internal asset operations. React + Vite is hosted on AWS Amplify Hosting, the public API entry point is an Application Load Balancer, and the backend runs on AWS Elastic Beanstalk with Node.js + Express. Persistent business data is stored in Amazon RDS for MySQL and accessed through Prisma. The architecture is detailed below:
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+![Enterprise Asset Management Architecture Overview](/images/2-Proposal/enterprise-asset-management-architecture-overview.svg)
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+![Enterprise Asset Management Request Flow](/images/2-Proposal/enterprise-asset-management-request-flow.svg)
 
 ### AWS Services Used
-- **AWS IoT Core**: Ingests MQTT data from 5 stations, scalable to 15.
-- **AWS Lambda**: Processes data and triggers Glue jobs (two functions).
-- **Amazon API Gateway**: Facilitates web app communication.
-- **Amazon S3**: Stores raw data in a data lake and processed outputs (two buckets).
-- **AWS Glue**: Crawlers catalog data, and ETL jobs transform and load it.
-- **AWS Amplify**: Hosts the Next.js web interface.
-- **Amazon Cognito**: Secures access for lab users.
+- **AWS Amplify Hosting**: Hosts the React + Vite frontend.
+- **Application Load Balancer**: Receives API traffic and routes it to the backend.
+- **AWS Elastic Beanstalk**: Runs the Node.js + Express application.
+- **Amazon RDS for MySQL Single-AZ**: Stores assets, assignments, maintenance history, and reports.
+- **Amazon S3 private bucket**: Stores attachments, uploaded files, and exported documents.
+- **Amazon SES**: Sends OTP and internal notification emails.
+- **AWS Secrets Manager**: Stores sensitive secrets such as database credentials and mail credentials.
+- **AWS Systems Manager Parameter Store**: Stores environment-specific configuration.
+- **Amazon CloudWatch**: Collects logs and alarms for application health.
+- **AWS CloudTrail**: Records AWS-level audit activity.
+- **AWS Systems Manager Session Manager**: Supports secure administration without public SSH.
 
 ### Component Design
-- **Edge Devices**: Raspberry Pi collects and filters sensor data, sending it to IoT Core.
-- **Data Ingestion**: AWS IoT Core receives MQTT messages from the edge devices.
-- **Data Storage**: Raw data is stored in an S3 data lake; processed data is stored in another S3 bucket.
-- **Data Processing**: AWS Glue Crawlers catalog the data, and ETL jobs transform it for analysis.
-- **Web Interface**: AWS Amplify hosts a Next.js app for real-time dashboards and analytics.
-- **User Management**: Amazon Cognito manages user access, allowing up to 5 active accounts.
+- **Frontend**: React + Vite provides admin and employee screens for asset workflows.
+- **API entry**: The Application Load Balancer forwards API requests into the backend tier.
+- **Application tier**: Node.js + Express implements authentication, role checks, and business rules.
+- **Data storage**: Amazon RDS for MySQL stores the core relational model through Prisma.
+- **File handling**: Amazon S3 private bucket stores attachments, evidence files, and exports.
+- **Notifications**: Amazon SES sends OTP and notification emails from backend actions.
+- **Secrets and config**: Secrets Manager and Parameter Store keep runtime values out of source code.
+- **Observability**: CloudWatch, CloudTrail, and Session Manager support monitoring, audit, and operations.
 
 ### 4. Technical Implementation
 **Implementation Phases**
-This project has two partsâ€”setting up weather edge stations and building the weather platformâ€”each following 4 phases:
-- Build Theory and Draw Architecture: Research Raspberry Pi setup with ESP32 sensors and design the AWS serverless architecture (1 month pre-internship)
-- Calculate Price and Check Practicality: Use AWS Pricing Calculator to estimate costs and adjust if needed (Month 1).
-- Fix Architecture for Cost or Solution Fit: Tweak the design (e.g., optimize Lambda with Next.js) to stay cost-effective and usable (Month 2).
-- Develop, Test, and Deploy: Code the Raspberry Pi setup, AWS services with CDK/SDK, and Next.js app, then test and release to production (Months 2-3).
+This project moves through four practical implementation phases that match the actual asset management workflow:
+- Frontend and user-role foundation: set up React + Vite screens for admin and employee access, route structure, shared layout, and basic auth-aware UI behavior.
+- Backend foundation, auth, and database schema: implement Node.js + Express APIs, JWT authentication, role-based access control, Prisma models, and MySQL schema setup.
+- Asset lifecycle flows: build asset, assignment, return, transfer, maintenance, inventory, reporting, attachment, and notification flows end to end.
+- Deployment, QA, documentation, and demo hardening: validate AWS deployment, stabilize error handling, prepare seed data, write docs, and polish the demo path.
 
 **Technical Requirements**
-- Weather Edge Station: Sensors (temperature, humidity, rainfall, wind speed), a microcontroller (ESP32), and a Raspberry Pi as the edge device. Raspberry Pi runs Raspbian, handles Docker for filtering, and sends 1 MB/day per station via MQTT over Wi-Fi.
-- Weather Platform: Practical knowledge of AWS Amplify (hosting Next.js), Lambda (minimal use due to Next.js), AWS Glue (ETL), S3 (two buckets), IoT Core (gateway and rules), and Cognito (5 users). Use AWS CDK/SDK to code interactions (e.g., IoT Core rules to S3). Next.js reduces Lambda workload for the fullstack web app.
+- Frontend stack: React + Vite with role-aware admin and employee screens.
+- Backend stack: Node.js + Express with JWT, bcrypt, Prisma, and MySQL.
+- Testing stack: Playwright for end-to-end checks and Jest for backend or service-level tests where applicable.
+- Deployment stack: AWS Amplify Hosting, AWS Elastic Beanstalk, Amazon RDS for MySQL, Amazon S3 private bucket, Amazon SES, AWS Secrets Manager, AWS Systems Manager Parameter Store, Amazon CloudWatch, AWS CloudTrail, and AWS Systems Manager Session Manager.
+- Operational requirements: keep the schema aligned between local development and production, preserve role-based access control, and make the demo flow stable enough for presentation.
 
 ### 5. Timeline & Milestones
 **Project Timeline**
-- Pre-Internship (Month 0): 1 month for planning and old station review.
-- Internship (Months 1-3): 3 months.
-    - Month 1: Study AWS and upgrade hardware.
-    - Month 2: Design and adjust architecture.
-    - Month 3: Implement, test, and launch.
-- Post-Launch: Up to 1 year for research.
+The timeline is organized by dependency over five weeks so the team can build the foundation first and then layer the lifecycle flows on top.
+
+- Week 1: Foundation and contracts
+  - Build the backend foundation, core schema, API contracts, frontend shell, and QA outline.
+  - Milestone: schema, API contract, app skeleton, login flow.
+- Week 2: Core management features
+  - Finish JWT login, complete core CRUD, connect admin CRUD screens, and prepare the employee profile shell.
+  - Milestone: core CRUD complete.
+- Week 3: Asset lifecycle features
+  - Implement assignment APIs and screens, employee asset detail, and the broken-asset report flow.
+  - Milestone: assignment, employee views, broken asset report complete.
+- Week 4: Maintenance, inventory, reports, and AWS trial
+  - Implement maintenance, inventory, and report APIs, build the remaining admin screens, and run the first AWS deployment trial.
+  - Milestone: maintenance, inventory, reports, first AWS deployment complete.
+- Week 5: Final deployment, QA, and presentation
+  - Finalize deployment, verify data and auth stability, prepare seed data, QA checklist, screenshots, and the demo script.
+  - Milestone: final deployment, demo data, QA, presentation complete.
 
 ### 6. Budget Estimation
-You can find the budget estimation on the [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01).  
-Or you can download the [Budget Estimation File](../attachments/budget_estimation.pdf).
+The budget is based on the current AWS architecture and should be recalculated in AWS Pricing Calculator once the final instance sizes are locked.
 
-### Infrastructure Costs
-- AWS Services:
-    - AWS Lambda: $0.00/month (1,000 requests, 512 MB storage).
-    - S3 Standard: $0.15/month (6 GB, 2,100 requests, 1 GB scanned).
-    - Data Transfer: $0.02/month (1 GB inbound, 1 GB outbound).
-    - AWS Amplify: $0.35/month (256 MB, 500 ms requests).
-    - Amazon API Gateway: $0.01/month (2,000 requests).
-    - AWS Glue ETL Jobs: $0.02/month (2 DPUs).
-    - AWS Glue Crawlers: $0.07/month (1 crawler).
-    - MQTT (IoT Core): $0.08/month (5 devices, 45,000 messages).
+### Estimated Infrastructure Costs
+- Application Load Balancer + Elastic Beanstalk compute: UNCONFIRMED, roughly $28-40/month combined for the current demo-sized stack.
+- Amazon RDS for MySQL Single-AZ: UNCONFIRMED, roughly $12-19/month including modest storage and backup usage.
+- Amazon S3 private bucket: UNCONFIRMED, usually low single-digit monthly cost for attachments and exports.
+- Amazon SES: UNCONFIRMED, usually low single-digit monthly cost for OTP and internal email volume.
+- Amazon CloudWatch: UNCONFIRMED, usually low single-digit monthly cost for logs and alarms.
+- AWS Secrets Manager, Systems Manager Parameter Store, CloudTrail, and Session Manager: UNCONFIRMED or near-zero for baseline usage.
 
-Total: $0.7/month, $8.40/12 months
-
-- Hardware: $265 one-time (Raspberry Pi 5 and sensors).
+### Total Estimate
+- Estimated monthly operating cost: UNCONFIRMED, roughly $46-60/month for the current architecture.
+- Estimated annual operating cost: UNCONFIRMED, roughly $552-720/year.
+- One-time hardware cost: no dedicated hardware purchase is required beyond existing development devices.
 
 ### 7. Risk Assessment
 #### Risk Matrix
-- Network Outages: Medium impact, medium probability.
-- Sensor Failures: High impact, low probability.
-- Cost Overruns: Medium impact, low probability.
+- Single-instance availability risk: Medium impact, medium probability.
+- File upload durability risk: High impact, medium probability.
+- Auth or permission leakage risk: High impact, low probability.
+- Database backup and restore risk: High impact, low probability.
+- SSE or realtime notification state risk: Medium impact, medium probability.
+- Cost overrun risk: Medium impact, medium probability.
+- Deployment or rollback risk: Medium impact, medium probability.
+- Audit and history integrity risk: High impact, low probability.
 
 #### Mitigation Strategies
-- Network: Local storage on Raspberry Pi with Docker.
-- Sensors: Regular checks and spares.
-- Cost: AWS budget alerts and optimization.
+- Single-instance availability: keep the deployment small and documented, then upgrade only after the workflow is stable.
+- File uploads: store attachments in a private S3 bucket and keep upload validation on the backend.
+- Auth and permissions: enforce JWT, role checks, and server-side authorization on every protected route.
+- Backup and restore: keep database backups and document restore steps before production use.
+- SSE and realtime state: treat in-memory notification state as a baseline constraint and review scaling strategy before multi-instance rollout.
+- Cost: use budget alerts, small instance sizes, and monthly cost reviews.
+- Deployment and rollback: keep deployment notes, versioned releases, and a rollback path ready before demo day.
+- Audit and history: keep operational history in MySQL and write cloud audit events through CloudTrail and CloudWatch.
 
 #### Contingency Plans
-- Revert to manual methods if AWS fails.
-- Use CloudFormation for cost-related rollbacks.
+- Revert to a manual process only if the AWS deployment is unavailable during demo preparation.
+- Restore from database backup if data corruption or failed deployment affects the main dataset.
+- Roll back the last deployment version if the release introduces blocking bugs.
+- Revisit notification design if multi-instance scaling breaks in-memory SSE assumptions.
 
 ### 8. Expected Outcomes
-#### Technical Improvements: 
-Real-time data and analytics replace manual processes.  
-Scalable to 10-15 stations.
+#### Technical Improvements:
+Centralized asset visibility replaces scattered spreadsheets and manual follow-up.
+Faster assignment, return, and transfer flows reduce handoff delays.
+Better maintenance handling keeps request status, repair cost, and history in one place.
+Employee self-service screens let users track assets and requests without asking admins for every update.
+Improved reporting and auditability make summaries, attachments, and history easier to review.
 #### Long-term Value
-1-year data foundation for AI research.  
-Reusable for future projects.
+A stable internal MVP foundation supports future expansion without changing the core workflow.
+Reusable asset, maintenance, and inventory data supports future reporting and process improvements.
+The team can keep using the project as a demo-ready internal system for later iterations.
+### 9. Final Conclusion
+The proposed Enterprise Asset Management solution is a practical internal MVP that matches the current team scope and the actual AWS stack in use.
+React + Vite on Amplify, Node.js + Express on Elastic Beanstalk, and MySQL through Prisma provide a clear path from local development to a deployable demo.
+The supporting AWS services give the project enough structure for asset tracking, maintenance, reporting, file handling, notifications, audit, and secure operations without adding unnecessary complexity.
