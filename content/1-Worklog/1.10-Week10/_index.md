@@ -1,54 +1,43 @@
-﻿---
+---
 title: "Week 10 Worklog"
 date: 2024-01-01
 weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
+### Date Range:
+
+* From 22/06/2026 to 28/06/2026
+
 ### Week 10 Objectives:
 
-* Connect and get acquainted with members of First Cloud Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Finalize the AWS architecture for the project and make the deployment flow easier to follow.
+* Deploy the application to AWS and review any issues that appear during the first deployment.
+* Test the project after deployment and verify that the deployed system behaves as expected.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+This week was the first full deployment-oriented stage of the project. After the architecture had been discussed in earlier weeks, the focus moved to putting the system onto AWS, checking the actual runtime behavior, and adjusting the setup based on what was observed during testing.
 
+### Tasks This Week:
 
-### Week 10 Achievements:
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| 1 | Draft the AWS architecture in more detail and start deploying the project to AWS.<br>- Reviewed the main services that would be used in the deployment flow.<br>- Began the first deployment pass and checked for configuration issues. | 22/06/2026 | 23/06/2026 | AWS Console |
+| 2 | Review the initial deployment setup and adjust the environment if necessary.<br>- Checked resource configuration, connectivity, and service dependencies.<br>- Noted any gaps that could affect the next testing step. | 23/06/2026 | 24/06/2026 | Team discussion |
+| 3 | Test the project after deploying it on AWS.<br>- Verified that the application could run correctly in the AWS environment.<br>- Observed behavior after deployment and recorded issues that still needed fixing. | 24/06/2026 | 25/06/2026 | AWS Console |
+| 4 | Fix and refine the project based on the deployment test results.<br>- Adjusted the architecture or configuration where problems were found.<br>- Rechecked the main runtime path after each update. | 25/06/2026 | 26/06/2026 | Team discussion |
+| 5 | Re-test the updated deployment and confirm the changes worked as expected.<br>- Repeated the main test cases on AWS after applying fixes.<br>- Compared the behavior before and after the adjustments. | 27/06/2026 | 27/06/2026 | AWS Console |
+| 6 | Perform the final review and prepare the week summary.<br>- Reviewed the final deployment state and collected notes for the report.<br>- Organized the remaining follow-up items for later weeks. | 28/06/2026 | 28/06/2026 | Team discussion |
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+### Achievements:
 
-* Successfully created and configured an AWS Free Tier account.
+* Completed the first AWS deployment pass for the project and identified the main configuration points.
+* Verified the application after deployment and confirmed the critical runtime flow on AWS.
+* Improved the deployment setup based on the test results and prepared the notes needed for the report.
+* Reached a clearer understanding of how the AWS architecture and the deployed application connect in practice.
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+### Difficulties and How They Were Handled:
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
-
-
+* Difficulty: Some deployment settings needed to be adjusted after the first AWS run.
+* Solution: Reviewed the configuration step by step, checked the service dependencies, and corrected the setup before testing again.
+* Difficulty: The deployed application behavior needed to be verified carefully after each change.
+* Solution: Re-tested the main flow after every adjustment and compared the results to the previous version.

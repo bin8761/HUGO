@@ -1,52 +1,43 @@
-﻿---
-title: "Nhật ký công việc tuần 10"
+---
+title: "Tuần 10 Worklog"
 date: 2024-01-01
 weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
+### Khoảng thời gian:
+
+* Từ 22/06/2026 đến 28/06/2026
+
 ### Mục tiêu tuần 10:
 
-* Kết nối và làm quen với các thành viên của First Cloud Journey.
-* Hiểu các dịch vụ AWS cơ bản, cách sử dụng bảng điều khiển & CLI.
+* Hoàn thiện kiến trúc AWS cho dự án để luồng triển khai rõ ràng và dễ theo dõi hơn.
+* Triển khai ứng dụng lên AWS và rà soát các vấn đề phát sinh trong lần deploy đầu tiên.
+* Kiểm thử lại dự án sau khi deploy để xác nhận hệ thống hoạt động đúng như mong đợi.
+
+Tuần này là giai đoạn triển khai thực tế đầu tiên của dự án lên AWS. Sau khi kiến trúc đã được thảo luận ở các tuần trước, trọng tâm chuyển sang đưa hệ thống lên cloud, kiểm tra hành vi thực tế khi chạy và điều chỉnh lại cấu hình dựa trên kết quả kiểm thử.
 
 ### Các công việc cần thực hiện trong tuần này:
-| Ngày | Nhiệm vụ                                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo                        |
-| --- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và ghi chú nội quy, quy định của đơn vị thực tập                                                                                                   | 11/08/2025 | 11/08/2025      |
-| 3   | - Tìm hiểu về AWS và các loại dịch vụ của nó <br>  + Điện toán <br>  + Lưu trữ <br>  + Kết nối mạng <br>  + Cơ sở dữ liệu <br>  + ... <br>                                              | 12/08/2025 | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo tài khoản Bậc miễn phí của AWS <br> - Tìm hiểu về AWS Console & AWS CLI <br> - **Thực hành:** <br>  + Tạo tài khoản AWS <br>  + Cài đặt và định cấu hình AWS CLI <br>   + Cách sử dụng AWS CLI | 13/08/2025 | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>  + Các loại phiên bản <br>  + AMI <br>  + EBS <br>  + ... <br> - Các phương thức kết nối SSH tới EC2 <br> - Tìm hiểu về IP đàn hồi <br>                            | 14/08/2025 | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>  + Khởi chạy phiên bản EC2 <br>  + Kết nối qua SSH <br>  + Đính kèm ổ đĩa EBS                                                                                     | 15/08/2025 | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Ngày | Nhiệm vụ | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --- | --- | --- | --- |
+| 1 | Phác thảo lại kiến trúc AWS chi tiết hơn và bắt đầu triển khai dự án lên AWS.<br>- Rà soát các dịch vụ chính sẽ tham gia vào luồng triển khai.<br>- Thực hiện bước deploy đầu tiên và kiểm tra các vấn đề về cấu hình. | 22/06/2026 | 23/06/2026 | AWS Console |
+| 2 | Kiểm tra lại phần triển khai ban đầu và điều chỉnh môi trường nếu cần thiết.<br>- Kiểm tra cấu hình tài nguyên, kết nối và các phụ thuộc giữa dịch vụ.<br>- Ghi lại những điểm còn thiếu có thể ảnh hưởng đến bước kiểm thử tiếp theo. | 23/06/2026 | 24/06/2026 | Thảo luận nhóm |
+| 3 | Test dự án sau khi triển khai lên AWS.<br>- Xác minh ứng dụng có thể chạy đúng trong môi trường AWS.<br>- Quan sát hành vi sau khi deploy và ghi nhận các lỗi cần xử lý thêm. | 24/06/2026 | 25/06/2026 | AWS Console |
+| 4 | Sửa và tinh chỉnh dự án dựa trên kết quả kiểm thử sau deploy.<br>- Điều chỉnh kiến trúc hoặc cấu hình ở những phần phát hiện vấn đề.<br>- Kiểm tra lại luồng chạy chính sau mỗi lần cập nhật. | 25/06/2026 | 26/06/2026 | Thảo luận nhóm |
+| 5 | Kiểm thử lại phần triển khai đã cập nhật để xác nhận các thay đổi hoạt động đúng.<br>- Chạy lại các luồng kiểm tra chính trên AWS sau khi áp dụng sửa lỗi.<br>- So sánh hành vi trước và sau khi điều chỉnh. | 27/06/2026 | 27/06/2026 | AWS Console |
+| 6 | Tổng kết cuối tuần và chuẩn bị nội dung báo cáo.<br>- Rà soát trạng thái deploy cuối cùng và ghi lại các ghi chú quan trọng cho báo cáo.<br>- Sắp xếp các đầu việc còn lại cho những tuần sau. | 28/06/2026 | 28/06/2026 | Thảo luận nhóm |
 
-### Thành tích tuần 10:
+### Kết quả đạt được:
 
-* Hiểu AWS là gì và nắm vững các nhóm dịch vụ cơ bản: 
-  * Tính toán
-  * Kho
-  * Mạng 
-  * Cơ sở dữ liệu
-  * ...
+* Hoàn tất bước deploy đầu tiên của dự án lên AWS và xác định được các điểm cấu hình quan trọng.
+* Kiểm tra được ứng dụng sau khi triển khai và xác nhận luồng chạy chính trên AWS.
+* Cải thiện cấu hình triển khai dựa trên kết quả kiểm thử và chuẩn bị các ghi chú cần thiết cho báo cáo.
+* Hiểu rõ hơn mối liên hệ giữa kiến trúc AWS và ứng dụng sau khi triển khai thực tế.
 
-* Đã tạo và đặt cấu hình thành công tài khoản Bậc miễn phí của AWS.
+### Khó khăn và cách xử lý:
 
-* Làm quen với Bảng điều khiển quản lý AWS và tìm hiểu cách tìm, truy cập và sử dụng các dịch vụ qua giao diện web.
-
-* Đã cài đặt và cấu hình AWS CLI trên máy tính, bao gồm:
-  * Khóa truy cập
-  * Khóa bí mật
-  * Vùng mặc định
-  * ...
-
-* Đã sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản và cấu hình
-  * Truy xuất danh sách các khu vực
-  * Xem dịch vụ EC2
-  * Tạo và quản lý các cặp khóa
-  * Kiểm tra thông tin về các dịch vụ đang chạy
-  * ...
-
-* Có được khả năng kết nối giữa giao diện web và CLI để quản lý song song các tài nguyên AWS.
-* ...
+* Khó khăn: Một số cấu hình triển khai cần được điều chỉnh sau lần chạy đầu tiên trên AWS.
+* Cách xử lý: Rà soát từng bước cấu hình, kiểm tra các phụ thuộc giữa dịch vụ và sửa lại setup trước khi test tiếp.
+* Khó khăn: Cần xác nhận hành vi ứng dụng một cách cẩn thận sau mỗi lần thay đổi.
+* Cách xử lý: Kiểm thử lại luồng chính sau từng lần chỉnh sửa và so sánh kết quả với phiên bản trước đó.
