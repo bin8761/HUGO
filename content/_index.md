@@ -9,25 +9,50 @@ chapter: false
 # Internship Report
 
 ### Student Information:
-&emsp; **Full Name:** Le Huu Tri Anh
+<div class="student-card">
+  <figure class="student-card__portrait">
+    <img src="images/avatar.png" alt="Your profile picture" />
+  </figure>
 
-&emsp; **Phone Number:** 03634784120363478412 
-
-&emsp; **Email:** anhnguyen8761@gmail.com
-
-&emsp; **University:** HUTECH UniversityUniversity
-
-&emsp; **Major:** Information Technology
-
-&emsp; **Class:** 22DTHH1
-
-&emsp; **Internship Company:** Amazon Web Services Vietnam Co., Ltd.
-
-&emsp; **Internship Position:** FCJ Cloud Intern
-
-&emsp; **Internship Duration:** From 17/04/2026 to 12/11/2026
-
-![Your profile picture](/images/avatar.png)
+  <dl class="student-card__meta">
+    <div>
+      <dt>Full Name</dt>
+      <dd>Le Huu Tri Anh</dd>
+    </div>
+    <div>
+      <dt>Phone Number</dt>
+      <dd>03634784120363478412</dd>
+    </div>
+    <div>
+      <dt>Email</dt>
+      <dd>anhnguyen8761@gmail.com</dd>
+    </div>
+    <div>
+      <dt>University</dt>
+      <dd>HUTECH - Ho Chi Minh City University of Technology</dd>
+    </div>
+    <div>
+      <dt>Major</dt>
+      <dd>Information Technology</dd>
+    </div>
+    <div>
+      <dt>Class</dt>
+      <dd>22DTHH1</dd>
+    </div>
+    <div>
+      <dt>Internship Company</dt>
+      <dd>Amazon Web Services Vietnam Co., Ltd.</dd>
+    </div>
+    <div>
+      <dt>Internship Position</dt>
+      <dd>FCJ Cloud Intern</dd>
+    </div>
+    <div>
+      <dt>Internship Duration</dt>
+      <dd>From 17/04/2026 to 10/07/2026</dd>
+    </div>
+  </dl>
+</div>
 
 ### Report Content
 

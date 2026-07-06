@@ -226,3 +226,75 @@ div.notices.info p {
   border-top: 30px solid #fd9827;
   background: #fff2db;
 }
+
+.student-card {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+  margin: 1.25rem 0 2rem;
+  padding: 1rem;
+  border: 1px solid rgba(120, 139, 165, 0.18);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 8px 24px rgba(35, 52, 72, 0.06);
+}
+
+.student-card__portrait {
+  margin: 0;
+  min-height: 100%;
+}
+
+.student-card__portrait img {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 16px;
+  outline: 1px solid rgba(0, 0, 0, 0.08);
+  outline-offset: -1px;
+}
+
+.student-card__meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.5rem;
+  margin: 0;
+  align-content: start;
+}
+
+.student-card__meta > div {
+  min-width: 0;
+}
+
+.student-card__meta dt {
+  margin: 0 0 0.2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--MENU-SECTION-ACTIVE-CATEGORY-color);
+}
+
+.student-card__meta dd {
+  margin: 0;
+  color: var(--MAIN-TEXT-color);
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+@media (max-width: 900px) {
+  .student-card {
+    grid-template-columns: 1fr;
+  }
+
+  .student-card__portrait img {
+    max-width: 180px;
+  }
+
+  .student-card__meta {
+    grid-template-columns: 1fr;
+  }
+}

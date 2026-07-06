@@ -9,25 +9,50 @@ chapter: false
 # Báo cáo thực tập
 
 ### Thông tin sinh viên:
-  **Họ và tên:** Lê Hữu Trí Anh
+<div class="student-card">
+  <figure class="student-card__portrait">
+    <img src="images/avatar.png" alt="Ảnh hồ sơ của bạn" />
+  </figure>
 
-  **Số điện thoại:** 03634784120363478412 
-
-  **Email:** anhnguyen8761@gmail.com
-
-  **Đại học:** Đại học HUTECHĐại học
-
-  **Chuyên ngành:** Công nghệ thông tin
-
-  **Lớp:** 22DTHH1
-
-  **Công ty thực tập:** Công ty TNHH Amazon Web Services Việt Nam
-
-  **Vị trí thực tập:** FCJ Cloud Intern
-
-  **Thời gian thực tập:** Từ 17/04/2026 đến 11/12/2026
-
-![Ảnh hồ sơ của bạn](/images/avatar.png)
+  <dl class="student-card__meta">
+    <div>
+      <dt>Họ và tên</dt>
+      <dd>Lê Hữu Trí Anh</dd>
+    </div>
+    <div>
+      <dt>Số điện thoại</dt>
+      <dd>03634784120363478412</dd>
+    </div>
+    <div>
+      <dt>Email</dt>
+      <dd>anhnguyen8761@gmail.com</dd>
+    </div>
+    <div>
+      <dt>Đại học</dt>
+      <dd>HUTECH - Ho Chi Minh City University of Technology</dd>
+    </div>
+    <div>
+      <dt>Chuyên ngành</dt>
+      <dd>Công nghệ thông tin</dd>
+    </div>
+    <div>
+      <dt>Lớp</dt>
+      <dd>22DTHH1</dd>
+    </div>
+    <div>
+      <dt>Công ty thực tập</dt>
+      <dd>Công ty TNHH Amazon Web Services Việt Nam</dd>
+    </div>
+    <div>
+      <dt>Vị trí thực tập</dt>
+      <dd>FCJ Cloud Intern</dd>
+    </div>
+    <div>
+      <dt>Thời gian thực tập</dt>
+      <dd>Từ 17/04/2026 đến 10/07/2026</dd>
+    </div>
+  </dl>
+</div>
 
 ### Nội dung báo cáo
 
