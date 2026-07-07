@@ -87,15 +87,7 @@ FC Community Day mang lại cái nhìn thực tế về cách cloud và AI đang
 
 Một số hình ảnh được ghi lại trong quá trình tham gia sự kiện:
 
-![FC Community Day](/HUGO/images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20090429.png)
+![FC Community Day](/HUGO/images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20234244.png)
 
-![FC Community Day](/HUGO/images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20091254.png)
-
-![FC Community Day](/HUGO/images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20093533.png)
-
-![FC Community Day](/HUGO/images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20094353.png)
-
-![FC Community Day](/HUGO/images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20102958.png)
-
-![FC Community Day](/HUGO/images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20103819.png)
+![FC Community Day](/HUGO/images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20234457.png)
 

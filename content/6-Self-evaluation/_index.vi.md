@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-# Tự đánh giá
-
 Trong khoảng thời gian thực tập từ **17/04/2026 đến 10/07/2026** tại **Amazon Web Services Vietnam Company Limited** trong chương trình **Workforce Bootcamp - First Cloud AI Journey**, tôi có cơ hội làm việc với AWS theo cách thực tế hơn rất nhiều so với việc chỉ học trên tài liệu. Những gì tôi trải qua trong kỳ thực tập không chỉ là tự học, tham gia sự kiện, đọc AWS Blog, triển khai project hay viết workshop, mà còn là quá trình nhìn rõ hơn cách một hệ thống backend được đưa từ môi trường local lên cloud và được vận hành như một hệ thống hoàn chỉnh.
 
 Báo cáo này dựa trên project **EAM Workspace - Enterprise Asset Management System**. Trong project, tôi tham gia phần frontend, nhưng điều khiến tôi học được nhiều nhất lại nằm ở phần backend phía sau: cách API được tổ chức, cách backend kết nối với database, cách các dịch vụ AWS hỗ trợ cho luồng deploy, và cách theo dõi hệ thống khi nó đã chạy trên cloud. Chính góc nhìn đó giúp tôi hiểu backend không chỉ là viết API, mà còn là biết thiết kế, triển khai và kiểm tra toàn bộ luồng hoạt động của hệ thống.

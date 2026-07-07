@@ -1,31 +1,31 @@
 ---
-title: "Tu?n 8 Worklog"
+title: "Tuần 8 Worklog"
 date: 2024-01-01
 weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-### Kho?ng th?i gian:
+### Khoảng thời gian:
 
-* T? 08/06/2026 �?n 14/06/2026
+* Từ 08/06/2026 đến 14/06/2026
 
-### M?c ti�u tu?n 8:
+### Mục tiêu tuần 8:
 
-* T?m hi?u k? c�c d?ch v? AWS �? tri?n khai d? �n theo ��ng ph?m vi v� ng�n s�ch.
-* So s�nh c�c l?a ch?n AWS tr�?c khi quy?t �?nh b? d?ch v? cu?i c�ng.
-* �?m b?o nh�m c� �? th�ng tin �? th?o lu?n r? r�ng v? h�?ng deploy.
+* Tìm hiểu kỹ các dịch vụ AWS để triển khai dự án theo đúng phạm vi và ngân sách.
+* So sánh các lựa chọn AWS trước khi quyết định bộ dịch vụ cuối cùng.
+* Đảm bảo nhóm có đủ thông tin để thảo luận rõ ràng về hướng deploy.
 
-Tu?n n�y d�nh cho vi?c ch?n d?ch v?. M?c ti�u kh�ng ch? l� bi?t AWS c� g?, m� c?n l� quy?t �?nh nh?ng d?ch v? n�o th?c s? ph� h?p v?i d? �n c? v? k? thu?t l?n chi ph�.
+Tuần này dành cho việc chọn dịch vụ. Mục tiêu không chỉ là biết AWS có gì, mà còn là quyết định những dịch vụ nào thực sự phù hợp với dự án cả về kỹ thuật lẫn chi phí.
 
-### C�c c�ng vi?c trong tu?n:
+### Các công việc trong tuần:
 
 | Day | Task | Start Date | Completion Date | Reference Material |
 | --- | --- | --- | --- | --- |
-| 1 | T?m hi?u k? c�c d?ch v? AWS s? ph� h?p v?i d? �n v� ng�n s�ch<br>- R� so�t c�c d?ch v? AWS hi?n c� v� �?i chi?u v?i y�u c?u c?a d? �n.<br>- C�n nh?c chi ph�, �? ��n gi?n khi tri?n khai v� kh? n�ng b?o tr? l�u d�i tr�?c khi ch?n. | 08/06/2026 | 12/06/2026 |  |
-| 5 | Th?o lu?n c�ng nh�m v? c�c d?ch v? AWS<br>- Chia s? c�c l?a ch?n d?ch v? v?i nh�m v� gi?i th�ch v? sao m?i d?ch v? ph� h?p hay ch�a ph� h?p.<br>- Thu th?p ph?n h?i �? �i?u ch?nh h�?ng tri?n khai. | 13/06/2026 | 14/06/2026 |  |
+| 1 | Tìm hiểu các dịch vụ AWS phù hợp với dự án và ngân sách<br>- Rà soát các dịch vụ AWS hiện có và đối chiếu với yêu cầu của dự án.<br>- Cân nhắc chi phí, độ đơn giản khi triển khai và khả năng bảo trì lâu dài trước khi chọn. | 08/06/2026 | 12/06/2026 |  |
+| 5 | Thảo luận cùng nhóm về các dịch vụ AWS<br>- Chia sẻ các lựa chọn dịch vụ với nhóm và giải thích vì sao mỗi dịch vụ phù hợp hay chưa phù hợp.<br>- Thu thập phản hồi để điều chỉnh hướng triển khai. | 13/06/2026 | 14/06/2026 |  |
 
-### K?t qu? �?t ��?c:
+### Kết quả đạt được:
 
-* X�c �?nh ��?c c�c d?ch v? AWS ph� h?p nh?t v?i d? �n.
-* So s�nh ��?c gi� tr? k? thu?t v� ?nh h�?ng chi ph� c?a c�c d?ch v? ��?c xem x�t.
-* Tr?nh b�y h�?ng ch?n d?ch v? cho nh�m v� d�ng ph?n h?i �? ho�n thi?n k? ho?ch.
+* Xác định được các dịch vụ AWS phù hợp nhất với dự án.
+* So sánh được giá trị kỹ thuật và ảnh hưởng chi phí của các dịch vụ được xem xét.
+* Trình bày hướng chọn dịch vụ cho nhóm và dùng phản hồi để hoàn thiện kế hoạch.

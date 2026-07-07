@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-# Self-Assessment
-
 My internship ran from **17/04/2026 to 10/07/2026** at **Amazon Web Services Vietnam Company Limited**, within the **Workforce Bootcamp - First Cloud AI Journey** program. Over that period, the most useful part for me was not a single task, but the way the entire workflow connected: self-study, event participation, AWS Blog reading, deployment work, and workshop writing. Together, those activities helped me understand what it takes to bring a backend system from local development to a real cloud environment.
 
 The report is based on **EAM Workspace - Enterprise Asset Management System**. From my perspective, the most important learning was not the UI itself, but the backend path behind it: API design, database connectivity, authentication flow, deployment configuration, and runtime monitoring. That is the part of the internship that shaped my thinking the most.

@@ -99,20 +99,6 @@ The AWS & Swinburne Vietnam Cloud Computing Study Tour provided a broad view of 
 
 Some images recorded during the event:
 
-![AWS Swinburne Vietnam Cloud Computing Study Tour](../../images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20095726.png)
+![AWS Swinburne Vietnam Cloud Computing Study Tour](../../images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20094307.png)
 
-![AWS Swinburne Vietnam Cloud Computing Study Tour](../../images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20101235.png)
-
-![AWS Swinburne Vietnam Cloud Computing Study Tour](../../images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20102142.png)
-
-![AWS Swinburne Vietnam Cloud Computing Study Tour](../../images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20105543.png)
-
-![AWS Swinburne Vietnam Cloud Computing Study Tour](../../images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20111017.png)
-
-![AWS Swinburne Vietnam Cloud Computing Study Tour](../../images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20112156.png)
-
-![AWS Swinburne Vietnam Cloud Computing Study Tour](../../images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20112741.png)
-
-![AWS Swinburne Vietnam Cloud Computing Study Tour](../../images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20114532.png)
-
-![AWS Swinburne Vietnam Cloud Computing Study Tour](../../images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20115045.png)
+![AWS Swinburne Vietnam Cloud Computing Study Tour](../../images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20111728.png)

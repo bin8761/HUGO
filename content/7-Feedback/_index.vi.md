@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 7. </b> "
 ---
 
-# Chia sẻ và phản hồi
-
 Chương trình First Cloud AI Journey cho tôi một góc nhìn rất thực tế về AWS, đặc biệt là ở phần backend. Điều tôi cảm nhận rõ nhất trong suốt quá trình tham gia là chương trình không dừng ở việc học dịch vụ riêng lẻ, mà luôn kéo người học đi theo toàn bộ luồng của một hệ thống: request đi như thế nào, backend xử lý ra sao, database kết nối thế nào, log được xem ở đâu và lỗi được kiểm tra bằng cách nào sau khi deploy.
 
 Với tôi, đây là điểm giá trị nhất của chương trình. Nó khiến việc học AWS gắn chặt hơn với cách một hệ thống backend thực sự vận hành trên cloud.

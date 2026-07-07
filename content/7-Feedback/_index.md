@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 7. </b> "
 ---
 
-# Sharing and Feedback
-
 The First Cloud AI Journey program gave me a backend-oriented view of AWS that I did not get from classroom learning alone. What stood out most was that the program did not treat deployment as a final step. Instead, it forced me to think about the full backend path: how the API is routed, how the database is connected, how runtime variables are managed, how logs are checked, and how the system is verified after deployment.
 
 That approach made the internship feel practical. I was not only learning AWS service names. I was learning how those services behave together in a real architecture.

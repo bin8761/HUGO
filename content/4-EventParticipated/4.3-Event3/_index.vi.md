@@ -99,21 +99,7 @@ AWS & Swinburne Vietnam Cloud Computing Study Tour mang lại cái nhìn toàn d
 
 Một số hình ảnh được ghi lại trong quá trình tham gia sự kiện:
 
-![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20095726.png)
+![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20094307.png)
 
-![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20101235.png)
-
-![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20102142.png)
-
-![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20105543.png)
-
-![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20111017.png)
-
-![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20112156.png)
-
-![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20112741.png)
-
-![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20114532.png)
-
-![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20115045.png)
+![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20111728.png)
 
