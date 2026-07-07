@@ -21,79 +21,79 @@ pre: " <b> 4.3. </b> "
 
 ## Tổng quan
 
-Sự kiện AWS & Swinburne Vietnam Cloud Computing Study Tour là một buổi chia sẻ kiến thức và định hướng nghề nghiệp dành cho sinh viên quan tâm đến cloud computing và ngành công nghệ thông tin. Nội dung có sự tham gia của đại diện AWS, chuyên gia trong lĩnh vực data engineering, account management và solution architecture.
+Buổi chia sẻ này giống một cuộc “soi gương” hơn là một buổi giới thiệu công nghệ đơn thuần. Nó cho thấy những gì sinh viên cần biết nếu muốn đi vào cloud: không chỉ là dịch vụ AWS, mà còn là cách thị trường vận hành, cách doanh nghiệp đánh giá nhân sự và cách một người mới giữ được đà học lâu dài.
 
-Buổi chia sẻ không chỉ tập trung vào dịch vụ AWS hay kiến trúc cloud, mà còn mở rộng sang các vấn đề thực tế của thị trường lao động: doanh nghiệp đang cần kỹ năng gì, sinh viên cần chuẩn bị ra sao, AI đang thay đổi cách học và cách làm việc như thế nào, cũng như vai trò của cộng đồng trong quá trình phát triển nghề nghiệp.
+Điều tôi thấy rõ nhất là chương trình không tách công nghệ ra khỏi sự nghiệp. Cloud, AI, giao tiếp, networking và thái độ học tập đều được đặt chung trong một bức tranh phát triển nghề nghiệp.
 
 ## Nội dung chính
 
-### Quan hệ hợp tác AWS và Swinburne Vietnam
+### Quan hệ hợp tác giữa AWS và Swinburne Vietnam
 
-Phần mở đầu giới thiệu mục đích của chương trình study tour và sự kết nối giữa AWS với sinh viên Swinburne Vietnam. Nội dung này giúp người tham dự hiểu rằng cloud computing không chỉ là một nhóm công nghệ riêng lẻ, mà đang trở thành nền tảng quan trọng trong nhiều doanh nghiệp và ngành nghề.
+Phần đầu giới thiệu mục đích của study tour và lý do AWS đồng hành cùng sinh viên Swinburne Vietnam. Thông điệp khá rõ: cloud computing đã trở thành nền tảng của nhiều doanh nghiệp hiện đại, không còn là một chủ đề riêng cho kỹ sư hạ tầng nữa.
 
-Thông qua chương trình, sinh viên có cơ hội tiếp cận góc nhìn thực tế từ doanh nghiệp, hiểu thêm cách các công ty ứng dụng cloud, đồng thời nhìn rõ hơn các yêu cầu về kỹ năng khi bước vào thị trường việc làm.
+Nhờ phần này, sinh viên có thể nhìn cloud theo góc độ doanh nghiệp, từ đó hiểu hơn doanh nghiệp đang cần điều gì ở người mới đi làm.
 
-### Xu hướng thị trường Cloud Computing tại Việt Nam
+### Xu hướng Cloud Computing tại Việt Nam
 
-Đại diện AWS Vietnam chia sẻ về tốc độ phát triển của thị trường cloud, nhu cầu nhân sự và sự thay đổi trong cách doanh nghiệp triển khai hạ tầng công nghệ. Một điểm đáng chú ý là nhiều doanh nghiệp hiện nay ưu tiên tư duy **Cloud First**, tức là cân nhắc giải pháp cloud trước khi chọn hạ tầng truyền thống.
+Đại diện AWS Vietnam chia sẻ về tốc độ tăng trưởng của thị trường cloud tại Việt Nam và khu vực ASEAN. Một điểm được nhắc nhiều là tư duy **Cloud First**, tức là ưu tiên cloud trước khi nghĩ đến hạ tầng truyền thống.
 
-Nội dung cũng nhấn mạnh rằng yêu cầu dành cho nhân sự cloud ngày càng cao. Ngay cả các vị trí fresher hoặc intern cũng cần hiểu các khái niệm nền tảng như cloud-native architecture, Kubernetes, networking, security và khả năng học nhanh các công cụ mới.
+Sự kiện cũng cho thấy yêu cầu với nhân sự cloud đang cao hơn. Sinh viên hoặc fresher muốn theo cloud cần nắm cloud-native architecture, Kubernetes, networking, security và đặc biệt là khả năng học nhanh công cụ mới.
 
-### Cộng đồng First Cloud AI Journey và vai trò của việc học liên tục
+### First Cloud AI Journey và việc học liên tục
 
-Sự kiện đề cập đến cộng đồng First Cloud AI Journey như một môi trường giúp sinh viên và người mới đi làm tiếp cận kiến thức cloud, AI và kinh nghiệm thực tế từ cộng đồng. Bài học quan trọng là năng lực chuyên môn cần đi cùng khả năng hiện diện trong cộng đồng và sự kiên trì học tập.
+Cộng đồng First Cloud AI Journey được giới thiệu như một không gian để sinh viên và người mới đi làm học từ cộng đồng, đồng thời tạo được độ hiện diện cho bản thân trong quá trình phát triển nghề nghiệp.
 
-Một mô hình được nhấn mạnh trong sự kiện là:
+Một công thức được nhấn mạnh trong chương trình là:
 
 ```text
 Career Growth = Capability x Visibility x Consistency
 ```
 
-Trong đó, **Capability** là năng lực chuyên môn, **Visibility** là khả năng được cộng đồng và doanh nghiệp nhìn thấy, còn **Consistency** là sự bền bỉ trong quá trình học tập và thực hành.
+Ở đây, Capability là năng lực chuyên môn, Visibility là mức độ được cộng đồng và nhà tuyển dụng nhìn thấy, còn Consistency là sự bền bỉ trong học tập và thực hành.
 
-### Khác biệt giữa học thuật và công việc Data Engineering thực tế
+### Học thuật và công việc data engineering thực tế
 
-Phần chia sẻ của chuyên gia data engineering cho thấy sự khác biệt lớn giữa bài tập trong trường và dự án thực tế. Trong môi trường học thuật, dữ liệu thường sạch, phạm vi bài toán rõ và thời gian linh hoạt. Ngược lại, công việc thực tế thường có dữ liệu không hoàn chỉnh, yêu cầu thay đổi nhanh và kết quả ảnh hưởng trực tiếp đến quyết định kinh doanh.
+Phần data engineering làm rõ sự khác nhau giữa học trong trường và đi làm thật. Trong bài tập, dữ liệu thường sạch, phạm vi rõ và thời gian khá thoải mái. Trong môi trường thực tế, dữ liệu có thể lộn xộn, yêu cầu thay đổi nhanh và kết quả ảnh hưởng trực tiếp đến quyết định kinh doanh.
 
-Vì vậy, ngoài kỹ năng lập trình, người làm data hoặc cloud cần hiểu thêm về chất lượng dữ liệu, xử lý lỗi, bảo mật, API, hệ thống phân tán và cách phối hợp với nhiều đội khác nhau trong doanh nghiệp.
+Vì vậy, người làm cloud hoặc data không thể chỉ biết code. Họ còn phải hiểu chất lượng dữ liệu, cách xử lý lỗi, bảo mật, API, hệ thống phân tán và cách phối hợp với nhiều nhóm khác nhau.
 
 ### AI trong học tập và công việc
 
-Sự kiện cũng đề cập đến vai trò của AI trong quá trình học tập và làm việc. AI có thể hỗ trợ viết code, tạo sơ đồ, tóm tắt tài liệu hoặc gợi ý hướng giải quyết vấn đề. Tuy nhiên, người học không nên phụ thuộc hoàn toàn vào AI mà cần kiểm chứng kết quả, hiểu bản chất vấn đề và giữ tư duy phản biện.
+Phần nói về AI khá thực tế. AI có thể hỗ trợ viết code, làm sơ đồ, tóm tắt tài liệu hoặc gợi ý cách giải quyết vấn đề. Nhưng người học không nên giao toàn bộ suy nghĩ của mình cho AI. Cần hiểu kết quả, kiểm chứng thông tin và giữ tư duy phản biện.
 
-Đây là điểm rất quan trọng đối với sinh viên công nghệ vì tốc độ thay đổi của AI khiến kỹ năng học nhanh, chọn lọc thông tin và hiểu nền tảng trở nên cần thiết hơn bao giờ hết.
+Điều này đặc biệt quan trọng với sinh viên công nghệ vì AI thay đổi rất nhanh. Ai biết học nhanh, lọc thông tin tốt và giữ nền tảng chắc sẽ đi xa hơn.
 
 ### Kỹ năng mềm, giao tiếp và tư duy nghề nghiệp
 
-Các phần chia sẻ về kỹ năng mềm nhấn mạnh rằng sự nghiệp trong ngành công nghệ không chỉ phụ thuộc vào kỹ năng kỹ thuật. Người mới đi làm cần rèn luyện khả năng giao tiếp, đặt câu hỏi, vượt qua nỗi sợ sai, chủ động trao đổi với đồng nghiệp và xây dựng sự tin tưởng trong môi trường làm việc.
+Các phần chia sẻ về kỹ năng mềm nhấn mạnh rằng sự nghiệp công nghệ không chỉ phụ thuộc vào kỹ thuật. Người mới đi làm cần biết giao tiếp, hỏi đúng lúc, không sợ sai, phối hợp chủ động và xây dựng niềm tin trong nhóm.
 
-Một số lời khuyên thực tế được nhắc đến gồm: không ngại hỏi khi chưa hiểu, biết cách trình bày vấn đề, chủ động tìm cơ hội, giữ thái độ cầu tiến và xem thất bại là một phần của quá trình trưởng thành.
+Những lời khuyên như hỏi khi chưa rõ, trình bày vấn đề mạch lạc, chủ động tìm cơ hội, giữ tinh thần cầu tiến và coi thất bại là bài học đều rất thực tế.
 
-### Góc nhìn từ Solution Architect và cựu sinh viên
+### Góc nhìn từ solution architect và cựu sinh viên
 
-Phần chia sẻ cuối đưa ra nhiều lời khuyên về con đường phát triển của sinh viên công nghệ. Diễn giả nhấn mạnh rằng chương trình học ở trường là nền tảng quan trọng, nhưng chưa đủ để sẵn sàng cho môi trường doanh nghiệp. Sinh viên cần chủ động làm project, tham gia cộng đồng, học cách dùng AI hiệu quả và phát triển tư duy đặt câu hỏi.
+Phần cuối nhắc sinh viên rằng học trên lớp là nền tảng, nhưng để sẵn sàng cho doanh nghiệp thì cần thêm project, cộng đồng, thực hành AI đúng cách và kỹ năng đặt câu hỏi có chất lượng.
 
-Một điểm đáng chú ý là nhà tuyển dụng thường đánh giá cao **thái độ**, sau đó mới đến kỹ năng, kinh nghiệm và đặc điểm cá nhân. Điều này cho thấy người mới bắt đầu cần chứng minh được khả năng học hỏi, tính kỷ luật và tinh thần chịu trách nhiệm trong công việc.
+Một điểm đáng nhớ là nhà tuyển dụng thường chú ý đến thái độ trước. Kỹ năng và kinh nghiệm quan trọng, nhưng thái độ học hỏi, kỷ luật và trách nhiệm mới là thứ giúp người mới tạo được niềm tin.
 
 ## Kiến thức rút ra
 
-- Cloud computing tại Việt Nam đang phát triển nhanh và tạo ra nhiều cơ hội nghề nghiệp mới.
-- Doanh nghiệp ngày càng cần nhân sự có nền tảng cloud, hiểu kiến trúc hệ thống và có khả năng thích nghi với AI.
-- Sinh viên không nên chỉ học lý thuyết, mà cần thực hành qua project, cộng đồng và các tình huống gần với thực tế.
-- AI là công cụ hỗ trợ mạnh, nhưng vẫn cần tư duy phản biện và khả năng kiểm chứng kết quả.
-- Kỹ năng giao tiếp, đặt câu hỏi, networking và sự kiên trì có ảnh hưởng lớn đến cơ hội nghề nghiệp.
-- Data engineering và cloud engineering đều yêu cầu hiểu cả kỹ thuật lẫn bối cảnh nghiệp vụ.
-- Phát triển nghề nghiệp cần kết hợp giữa năng lực, sự hiện diện trong cộng đồng và sự nhất quán trong quá trình học tập.
+- Cloud computing ở Việt Nam đang mở rộng nhanh và tạo nhiều cơ hội mới.
+- Doanh nghiệp cần người có nền tảng cloud, hiểu kiến trúc hệ thống và sẵn sàng thích nghi với AI.
+- Sinh viên nên thực hành qua project và cộng đồng thay vì chỉ học lý thuyết.
+- AI hữu ích, nhưng tư duy phản biện và khả năng kiểm chứng vẫn cần giữ vững.
+- Giao tiếp, networking và sự kiên trì ảnh hưởng rất mạnh đến cơ hội nghề nghiệp.
+- Data engineering và cloud engineering đều cần hiểu cả kỹ thuật lẫn bối cảnh nghiệp vụ.
+- Phát triển nghề nghiệp là sự kết hợp giữa năng lực, độ hiện diện và sự nhất quán.
 
 ## Liên hệ với project EAM Workspace
 
-Nội dung sự kiện có liên hệ rõ với project EAM Workspace. Khi xây dựng một hệ thống quản lý tài sản doanh nghiệp, việc hiểu bài toán nghiệp vụ quan trọng không kém việc triển khai kỹ thuật. Hệ thống không chỉ cần có frontend, backend và database, mà còn cần giải quyết được nhu cầu thực tế như quản lý tài sản, phân quyền người dùng, truy vết lịch sử, hỗ trợ báo cáo và đảm bảo dữ liệu có thể được sử dụng lâu dài.
+Buổi chia sẻ có liên hệ rất rõ với project EAM Workspace. Một hệ thống quản lý tài sản doanh nghiệp không chỉ cần frontend, backend và database mà còn phải giải quyết bài toán thực tế như quản lý tài sản, phân quyền, lịch sử thay đổi, báo cáo và khả năng dùng dữ liệu lâu dài.
 
-Từ góc nhìn cloud, project giúp thực hành các nội dung đã được nhắc đến trong sự kiện như triển khai ứng dụng lên AWS, kết nối backend với database, kiểm soát biến môi trường, kiểm tra health endpoint, monitoring và cleanup tài nguyên sau khi demo. Từ góc nhìn nghề nghiệp, quá trình làm project cũng giúp rèn luyện khả năng tự học, đọc tài liệu, xử lý lỗi và trình bày kết quả theo cách có thể chia sẻ lại cho người khác.
+Từ góc nhìn cloud, project cũng giúp mình thực hành những nội dung được nhắc đến trong sự kiện: triển khai lên AWS, kết nối backend với database, kiểm soát biến môi trường, kiểm tra health endpoint, theo dõi hệ thống và dọn tài nguyên sau demo. Từ góc nhìn nghề nghiệp, đây cũng là bài tập tốt cho tự học, đọc tài liệu và trình bày lại kiến thức.
 
 ## Kết luận
 
-AWS & Swinburne Vietnam Cloud Computing Study Tour mang lại cái nhìn toàn diện về thị trường cloud, yêu cầu nghề nghiệp và cách sinh viên công nghệ nên chuẩn bị cho tương lai. Sự kiện giúp củng cố nhận thức rằng muốn phát triển trong lĩnh vực cloud và AI, người học cần kết hợp nền tảng kỹ thuật, tư duy nghiệp vụ, kỹ năng giao tiếp, khả năng tự học và sự tham gia tích cực vào cộng đồng.
+AWS & Swinburne Vietnam Cloud Computing Study Tour cho tôi một góc nhìn rộng hơn về cloud, thị trường việc làm và cách sinh viên công nghệ nên chuẩn bị cho tương lai. Sự kiện nhắc lại rằng muốn đi xa trong cloud và AI, người học cần nền tảng kỹ thuật, tư duy nghiệp vụ, kỹ năng giao tiếp, sự tự học và sự tham gia tích cực vào cộng đồng.
 
 ## Hình ảnh sự kiện
 
@@ -102,4 +102,3 @@ Một số hình ảnh được ghi lại trong quá trình tham gia sự kiện
 ![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20094307.png)
 
 ![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20111728.png)
-

@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-# Event 1 AWS First Cloud Journey Community Day
+# Event 1 - AWS First Cloud Journey Community Day
 
 | Information | Details |
 | --- | --- |
@@ -17,83 +17,79 @@ pre: " <b> 4.1. </b> "
 | Main topics | Cloud Computing, DevOps, Security, AI, WebSocket, Teamwork, and career orientation in information technology |
 | Speakers | Tran Trung Vinh - System Administrator at Central Retail Group; Bao Huynh - Junior Cloud Native Developer, Endava Vietnam; Le Hoang Gia Dai; Nguyen Quoc Bao; Truong Huy Phuoc; Viet Phat |
 
-## 1. Purpose of participating in the event
+## 1. Why I joined this event
 
-AWS First Cloud Journey Community Day was a professional activity that helped students and beginners in cloud computing gain practical knowledge from speakers who are currently working in the technology industry. Through diverse sessions, the event helped participants understand how modern technologies such as AWS, Docker, Machine Learning, WebSocket, GraphRAG, and DevOps are applied in real environments.
+AWS First Cloud Journey Community Day brought together speakers who were already working with cloud systems, so the event felt practical from the start. Instead of staying at the level of theory, it showed how AWS, Docker, machine learning, WebSocket, GraphRAG, and DevOps show up in real projects and real operations.
 
-My purpose in joining the event was to expand my knowledge beyond classroom theory, especially around application deployment on cloud, system security, real-time architecture, and career development in Cloud and DevOps. It was also an opportunity to observe how professionals present solutions, analyze problems, and share experience from enterprise environments.
+I joined to get a clearer picture of what lies beyond classroom material. In particular, I wanted to hear how practitioners talk about cloud deployment, security, real-time systems, and career growth. The event was also useful because it showed how professionals explain tradeoffs, break down problems, and connect technology choices to day-to-day work.
 
-## 2. Main content of the event
+## 2. What the sessions covered
 
-The event included several sharing sessions with different topics. Although each session had its own focus, all of them were related to building technical capability for AWS learners, from software deployment foundations, security, and artificial intelligence to teamwork and career orientation.
+The program was split into several talks, and each one covered a different angle of the cloud journey. Taken together, they formed a useful map of the skills a cloud learner needs, from deployment basics and security to collaboration and career mindset.
 
-### 2.1. Docker - A Containerization Technology
+### 2.1. Docker as a packaging layer
 
-The Docker session introduced the concept of containerization and Docker's role in software development, testing, and deployment. The speaker explained the difference between virtualization and containerization, where containers are considered lighter, more flexible, and more suitable for modern cloud-native systems.
+The Docker session focused on containerization and why it has become a standard part of modern software delivery. The speaker contrasted containers with traditional virtualization and made a simple point: containers are lighter, easier to move, and a better fit for cloud-native workflows.
 
-This content helped me understand that Docker is not only a tool for running applications in containers, but also an important part of the DevOps workflow. With Docker, developers can package applications with required libraries, configuration, and runtime environments, reducing errors caused by differences between local machines, testing servers, and real deployment environments.
+What I took from this session was that Docker is not just a runtime tool. It also helps teams package code, dependencies, configuration, and execution environment together, which reduces the “it works on my machine” problem. That is one of the reasons Docker shows up so often in DevOps and deployment pipelines.
 
-For learning AWS, Docker knowledge is practical because many modern services such as Amazon ECS, Amazon EKS, and CI/CD workflows are related to containers. Understanding Docker gives me a better foundation for modern application deployment models on cloud.
+From an AWS perspective, this matters because services like Amazon ECS, Amazon EKS, and CI/CD flows all connect naturally to container-based delivery. Understanding Docker gives me a more stable base for those services later.
 
-### 2.2. Machine Learning-based Network Intrusion Detection System (NIDS) on AWS
+### 2.2. AWS WAF and machine-learning-based NIDS
 
-The session about AWS WAF and Machine Learning-based NIDS focused on web application security and network attack detection. The speaker introduced AWS WAF as a protection layer for HTTP/HTTPS web applications, capable of blocking common attack patterns such as SQL Injection, Cross-site Scripting, bot traffic, brute force, and abnormal requests.
+The security session looked at web application protection and network intrusion detection. AWS WAF was introduced as a first layer of defense for HTTP and HTTPS applications, with the ability to block common threats such as SQL injection, cross-site scripting, brute-force attempts, bots, and unusual request patterns.
 
-The speaker also analyzed the limitations of fixed rule-based security methods. Traditional rules are effective against known attack patterns, but can struggle with new techniques, zero-day attacks, or abnormal behavior that has not been defined in advance. From there, the session introduced an approach that combines AWS WAF with Machine Learning to build a NIDS that can learn from network data and detect abnormal signals.
+The speaker also pointed out the weakness of rule-only protection. Static rules work well for known attack patterns, but they are less useful when the threat is new or behaves differently from the patterns already defined. That led into the machine-learning-based NIDS approach, where network data is used to detect behavior that does not look normal.
 
-This topic helped me realize that cloud security is not only about configuring firewalls or rules, but also about combining multiple defense layers. Applying Machine Learning to intrusion detection shows that modern security is moving from signature-based detection toward behavior-based detection.
+This session stood out because it made cloud security feel layered rather than single-purpose. It was not just “set a firewall and move on.” The stronger model combines rules, monitoring, and behavior-based detection.
 
-### 2.3. From IT Helpdesk to Senior Sysadmin
+### 2.3. The road from helpdesk to sysadmin
 
-The sharing session about the journey from IT Helpdesk to Senior Sysadmin provided very practical career guidance. The speaker described starting from user support, then gradually developing skills in Linux, networking, system infrastructure, building personal lab environments, and moving toward system administration.
+One of the most practical sessions traced a career path from IT Helpdesk to Senior Sysadmin. The speaker showed how support work can grow into Linux administration, networking, infrastructure management, home lab practice, and eventually system administration.
 
-An important point was that infrastructure engineers need stable operations thinking, troubleshooting ability, documentation skills, monitoring habits, and a careful approach that avoids testing directly in production without a safety plan. The speaker also shared the mindset shift from on-premise environments to cloud, including elastic scalability, pay-as-you-go pricing, managed services, and Infrastructure as Code.
+The part that stayed with me was the emphasis on operating discipline. Infrastructure roles require more than technical knowledge. They need calm troubleshooting, documentation, monitoring habits, and a habit of checking before touching production. The shift from on-premise to cloud also changes how you think about scale, cost, managed services, and Infrastructure as Code.
 
-For me, this session clarified the relationship between Sysadmin, Cloud, and DevOps. To grow in cloud, learners need not only knowledge of AWS services, but also foundations in operating systems, networking, security, and automation.
+For me, this session connected the dots between Sysadmin, Cloud, and DevOps. The cloud path is not built only on service names. It also depends on operating systems, networking, security, and automation fundamentals.
 
-### 2.4. Multiplayer in the Cloud - Connecting Godot Clients with AWS WebSockets
+### 2.4. Multiplayer systems in the cloud
 
-The Multiplayer in the Cloud session introduced how to build real-time connections between Godot clients using AWS WebSocket. The speaker analyzed several communication options for games or real-time applications, including UDP/ENet, WebSocket, and HTTP Polling, while explaining the advantages, limitations, and suitable use cases of each option.
+The multiplayer session showed how Godot clients can stay connected through AWS WebSockets. The speaker compared several communication models, including UDP/ENet, WebSocket, and HTTP polling, and explained when each one makes sense.
 
-The presented architecture used API Gateway WebSocket to maintain connections between clients and backend, AWS Lambda to handle event logic, DynamoDB to store connection state, and CloudWatch for logging and monitoring. This is a practical example of serverless architecture, where the system can handle connections and exchange data without managing traditional servers.
+The architecture used API Gateway WebSocket to manage client connections, AWS Lambda to process events, DynamoDB to store connection state, and CloudWatch for logs and monitoring. That example made serverless feel concrete rather than abstract, because it showed how a system can handle real-time communication without a traditional always-on server.
 
-Through this session, I understood more about how AWS supports real-time applications such as chat, game lobbies, matchmaking systems, or applications that require continuous data exchange. It also helped me connect backend knowledge, cloud architecture, and serverless design.
+This section was useful because it linked backend systems, cloud design, and real-time application patterns. I left with a better understanding of where AWS fits in chat systems, game lobbies, matchmaking, and other always-connected use cases.
 
-### 2.5. The Art of Effective Teamwork
+### 2.5. Teamwork as an engineering skill
 
-The teamwork session focused on principles that improve collaboration in a team. The speaker emphasized four important factors: clear and aligned goals, assigning the right work to the right person, open communication with active listening, and personal accountability.
+The teamwork session focused on the habits that make collaboration work in practice. The speaker highlighted four essentials: shared goals, putting the right person on the right task, open communication with active listening, and personal accountability.
 
-In addition to teamwork principles, the session introduced management and communication tools such as ClickUp, Trello, Slack, Google Workspace, and Discord. These tools help teams track progress, assign tasks, exchange information, and store documents more systematically.
+The tools mentioned, such as ClickUp, Trello, Slack, Google Workspace, and Discord, were not the main story. They were examples of how teams keep work visible, divide tasks, exchange updates, and store information without relying on memory alone.
 
-For internships and project work, this session was practical because technology projects usually require coordination among multiple members. I realized that technical skills are important, but communication, work management, and personal responsibility also directly affect project outcomes.
+That session felt relevant to internship work because technical projects are rarely solo efforts. Good results usually depend on how well the team communicates and how clearly people handle responsibility.
 
-### 2.6. GraphRAG - Build GraphRAG Applications Using Amazon Bedrock and Amazon Neptune
+### 2.6. GraphRAG with Bedrock and Neptune
 
-The GraphRAG session introduced a new approach in artificial intelligence that combines Retrieval-Augmented Generation with graph data. Traditional RAG helps large language models retrieve information from external data sources to generate more grounded answers. However, when questions require reasoning across many entities and relationships, GraphRAG can provide better support by representing data as nodes and edges.
+The final technical session introduced GraphRAG, which extends Retrieval-Augmented Generation with graph structures. Traditional RAG improves answer quality by pulling information from external sources, but GraphRAG goes further when the problem requires reasoning over connected entities and relationships.
 
-The speaker presented how to build GraphRAG applications using Amazon Bedrock and Amazon Neptune. Amazon Bedrock supports generative AI models and knowledge bases, while Amazon Neptune stores and processes graph data. This combination allows systems not only to search by content, but also to use relationships between entities to improve reasoning.
+The speaker showed how Amazon Bedrock and Amazon Neptune can be combined to build this kind of system. Bedrock provides the generative AI layer, while Neptune stores and processes graph data. Together they let the system search by content and by relationship, which makes reasoning more useful for complex questions.
 
-This session gave me a broader view of applying AWS in AI. It helped me understand that cloud does not only provide servers, storage, or networking, but also higher-level services for building intelligent applications, especially question-answering systems, knowledge search, and complex data analysis.
+This was a strong reminder that AWS is not only for infrastructure. It also provides building blocks for intelligent systems, knowledge search, and applications that need more than simple keyword retrieval.
 
-## 3. Lessons learned
+## 3. What I took away
 
-After joining the event, I learned many lessons related to both technical skills and career development. Technically, I better understood Docker's role in application deployment, how AWS supports serverless architecture, the importance of multi-layer security, and the potential of AI on AWS. Topics such as WebSocket, Machine Learning-based NIDS, and GraphRAG showed me that the AWS ecosystem can be applied in many areas, from security and games to real-time backend systems and artificial intelligence.
+The event left me with both technical and career lessons. On the technical side, I came away with a clearer view of Docker in delivery pipelines, layered cloud security, serverless real-time systems, and the way AWS is moving into AI-enabled use cases. On the career side, the helpdesk-to-sysadmin talk reinforced the need for a strong foundation in Linux, networking, troubleshooting, monitoring, and documentation.
 
-For career orientation, the session about moving from IT Helpdesk to Senior Sysadmin helped me realize that growth in technology should begin with a strong foundation and continuous learning. Skills such as networking, Linux, troubleshooting, monitoring, automation, and documentation are all important for cloud and DevOps roles.
+The teamwork session also made an obvious point that is easy to ignore: communication is not a soft extra, it is part of how technical work succeeds. The better a team communicates, the easier it is to move work forward without confusion.
 
-For soft skills, the teamwork session helped me understand that effective teamwork requires shared goals, clear responsibility, frequent communication, and accountability. These factors are necessary not only during the internship, but also in future enterprise environments.
+## 4. How I used the event
 
-## 4. Personal contribution
+I took notes during the sessions and focused on the parts that were relevant to my internship report: AWS, Docker, security, serverless systems, AI, and teamwork. I also compared the speakers’ examples with what I had already learned in AWS Study Group sessions so I could connect the talk content to my own study path.
 
-During the event, I actively listened to the sessions and took notes on topics related to AWS, Docker, security, serverless, and AI for my internship report. I also compared the shared knowledge with what I had learned in the AWS Study Group program to reinforce my foundation and identify topics that I need to study more deeply.
+After the event, I adjusted my learning plan a bit. The topics made it clear that I should keep practicing Docker, deepen my AWS serverless knowledge, strengthen cloud security basics, and keep looking at real deployment patterns rather than only isolated services.
 
-In addition, I treated the event as an opportunity to adjust my personal learning plan. After the event, I identified the need to continue practicing skills such as deploying applications with Docker, learning AWS serverless services, improving cloud security knowledge, and practicing real-world application deployment models.
+## 5. Closing note
 
-## 5. Conclusion
-
-Overall, AWS First Cloud Journey Community Day gave me practical knowledge and a broader perspective on cloud computing. The sessions not only helped me understand more about AWS-related services and technologies, but also made me more aware of the skills required in the current information technology industry.
-
-Through this event, I gained more motivation to continue learning, practicing, and improving the skills needed for my future career direction, especially in Cloud, DevOps, Backend, and AI applications on AWS.
+AWS First Cloud Journey Community Day gave me a practical look at how cloud, DevOps, security, and AI fit together in real work. It also showed that career growth in tech comes from more than technical knowledge alone. You need consistency, communication, and a habit of learning from people who are already doing the job.
 
 ## Event Images
 

@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-# Event 1 AWS First Cloud Journey Community Day
+# Event 1 - AWS First Cloud Journey Community Day
 
 | Thông tin | Nội dung |
 | --- | --- |
@@ -15,89 +15,86 @@ pre: " <b> 4.1. </b> "
 | Vai trò | Người tham dự chương trình First Cloud Journey |
 | Hình thức tham gia | Tham gia trực tiếp |
 | Chủ đề chính | Cloud Computing, DevOps, Security, AI, WebSocket, Teamwork và định hướng nghề nghiệp trong lĩnh vực công nghệ thông tin |
-| Danh sách diễn giả | Tran Trung Vinh - System Administrator at Central Retail Group; Bảo Huỳnh - Junior Cloud Native Developer Endava Vietnam; Lê Hoàng Gia Đại; Nguyễn Quốc Bảo; Trương Huy Phước; Việt Phát |
+| Danh sách diễn giả | Tran Trung Vinh - System Administrator tại Central Retail Group; Bảo Huỳnh - Junior Cloud Native Developer, Endava Vietnam; Lê Hoàng Gia Đại; Nguyễn Quốc Bảo; Trương Huy Phước; Việt Phát |
 
-## 1. Mục đích tham gia sự kiện
+## 1. Lý do tham gia
 
-Buổi sự kiện AWS First Cloud Journey Community Day là một hoạt động chuyên môn giúp sinh viên và người mới bắt đầu trong lĩnh vực điện toán đám mây có cơ hội tiếp cận kiến thức thực tế từ các diễn giả đang làm việc trong ngành. Thông qua các phần trình bày đa dạng, sự kiện giúp người tham dự hiểu rõ hơn về cách các công nghệ hiện đại như AWS, Docker, Machine Learning, WebSocket, GraphRAG và DevOps được ứng dụng trong môi trường thực tế.
+AWS First Cloud Journey Community Day là một sự kiện có nhiều diễn giả đang làm việc thực tế với cloud, nên ngay từ đầu đã tạo cảm giác rất gần với công việc thật. Thay vì chỉ nói về khái niệm, chương trình đưa ra những ví dụ cụ thể về AWS, Docker, machine learning, WebSocket, GraphRAG và DevOps trong môi trường triển khai thực tế.
 
-Mục đích tham gia của tôi là mở rộng kiến thức ngoài phạm vi lý thuyết đã học, đặc biệt là các chủ đề liên quan đến triển khai ứng dụng trên cloud, bảo mật hệ thống, xây dựng kiến trúc thời gian thực và định hướng phát triển nghề nghiệp trong lĩnh vực Cloud/DevOps. Đây cũng là cơ hội để tôi quan sát cách các chuyên gia trình bày giải pháp, phân tích vấn đề và chia sẻ kinh nghiệm làm việc trong môi trường doanh nghiệp.
+Tôi tham gia để nhìn rộng hơn so với kiến thức học trên lớp. Điều tôi muốn nghe là cách người trong ngành nói về triển khai cloud, bảo mật hệ thống, ứng dụng thời gian thực và hướng phát triển nghề nghiệp. Sự kiện cũng hữu ích vì cho thấy cách các chuyên gia phân tích vấn đề, trình bày giải pháp và chia sẻ kinh nghiệm làm việc trong doanh nghiệp.
 
-## 2. Nội dung chính của sự kiện
+## 2. Nội dung các phiên chia sẻ
 
-Sự kiện gồm nhiều phần chia sẻ với các chủ đề khác nhau. Mặc dù mỗi phần có trọng tâm riêng, tất cả đều liên quan đến quá trình xây dựng năng lực kỹ thuật cho người học AWS, từ nền tảng triển khai phần mềm, bảo mật, trí tuệ nhân tạo cho đến kỹ năng làm việc nhóm và định hướng nghề nghiệp.
+Chương trình được chia thành nhiều phần, mỗi phần đi vào một khía cạnh khác nhau của hành trình học cloud. Gộp lại, các chủ đề này tạo thành một bức tranh khá đầy đủ về những gì người học AWS cần có, từ nền tảng triển khai, bảo mật cho đến làm việc nhóm và tư duy nghề nghiệp.
 
-### 2.1. Docker - A Containerization Technology
+### 2.1. Docker như một lớp đóng gói ứng dụng
 
-Phần trình bày về Docker giới thiệu khái niệm containerization và vai trò của Docker trong quá trình phát triển, kiểm thử và triển khai phần mềm. Diễn giả giải thích sự khác nhau giữa virtualization và containerization, trong đó container được xem là giải pháp nhẹ hơn, linh hoạt hơn và phù hợp với các hệ thống cloud-native hiện đại.
+Phần Docker nói về containerization và vì sao đây là một phần quan trọng của quy trình phát triển phần mềm hiện đại. Diễn giả so sánh container với virtual machine và chỉ ra rằng container nhẹ hơn, dễ di chuyển hơn, đồng thời phù hợp với workflow cloud-native.
 
-Nội dung này giúp tôi hiểu rằng Docker không chỉ là công cụ chạy ứng dụng trong container, mà còn là một phần quan trọng trong quy trình DevOps. Khi sử dụng Docker, lập trình viên có thể đóng gói ứng dụng cùng các thư viện, cấu hình và môi trường chạy cần thiết, từ đó hạn chế lỗi do khác biệt môi trường giữa máy cá nhân, máy chủ kiểm thử và môi trường triển khai thật.
+Điều tôi rút ra là Docker không chỉ dùng để chạy ứng dụng trong container. Nó còn giúp đóng gói code, thư viện, cấu hình và môi trường chạy vào cùng một đơn vị, nhờ đó giảm tình trạng “chạy trên máy mình thì đúng” nhưng sang môi trường khác lại lỗi. Đây là lý do Docker xuất hiện rất nhiều trong DevOps và quy trình triển khai.
 
-Đối với quá trình học AWS, kiến thức về Docker có ý nghĩa thực tế vì nhiều dịch vụ hiện đại như Amazon ECS, Amazon EKS hoặc các quy trình CI/CD đều liên quan đến container. Việc nắm được Docker giúp tôi có nền tảng tốt hơn để tiếp cận các mô hình triển khai ứng dụng hiện đại trên cloud.
+Với AWS, kiến thức này rất cần vì các dịch vụ như Amazon ECS, Amazon EKS và các pipeline CI/CD đều gắn rất chặt với mô hình container. Hiểu Docker giúp tôi có nền tảng chắc hơn khi tiếp cận những dịch vụ đó sau này.
 
-### 2.2. Machine Learning-based Network Intrusion Detection System (NIDS) on AWS
+### 2.2. AWS WAF và NIDS dựa trên Machine Learning
 
-Phần trình bày về AWS WAF và Machine Learning-based NIDS tập trung vào vấn đề bảo mật ứng dụng web và phát hiện tấn công mạng. Diễn giả giới thiệu AWS WAF như một lớp bảo vệ ứng dụng web ở tầng HTTP/HTTPS, có khả năng ngăn chặn các kiểu tấn công phổ biến như SQL Injection, Cross-site Scripting, bot traffic, brute force và các yêu cầu bất thường.
+Phiên về bảo mật tập trung vào việc bảo vệ ứng dụng web và phát hiện tấn công mạng. AWS WAF được giới thiệu như một lớp phòng thủ cho ứng dụng HTTP/HTTPS, có thể chặn các kiểu tấn công phổ biến như SQL Injection, Cross-site Scripting, bot traffic, brute force và các request bất thường.
 
-Bên cạnh đó, diễn giả cũng phân tích hạn chế của phương pháp bảo mật dựa trên luật cố định. Các quy tắc truyền thống có hiệu quả với những mẫu tấn công đã biết, nhưng có thể gặp khó khăn trước các kỹ thuật tấn công mới, tấn công zero-day hoặc các hành vi bất thường chưa được định nghĩa trước. Từ đó, phần trình bày đưa ra hướng tiếp cận kết hợp AWS WAF với Machine Learning để xây dựng hệ thống NIDS có khả năng học từ dữ liệu mạng và phát hiện dấu hiệu bất thường.
+Diễn giả cũng chỉ ra hạn chế của cách bảo mật chỉ dựa trên luật cố định. Rule truyền thống hiệu quả với kiểu tấn công đã biết, nhưng sẽ yếu hơn khi gặp kỹ thuật mới, zero-day hoặc hành vi bất thường chưa từng được mô tả trước đó. Từ đó, phần trình bày đưa ra hướng kết hợp AWS WAF với Machine Learning để xây dựng NIDS có khả năng học từ dữ liệu mạng và phát hiện tín hiệu bất thường.
 
-Nội dung này giúp tôi nhận thức rõ hơn rằng bảo mật trên cloud không chỉ dừng lại ở việc cấu hình firewall hoặc rule, mà cần kết hợp nhiều lớp phòng thủ. Việc ứng dụng Machine Learning vào phát hiện xâm nhập cho thấy xu hướng bảo mật hiện đại đang chuyển từ phát hiện dựa trên chữ ký sang phát hiện dựa trên hành vi.
+Điểm tôi nhớ nhất là bảo mật cloud không phải chỉ là dựng firewall rồi dừng lại. Cách làm tốt hơn là ghép nhiều lớp bảo vệ cùng nhau, trong đó phát hiện dựa trên hành vi đang ngày càng quan trọng.
 
-### 2.3. From IT Helpdesk to Senior Sysadmin
+### 2.3. Từ IT Helpdesk đến Senior Sysadmin
 
-Phần chia sẻ về hành trình từ IT Helpdesk đến Senior Sysadmin mang tính định hướng nghề nghiệp rất thực tế. Diễn giả trình bày quá trình bắt đầu từ vị trí hỗ trợ người dùng, sau đó từng bước phát triển kỹ năng về Linux, networking, hạ tầng hệ thống, tự xây dựng môi trường lab và chuyển dần sang vai trò quản trị hệ thống.
+Phiên chia sẻ về hành trình từ IT Helpdesk đến Senior Sysadmin rất thực tế. Diễn giả nói về việc bắt đầu từ hỗ trợ người dùng, rồi dần phát triển sang Linux, networking, hạ tầng hệ thống, làm lab cá nhân và tiến tới vai trò quản trị hệ thống.
 
-Một điểm quan trọng được nhấn mạnh là người làm hạ tầng cần có tư duy vận hành ổn định, khả năng xử lý sự cố, kỹ năng ghi chép tài liệu, giám sát hệ thống và không thử nghiệm trực tiếp trên môi trường production nếu chưa có kế hoạch an toàn. Ngoài ra, diễn giả cũng chia sẻ sự thay đổi tư duy khi chuyển từ môi trường on-premise sang cloud, bao gồm khả năng mở rộng linh hoạt, mô hình trả phí theo mức sử dụng, dịch vụ quản lý sẵn và Infrastructure as Code.
+Điểm đáng nhớ là tư duy vận hành. Làm hạ tầng không chỉ là biết kỹ thuật mà còn phải có thói quen xử lý sự cố bình tĩnh, ghi chép rõ ràng, theo dõi hệ thống đều đặn và tránh thử trực tiếp trên production khi chưa có phương án an toàn. Ngoài ra, việc chuyển từ on-premise sang cloud cũng kéo theo cách nghĩ mới về mở rộng linh hoạt, trả phí theo mức dùng, dịch vụ quản lý sẵn và Infrastructure as Code.
 
-Đối với cá nhân tôi, phần này giúp tôi hiểu rõ hơn về mối liên hệ giữa Sysadmin, Cloud và DevOps. Để phát triển trong lĩnh vực cloud, người học không chỉ cần biết sử dụng dịch vụ AWS mà còn cần nắm nền tảng hệ điều hành, mạng máy tính, bảo mật và tự động hóa.
+Phiên này giúp tôi nối rõ hơn mối quan hệ giữa Sysadmin, Cloud và DevOps. Đường đi vào cloud không chỉ là học tên dịch vụ, mà còn phải có nền tảng về hệ điều hành, mạng, bảo mật và tự động hóa.
 
-### 2.4. Multiplayer in the Cloud - Connecting Godot Clients with AWS WebSockets
+### 2.4. Multiplayer trên cloud
 
-Phần trình bày về Multiplayer in the Cloud giới thiệu cách xây dựng hệ thống kết nối thời gian thực giữa các client Godot bằng AWS WebSocket. Diễn giả phân tích một số phương án giao tiếp trong game hoặc ứng dụng thời gian thực như UDP/ENet, WebSocket và HTTP Polling, đồng thời giải thích ưu điểm, hạn chế và trường hợp sử dụng phù hợp của từng phương án.
+Phiên Multiplayer in the Cloud cho thấy cách kết nối các client Godot qua AWS WebSocket. Diễn giả so sánh nhiều mô hình giao tiếp như UDP/ENet, WebSocket và HTTP Polling, rồi giải thích khi nào nên chọn từng cách.
 
-Kiến trúc được trình bày sử dụng API Gateway WebSocket để duy trì kết nối giữa client và backend, AWS Lambda để xử lý logic sự kiện, DynamoDB để lưu trạng thái kết nối và CloudWatch để ghi log, giám sát hệ thống. Đây là một ví dụ thực tế về kiến trúc serverless, trong đó hệ thống có thể xử lý kết nối và trao đổi dữ liệu mà không cần tự quản lý máy chủ truyền thống.
+Kiến trúc được trình bày dùng API Gateway WebSocket để giữ kết nối client, AWS Lambda để xử lý sự kiện, DynamoDB để lưu trạng thái kết nối và CloudWatch để ghi log, theo dõi hệ thống. Ví dụ này làm serverless trở nên cụ thể hơn vì nó cho thấy một hệ thống thời gian thực có thể vận hành mà không cần tự quản lý máy chủ theo cách truyền thống.
 
-Qua phần này, tôi hiểu thêm về cách AWS hỗ trợ xây dựng các ứng dụng real-time như chat, lobby game, hệ thống ghép cặp người chơi hoặc ứng dụng cần trao đổi dữ liệu liên tục. Nội dung này cũng giúp tôi liên hệ tốt hơn giữa kiến thức backend, cloud và kiến trúc serverless.
+Phần này hữu ích vì nó nối backend, kiến trúc cloud và mô hình ứng dụng real-time lại với nhau. Tôi hiểu rõ hơn AWS có thể đứng ở đâu trong các bài toán như chat, lobby game, matchmaking hay những hệ thống cần trao đổi dữ liệu liên tục.
 
-### 2.5. The Art of Effective Teamwork
+### 2.5. Teamwork trong công việc kỹ thuật
 
-Phần trình bày về kỹ năng làm việc nhóm tập trung vào các nguyên tắc giúp tăng hiệu quả cộng tác trong một tập thể. Diễn giả nhấn mạnh bốn yếu tố quan trọng gồm mục tiêu rõ ràng và thống nhất, phân công đúng người đúng việc, giao tiếp cởi mở và lắng nghe chủ động, cũng như tinh thần trách nhiệm cá nhân.
+Phiên về teamwork tập trung vào những thói quen giúp việc cộng tác hiệu quả hơn. Diễn giả nhấn mạnh bốn yếu tố: mục tiêu chung rõ ràng, giao việc đúng người, giao tiếp cởi mở với sự lắng nghe chủ động và tinh thần trách nhiệm cá nhân.
 
-Ngoài các nguyên tắc làm việc nhóm, nội dung còn giới thiệu một số công cụ hỗ trợ quản lý và giao tiếp như ClickUp, Trello, Slack, Google Workspace và Discord. Các công cụ này giúp nhóm theo dõi tiến độ, phân chia nhiệm vụ, trao đổi thông tin và lưu trữ tài liệu một cách có hệ thống hơn.
+Các công cụ như ClickUp, Trello, Slack, Google Workspace và Discord không phải là trọng tâm chính, nhưng chúng cho thấy cách một nhóm giữ công việc minh bạch, chia nhỏ nhiệm vụ, cập nhật tiến độ và lưu trữ thông tin mà không phụ thuộc vào trí nhớ.
 
-Đối với quá trình thực tập và làm đồ án, phần này có giá trị thực tiễn vì các dự án công nghệ thường yêu cầu sự phối hợp giữa nhiều thành viên. Tôi nhận thấy rằng kỹ năng kỹ thuật là cần thiết, nhưng kỹ năng giao tiếp, quản lý công việc và trách nhiệm cá nhân cũng ảnh hưởng trực tiếp đến kết quả của dự án.
+Với tôi, phần này rất hợp với thực tế thực tập vì project công nghệ hiếm khi là việc của một người. Kết quả tốt thường đến từ việc cả nhóm giao tiếp rõ và mỗi người làm đúng phần mình.
 
-### 2.6. GraphRAG - Build GraphRAG Applications Using Amazon Bedrock and Amazon Neptune
+### 2.6. GraphRAG với Bedrock và Neptune
 
-Phần trình bày về GraphRAG giới thiệu một hướng tiếp cận mới trong lĩnh vực trí tuệ nhân tạo, kết hợp giữa Retrieval-Augmented Generation và dữ liệu dạng đồ thị. RAG truyền thống giúp mô hình ngôn ngữ lớn truy xuất thông tin từ kho dữ liệu bên ngoài để tạo câu trả lời có căn cứ hơn. Tuy nhiên, khi câu hỏi cần suy luận qua nhiều thực thể và nhiều mối quan hệ, GraphRAG có thể hỗ trợ tốt hơn nhờ khả năng biểu diễn dữ liệu dưới dạng node và edge.
+Phiên cuối về GraphRAG giới thiệu một hướng mới trong AI, nơi Retrieval-Augmented Generation được kết hợp với cấu trúc đồ thị. RAG truyền thống giúp mô hình ngôn ngữ lấy thông tin từ nguồn ngoài để trả lời chắc hơn, còn GraphRAG hữu ích hơn khi câu hỏi cần suy luận qua nhiều thực thể và mối quan hệ giữa chúng.
 
-Diễn giả trình bày cách xây dựng ứng dụng GraphRAG bằng Amazon Bedrock và Amazon Neptune. Trong đó, Amazon Bedrock hỗ trợ làm việc với các mô hình AI tạo sinh và knowledge base, còn Amazon Neptune đóng vai trò lưu trữ và xử lý dữ liệu đồ thị. Sự kết hợp này giúp hệ thống không chỉ tìm kiếm thông tin theo nội dung, mà còn khai thác được quan hệ giữa các thực thể để cải thiện khả năng suy luận.
+Diễn giả mô tả cách xây dựng ứng dụng GraphRAG bằng Amazon Bedrock và Amazon Neptune. Bedrock đảm nhiệm phần mô hình AI sinh sinh, còn Neptune lưu trữ và xử lý dữ liệu đồ thị. Sự kết hợp này giúp hệ thống vừa tìm theo nội dung, vừa tìm theo quan hệ để suy luận tốt hơn.
 
-Qua phần này, tôi có thêm góc nhìn về việc ứng dụng AWS trong lĩnh vực AI. Nội dung giúp tôi hiểu rằng cloud không chỉ cung cấp tài nguyên máy chủ, lưu trữ hoặc mạng, mà còn cung cấp các dịch vụ cấp cao phục vụ xây dựng ứng dụng thông minh, đặc biệt là các hệ thống hỏi đáp, tìm kiếm tri thức và phân tích dữ liệu phức tạp.
+Điều này cho tôi một góc nhìn rộng hơn về AWS trong AI. Cloud không chỉ cung cấp máy chủ, mạng hay lưu trữ, mà còn có thể hỗ trợ xây dựng các hệ thống thông minh phục vụ hỏi đáp, tìm kiếm tri thức và phân tích dữ liệu phức tạp.
 
 ## 3. Bài học rút ra
 
-Sau khi tham gia sự kiện, tôi rút ra được nhiều bài học liên quan đến cả kỹ thuật và kỹ năng nghề nghiệp. Về mặt kỹ thuật, tôi hiểu rõ hơn vai trò của Docker trong triển khai ứng dụng, cách AWS hỗ trợ xây dựng kiến trúc serverless, tầm quan trọng của bảo mật nhiều lớp và tiềm năng của AI trên nền tảng AWS. Các chủ đề như WebSocket, Machine Learning-based NIDS và GraphRAG giúp tôi nhận thấy rằng hệ sinh thái AWS có thể được ứng dụng trong nhiều lĩnh vực khác nhau, từ bảo mật, game, backend thời gian thực đến trí tuệ nhân tạo.
+Sau sự kiện, tôi rút ra được cả bài học kỹ thuật lẫn bài học về nghề nghiệp. Về kỹ thuật, tôi hiểu rõ hơn vai trò của Docker trong triển khai ứng dụng, cách AWS hỗ trợ kiến trúc serverless, tầm quan trọng của bảo mật nhiều lớp và tiềm năng của AI trên nền tảng AWS. Các chủ đề như WebSocket, machine-learning-based NIDS và GraphRAG cho thấy hệ sinh thái AWS có thể đi vào nhiều hướng khác nhau, từ bảo mật, game, backend thời gian thực cho đến AI.
 
-Về định hướng nghề nghiệp, buổi chia sẻ của diễn giả về hành trình từ IT Helpdesk đến Senior Sysadmin giúp tôi nhận ra rằng việc phát triển trong ngành công nghệ cần bắt đầu từ nền tảng vững chắc và quá trình học tập liên tục. Những kỹ năng như networking, Linux, troubleshooting, monitoring, automation và documentation đều rất quan trọng đối với người làm cloud hoặc DevOps.
+Về định hướng nghề nghiệp, phiên chia sẻ từ IT Helpdesk đến Senior Sysadmin nhắc tôi rằng con đường phát triển trong ngành công nghệ phải bắt đầu từ nền tảng chắc và sự học hỏi liên tục. Những kỹ năng như networking, Linux, troubleshooting, monitoring, automation và documentation đều rất quan trọng với người làm cloud hoặc DevOps.
 
-Về kỹ năng mềm, phần trình bày về teamwork giúp tôi hiểu rằng làm việc nhóm hiệu quả cần có mục tiêu chung, phân công rõ ràng, giao tiếp thường xuyên và tinh thần trách nhiệm. Đây là những yếu tố cần thiết không chỉ trong thực tập mà còn trong môi trường doanh nghiệp sau này.
+Về kỹ năng mềm, phần teamwork cho tôi thấy làm việc nhóm hiệu quả cần có mục tiêu chung, phân công rõ ràng, giao tiếp thường xuyên và tinh thần trách nhiệm. Những điều này cần thiết không chỉ trong thực tập mà cả trong môi trường doanh nghiệp sau này.
 
 ## 4. Đóng góp cá nhân
 
-Trong quá trình tham gia sự kiện, tôi chủ động lắng nghe các phần trình bày, ghi chú lại những nội dung liên quan đến AWS, Docker, bảo mật, serverless và AI để phục vụ cho báo cáo thực tập. Tôi cũng đối chiếu các kiến thức được chia sẻ với những nội dung đã học trong chương trình AWS Study Group nhằm củng cố lại kiến thức nền tảng và nhận diện các chủ đề cần tiếp tục tìm hiểu sâu hơn.
+Trong lúc tham gia sự kiện, tôi chủ động nghe và ghi chú lại các nội dung liên quan đến AWS, Docker, bảo mật, serverless và AI để đưa vào báo cáo thực tập. Tôi cũng đối chiếu những gì nghe được với kiến thức đã học trong chương trình AWS Study Group để củng cố nền tảng và xác định phần nào cần học sâu hơn.
 
-Bên cạnh đó, tôi xem sự kiện là cơ hội để định hướng lại kế hoạch học tập cá nhân. Sau buổi event, tôi xác định cần tiếp tục rèn luyện thêm các kỹ năng thực hành như triển khai ứng dụng bằng Docker, tìm hiểu các dịch vụ serverless của AWS, nâng cao kiến thức bảo mật cloud và thực hành các mô hình triển khai ứng dụng thực tế.
+Bên cạnh đó, tôi xem sự kiện như một dấu mốc để chỉnh lại kế hoạch học của mình. Sau buổi event, tôi thấy rõ rằng mình cần tiếp tục luyện Docker, tìm hiểu sâu hơn về dịch vụ serverless của AWS, tăng cường kiến thức bảo mật cloud và thực hành thêm các mô hình triển khai ứng dụng thực tế.
 
 ## 5. Kết luận
 
-Nhìn chung, sự kiện AWS First Cloud Journey Community Day đã mang lại cho tôi nhiều kiến thức thực tế và góc nhìn đa chiều về lĩnh vực cloud computing. Các nội dung được trình bày không chỉ giúp tôi hiểu thêm về các dịch vụ và công nghệ liên quan đến AWS, mà còn giúp tôi nhận thức rõ hơn về yêu cầu kỹ năng của ngành công nghệ thông tin hiện nay.
-
-Thông qua buổi event, tôi có thêm động lực để tiếp tục học tập, thực hành và hoàn thiện các kỹ năng cần thiết cho định hướng nghề nghiệp trong tương lai, đặc biệt là các mảng Cloud, DevOps, Backend và AI ứng dụng trên nền tảng AWS.
+AWS First Cloud Journey Community Day mang lại cho tôi một bức tranh thực tế hơn về mối liên hệ giữa cloud, DevOps, bảo mật và AI. Sự kiện cũng cho thấy phát triển nghề nghiệp trong ngành công nghệ không chỉ dựa vào kiến thức kỹ thuật, mà còn cần sự bền bỉ, kỹ năng giao tiếp và khả năng học hỏi từ những người đang làm việc trong ngành.
 
 ## Hình ảnh sự kiện
 
 Một số hình ảnh được ghi lại trong quá trình tham gia sự kiện:
 
 ![AWS First Cloud Journey Community Day](/HUGO/images/4-EventParticipated/4.1-Event1/z7976498940486_4005b6c6d8361abe3f1b76bdf4dd74ef.jpg)
-
