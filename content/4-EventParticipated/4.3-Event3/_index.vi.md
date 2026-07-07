@@ -1,4 +1,4 @@
----
+﻿---
 title: "AWS & Swinburne Vietnam Cloud Computing Study Tour"
 date: 2024-01-01
 weight: 3
@@ -8,111 +8,112 @@ pre: " <b> 4.3. </b> "
 
 # Event 3 - AWS & Swinburne Vietnam Cloud Computing Study Tour
 
-## Thông tin sự kiện
+## ThĂ´ng tin sá»± kiá»‡n
 
-| Nội dung | Chi tiết |
+| Ná»™i dung | Chi tiáº¿t |
 | --- | --- |
-| Tên sự kiện | AWS & Swinburne Vietnam Cloud Computing Study Tour |
-| Hình thức | Video/phiên chia sẻ kiến thức và định hướng nghề nghiệp |
-| Thời gian | Không ghi rõ trong tài liệu cung cấp |
-| Đơn vị liên quan | AWS, Swinburne Vietnam, cộng đồng First Cloud AI Journey và các khách mời trong ngành |
-| Vai trò | Người theo dõi nội dung sự kiện |
-| Chủ đề chính | Cloud Computing, thị trường việc làm cloud, kỹ năng nghề nghiệp, data engineering, AI, giao tiếp, networking và tư duy phát triển |
+| TĂªn sá»± kiá»‡n | AWS & Swinburne Vietnam Cloud Computing Study Tour |
+| HĂ¬nh thá»©c | Video/phiĂªn chia sáº» kiáº¿n thá»©c vĂ  Ä‘á»‹nh hÆ°á»›ng nghá» nghiá»‡p |
+| Thá»i gian | KhĂ´ng ghi rĂµ trong tĂ i liá»‡u cung cáº¥p |
+| ÄÆ¡n vá»‹ liĂªn quan | AWS, Swinburne Vietnam, cá»™ng Ä‘á»“ng First Cloud AI Journey vĂ  cĂ¡c khĂ¡ch má»i trong ngĂ nh |
+| Vai trĂ² | NgÆ°á»i theo dĂµi ná»™i dung sá»± kiá»‡n |
+| Chá»§ Ä‘á» chĂ­nh | Cloud Computing, thá»‹ trÆ°á»ng viá»‡c lĂ m cloud, ká»¹ nÄƒng nghá» nghiá»‡p, data engineering, AI, giao tiáº¿p, networking vĂ  tÆ° duy phĂ¡t triá»ƒn |
 
-## Tổng quan
+## Tá»•ng quan
 
-Sự kiện AWS & Swinburne Vietnam Cloud Computing Study Tour là một buổi chia sẻ kiến thức và định hướng nghề nghiệp dành cho sinh viên quan tâm đến cloud computing và ngành công nghệ thông tin. Nội dung có sự tham gia của đại diện AWS, chuyên gia trong lĩnh vực data engineering, account management và solution architecture.
+Sá»± kiá»‡n AWS & Swinburne Vietnam Cloud Computing Study Tour lĂ  má»™t buá»•i chia sáº» kiáº¿n thá»©c vĂ  Ä‘á»‹nh hÆ°á»›ng nghá» nghiá»‡p dĂ nh cho sinh viĂªn quan tĂ¢m Ä‘áº¿n cloud computing vĂ  ngĂ nh cĂ´ng nghá»‡ thĂ´ng tin. Ná»™i dung cĂ³ sá»± tham gia cá»§a Ä‘áº¡i diá»‡n AWS, chuyĂªn gia trong lÄ©nh vá»±c data engineering, account management vĂ  solution architecture.
 
-Buổi chia sẻ không chỉ tập trung vào dịch vụ AWS hay kiến trúc cloud, mà còn mở rộng sang các vấn đề thực tế của thị trường lao động: doanh nghiệp đang cần kỹ năng gì, sinh viên cần chuẩn bị ra sao, AI đang thay đổi cách học và cách làm việc như thế nào, cũng như vai trò của cộng đồng trong quá trình phát triển nghề nghiệp.
+Buá»•i chia sáº» khĂ´ng chá»‰ táº­p trung vĂ o dá»‹ch vá»¥ AWS hay kiáº¿n trĂºc cloud, mĂ  cĂ²n má»Ÿ rá»™ng sang cĂ¡c váº¥n Ä‘á» thá»±c táº¿ cá»§a thá»‹ trÆ°á»ng lao Ä‘á»™ng: doanh nghiá»‡p Ä‘ang cáº§n ká»¹ nÄƒng gĂ¬, sinh viĂªn cáº§n chuáº©n bá»‹ ra sao, AI Ä‘ang thay Ä‘á»•i cĂ¡ch há»c vĂ  cĂ¡ch lĂ m viá»‡c nhÆ° tháº¿ nĂ o, cÅ©ng nhÆ° vai trĂ² cá»§a cá»™ng Ä‘á»“ng trong quĂ¡ trĂ¬nh phĂ¡t triá»ƒn nghá» nghiá»‡p.
 
-## Nội dung chính
+## Ná»™i dung chĂ­nh
 
-### Quan hệ hợp tác AWS và Swinburne Vietnam
+### Quan há»‡ há»£p tĂ¡c AWS vĂ  Swinburne Vietnam
 
-Phần mở đầu giới thiệu mục đích của chương trình study tour và sự kết nối giữa AWS với sinh viên Swinburne Vietnam. Nội dung này giúp người tham dự hiểu rằng cloud computing không chỉ là một nhóm công nghệ riêng lẻ, mà đang trở thành nền tảng quan trọng trong nhiều doanh nghiệp và ngành nghề.
+Pháº§n má»Ÿ Ä‘áº§u giá»›i thiá»‡u má»¥c Ä‘Ă­ch cá»§a chÆ°Æ¡ng trĂ¬nh study tour vĂ  sá»± káº¿t ná»‘i giá»¯a AWS vá»›i sinh viĂªn Swinburne Vietnam. Ná»™i dung nĂ y giĂºp ngÆ°á»i tham dá»± hiá»ƒu ráº±ng cloud computing khĂ´ng chá»‰ lĂ  má»™t nhĂ³m cĂ´ng nghá»‡ riĂªng láº», mĂ  Ä‘ang trá»Ÿ thĂ nh ná»n táº£ng quan trá»ng trong nhiá»u doanh nghiá»‡p vĂ  ngĂ nh nghá».
 
-Thông qua chương trình, sinh viên có cơ hội tiếp cận góc nhìn thực tế từ doanh nghiệp, hiểu thêm cách các công ty ứng dụng cloud, đồng thời nhìn rõ hơn các yêu cầu về kỹ năng khi bước vào thị trường việc làm.
+ThĂ´ng qua chÆ°Æ¡ng trĂ¬nh, sinh viĂªn cĂ³ cÆ¡ há»™i tiáº¿p cáº­n gĂ³c nhĂ¬n thá»±c táº¿ tá»« doanh nghiá»‡p, hiá»ƒu thĂªm cĂ¡ch cĂ¡c cĂ´ng ty á»©ng dá»¥ng cloud, Ä‘á»“ng thá»i nhĂ¬n rĂµ hÆ¡n cĂ¡c yĂªu cáº§u vá» ká»¹ nÄƒng khi bÆ°á»›c vĂ o thá»‹ trÆ°á»ng viá»‡c lĂ m.
 
-### Xu hướng thị trường Cloud Computing tại Việt Nam
+### Xu hÆ°á»›ng thá»‹ trÆ°á»ng Cloud Computing táº¡i Viá»‡t Nam
 
-Đại diện AWS Vietnam chia sẻ về tốc độ phát triển của thị trường cloud, nhu cầu nhân sự và sự thay đổi trong cách doanh nghiệp triển khai hạ tầng công nghệ. Một điểm đáng chú ý là nhiều doanh nghiệp hiện nay ưu tiên tư duy **Cloud First**, tức là cân nhắc giải pháp cloud trước khi chọn hạ tầng truyền thống.
+Äáº¡i diá»‡n AWS Vietnam chia sáº» vá» tá»‘c Ä‘á»™ phĂ¡t triá»ƒn cá»§a thá»‹ trÆ°á»ng cloud, nhu cáº§u nhĂ¢n sá»± vĂ  sá»± thay Ä‘á»•i trong cĂ¡ch doanh nghiá»‡p triá»ƒn khai háº¡ táº§ng cĂ´ng nghá»‡. Má»™t Ä‘iá»ƒm Ä‘Ă¡ng chĂº Ă½ lĂ  nhiá»u doanh nghiá»‡p hiá»‡n nay Æ°u tiĂªn tÆ° duy **Cloud First**, tá»©c lĂ  cĂ¢n nháº¯c giáº£i phĂ¡p cloud trÆ°á»›c khi chá»n háº¡ táº§ng truyá»n thá»‘ng.
 
-Nội dung cũng nhấn mạnh rằng yêu cầu dành cho nhân sự cloud ngày càng cao. Ngay cả các vị trí fresher hoặc intern cũng cần hiểu các khái niệm nền tảng như cloud-native architecture, Kubernetes, networking, security và khả năng học nhanh các công cụ mới.
+Ná»™i dung cÅ©ng nháº¥n máº¡nh ráº±ng yĂªu cáº§u dĂ nh cho nhĂ¢n sá»± cloud ngĂ y cĂ ng cao. Ngay cáº£ cĂ¡c vá»‹ trĂ­ fresher hoáº·c intern cÅ©ng cáº§n hiá»ƒu cĂ¡c khĂ¡i niá»‡m ná»n táº£ng nhÆ° cloud-native architecture, Kubernetes, networking, security vĂ  kháº£ nÄƒng há»c nhanh cĂ¡c cĂ´ng cá»¥ má»›i.
 
-### Cộng đồng First Cloud AI Journey và vai trò của việc học liên tục
+### Cá»™ng Ä‘á»“ng First Cloud AI Journey vĂ  vai trĂ² cá»§a viá»‡c há»c liĂªn tá»¥c
 
-Sự kiện đề cập đến cộng đồng First Cloud AI Journey như một môi trường giúp sinh viên và người mới đi làm tiếp cận kiến thức cloud, AI và kinh nghiệm thực tế từ cộng đồng. Bài học quan trọng là năng lực chuyên môn cần đi cùng khả năng hiện diện trong cộng đồng và sự kiên trì học tập.
+Sá»± kiá»‡n Ä‘á» cáº­p Ä‘áº¿n cá»™ng Ä‘á»“ng First Cloud AI Journey nhÆ° má»™t mĂ´i trÆ°á»ng giĂºp sinh viĂªn vĂ  ngÆ°á»i má»›i Ä‘i lĂ m tiáº¿p cáº­n kiáº¿n thá»©c cloud, AI vĂ  kinh nghiá»‡m thá»±c táº¿ tá»« cá»™ng Ä‘á»“ng. BĂ i há»c quan trá»ng lĂ  nÄƒng lá»±c chuyĂªn mĂ´n cáº§n Ä‘i cĂ¹ng kháº£ nÄƒng hiá»‡n diá»‡n trong cá»™ng Ä‘á»“ng vĂ  sá»± kiĂªn trĂ¬ há»c táº­p.
 
-Một mô hình được nhấn mạnh trong sự kiện là:
+Má»™t mĂ´ hĂ¬nh Ä‘Æ°á»£c nháº¥n máº¡nh trong sá»± kiá»‡n lĂ :
 
 ```text
 Career Growth = Capability x Visibility x Consistency
 ```
 
-Trong đó, **Capability** là năng lực chuyên môn, **Visibility** là khả năng được cộng đồng và doanh nghiệp nhìn thấy, còn **Consistency** là sự bền bỉ trong quá trình học tập và thực hành.
+Trong Ä‘Ă³, **Capability** lĂ  nÄƒng lá»±c chuyĂªn mĂ´n, **Visibility** lĂ  kháº£ nÄƒng Ä‘Æ°á»£c cá»™ng Ä‘á»“ng vĂ  doanh nghiá»‡p nhĂ¬n tháº¥y, cĂ²n **Consistency** lĂ  sá»± bá»n bá»‰ trong quĂ¡ trĂ¬nh há»c táº­p vĂ  thá»±c hĂ nh.
 
-### Khác biệt giữa học thuật và công việc Data Engineering thực tế
+### KhĂ¡c biá»‡t giá»¯a há»c thuáº­t vĂ  cĂ´ng viá»‡c Data Engineering thá»±c táº¿
 
-Phần chia sẻ của chuyên gia data engineering cho thấy sự khác biệt lớn giữa bài tập trong trường và dự án thực tế. Trong môi trường học thuật, dữ liệu thường sạch, phạm vi bài toán rõ và thời gian linh hoạt. Ngược lại, công việc thực tế thường có dữ liệu không hoàn chỉnh, yêu cầu thay đổi nhanh và kết quả ảnh hưởng trực tiếp đến quyết định kinh doanh.
+Pháº§n chia sáº» cá»§a chuyĂªn gia data engineering cho tháº¥y sá»± khĂ¡c biá»‡t lá»›n giá»¯a bĂ i táº­p trong trÆ°á»ng vĂ  dá»± Ă¡n thá»±c táº¿. Trong mĂ´i trÆ°á»ng há»c thuáº­t, dá»¯ liá»‡u thÆ°á»ng sáº¡ch, pháº¡m vi bĂ i toĂ¡n rĂµ vĂ  thá»i gian linh hoáº¡t. NgÆ°á»£c láº¡i, cĂ´ng viá»‡c thá»±c táº¿ thÆ°á»ng cĂ³ dá»¯ liá»‡u khĂ´ng hoĂ n chá»‰nh, yĂªu cáº§u thay Ä‘á»•i nhanh vĂ  káº¿t quáº£ áº£nh hÆ°á»Ÿng trá»±c tiáº¿p Ä‘áº¿n quyáº¿t Ä‘á»‹nh kinh doanh.
 
-Vì vậy, ngoài kỹ năng lập trình, người làm data hoặc cloud cần hiểu thêm về chất lượng dữ liệu, xử lý lỗi, bảo mật, API, hệ thống phân tán và cách phối hợp với nhiều đội khác nhau trong doanh nghiệp.
+VĂ¬ váº­y, ngoĂ i ká»¹ nÄƒng láº­p trĂ¬nh, ngÆ°á»i lĂ m data hoáº·c cloud cáº§n hiá»ƒu thĂªm vá» cháº¥t lÆ°á»£ng dá»¯ liá»‡u, xá»­ lĂ½ lá»—i, báº£o máº­t, API, há»‡ thá»‘ng phĂ¢n tĂ¡n vĂ  cĂ¡ch phá»‘i há»£p vá»›i nhiá»u Ä‘á»™i khĂ¡c nhau trong doanh nghiá»‡p.
 
-### AI trong học tập và công việc
+### AI trong há»c táº­p vĂ  cĂ´ng viá»‡c
 
-Sự kiện cũng đề cập đến vai trò của AI trong quá trình học tập và làm việc. AI có thể hỗ trợ viết code, tạo sơ đồ, tóm tắt tài liệu hoặc gợi ý hướng giải quyết vấn đề. Tuy nhiên, người học không nên phụ thuộc hoàn toàn vào AI mà cần kiểm chứng kết quả, hiểu bản chất vấn đề và giữ tư duy phản biện.
+Sá»± kiá»‡n cÅ©ng Ä‘á» cáº­p Ä‘áº¿n vai trĂ² cá»§a AI trong quĂ¡ trĂ¬nh há»c táº­p vĂ  lĂ m viá»‡c. AI cĂ³ thá»ƒ há»— trá»£ viáº¿t code, táº¡o sÆ¡ Ä‘á»“, tĂ³m táº¯t tĂ i liá»‡u hoáº·c gá»£i Ă½ hÆ°á»›ng giáº£i quyáº¿t váº¥n Ä‘á». Tuy nhiĂªn, ngÆ°á»i há»c khĂ´ng nĂªn phá»¥ thuá»™c hoĂ n toĂ n vĂ o AI mĂ  cáº§n kiá»ƒm chá»©ng káº¿t quáº£, hiá»ƒu báº£n cháº¥t váº¥n Ä‘á» vĂ  giá»¯ tÆ° duy pháº£n biá»‡n.
 
-Đây là điểm rất quan trọng đối với sinh viên công nghệ vì tốc độ thay đổi của AI khiến kỹ năng học nhanh, chọn lọc thông tin và hiểu nền tảng trở nên cần thiết hơn bao giờ hết.
+ÄĂ¢y lĂ  Ä‘iá»ƒm ráº¥t quan trá»ng Ä‘á»‘i vá»›i sinh viĂªn cĂ´ng nghá»‡ vĂ¬ tá»‘c Ä‘á»™ thay Ä‘á»•i cá»§a AI khiáº¿n ká»¹ nÄƒng há»c nhanh, chá»n lá»c thĂ´ng tin vĂ  hiá»ƒu ná»n táº£ng trá»Ÿ nĂªn cáº§n thiáº¿t hÆ¡n bao giá» háº¿t.
 
-### Kỹ năng mềm, giao tiếp và tư duy nghề nghiệp
+### Ká»¹ nÄƒng má»m, giao tiáº¿p vĂ  tÆ° duy nghá» nghiá»‡p
 
-Các phần chia sẻ về kỹ năng mềm nhấn mạnh rằng sự nghiệp trong ngành công nghệ không chỉ phụ thuộc vào kỹ năng kỹ thuật. Người mới đi làm cần rèn luyện khả năng giao tiếp, đặt câu hỏi, vượt qua nỗi sợ sai, chủ động trao đổi với đồng nghiệp và xây dựng sự tin tưởng trong môi trường làm việc.
+CĂ¡c pháº§n chia sáº» vá» ká»¹ nÄƒng má»m nháº¥n máº¡nh ráº±ng sá»± nghiá»‡p trong ngĂ nh cĂ´ng nghá»‡ khĂ´ng chá»‰ phá»¥ thuá»™c vĂ o ká»¹ nÄƒng ká»¹ thuáº­t. NgÆ°á»i má»›i Ä‘i lĂ m cáº§n rĂ¨n luyá»‡n kháº£ nÄƒng giao tiáº¿p, Ä‘áº·t cĂ¢u há»i, vÆ°á»£t qua ná»—i sá»£ sai, chá»§ Ä‘á»™ng trao Ä‘á»•i vá»›i Ä‘á»“ng nghiá»‡p vĂ  xĂ¢y dá»±ng sá»± tin tÆ°á»Ÿng trong mĂ´i trÆ°á»ng lĂ m viá»‡c.
 
-Một số lời khuyên thực tế được nhắc đến gồm: không ngại hỏi khi chưa hiểu, biết cách trình bày vấn đề, chủ động tìm cơ hội, giữ thái độ cầu tiến và xem thất bại là một phần của quá trình trưởng thành.
+Má»™t sá»‘ lá»i khuyĂªn thá»±c táº¿ Ä‘Æ°á»£c nháº¯c Ä‘áº¿n gá»“m: khĂ´ng ngáº¡i há»i khi chÆ°a hiá»ƒu, biáº¿t cĂ¡ch trĂ¬nh bĂ y váº¥n Ä‘á», chá»§ Ä‘á»™ng tĂ¬m cÆ¡ há»™i, giá»¯ thĂ¡i Ä‘á»™ cáº§u tiáº¿n vĂ  xem tháº¥t báº¡i lĂ  má»™t pháº§n cá»§a quĂ¡ trĂ¬nh trÆ°á»Ÿng thĂ nh.
 
-### Góc nhìn từ Solution Architect và cựu sinh viên
+### GĂ³c nhĂ¬n tá»« Solution Architect vĂ  cá»±u sinh viĂªn
 
-Phần chia sẻ cuối đưa ra nhiều lời khuyên về con đường phát triển của sinh viên công nghệ. Diễn giả nhấn mạnh rằng chương trình học ở trường là nền tảng quan trọng, nhưng chưa đủ để sẵn sàng cho môi trường doanh nghiệp. Sinh viên cần chủ động làm project, tham gia cộng đồng, học cách dùng AI hiệu quả và phát triển tư duy đặt câu hỏi.
+Pháº§n chia sáº» cuá»‘i Ä‘Æ°a ra nhiá»u lá»i khuyĂªn vá» con Ä‘Æ°á»ng phĂ¡t triá»ƒn cá»§a sinh viĂªn cĂ´ng nghá»‡. Diá»…n giáº£ nháº¥n máº¡nh ráº±ng chÆ°Æ¡ng trĂ¬nh há»c á»Ÿ trÆ°á»ng lĂ  ná»n táº£ng quan trá»ng, nhÆ°ng chÆ°a Ä‘á»§ Ä‘á»ƒ sáºµn sĂ ng cho mĂ´i trÆ°á»ng doanh nghiá»‡p. Sinh viĂªn cáº§n chá»§ Ä‘á»™ng lĂ m project, tham gia cá»™ng Ä‘á»“ng, há»c cĂ¡ch dĂ¹ng AI hiá»‡u quáº£ vĂ  phĂ¡t triá»ƒn tÆ° duy Ä‘áº·t cĂ¢u há»i.
 
-Một điểm đáng chú ý là nhà tuyển dụng thường đánh giá cao **thái độ**, sau đó mới đến kỹ năng, kinh nghiệm và đặc điểm cá nhân. Điều này cho thấy người mới bắt đầu cần chứng minh được khả năng học hỏi, tính kỷ luật và tinh thần chịu trách nhiệm trong công việc.
+Má»™t Ä‘iá»ƒm Ä‘Ă¡ng chĂº Ă½ lĂ  nhĂ  tuyá»ƒn dá»¥ng thÆ°á»ng Ä‘Ă¡nh giĂ¡ cao **thĂ¡i Ä‘á»™**, sau Ä‘Ă³ má»›i Ä‘áº¿n ká»¹ nÄƒng, kinh nghiá»‡m vĂ  Ä‘áº·c Ä‘iá»ƒm cĂ¡ nhĂ¢n. Äiá»u nĂ y cho tháº¥y ngÆ°á»i má»›i báº¯t Ä‘áº§u cáº§n chá»©ng minh Ä‘Æ°á»£c kháº£ nÄƒng há»c há»i, tĂ­nh ká»· luáº­t vĂ  tinh tháº§n chá»‹u trĂ¡ch nhiá»‡m trong cĂ´ng viá»‡c.
 
-## Kiến thức rút ra
+## Kiáº¿n thá»©c rĂºt ra
 
-- Cloud computing tại Việt Nam đang phát triển nhanh và tạo ra nhiều cơ hội nghề nghiệp mới.
-- Doanh nghiệp ngày càng cần nhân sự có nền tảng cloud, hiểu kiến trúc hệ thống và có khả năng thích nghi với AI.
-- Sinh viên không nên chỉ học lý thuyết, mà cần thực hành qua project, cộng đồng và các tình huống gần với thực tế.
-- AI là công cụ hỗ trợ mạnh, nhưng vẫn cần tư duy phản biện và khả năng kiểm chứng kết quả.
-- Kỹ năng giao tiếp, đặt câu hỏi, networking và sự kiên trì có ảnh hưởng lớn đến cơ hội nghề nghiệp.
-- Data engineering và cloud engineering đều yêu cầu hiểu cả kỹ thuật lẫn bối cảnh nghiệp vụ.
-- Phát triển nghề nghiệp cần kết hợp giữa năng lực, sự hiện diện trong cộng đồng và sự nhất quán trong quá trình học tập.
+- Cloud computing táº¡i Viá»‡t Nam Ä‘ang phĂ¡t triá»ƒn nhanh vĂ  táº¡o ra nhiá»u cÆ¡ há»™i nghá» nghiá»‡p má»›i.
+- Doanh nghiá»‡p ngĂ y cĂ ng cáº§n nhĂ¢n sá»± cĂ³ ná»n táº£ng cloud, hiá»ƒu kiáº¿n trĂºc há»‡ thá»‘ng vĂ  cĂ³ kháº£ nÄƒng thĂ­ch nghi vá»›i AI.
+- Sinh viĂªn khĂ´ng nĂªn chá»‰ há»c lĂ½ thuyáº¿t, mĂ  cáº§n thá»±c hĂ nh qua project, cá»™ng Ä‘á»“ng vĂ  cĂ¡c tĂ¬nh huá»‘ng gáº§n vá»›i thá»±c táº¿.
+- AI lĂ  cĂ´ng cá»¥ há»— trá»£ máº¡nh, nhÆ°ng váº«n cáº§n tÆ° duy pháº£n biá»‡n vĂ  kháº£ nÄƒng kiá»ƒm chá»©ng káº¿t quáº£.
+- Ká»¹ nÄƒng giao tiáº¿p, Ä‘áº·t cĂ¢u há»i, networking vĂ  sá»± kiĂªn trĂ¬ cĂ³ áº£nh hÆ°á»Ÿng lá»›n Ä‘áº¿n cÆ¡ há»™i nghá» nghiá»‡p.
+- Data engineering vĂ  cloud engineering Ä‘á»u yĂªu cáº§u hiá»ƒu cáº£ ká»¹ thuáº­t láº«n bá»‘i cáº£nh nghiá»‡p vá»¥.
+- PhĂ¡t triá»ƒn nghá» nghiá»‡p cáº§n káº¿t há»£p giá»¯a nÄƒng lá»±c, sá»± hiá»‡n diá»‡n trong cá»™ng Ä‘á»“ng vĂ  sá»± nháº¥t quĂ¡n trong quĂ¡ trĂ¬nh há»c táº­p.
 
-## Liên hệ với project EAM Workspace
+## LiĂªn há»‡ vá»›i project EAM Workspace
 
-Nội dung sự kiện có liên hệ rõ với project EAM Workspace. Khi xây dựng một hệ thống quản lý tài sản doanh nghiệp, việc hiểu bài toán nghiệp vụ quan trọng không kém việc triển khai kỹ thuật. Hệ thống không chỉ cần có frontend, backend và database, mà còn cần giải quyết được nhu cầu thực tế như quản lý tài sản, phân quyền người dùng, truy vết lịch sử, hỗ trợ báo cáo và đảm bảo dữ liệu có thể được sử dụng lâu dài.
+Ná»™i dung sá»± kiá»‡n cĂ³ liĂªn há»‡ rĂµ vá»›i project EAM Workspace. Khi xĂ¢y dá»±ng má»™t há»‡ thá»‘ng quáº£n lĂ½ tĂ i sáº£n doanh nghiá»‡p, viá»‡c hiá»ƒu bĂ i toĂ¡n nghiá»‡p vá»¥ quan trá»ng khĂ´ng kĂ©m viá»‡c triá»ƒn khai ká»¹ thuáº­t. Há»‡ thá»‘ng khĂ´ng chá»‰ cáº§n cĂ³ frontend, backend vĂ  database, mĂ  cĂ²n cáº§n giáº£i quyáº¿t Ä‘Æ°á»£c nhu cáº§u thá»±c táº¿ nhÆ° quáº£n lĂ½ tĂ i sáº£n, phĂ¢n quyá»n ngÆ°á»i dĂ¹ng, truy váº¿t lá»‹ch sá»­, há»— trá»£ bĂ¡o cĂ¡o vĂ  Ä‘áº£m báº£o dá»¯ liá»‡u cĂ³ thá»ƒ Ä‘Æ°á»£c sá»­ dá»¥ng lĂ¢u dĂ i.
 
-Từ góc nhìn cloud, project giúp thực hành các nội dung đã được nhắc đến trong sự kiện như triển khai ứng dụng lên AWS, kết nối backend với database, kiểm soát biến môi trường, kiểm tra health endpoint, monitoring và cleanup tài nguyên sau khi demo. Từ góc nhìn nghề nghiệp, quá trình làm project cũng giúp rèn luyện khả năng tự học, đọc tài liệu, xử lý lỗi và trình bày kết quả theo cách có thể chia sẻ lại cho người khác.
+Tá»« gĂ³c nhĂ¬n cloud, project giĂºp thá»±c hĂ nh cĂ¡c ná»™i dung Ä‘Ă£ Ä‘Æ°á»£c nháº¯c Ä‘áº¿n trong sá»± kiá»‡n nhÆ° triá»ƒn khai á»©ng dá»¥ng lĂªn AWS, káº¿t ná»‘i backend vá»›i database, kiá»ƒm soĂ¡t biáº¿n mĂ´i trÆ°á»ng, kiá»ƒm tra health endpoint, monitoring vĂ  cleanup tĂ i nguyĂªn sau khi demo. Tá»« gĂ³c nhĂ¬n nghá» nghiá»‡p, quĂ¡ trĂ¬nh lĂ m project cÅ©ng giĂºp rĂ¨n luyá»‡n kháº£ nÄƒng tá»± há»c, Ä‘á»c tĂ i liá»‡u, xá»­ lĂ½ lá»—i vĂ  trĂ¬nh bĂ y káº¿t quáº£ theo cĂ¡ch cĂ³ thá»ƒ chia sáº» láº¡i cho ngÆ°á»i khĂ¡c.
 
-## Kết luận
+## Káº¿t luáº­n
 
-AWS & Swinburne Vietnam Cloud Computing Study Tour mang lại cái nhìn toàn diện về thị trường cloud, yêu cầu nghề nghiệp và cách sinh viên công nghệ nên chuẩn bị cho tương lai. Sự kiện giúp củng cố nhận thức rằng muốn phát triển trong lĩnh vực cloud và AI, người học cần kết hợp nền tảng kỹ thuật, tư duy nghiệp vụ, kỹ năng giao tiếp, khả năng tự học và sự tham gia tích cực vào cộng đồng.
+AWS & Swinburne Vietnam Cloud Computing Study Tour mang láº¡i cĂ¡i nhĂ¬n toĂ n diá»‡n vá» thá»‹ trÆ°á»ng cloud, yĂªu cáº§u nghá» nghiá»‡p vĂ  cĂ¡ch sinh viĂªn cĂ´ng nghá»‡ nĂªn chuáº©n bá»‹ cho tÆ°Æ¡ng lai. Sá»± kiá»‡n giĂºp cá»§ng cá»‘ nháº­n thá»©c ráº±ng muá»‘n phĂ¡t triá»ƒn trong lÄ©nh vá»±c cloud vĂ  AI, ngÆ°á»i há»c cáº§n káº¿t há»£p ná»n táº£ng ká»¹ thuáº­t, tÆ° duy nghiá»‡p vá»¥, ká»¹ nÄƒng giao tiáº¿p, kháº£ nÄƒng tá»± há»c vĂ  sá»± tham gia tĂ­ch cá»±c vĂ o cá»™ng Ä‘á»“ng.
 
-## Hình ảnh sự kiện
+## HĂ¬nh áº£nh sá»± kiá»‡n
 
-Một số hình ảnh được ghi lại trong quá trình tham gia sự kiện:
+Má»™t sá»‘ hĂ¬nh áº£nh Ä‘Æ°á»£c ghi láº¡i trong quĂ¡ trĂ¬nh tham gia sá»± kiá»‡n:
 
-![AWS Swinburne Vietnam Cloud Computing Study Tour](../../images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20095726.png)
+![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20095726.png)
 
-![AWS Swinburne Vietnam Cloud Computing Study Tour](../../images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20101235.png)
+![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20101235.png)
 
-![AWS Swinburne Vietnam Cloud Computing Study Tour](../../images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20102142.png)
+![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20102142.png)
 
-![AWS Swinburne Vietnam Cloud Computing Study Tour](../../images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20105543.png)
+![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20105543.png)
 
-![AWS Swinburne Vietnam Cloud Computing Study Tour](../../images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20111017.png)
+![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20111017.png)
 
-![AWS Swinburne Vietnam Cloud Computing Study Tour](../../images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20112156.png)
+![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20112156.png)
 
-![AWS Swinburne Vietnam Cloud Computing Study Tour](../../images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20112741.png)
+![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20112741.png)
 
-![AWS Swinburne Vietnam Cloud Computing Study Tour](../../images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20114532.png)
+![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20114532.png)
 
-![AWS Swinburne Vietnam Cloud Computing Study Tour](../../images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20115045.png)
+![AWS Swinburne Vietnam Cloud Computing Study Tour](/HUGO/images/4-EventParticipated/4.3-Event3/Screenshot%202026-07-04%20115045.png)
+

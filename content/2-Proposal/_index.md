@@ -60,7 +60,9 @@ The application is deployed to AWS so that the frontend, backend, database, and 
 
 ### 4. Solution Architecture
 
-The proposed AWS deployment architecture follows a simple full-stack web application model for an internal demo environment. The current deployment mode does not require Route 53 or a custom domain. Users access the default AWS Amplify Hosting URL, and frontend API calls are rewritten through `/api/*` to Amazon API Gateway. API Gateway then forwards requests to the backend running on AWS Elastic Beanstalk, and the backend connects to Amazon RDS for MySQL.`r`n`r`n![Solution architecture overview](/HUGO/images/app.png)
+The proposed AWS deployment architecture follows a simple full-stack web application model for an internal demo environment. The current deployment mode does not require Route 53 or a custom domain. Users access the default AWS Amplify Hosting URL, and frontend API calls are rewritten through `/api/*` to Amazon API Gateway. API Gateway then forwards requests to the backend running on AWS Elastic Beanstalk, and the backend connects to Amazon RDS for MySQL.
+
+![Solution architecture overview](/HUGO/images/app.png)
 
 {{< mermaid >}}
 flowchart LR
