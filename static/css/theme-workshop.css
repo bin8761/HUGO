@@ -285,6 +285,58 @@ div.notices.info p {
   text-wrap: pretty;
 }
 
+.report-content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.report-content-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 132px;
+  padding: 1rem 1.05rem;
+  border: 1px solid rgba(120, 139, 165, 0.22);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(247, 249, 252, 0.96) 100%);
+  box-shadow: 0 8px 24px rgba(35, 52, 72, 0.06);
+  color: var(--MAIN-TEXT-color);
+  text-decoration: none !important;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.report-content-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(35, 52, 72, 0.11);
+  border-color: rgba(88, 111, 142, 0.38);
+}
+
+.report-content-card__index {
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--MENU-SECTION-ACTIVE-CATEGORY-color);
+}
+
+.report-content-card__title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.35;
+  color: var(--MAIN-TEXT-color);
+}
+
+.report-content-card__desc {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--MAIN-TEXT-color);
+  opacity: 0.86;
+}
+
 @media (max-width: 900px) {
   .student-card {
     grid-template-columns: 1fr;
@@ -295,6 +347,10 @@ div.notices.info p {
   }
 
   .student-card__meta {
+    grid-template-columns: 1fr;
+  }
+
+  .report-content-grid {
     grid-template-columns: 1fr;
   }
 }

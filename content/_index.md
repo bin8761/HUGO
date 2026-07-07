@@ -11,7 +11,7 @@ chapter: false
 ### Student Information:
 <div class="student-card">
   <figure class="student-card__portrait">
-    <img src="images/avatar.png" alt="Your profile picture" />
+    <img src="/HUGO/images/avatar.png" alt="Your profile picture" />
   </figure>
 
   <dl class="student-card__meta">
@@ -21,7 +21,7 @@ chapter: false
     </div>
     <div>
       <dt>Phone Number</dt>
-      <dd>03634784120363478412</dd>
+      <dd>0363478412</dd>
     </div>
     <div>
       <dt>Email</dt>
@@ -56,10 +56,40 @@ chapter: false
 
 ### Report Content
 
-1.  [Worklog](1-Worklog/)
-2.  [Proposal](2-Proposal/)
-3.  [Translated Blogs](3-BlogsTranslated/)
-4.  [Events Participated](4-EventParticipated/)
-5.  [Workshop](5-Workshop/)
-6.  [Self-evaluation](6-Self-evaluation/)
-7.  [Sharing and Feedback](7-Feedback/)
+<div class="report-content-grid">
+  <a class="report-content-card" href="1-Worklog/">
+    <div class="report-content-card__index">01</div>
+    <div class="report-content-card__title">Worklog</div>
+    <p class="report-content-card__desc">Weekly progress log from Week 1 to Week 12.</p>
+  </a>
+  <a class="report-content-card" href="2-Proposal/">
+    <div class="report-content-card__index">02</div>
+    <div class="report-content-card__title">Proposal</div>
+    <p class="report-content-card__desc">Project idea, architecture, and deployment plan.</p>
+  </a>
+  <a class="report-content-card" href="3-BlogsTranslated/">
+    <div class="report-content-card__index">03</div>
+    <div class="report-content-card__title">Translated Blogs</div>
+    <p class="report-content-card__desc">Selected technical blogs translated and illustrated.</p>
+  </a>
+  <a class="report-content-card" href="4-EventParticipated/">
+    <div class="report-content-card__index">04</div>
+    <div class="report-content-card__title">Events Participated</div>
+    <p class="report-content-card__desc">Workshops and events joined during the internship.</p>
+  </a>
+  <a class="report-content-card" href="5-Workshop/">
+    <div class="report-content-card__index">05</div>
+    <div class="report-content-card__title">Workshop</div>
+    <p class="report-content-card__desc">Step-by-step deployment and validation guide.</p>
+  </a>
+  <a class="report-content-card" href="6-Self-evaluation/">
+    <div class="report-content-card__index">06</div>
+    <div class="report-content-card__title">Self-Assessment</div>
+    <p class="report-content-card__desc">Personal review of learning progress and outcomes.</p>
+  </a>
+  <a class="report-content-card" href="7-Feedback/">
+    <div class="report-content-card__index">07</div>
+    <div class="report-content-card__title">Sharing and Feedback</div>
+    <p class="report-content-card__desc">Reflection, feedback, and lessons learned.</p>
+  </a>
+</div>

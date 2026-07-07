@@ -1,17 +1,16 @@
-﻿---
+---
 title: "Báo cáo thực tập"
 date: 2024-01-01
 weight: 1
 chapter: false
 ---
 
-    
 # Báo cáo thực tập
 
 ### Thông tin sinh viên:
 <div class="student-card">
   <figure class="student-card__portrait">
-    <img src="images/avatar.png" alt="Ảnh hồ sơ của bạn" />
+    <img src="/HUGO/images/avatar.png" alt="Ảnh hồ sơ của bạn" />
   </figure>
 
   <dl class="student-card__meta">
@@ -21,7 +20,7 @@ chapter: false
     </div>
     <div>
       <dt>Số điện thoại</dt>
-      <dd>03634784120363478412</dd>
+      <dd>0363478412</dd>
     </div>
     <div>
       <dt>Email</dt>
@@ -56,10 +55,40 @@ chapter: false
 
 ### Nội dung báo cáo
 
-1.  [Nhật kí làm việc](1-Worklog/)
-2.  [Đề xuất](2-Proposal/)
-3.  [Blog được dịch](3-BlogsTranslated/)
-4.  [Sự kiện đã tham gia](4-EventParticipated/)
-5.  [Xưởng](5-Workshop/)
-6.  [Tự đánh giá](6-Self-evaluation/)
-7.  [Chia sẻ và phản hồi](7-Feedback/)
+<div class="report-content-grid">
+  <a class="report-content-card" href="1-Worklog/">
+    <div class="report-content-card__index">01</div>
+    <div class="report-content-card__title">Nhật kí làm việc</div>
+    <p class="report-content-card__desc">Nhật kí tiến độ hằng tuần từ tuần 1 đến tuần 12.</p>
+  </a>
+  <a class="report-content-card" href="2-Proposal/">
+    <div class="report-content-card__index">02</div>
+    <div class="report-content-card__title">Bản đề xuất</div>
+    <p class="report-content-card__desc">Ý tưởng dự án, kiến trúc và kế hoạch triển khai.</p>
+  </a>
+  <a class="report-content-card" href="3-BlogsTranslated/">
+    <div class="report-content-card__index">03</div>
+    <div class="report-content-card__title">Các bài blog đã dịch</div>
+    <p class="report-content-card__desc">Các bài blog kỹ thuật được dịch và minh hoạ.</p>
+  </a>
+  <a class="report-content-card" href="4-EventParticipated/">
+    <div class="report-content-card__index">04</div>
+    <div class="report-content-card__title">Các sự kiện đã tham gia</div>
+    <p class="report-content-card__desc">Các workshop và sự kiện đã tham gia trong kỳ thực tập.</p>
+  </a>
+  <a class="report-content-card" href="5-Workshop/">
+    <div class="report-content-card__index">05</div>
+    <div class="report-content-card__title">Workshop</div>
+    <p class="report-content-card__desc">Hướng dẫn triển khai và kiểm tra theo từng bước.</p>
+  </a>
+  <a class="report-content-card" href="6-Self-evaluation/">
+    <div class="report-content-card__index">06</div>
+    <div class="report-content-card__title">Tự đánh giá</div>
+    <p class="report-content-card__desc">Nhìn lại quá trình học tập và kết quả đạt được.</p>
+  </a>
+  <a class="report-content-card" href="7-Feedback/">
+    <div class="report-content-card__index">07</div>
+    <div class="report-content-card__title">Chia sẻ và phản hồi</div>
+    <p class="report-content-card__desc">Phản hồi, cảm nhận và bài học rút ra từ kỳ thực tập.</p>
+  </a>
+</div>
