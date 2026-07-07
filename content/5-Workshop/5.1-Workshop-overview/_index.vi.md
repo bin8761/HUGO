@@ -1,95 +1,95 @@
-﻿---
-title: "Tá»•ng quan workshop"
+---
+title: "Tổng quan workshop"
 date: 2024-01-01
 weight: 1
 chapter: false
 pre: " <b> 5.1. </b> "
 ---
 
-## Tá»•ng quan workshop
+## Tổng quan workshop
 
-Má»¥c tiĂªu cá»§a workshop lĂ  triá»ƒn khai EAM Workspace lĂªn AWS vĂ  kiá»ƒm thá»­ luá»“ng end-to-end tá»« trĂ¬nh duyá»‡t Ä‘áº¿n database. Ná»™i dung Ä‘Æ°á»£c viáº¿t theo Ä‘Ăºng mĂ´ hĂ¬nh Ä‘Ă£ triá»ƒn khai trong project: Amplify Hosting cho frontend, API Gateway cho route `/api`, Elastic Beanstalk cho backend vĂ  RDS MySQL cho dá»¯ liá»‡u.
+Mục tiêu của workshop là triển khai EAM Workspace lên AWS và kiểm thử luồng end-to-end từ trình duyệt đến database. Nội dung được viết theo đúng mô hình đã triển khai trong project: Amplify Hosting cho frontend, API Gateway cho route `/api`, Elastic Beanstalk cho backend và RDS MySQL cho dữ liệu.
 
-EAM Workspace cĂ³ hai tráº£i nghiá»‡m ngÆ°á»i dĂ¹ng chĂ­nh:
+EAM Workspace có hai trải nghiệm người dùng chính:
 
-- **Admin Portal**: quáº£n lĂ½ nhĂ¢n viĂªn, phĂ²ng ban, danh má»¥c, tĂ i sáº£n, bĂ n giao, thu há»“i, báº£o trĂ¬, kiá»ƒm kĂª, bĂ¡o cĂ¡o, feedback, FAQ, cháº¥m cĂ´ng, lá»‹ch sá»­ Ä‘Äƒng nháº­p vĂ  support chat.
-- **Employee Portal**: xem tĂ i sáº£n Ä‘Æ°á»£c bĂ n giao, gá»­i yĂªu cáº§u há»— trá»£, Ä‘á»c FAQ, cáº­p nháº­t há»“ sÆ¡, Ä‘á»•i máº­t kháº©u vĂ  xem lá»‹ch sá»­ cĂ¡ nhĂ¢n.
+- **Admin Portal**: quản lý nhân viên, phòng ban, danh mục, tài sản, bàn giao, thu hồi, bảo trì, kiểm kê, báo cáo, feedback, FAQ, chấm công, lịch sử đăng nhập và support chat.
+- **Employee Portal**: xem tài sản được bàn giao, gửi yêu cầu hỗ trợ, đọc FAQ, cập nhật hồ sơ, đổi mật khẩu và xem lịch sử cá nhân.
 
-Backend cung cáº¥p REST API dÆ°á»›i prefix `/api`. Frontend gá»i API báº±ng Ä‘Æ°á»ng dáº«n tÆ°Æ¡ng Ä‘á»‘i `/api`, Amplify rewrite request Ä‘áº¿n API Gateway, sau Ä‘Ă³ API Gateway chuyá»ƒn tiáº¿p Ä‘áº¿n backend Elastic Beanstalk. CĂ¡c file upload nhÆ° avatar hoáº·c hĂ¬nh áº£nh tĂ i sáº£n Ä‘Æ°á»£c truy cáº­p qua prefix `/uploads`, vĂ¬ váº­y mĂ´i trÆ°á»ng Amplify cÅ©ng cáº§n rewrite `/uploads/*` Ä‘áº¿n API Gateway Ä‘á»ƒ áº£nh khĂ´ng bá»‹ tráº£ vá» `404`.
+Backend cung cấp REST API dưới prefix `/api`. Frontend gọi API bằng đường dẫn tương đối `/api`, Amplify rewrite request đến API Gateway, sau đó API Gateway chuyển tiếp đến backend Elastic Beanstalk. Các file upload như avatar hoặc hình ảnh tài sản được truy cập qua prefix `/uploads`, vì vậy môi trường Amplify cũng cần rewrite `/uploads/*` đến API Gateway để ảnh không bị trả về `404`.
 
-## Káº¿t quáº£ má»¥c tiĂªu
+## Kết quả mục tiêu
 
-Sau khi hoĂ n thĂ nh workshop, há»‡ thá»‘ng cĂ³:
+Sau khi hoàn thành workshop, hệ thống có:
 
-- Frontend React Ä‘Æ°á»£c host trĂªn AWS Amplify Hosting.
-- Backend Node.js/Express cháº¡y trĂªn AWS Elastic Beanstalk.
-- Amazon API Gateway HTTP API lĂ m Ä‘iá»ƒm vĂ o cho backend.
-- Database MySQL cháº¡y trĂªn Amazon RDS.
-- Endpoint `/api/health` hoáº¡t Ä‘á»™ng qua cáº£ API Gateway vĂ  Amplify domain.
-- Luá»“ng Ä‘Äƒng nháº­p admin, user vĂ  cĂ¡c quy trĂ¬nh chĂ­nh cĂ³ thá»ƒ kiá»ƒm thá»­ trĂªn trĂ¬nh duyá»‡t.
-- CloudWatch Logs há»— trá»£ kiá»ƒm tra lá»—i backend.
+- Frontend React được host trên AWS Amplify Hosting.
+- Backend Node.js/Express chạy trên AWS Elastic Beanstalk.
+- Amazon API Gateway HTTP API làm điểm vào cho backend.
+- Database MySQL chạy trên Amazon RDS.
+- Endpoint `/api/health` hoạt động qua cả API Gateway và Amplify domain.
+- Luồng đăng nhập admin, user và các quy trình chính có thể kiểm thử trên trình duyệt.
+- CloudWatch Logs hỗ trợ kiểm tra lỗi backend.
 
-## Luá»“ng triá»ƒn khai
+## Luồng triển khai
 
-Luá»“ng triá»ƒn khai cá»§a workshop Ä‘Æ°á»£c xĂ¢y dá»±ng theo thá»© tá»± tá»« háº¡ táº§ng dá»¯ liá»‡u, backend, lá»›p API trung gian Ä‘áº¿n frontend. CĂ¡ch triá»ƒn khai nĂ y giĂºp kiá»ƒm tra tá»«ng thĂ nh pháº§n riĂªng láº» trÆ°á»›c khi káº¿t ná»‘i thĂ nh má»™t há»‡ thá»‘ng hoĂ n chá»‰nh.
+Luồng triển khai của workshop được xây dựng theo thứ tự từ hạ tầng dữ liệu, backend, lớp API trung gian đến frontend. Cách triển khai này giúp kiểm tra từng thành phần riêng lẻ trước khi kết nối thành một hệ thống hoàn chỉnh.
 
-Äáº§u tiĂªn, mĂ´i trÆ°á»ng AWS, source code vĂ  cĂ¡c biáº¿n cáº¥u hĂ¬nh cáº§n Ä‘Æ°á»£c chuáº©n bá»‹ Ä‘áº§y Ä‘á»§. Sau Ä‘Ă³, Amazon RDS for MySQL Ä‘Æ°á»£c cáº¥u hĂ¬nh lĂ m database chĂ­nh cho há»‡ thá»‘ng. Khi database sáºµn sĂ ng, backend Node.js/Express Ä‘Æ°á»£c Ä‘Ă³ng gĂ³i vĂ  triá»ƒn khai lĂªn AWS Elastic Beanstalk, Ä‘á»“ng thá»i cáº¥u hĂ¬nh cĂ¡c biáº¿n mĂ´i trÆ°á»ng nhÆ° `DATABASE_URL`, `JWT_SECRET`, thĂ´ng tin SES SMTP vĂ  CORS origin.
+Đầu tiên, môi trường AWS, source code và các biến cấu hình cần được chuẩn bị đầy đủ. Sau đó, Amazon RDS for MySQL được cấu hình làm database chính cho hệ thống. Khi database sẵn sàng, backend Node.js/Express được đóng gói và triển khai lên AWS Elastic Beanstalk, đồng thời cấu hình các biến môi trường như `DATABASE_URL`, `JWT_SECRET`, thông tin SES SMTP và CORS origin.
 
-Sau khi backend hoáº¡t Ä‘á»™ng á»•n Ä‘á»‹nh vĂ  endpoint `/api/health` tráº£ káº¿t quáº£ thĂ nh cĂ´ng, Amazon API Gateway Ä‘Æ°á»£c táº¡o Ä‘á»ƒ lĂ m Ä‘iá»ƒm truy cáº­p public cho backend. Frontend React/Vite Ä‘Æ°á»£c triá»ƒn khai lĂªn AWS Amplify Hosting, sau Ä‘Ă³ cáº¥u hĂ¬nh rewrite Ä‘á»ƒ cĂ¡c request `/api/*` vĂ  `/uploads/*` tá»« Amplify domain Ä‘Æ°á»£c chuyá»ƒn tiáº¿p Ä‘áº¿n API Gateway. Cuá»‘i cĂ¹ng, há»‡ thá»‘ng Ä‘Æ°á»£c kiá»ƒm thá»­ báº±ng cĂ¡c luá»“ng chĂ­nh nhÆ° Ä‘Äƒng nháº­p admin, Ä‘Äƒng nháº­p nhĂ¢n viĂªn, quáº£n lĂ½ tĂ i sáº£n, bĂ n giao tĂ i sáº£n, kiá»ƒm tra API request trĂªn DevTools vĂ  xĂ¡c nháº­n tĂ i khoáº£n inactive bá»‹ cháº·n Ä‘Äƒng nháº­p.
+Sau khi backend hoạt động ổn định và endpoint `/api/health` trả kết quả thành công, Amazon API Gateway được tạo để làm điểm truy cập public cho backend. Frontend React/Vite được triển khai lên AWS Amplify Hosting, sau đó cấu hình rewrite để các request `/api/*` và `/uploads/*` từ Amplify domain được chuyển tiếp đến API Gateway. Cuối cùng, hệ thống được kiểm thử bằng các luồng chính như đăng nhập admin, đăng nhập nhân viên, quản lý tài sản, bàn giao tài sản, kiểm tra API request trên DevTools và xác nhận tài khoản inactive bị chặn đăng nhập.
 
 {{< mermaid >}}
 flowchart TD
-    A["Chuáº©n bá»‹ AWS account, source code vĂ  biáº¿n mĂ´i trÆ°á»ng"] --> B["Táº¡o hoáº·c cáº¥u hĂ¬nh RDS MySQL"]
-    B --> C["ÄĂ³ng gĂ³i backend source bundle"]
-    C --> D["Deploy backend lĂªn Elastic Beanstalk"]
-    D --> E["Cáº¥u hĂ¬nh Environment Properties vĂ  kiá»ƒm tra health"]
-    E --> F["Táº¡o API Gateway HTTP API"]
-    F --> G["Deploy frontend lĂªn Amplify Hosting"]
-    G --> H["ThĂªm rewrite rule /api/* vĂ  /uploads/* Ä‘áº¿n API Gateway"]
-    H --> I["Kiá»ƒm thá»­ login, upload vĂ  workflow chĂ­nh"]
-    I --> J["Kiá»ƒm tra CloudWatch Logs vĂ  dá»n dáº¹p tĂ i nguyĂªn"]
+    A["Chuẩn bị AWS account, source code và biến môi trường"] --> B["Tạo hoặc cấu hình RDS MySQL"]
+    B --> C["Đóng gói backend source bundle"]
+    C --> D["Deploy backend lên Elastic Beanstalk"]
+    D --> E["Cấu hình Environment Properties và kiểm tra health"]
+    E --> F["Tạo API Gateway HTTP API"]
+    F --> G["Deploy frontend lên Amplify Hosting"]
+    G --> H["Thêm rewrite rule /api/* và /uploads/* đến API Gateway"]
+    H --> I["Kiểm thử login, upload và workflow chính"]
+    I --> J["Kiểm tra CloudWatch Logs và dọn dẹp tài nguyên"]
 {{< /mermaid >}}
 
-## Dá»‹ch vá»¥ AWS trong pháº¡m vi
+## Dịch vụ AWS trong phạm vi
 
-| Dá»‹ch vá»¥ | Má»¥c Ä‘Ă­ch |
+| Dịch vụ | Mục đích |
 | --- | --- |
-| AWS Amplify Hosting | Host vĂ  build frontend React/Vite. |
-| Amazon API Gateway | Cung cáº¥p HTTP API public cho Ä‘Æ°á»ng dáº«n `/api/*`. |
-| AWS Elastic Beanstalk | Cháº¡y vĂ  quáº£n lĂ½ backend Node.js. |
-| Amazon RDS for MySQL | LÆ°u dá»¯ liá»‡u á»©ng dá»¥ng. |
-| Amazon S3 | HÆ°á»›ng lÆ°u trá»¯ file sáºµn sĂ ng production. |
-| Amazon SES | Gá»­i OTP vĂ  email thĂ´ng bĂ¡o náº¿u cáº¥u hĂ¬nh mail Ä‘Æ°á»£c báº­t. |
-| Amazon CloudWatch | LÆ°u log vĂ  há»— trá»£ monitoring. |
+| AWS Amplify Hosting | Host và build frontend React/Vite. |
+| Amazon API Gateway | Cung cấp HTTP API public cho đường dẫn `/api/*`. |
+| AWS Elastic Beanstalk | Chạy và quản lý backend Node.js. |
+| Amazon RDS for MySQL | Lưu dữ liệu ứng dụng. |
+| Amazon S3 | Hướng lưu trữ file sẵn sàng production. |
+| Amazon SES | Gửi OTP và email thông báo nếu cấu hình mail được bật. |
+| Amazon CloudWatch | Lưu log và hỗ trợ monitoring. |
 
-## BÆ°á»›c 1: Quan sĂ¡t kiáº¿n trĂºc triá»ƒn khai
+## Bước 1: Quan sát kiến trúc triển khai
 
-TrÆ°á»›c khi báº¯t Ä‘áº§u cáº¥u hĂ¬nh tá»«ng dá»‹ch vá»¥, cáº§n náº¯m Ä‘Æ°á»£c luá»“ng káº¿t ná»‘i tá»•ng thá»ƒ cá»§a há»‡ thá»‘ng.
+Trước khi bắt đầu cấu hình từng dịch vụ, cần nắm được luồng kết nối tổng thể của hệ thống.
 
-![SÆ¡ Ä‘á»“ kiáº¿n trĂºc tá»•ng quan cá»§a workshop EAM Workspace](/HUGO/images/5-Workshop/5.1-Workshop-overview/5.1.1-architecture-overview.png)
+![Sơ đồ kiến trúc tổng quan của workshop EAM Workspace](/HUGO/images/5-Workshop/5.1-Workshop-overview/5.1.1-architecture-overview.png)
 
-*HĂ¬nh 5.1.1. SÆ¡ Ä‘á»“ kiáº¿n trĂºc tá»•ng quan cá»§a workshop.*
+*Hình 5.1.1. Sơ đồ kiến trúc tổng quan của workshop.*
 
-áº¢nh nĂ y giĂºp xĂ¡c nháº­n cĂ¡c thĂ nh pháº§n chĂ­nh trong kiáº¿n trĂºc: frontend Ä‘Æ°á»£c phá»¥c vá»¥ qua Amplify, request API Ä‘i qua API Gateway, backend cháº¡y trĂªn Elastic Beanstalk vĂ  dá»¯ liá»‡u Ä‘Æ°á»£c lÆ°u trong Amazon RDS MySQL.
+Ảnh này giúp xác nhận các thành phần chính trong kiến trúc: frontend được phục vụ qua Amplify, request API đi qua API Gateway, backend chạy trên Elastic Beanstalk và dữ liệu được lưu trong Amazon RDS MySQL.
 
-## BÆ°á»›c 2: XĂ¡c Ä‘á»‹nh cĂ¡c dá»‹ch vá»¥ AWS Ä‘Æ°á»£c sá»­ dá»¥ng
+## Bước 2: Xác định các dịch vụ AWS được sử dụng
 
-Sau khi hiá»ƒu kiáº¿n trĂºc tá»•ng quan, Ä‘á»‘i chiáº¿u cĂ¡c thĂ nh pháº§n trong sÆ¡ Ä‘á»“ vá»›i cĂ¡c dá»‹ch vá»¥ AWS sáº½ Ä‘Æ°á»£c thao tĂ¡c trong workshop.
+Sau khi hiểu kiến trúc tổng quan, đối chiếu các thành phần trong sơ đồ với các dịch vụ AWS sẽ được thao tác trong workshop.
 
-![Tá»•ng quan cĂ¡c dá»‹ch vá»¥ AWS Ä‘Æ°á»£c sá»­ dá»¥ng trong workshop](/HUGO/images/5-Workshop/5.1-Workshop-overview/5.1.2-aws-services-overview.png)
+![Tổng quan các dịch vụ AWS được sử dụng trong workshop](/HUGO/images/5-Workshop/5.1-Workshop-overview/5.1.2-aws-services-overview.png)
 
-*HĂ¬nh 5.1.2. Tá»•ng quan cĂ¡c dá»‹ch vá»¥ AWS Ä‘Æ°á»£c sá»­ dá»¥ng trong workshop.*
+*Hình 5.1.2. Tổng quan các dịch vụ AWS được sử dụng trong workshop.*
 
-Danh sĂ¡ch dá»‹ch vá»¥ cáº§n Ä‘á»‘i chiáº¿u vá»›i pháº¡m vi workshop, gá»“m Amplify, API Gateway, Elastic Beanstalk, RDS, SES vĂ  CloudWatch.
+Danh sách dịch vụ cần đối chiếu với phạm vi workshop, gồm Amplify, API Gateway, Elastic Beanstalk, RDS, SES và CloudWatch.
 
-## Giá»›i háº¡n cá»§a mĂ´i trÆ°á»ng demo
+## Giới hạn của môi trường demo
 
-Workshop nĂ y Ä‘Æ°á»£c giá»›i háº¡n cho mĂ´i trÆ°á»ng demo:
+Workshop này được giới hạn cho môi trường demo:
 
-- RDS cĂ³ thá»ƒ dĂ¹ng Single-AZ Ä‘á»ƒ giáº£m chi phĂ­.
-- Backend cĂ³ thá»ƒ cháº¡y vá»›i má»™t Elastic Beanstalk environment nhá».
-- Amplify dĂ¹ng domain máº·c Ä‘á»‹nh.
-- KhĂ´ng yĂªu cáº§u custom domain vá»›i Route 53.
-- File upload cĂ³ thá»ƒ Ä‘i qua backend trong demo; S3 Ä‘Æ°á»£c Ä‘á»‹nh hÆ°á»›ng cho báº£n sáºµn sĂ ng production.
+- RDS có thể dùng Single-AZ để giảm chi phí.
+- Backend có thể chạy với một Elastic Beanstalk environment nhỏ.
+- Amplify dùng domain mặc định.
+- Không yêu cầu custom domain với Route 53.
+- File upload có thể đi qua backend trong demo; S3 được định hướng cho bản sẵn sàng production.
 
 

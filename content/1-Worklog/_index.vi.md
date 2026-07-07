@@ -48,16 +48,16 @@ pre: " <b> 1. </b> "
 </style>
 
 <div class="worklog-grid">
-  <a class="worklog-card" href="1.1-Week1/">Tuần 1</a>
-  <a class="worklog-card" href="1.2-Week2/">Tuần 2</a>
-  <a class="worklog-card" href="1.3-Week3/">Tuần 3</a>
-  <a class="worklog-card" href="1.4-Week4/">Tuần 4</a>
-  <a class="worklog-card" href="1.5-Week5/">Tuần 5</a>
-  <a class="worklog-card" href="1.6-Week6/">Tuần 6</a>
-  <a class="worklog-card" href="1.7-Week7/">Tuần 7</a>
-  <a class="worklog-card" href="1.8-Week8/">Tuần 8</a>
-  <a class="worklog-card" href="1.9-Week9/">Tuần 9</a>
-  <a class="worklog-card" href="1.10-Week10/">Tuần 10</a>
-  <a class="worklog-card" href="1.11-Week11/">Tuần 11</a>
-  <a class="worklog-card" href="1.12-Week12/">Tuần 12</a>
+  <a class="worklog-card" href="1.1-week1/">Tuần 1</a>
+  <a class="worklog-card" href="1.2-week2/">Tuần 2</a>
+  <a class="worklog-card" href="1.3-week3/">Tuần 3</a>
+  <a class="worklog-card" href="1.4-week4/">Tuần 4</a>
+  <a class="worklog-card" href="1.5-week5/">Tuần 5</a>
+  <a class="worklog-card" href="1.6-week6/">Tuần 6</a>
+  <a class="worklog-card" href="1.7-week7/">Tuần 7</a>
+  <a class="worklog-card" href="1.8-week8/">Tuần 8</a>
+  <a class="worklog-card" href="1.9-week9/">Tuần 9</a>
+  <a class="worklog-card" href="1.10-week10/">Tuần 10</a>
+  <a class="worklog-card" href="1.11-week11/">Tuần 11</a>
+  <a class="worklog-card" href="1.12-week12/">Tuần 12</a>
 </div>

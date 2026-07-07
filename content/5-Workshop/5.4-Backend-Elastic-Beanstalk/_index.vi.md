@@ -1,18 +1,18 @@
-﻿---
-title: "Triá»ƒn khai backend báº±ng Elastic Beanstalk"
+---
+title: "Triển khai backend bằng Elastic Beanstalk"
 date: 2024-01-01
 weight: 4
 chapter: false
 pre: " <b> 5.4. </b> "
 ---
 
-## Triá»ƒn khai backend báº±ng Elastic Beanstalk
+## Triển khai backend bằng Elastic Beanstalk
 
-BÆ°á»›c nĂ y Ä‘Ă³ng gĂ³i backend Node.js/Express vĂ  deploy lĂªn AWS Elastic Beanstalk. Backend sáº½ nháº­n request tá»« API Gateway vĂ  káº¿t ná»‘i Ä‘áº¿n Amazon RDS for MySQL.
+Bước này đóng gói backend Node.js/Express và deploy lên AWS Elastic Beanstalk. Backend sẽ nhận request từ API Gateway và kết nối đến Amazon RDS for MySQL.
 
-## BÆ°á»›c 1: Kiá»ƒm tra backend local
+## Bước 1: Kiểm tra backend local
 
-Tá»« thÆ° má»¥c backend, cĂ i dependency vĂ  kiá»ƒm tra backend cĂ³ thá»ƒ start:
+Từ thư mục backend, cài dependency và kiểm tra backend có thể start:
 
 ```bash
 cd backend
@@ -20,23 +20,23 @@ npm ci
 npm start
 ```
 
-Entry point cá»§a backend:
+Entry point của backend:
 
 ```text
 src/app/server.js
 ```
 
-á»¨ng dá»¥ng cáº§n Ä‘á»c port tá»« biáº¿n mĂ´i trÆ°á»ng `PORT`. Khi deploy lĂªn Elastic Beanstalk, dĂ¹ng:
+Ứng dụng cần đọc port từ biến môi trường `PORT`. Khi deploy lên Elastic Beanstalk, dùng:
 
 ```env
 PORT=8080
 ```
 
-## BÆ°á»›c 2: Táº¡o backend source bundle
+## Bước 2: Tạo backend source bundle
 
-Táº¡o file ZIP tá»« ná»™i dung bĂªn trong thÆ° má»¥c `backend/`. Root cá»§a file ZIP pháº£i chá»©a trá»±c tiáº¿p `package.json`.
+Tạo file ZIP từ nội dung bên trong thư mục `backend/`. Root của file ZIP phải chứa trực tiếp `package.json`.
 
-Cáº¥u trĂºc ZIP Ä‘Ăºng:
+Cấu trúc ZIP đúng:
 
 ```text
 backend-eb-source.zip
@@ -46,7 +46,7 @@ backend-eb-source.zip
   prisma/
 ```
 
-Cáº¥u trĂºc ZIP sai:
+Cấu trúc ZIP sai:
 
 ```text
 backend-eb-source.zip
@@ -54,38 +54,38 @@ backend-eb-source.zip
     package.json
 ```
 
-KhĂ´ng Ä‘Æ°a `.env`, `node_modules` hoáº·c secret tháº­t vĂ o file ZIP.
+Không đưa `.env`, `node_modules` hoặc secret thật vào file ZIP.
 
-![Backend source bundle Ä‘Ăºng cáº¥u trĂºc Ä‘á»ƒ deploy lĂªn Elastic Beanstalk](/HUGO/images/5-Workshop/5.4-Backend-Elastic-Beanstalk/5.4.1-source-bundle.png)
+![Backend source bundle đúng cấu trúc để deploy lên Elastic Beanstalk](/HUGO/images/5-Workshop/5.4-Backend-Elastic-Beanstalk/5.4.1-source-bundle.png)
 
-*HĂ¬nh 5.4.1. Backend source bundle Ä‘Ăºng cáº¥u trĂºc Ä‘á»ƒ deploy lĂªn Elastic Beanstalk.*
+*Hình 5.4.1. Backend source bundle đúng cấu trúc để deploy lên Elastic Beanstalk.*
 
-File ZIP cáº§n cĂ³ `package.json`, `package-lock.json`, `src/` vĂ  `prisma/` náº±m trá»±c tiáº¿p á»Ÿ root. Náº¿u ZIP chá»©a thĂªm thÆ° má»¥c `backend/` bĂªn ngoĂ i, Elastic Beanstalk cĂ³ thá»ƒ khĂ´ng start Ä‘Æ°á»£c á»©ng dá»¥ng.
+File ZIP cần có `package.json`, `package-lock.json`, `src/` và `prisma/` nằm trực tiếp ở root. Nếu ZIP chứa thêm thư mục `backend/` bên ngoài, Elastic Beanstalk có thể không start được ứng dụng.
 
-## BÆ°á»›c 3: Táº¡o Elastic Beanstalk application
+## Bước 3: Tạo Elastic Beanstalk application
 
-Má»Ÿ Elastic Beanstalk console:
+Mở Elastic Beanstalk console:
 
-1. Chá»n **Create application**.
+1. Chọn **Create application**.
 2. Application name: `eam-backend`.
 3. Platform: **Node.js**.
-4. Application code: upload file ZIP cá»§a backend.
-5. Environment name: vĂ­ dá»¥ `eam-backend-prod`.
-6. Chá»n VPC vĂ  subnet phĂ¹ há»£p.
-7. Gáº¯n backend security group.
-8. Táº¡o environment vĂ  chá» quĂ¡ trĂ¬nh provision hoĂ n táº¥t.
+4. Application code: upload file ZIP của backend.
+5. Environment name: ví dụ `eam-backend-prod`.
+6. Chọn VPC và subnet phù hợp.
+7. Gắn backend security group.
+8. Tạo environment và chờ quá trình provision hoàn tất.
 
-Náº¿u environment cÅ© bá»‹ káº¹t á»Ÿ tráº¡ng thĂ¡i `Severe`, `No Data`, `CREATE_FAILED` hoáº·c `DELETE_FAILED`, cĂ³ thá»ƒ táº¡o environment má»›i vĂ  trá» vá» cĂ¹ng RDS Ä‘á»ƒ giáº£m thá»i gian xá»­ lĂ½.
+Nếu environment cũ bị kẹt ở trạng thái `Severe`, `No Data`, `CREATE_FAILED` hoặc `DELETE_FAILED`, có thể tạo environment mới và trỏ về cùng RDS để giảm thời gian xử lý.
 
-![Trang táº¡o Elastic Beanstalk environment cho backend](/HUGO/images/5-Workshop/5.4-Backend-Elastic-Beanstalk/5.4.2-create-eb-environment.png)
+![Trang tạo Elastic Beanstalk environment cho backend](/HUGO/images/5-Workshop/5.4-Backend-Elastic-Beanstalk/5.4.2-create-eb-environment.png)
 
-*HĂ¬nh 5.4.2. Trang táº¡o Elastic Beanstalk environment cho backend.*
+*Hình 5.4.2. Trang tạo Elastic Beanstalk environment cho backend.*
 
-Pháº§n táº¡o environment cáº§n thá»ƒ hiá»‡n Ä‘Ăºng application name, environment name, platform Node.js vĂ  file source bundle Ä‘Ă£ upload. ÄĂ¢y lĂ  cáº¥u hĂ¬nh ná»n táº£ng Ä‘á»ƒ backend cháº¡y trĂªn Elastic Beanstalk.
+Phần tạo environment cần thể hiện đúng application name, environment name, platform Node.js và file source bundle đã upload. Đây là cấu hình nền tảng để backend chạy trên Elastic Beanstalk.
 
-## BÆ°á»›c 4: Cáº¥u hĂ¬nh environment properties
+## Bước 4: Cấu hình environment properties
 
-Trong Elastic Beanstalk environment properties, Ä‘áº·t:
+Trong Elastic Beanstalk environment properties, đặt:
 
 ```env
 NODE_ENV=production
@@ -109,23 +109,23 @@ FRONTEND_ORIGIN=https://<amplify-domain>
 FRONTEND_ORIGINS=https://<amplify-domain>
 ```
 
-`FRONTEND_ORIGIN` vĂ  `FRONTEND_ORIGINS` cĂ³ thá»ƒ cáº­p nháº­t sau khi Amplify táº¡o URL frontend.
+`FRONTEND_ORIGIN` và `FRONTEND_ORIGINS` có thể cập nhật sau khi Amplify tạo URL frontend.
 
-![Environment properties cá»§a Elastic Beanstalk](/HUGO/images/5-Workshop/5.4-Backend-Elastic-Beanstalk/5.4.4-eb-env-properties.png)
+![Environment properties của Elastic Beanstalk](/HUGO/images/5-Workshop/5.4-Backend-Elastic-Beanstalk/5.4.4-eb-env-properties.png)
 
-*HĂ¬nh 5.4.4. Environment properties cá»§a Elastic Beanstalk sau khi che thĂ´ng tin nháº¡y cáº£m.*
+*Hình 5.4.4. Environment properties của Elastic Beanstalk sau khi che thông tin nhạy cảm.*
 
-CĂ¡c biáº¿n quan trá»ng cáº§n Ä‘Æ°á»£c kiá»ƒm tra gá»“m `DATABASE_URL`, `JWT_SECRET`, `MAIL_HOST`, `MAIL_USER`, `MAIL_PASSWORD`, `FRONTEND_ORIGIN` vĂ  `PORT=8080`. Khi Ä‘Æ°a vĂ o bĂ¡o cĂ¡o, cĂ¡c secret pháº£i Ä‘Æ°á»£c che Ä‘á»ƒ trĂ¡nh lá»™ thĂ´ng tin nháº¡y cáº£m.
+Các biến quan trọng cần được kiểm tra gồm `DATABASE_URL`, `JWT_SECRET`, `MAIL_HOST`, `MAIL_USER`, `MAIL_PASSWORD`, `FRONTEND_ORIGIN` và `PORT=8080`. Khi đưa vào báo cáo, các secret phải được che để tránh lộ thông tin nhạy cảm.
 
-## BÆ°á»›c 5: Deploy vĂ  kiá»ƒm tra health
+## Bước 5: Deploy và kiểm tra health
 
-Sau khi deploy, kiá»ƒm tra endpoint trá»±c tiáº¿p cá»§a backend:
+Sau khi deploy, kiểm tra endpoint trực tiếp của backend:
 
 ```text
 http://<elastic-beanstalk-domain>/api/health
 ```
 
-Káº¿t quáº£ mong Ä‘á»£i:
+Kết quả mong đợi:
 
 ```json
 {
@@ -137,30 +137,30 @@ Káº¿t quáº£ mong Ä‘á»£i:
 }
 ```
 
-![Elastic Beanstalk environment á»Ÿ tráº¡ng thĂ¡i OK](/HUGO/images/5-Workshop/5.4-Backend-Elastic-Beanstalk/5.4.3-eb-health-ok.png)
+![Elastic Beanstalk environment ở trạng thái OK](/HUGO/images/5-Workshop/5.4-Backend-Elastic-Beanstalk/5.4.3-eb-health-ok.png)
 
-*HĂ¬nh 5.4.3. Elastic Beanstalk environment á»Ÿ tráº¡ng thĂ¡i OK.*
+*Hình 5.4.3. Elastic Beanstalk environment ở trạng thái OK.*
 
-MĂ n hĂ¬nh nĂ y cáº§n hiá»ƒn thá»‹ environment health á»Ÿ tráº¡ng thĂ¡i OK. ÄĂ¢y lĂ  dáº¥u hiá»‡u Elastic Beanstalk Ä‘Ă£ provision tĂ i nguyĂªn vĂ  backend khĂ´ng gáº·p lá»—i startup nghiĂªm trá»ng.
+Màn hình này cần hiển thị environment health ở trạng thái OK. Đây là dấu hiệu Elastic Beanstalk đã provision tài nguyên và backend không gặp lỗi startup nghiêm trọng.
 
-![Health endpoint cá»§a backend trĂªn Elastic Beanstalk](/HUGO/images/5-Workshop/5.4-Backend-Elastic-Beanstalk/5.4.5-eb-health-endpoint.png)
+![Health endpoint của backend trên Elastic Beanstalk](/HUGO/images/5-Workshop/5.4-Backend-Elastic-Beanstalk/5.4.5-eb-health-endpoint.png)
 
-*HĂ¬nh 5.4.5. Health endpoint cá»§a backend trĂªn Elastic Beanstalk tráº£ káº¿t quáº£ thĂ nh cĂ´ng.*
+*Hình 5.4.5. Health endpoint của backend trên Elastic Beanstalk trả kết quả thành công.*
 
-Káº¿t quáº£ `/api/health` cáº§n tráº£ `success: true` vĂ  `status: ok`. Náº¿u endpoint nĂ y hoáº¡t Ä‘á»™ng, cĂ³ thá»ƒ tiáº¿p tá»¥c Ä‘Æ°a backend ra ngoĂ i thĂ´ng qua API Gateway.
+Kết quả `/api/health` cần trả `success: true` và `status: ok`. Nếu endpoint này hoạt động, có thể tiếp tục đưa backend ra ngoài thông qua API Gateway.
 
-Náº¿u health check lá»—i, kiá»ƒm tra:
+Nếu health check lỗi, kiểm tra:
 
-- Backend cĂ³ listen Ä‘Ăºng `PORT=8080`.
-- `DATABASE_URL` Ä‘Ăºng.
-- Backend security group cĂ³ thá»ƒ káº¿t ná»‘i RDS port `3306`.
-- `JWT_SECRET` Ä‘á»§ dĂ i vĂ  khĂ´ng rá»—ng.
-- Biáº¿n mĂ´i trÆ°á»ng mail/OTP/rate limit Ä‘Ă£ Ä‘Æ°á»£c cáº¥u hĂ¬nh.
-- Elastic Beanstalk logs khĂ´ng cĂ³ startup error.
+- Backend có listen đúng `PORT=8080`.
+- `DATABASE_URL` đúng.
+- Backend security group có thể kết nối RDS port `3306`.
+- `JWT_SECRET` đủ dài và không rỗng.
+- Biến môi trường mail/OTP/rate limit đã được cấu hình.
+- Elastic Beanstalk logs không có startup error.
 
-## BÆ°á»›c 6: Cháº¡y Prisma migration vĂ  seed
+## Bước 6: Chạy Prisma migration và seed
 
-Sau khi backend cĂ³ thá»ƒ káº¿t ná»‘i RDS, cháº¡y migration tá»« mĂ´i trÆ°á»ng cĂ³ quyá»n truy cáº­p database. TrÆ°á»›c khi cháº¡y lá»‡nh, cáº§n kiá»ƒm tra file `.env` hoáº·c biáº¿n mĂ´i trÆ°á»ng local Ä‘ang trá» Ä‘áº¿n Ä‘Ăºng RDS endpoint, khĂ´ng pháº£i `localhost:3306`.
+Sau khi backend có thể kết nối RDS, chạy migration từ môi trường có quyền truy cập database. Trước khi chạy lệnh, cần kiểm tra file `.env` hoặc biến môi trường local đang trỏ đến đúng RDS endpoint, không phải `localhost:3306`.
 
 ```bash
 cd backend
@@ -168,29 +168,29 @@ npx prisma generate
 npx prisma migrate deploy
 ```
 
-Náº¿u mĂ¡y local khĂ´ng truy cáº­p Ä‘Æ°á»£c RDS do security group, network hoáº·c VPN, khĂ´ng nĂªn cháº¡y migration trá»±c tiáº¿p tá»« local. Khi Ä‘Ă³ cáº§n cháº¡y lá»‡nh tá»« má»™t mĂ´i trÆ°á»ng cĂ³ quyá»n truy cáº­p database, vĂ­ dá»¥ EC2/bastion trong cĂ¹ng VPC, mĂ´i trÆ°á»ng CI/CD Ä‘Ă£ Ä‘Æ°á»£c cáº¥p quyá»n, hoáº·c táº¡m thá»i cáº¥u hĂ¬nh network phĂ¹ há»£p cho quĂ¡ trĂ¬nh migration.
+Nếu máy local không truy cập được RDS do security group, network hoặc VPN, không nên chạy migration trực tiếp từ local. Khi đó cần chạy lệnh từ một môi trường có quyền truy cập database, ví dụ EC2/bastion trong cùng VPC, môi trường CI/CD đã được cấp quyền, hoặc tạm thời cấu hình network phù hợp cho quá trình migration.
 
-Vá»›i database demo, cĂ³ thá»ƒ seed dá»¯ liá»‡u máº«u sau khi migration cháº¡y thĂ nh cĂ´ng:
+Với database demo, có thể seed dữ liệu mẫu sau khi migration chạy thành công:
 
 ```bash
 npx prisma db seed
 ```
 
-Náº¿u lá»‡nh Prisma bĂ¡o lá»—i khĂ´ng káº¿t ná»‘i Ä‘Æ°á»£c `localhost:3306`, nguyĂªn nhĂ¢n thÆ°á»ng lĂ  `DATABASE_URL` váº«n Ä‘ang dĂ¹ng cáº¥u hĂ¬nh local. Cáº§n cáº­p nháº­t láº¡i `DATABASE_URL` theo dáº¡ng:
+Nếu lệnh Prisma báo lỗi không kết nối được `localhost:3306`, nguyên nhân thường là `DATABASE_URL` vẫn đang dùng cấu hình local. Cần cập nhật lại `DATABASE_URL` theo dạng:
 
 ```env
 DATABASE_URL=mysql://asset_app:<password>@<rds-endpoint>:3306/enterprise_asset_management
 ```
 
-## Káº¿t quáº£ cá»§a bÆ°á»›c nĂ y
+## Kết quả của bước này
 
-Ghi láº¡i cĂ¡c giĂ¡ trá»‹:
+Ghi lại các giá trị:
 
-- TĂªn Elastic Beanstalk application.
-- TĂªn Elastic Beanstalk environment.
+- Tên Elastic Beanstalk application.
+- Tên Elastic Beanstalk environment.
 - Backend endpoint/domain.
 - Backend security group.
 - RDS endpoint.
-- Káº¿t quáº£ health check `/api/health`.
+- Kết quả health check `/api/health`.
 
 

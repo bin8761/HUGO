@@ -1,22 +1,22 @@
-﻿---
-title: "Chuáº©n bá»‹"
+---
+title: "Chuẩn bị"
 date: 2024-01-01
 weight: 2
 chapter: false
 pre: " <b> 5.2. </b> "
 ---
 
-## Chuáº©n bá»‹
+## Chuẩn bị
 
-TrÆ°á»›c khi triá»ƒn khai, cáº§n chuáº©n bá»‹ AWS account, cĂ´ng cá»¥ local, source code vĂ  cĂ¡c biáº¿n mĂ´i trÆ°á»ng cáº§n dĂ¹ng cho backend/frontend.
+Trước khi triển khai, cần chuẩn bị AWS account, công cụ local, source code và các biến môi trường cần dùng cho backend/frontend.
 
 ## AWS account
 
-Sá»­ dá»¥ng má»™t AWS Region cá»‘ Ä‘á»‹nh cho toĂ n bá»™ tĂ i nguyĂªn trong workshop. IAM user hoáº·c role cáº§n cĂ³ quyá»n táº¡o vĂ  quáº£n lĂ½:
+Sử dụng một AWS Region cố định cho toàn bộ tài nguyên trong workshop. IAM user hoặc role cần có quyền tạo và quản lý:
 
 - AWS Amplify Hosting
 - Amazon API Gateway
-- Amazon EC2 vĂ  Security Groups
+- Amazon EC2 và Security Groups
 - AWS Elastic Beanstalk
 - Amazon RDS
 - Amazon S3
@@ -26,44 +26,44 @@ Sá»­ dá»¥ng má»™t AWS Region cá»‘ Ä‘á»‹nh cho toĂ n bá»
 - Amazon CloudWatch
 - AWS CloudTrail
 
-Sau khi chá»n Region, kiá»ƒm tra láº¡i gĂ³c pháº£i trĂªn cá»§a AWS Console Ä‘á»ƒ Ä‘áº£m báº£o toĂ n bá»™ thao tĂ¡c Ä‘Æ°á»£c thá»±c hiá»‡n trong cĂ¹ng má»™t Region.
+Sau khi chọn Region, kiểm tra lại góc phải trên của AWS Console để đảm bảo toàn bộ thao tác được thực hiện trong cùng một Region.
 
-![Region AWS Ä‘Æ°á»£c sá»­ dá»¥ng cho workshop](/HUGO/images/5-Workshop/5.2-Prerequisites/5.2.1-aws-region.png)
+![Region AWS được sử dụng cho workshop](/HUGO/images/5-Workshop/5.2-Prerequisites/5.2.1-aws-region.png)
 
-*HĂ¬nh 5.2.1. Region AWS Ä‘Æ°á»£c sá»­ dá»¥ng cho workshop.*
+*Hình 5.2.1. Region AWS được sử dụng cho workshop.*
 
-Region Ä‘ang chá»n pháº£i lĂ  Region Ä‘Æ°á»£c dĂ¹ng xuyĂªn suá»‘t workshop. Viá»‡c thá»‘ng nháº¥t Region giĂºp trĂ¡nh lá»—i káº¿t ná»‘i giá»¯a Elastic Beanstalk, API Gateway, RDS vĂ  SES.
+Region đang chọn phải là Region được dùng xuyên suốt workshop. Việc thống nhất Region giúp tránh lỗi kết nối giữa Elastic Beanstalk, API Gateway, RDS và SES.
 
-## CĂ´ng cá»¥ local
+## Công cụ local
 
-CĂ i Ä‘áº·t vĂ  kiá»ƒm tra cĂ¡c cĂ´ng cá»¥ sau:
+Cài đặt và kiểm tra các công cụ sau:
 
-| CĂ´ng cá»¥ | Má»¥c Ä‘Ă­ch |
+| Công cụ | Mục đích |
 | --- | --- |
-| Node.js 20+ | Cháº¡y backend vĂ  frontend local. |
-| npm | CĂ i dependency vĂ  cháº¡y build script. |
-| Git | Quáº£n lĂ½ source code vĂ  káº¿t ná»‘i GitHub. |
-| MySQL client hoáº·c database tool | TĂ¹y chá»n, há»¯u Ă­ch khi kiá»ƒm tra database. |
-| Postman hoáº·c browser DevTools | Kiá»ƒm thá»­ API endpoint. |
+| Node.js 20+ | Chạy backend và frontend local. |
+| npm | Cài dependency và chạy build script. |
+| Git | Quản lý source code và kết nối GitHub. |
+| MySQL client hoặc database tool | Tùy chọn, hữu ích khi kiểm tra database. |
+| Postman hoặc browser DevTools | Kiểm thử API endpoint. |
 
-Kiá»ƒm tra Node.js vĂ  npm:
+Kiểm tra Node.js và npm:
 
 ```bash
 node -v
 npm -v
 ```
 
-Káº¿t quáº£ cáº§n hiá»ƒn thá»‹ phiĂªn báº£n Node.js vĂ  npm trĂªn mĂ¡y local.
+Kết quả cần hiển thị phiên bản Node.js và npm trên máy local.
 
-![Kiá»ƒm tra Node.js vĂ  npm trĂªn mĂ¡y local](/HUGO/images/5-Workshop/5.2-Prerequisites/5.2.3-local-tools.png)
+![Kiểm tra Node.js và npm trên máy local](/HUGO/images/5-Workshop/5.2-Prerequisites/5.2.3-local-tools.png)
 
-*HĂ¬nh 5.2.3. Kiá»ƒm tra Node.js vĂ  npm trĂªn mĂ¡y local.*
+*Hình 5.2.3. Kiểm tra Node.js và npm trên máy local.*
 
-Náº¿u hai lá»‡nh trĂªn tráº£ vá» version há»£p lá»‡, mĂ´i trÆ°á»ng local Ä‘Ă£ sáºµn sĂ ng Ä‘á»ƒ cĂ i dependency, build frontend vĂ  kiá»ƒm tra backend trÆ°á»›c khi Ä‘Ă³ng gĂ³i triá»ƒn khai lĂªn AWS.
+Nếu hai lệnh trên trả về version hợp lệ, môi trường local đã sẵn sàng để cài dependency, build frontend và kiểm tra backend trước khi đóng gói triển khai lên AWS.
 
-## Cáº¥u trĂºc source code
+## Cấu trúc source code
 
-Project cĂ³ hai thÆ° má»¥c á»©ng dá»¥ng:
+Project có hai thư mục ứng dụng:
 
 ```text
 quanlidoanhnghiep/
@@ -71,31 +71,31 @@ quanlidoanhnghiep/
   frontend/
 ```
 
-Entry runtime cá»§a backend:
+Entry runtime của backend:
 
 ```text
 backend/src/app/server.js
 ```
 
-Output build cá»§a frontend:
+Output build của frontend:
 
 ```text
 frontend/dist
 ```
 
-## Kiá»ƒm tra branch triá»ƒn khai
+## Kiểm tra branch triển khai
 
-TrÆ°á»›c khi káº¿t ná»‘i AWS Amplify, cáº§n xĂ¡c Ä‘á»‹nh branch GitHub Ä‘Æ°á»£c dĂ¹ng Ä‘á»ƒ triá»ƒn khai frontend.
+Trước khi kết nối AWS Amplify, cần xác định branch GitHub được dùng để triển khai frontend.
 
-![GitHub branch dĂ¹ng Ä‘á»ƒ triá»ƒn khai frontend báº±ng Amplify](/HUGO/images/5-Workshop/5.2-Prerequisites/5.2.2-github-branch.png)
+![GitHub branch dùng để triển khai frontend bằng Amplify](/HUGO/images/5-Workshop/5.2-Prerequisites/5.2.2-github-branch.png)
 
-*HĂ¬nh 5.2.2. GitHub branch dĂ¹ng Ä‘á»ƒ triá»ƒn khai frontend báº±ng Amplify.*
+*Hình 5.2.2. GitHub branch dùng để triển khai frontend bằng Amplify.*
 
-Cáº§n ghi láº¡i Ä‘Ăºng branch deploy, vĂ­ dá»¥ `aws-architecture`, vĂ¬ Amplify sáº½ láº¥y source code tá»« branch nĂ y Ä‘á»ƒ build vĂ  deploy frontend.
+Cần ghi lại đúng branch deploy, ví dụ `aws-architecture`, vì Amplify sẽ lấy source code từ branch này để build và deploy frontend.
 
-## Biáº¿n mĂ´i trÆ°á»ng backend
+## Biến môi trường backend
 
-Chuáº©n bá»‹ cĂ¡c giĂ¡ trá»‹ sau trÆ°á»›c khi táº¡o hoáº·c cáº­p nháº­t Elastic Beanstalk environment:
+Chuẩn bị các giá trị sau trước khi tạo hoặc cập nhật Elastic Beanstalk environment:
 
 ```env
 NODE_ENV=production
@@ -119,20 +119,20 @@ FRONTEND_ORIGIN=https://<amplify-domain>
 FRONTEND_ORIGINS=https://<amplify-domain>
 ```
 
-## Chuáº©n bá»‹ SES/SMTP
+## Chuẩn bị SES/SMTP
 
-Backend sá»­ dá»¥ng email Ä‘á»ƒ gá»­i OTP hoáº·c thĂ´ng bĂ¡o, vĂ¬ váº­y cáº§n chuáº©n bá»‹ thĂ´ng tin SMTP trÆ°á»›c khi cáº¥u hĂ¬nh Elastic Beanstalk. Trong mĂ´i trÆ°á»ng demo, cĂ³ thá»ƒ xĂ¡c thá»±c má»™t email identity thay vĂ¬ xĂ¡c thá»±c domain riĂªng.
+Backend sử dụng email để gửi OTP hoặc thông báo, vì vậy cần chuẩn bị thông tin SMTP trước khi cấu hình Elastic Beanstalk. Trong môi trường demo, có thể xác thực một email identity thay vì xác thực domain riêng.
 
-CĂ¡c bÆ°á»›c chuáº©n bá»‹:
+Các bước chuẩn bị:
 
-1. Má»Ÿ **Amazon SES** trong cĂ¹ng Region Ä‘ang dĂ¹ng cho workshop.
-2. VĂ o **Verified identities** vĂ  táº¡o identity loáº¡i **Email address**.
-3. Nháº­p email gá»­i, vĂ­ dá»¥ email cĂ¡ nhĂ¢n hoáº·c email dĂ¹ng cho demo.
-4. Má»Ÿ há»™p thÆ° vĂ  báº¥m link xĂ¡c thá»±c do Amazon SES gá»­i Ä‘áº¿n.
-5. Sau khi email á»Ÿ tráº¡ng thĂ¡i **Verified**, táº¡o **SMTP credentials** trong SES.
-6. LÆ°u láº¡i SMTP username vĂ  SMTP password Ä‘á»ƒ Ä‘iá»n vĂ o Elastic Beanstalk.
+1. Mở **Amazon SES** trong cùng Region đang dùng cho workshop.
+2. Vào **Verified identities** và tạo identity loại **Email address**.
+3. Nhập email gửi, ví dụ email cá nhân hoặc email dùng cho demo.
+4. Mở hộp thư và bấm link xác thực do Amazon SES gửi đến.
+5. Sau khi email ở trạng thái **Verified**, tạo **SMTP credentials** trong SES.
+6. Lưu lại SMTP username và SMTP password để điền vào Elastic Beanstalk.
 
-CĂ¡c biáº¿n mĂ´i trÆ°á»ng tÆ°Æ¡ng á»©ng:
+Các biến môi trường tương ứng:
 
 ```env
 MAIL_HOST=email-smtp.<region>.amazonaws.com
@@ -143,43 +143,43 @@ MAIL_PASSWORD=<ses-smtp-password>
 MAIL_FROM=<verified-email-address>
 ```
 
-Náº¿u SES váº«n á»Ÿ sandbox mode, email chá»‰ gá»­i Ä‘Æ°á»£c Ä‘áº¿n cĂ¡c Ä‘á»‹a chá»‰ Ä‘Ă£ verified. Vá»›i workshop demo, Ä‘iá»u nĂ y váº«n Ä‘á»§ Ä‘á»ƒ kiá»ƒm thá»­ OTP hoáº·c email thĂ´ng bĂ¡o.
+Nếu SES vẫn ở sandbox mode, email chỉ gửi được đến các địa chỉ đã verified. Với workshop demo, điều này vẫn đủ để kiểm thử OTP hoặc email thông báo.
 
-## Biáº¿n mĂ´i trÆ°á»ng frontend
+## Biến môi trường frontend
 
-Khi deploy báº±ng Amplify, dĂ¹ng API path tÆ°Æ¡ng Ä‘á»‘i:
+Khi deploy bằng Amplify, dùng API path tương đối:
 
 ```env
 VITE_API_BASE_URL=/api
 ```
 
-CĂ¡ch nĂ y giĂºp browser gá»i cĂ¹ng origin cá»§a Amplify, cĂ²n Amplify sáº½ rewrite `/api/*` Ä‘áº¿n endpoint Amazon API Gateway.
+Cách này giúp browser gọi cùng origin của Amplify, còn Amplify sẽ rewrite `/api/*` đến endpoint Amazon API Gateway.
 
-## Checklist Ä‘Ă³ng gĂ³i backend
+## Checklist đóng gói backend
 
-Khi Ä‘Ă³ng gĂ³i backend Ä‘á»ƒ deploy lĂªn Elastic Beanstalk, file ZIP nĂªn chá»©a cĂ¡c file vĂ  thÆ° má»¥c sau ngay á»Ÿ root cá»§a ZIP:
+Khi đóng gói backend để deploy lên Elastic Beanstalk, file ZIP nên chứa các file và thư mục sau ngay ở root của ZIP:
 
 - `package.json`
 - `package-lock.json`
 - `src/`
 - `prisma/`
-- cĂ¡c file cáº¥u hĂ¬nh runtime cáº§n thiáº¿t cho backend
+- các file cấu hình runtime cần thiết cho backend
 
-KhĂ´ng nĂªn Ä‘Æ°a vĂ o:
+Không nên đưa vào:
 
 - `node_modules/`
 - `.env`
-- secret tháº­t
-- file upload local khĂ´ng cáº§n thiáº¿t
+- secret thật
+- file upload local không cần thiết
 
-## Checklist sáºµn sĂ ng
+## Checklist sẵn sàng
 
-- [ ] ÄĂ£ chá»n AWS Region.
-- [ ] AWS account cĂ³ quyá»n phĂ¹ há»£p.
-- [ ] ÄĂ£ cĂ³ source code backend vĂ  frontend.
-- [ ] ÄĂ£ chuáº©n bá»‹ biáº¿n mĂ´i trÆ°á»ng backend.
-- [ ] ÄĂ£ chuáº©n bá»‹ `VITE_API_BASE_URL=/api` cho Amplify.
-- [ ] ÄĂ£ xĂ¡c Ä‘á»‹nh endpoint RDS hoáº·c káº¿ hoáº¡ch táº¡o RDS.
-- [ ] Thá»‘ng nháº¥t dĂ¹ng hÆ°á»›ng demo khĂ´ng cĂ³ Route 53 hoáº·c custom domain.
+- [ ] Đã chọn AWS Region.
+- [ ] AWS account có quyền phù hợp.
+- [ ] Đã có source code backend và frontend.
+- [ ] Đã chuẩn bị biến môi trường backend.
+- [ ] Đã chuẩn bị `VITE_API_BASE_URL=/api` cho Amplify.
+- [ ] Đã xác định endpoint RDS hoặc kế hoạch tạo RDS.
+- [ ] Thống nhất dùng hướng demo không có Route 53 hoặc custom domain.
 
 

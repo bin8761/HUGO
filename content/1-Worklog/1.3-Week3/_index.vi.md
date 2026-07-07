@@ -1,35 +1,35 @@
-﻿---
-title: "Tuần 3 Worklog"
+---
+title: "Tu?n 3 Worklog"
 date: 2024-01-01
 weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-### Khoảng thời gian:
+### Kho?ng th?i gian:
 
-* Từ 04/05/2026 đến 10/05/2026
+* T? 04/05/2026 �?n 10/05/2026
 
-### Mục tiêu tuần 3:
+### M?c ti�u tu?n 3:
 
-* Nâng cao khả năng sử dụng AWS qua các nội dung về giám sát, mạng, CLI và dịch vụ NoSQL.
-* Học cách AWS hỗ trợ cả vận hành hệ thống chứ không chỉ triển khai ban đầu.
-* Tiếp tục xây dựng sự tự tin qua lab hướng dẫn và ghi nhận kết quả rõ ràng.
+* N�ng cao kh? n�ng s? d?ng AWS qua c�c n?i dung v? gi�m s�t, m?ng, CLI v� d?ch v? NoSQL.
+* H?c c�ch AWS h? tr? c? v?n h�nh h? th?ng ch? kh�ng ch? tri?n khai ban �?u.
+* Ti?p t?c x�y d?ng s? t? tin qua lab h�?ng d?n v� ghi nh?n k?t qu? r? r�ng.
 
-Tuần này kỹ thuật hơn các tuần trước vì nội dung liên quan đến vận hành dịch vụ, giám sát, định tuyến và làm việc bằng dòng lệnh. Mục tiêu là hiểu AWS hoạt động như thế nào khi nhiều tài nguyên bắt đầu tương tác với nhau.
+Tu?n n�y k? thu?t h�n c�c tu?n tr�?c v? n?i dung li�n quan �?n v?n h�nh d?ch v?, gi�m s�t, �?nh tuy?n v� l�m vi?c b?ng d?ng l?nh. M?c ti�u l� hi?u AWS ho?t �?ng nh� th? n�o khi nhi?u t�i nguy�n b?t �?u t��ng t�c v?i nhau.
 
-### Các công việc trong tuần:
+### C�c c�ng vi?c trong tu?n:
 
 | Day | Task | Start Date | Completion Date | Reference Material |
 | --- | --- | --- | --- | --- |
-| 1 | Làm bài lab Deploying FCJ Management Application with Auto Scaling Group<br>- Xem cách ứng dụng thay đổi số lượng instance khi lưu lượng tăng giảm.<br>- Hiểu mối liên hệ giữa Auto Scaling, EC2 và tính sẵn sàng của ứng dụng. | 04/05/2026 | 04/05/2026 | <https://000006.awsstudygroup.com/> |
-| 2 | Làm bài lab AWS CloudWatch Workshop<br>- Thực hành thu thập metrics và xem log để theo dõi hành vi hệ thống.<br>- Hiểu vì sao monitoring cần được triển khai sau khi ứng dụng chạy. | 05/05/2026 | 05/05/2026 | <https://000008.awsstudygroup.com/> |
-| 3 | Làm bài lab Set up Hybrid DNS with Route 53 Resolver<br>- Tìm hiểu khái niệm hybrid DNS và cách AWS phân giải tên trong và ngoài hệ thống.<br>- Ghi nhận vai trò của Route 53 Resolver trong tích hợp mạng. | 06/05/2026 | 06/05/2026 | <https://000010.awsstudygroup.com/> |
-| 4 | Làm bài lab Getting Started with the AWS CLI<br>- Học luồng làm việc cơ bản bằng dòng lệnh để quản lý tài nguyên AWS.<br>- Thực hành chuyển từ thao tác trên Console sang thao tác bằng CLI. | 07/05/2026 | 07/05/2026 | <https://000011.awsstudygroup.com/> |
-| 5 | Làm bài lab Work with Amazon DynamoDB<br>- Tìm hiểu DynamoDB như một dịch vụ NoSQL được quản lý bởi AWS.<br>- Thực hành cách dữ liệu được lưu và truy vấn khác với cơ sở dữ liệu quan hệ. | 08/05/2026 | 10/05/2026 | <https://000060.awsstudygroup.com/> |
+| 1 | L�m b�i lab Deploying FCJ Management Application with Auto Scaling Group<br>- Xem c�ch ?ng d?ng thay �?i s? l�?ng instance khi l�u l�?ng t�ng gi?m.<br>- Hi?u m?i li�n h? gi?a Auto Scaling, EC2 v� t�nh s?n s�ng c?a ?ng d?ng. | 04/05/2026 | 04/05/2026 | <https://000006.awsstudygroup.com/> |
+| 2 | L�m b�i lab AWS CloudWatch Workshop<br>- Th?c h�nh thu th?p metrics v� xem log �? theo d?i h�nh vi h? th?ng.<br>- Hi?u v? sao monitoring c?n ��?c tri?n khai sau khi ?ng d?ng ch?y. | 05/05/2026 | 05/05/2026 | <https://000008.awsstudygroup.com/> |
+| 3 | L�m b�i lab Set up Hybrid DNS with Route 53 Resolver<br>- T?m hi?u kh�i ni?m hybrid DNS v� c�ch AWS ph�n gi?i t�n trong v� ngo�i h? th?ng.<br>- Ghi nh?n vai tr? c?a Route 53 Resolver trong t�ch h?p m?ng. | 06/05/2026 | 06/05/2026 | <https://000010.awsstudygroup.com/> |
+| 4 | L�m b�i lab Getting Started with the AWS CLI<br>- H?c lu?ng l�m vi?c c� b?n b?ng d?ng l?nh �? qu?n l? t�i nguy�n AWS.<br>- Th?c h�nh chuy?n t? thao t�c tr�n Console sang thao t�c b?ng CLI. | 07/05/2026 | 07/05/2026 | <https://000011.awsstudygroup.com/> |
+| 5 | L�m b�i lab Work with Amazon DynamoDB<br>- T?m hi?u DynamoDB nh� m?t d?ch v? NoSQL ��?c qu?n l? b?i AWS.<br>- Th?c h�nh c�ch d? li?u ��?c l�u v� truy v?n kh�c v?i c� s? d? li?u quan h?. | 08/05/2026 | 10/05/2026 | <https://000060.awsstudygroup.com/> |
 
-### Kết quả đạt được:
+### K?t qu? �?t ��?c:
 
-* Hoàn thành các lab và có trải nghiệm thực tế với monitoring, networking, CLI và NoSQL.
-* Hiểu rõ hơn AWS không chỉ phục vụ triển khai mà còn hỗ trợ bảo trì và vận hành.
-* Tăng sự tự tin khi sử dụng AWS CLI cho các tác vụ quản lý tài nguyên hàng ngày.
-* Hoàn thành các lab chính về Auto Scaling, CloudWatch, Route 53 Resolver, AWS CLI và DynamoDB.
+* Ho�n th�nh c�c lab v� c� tr?i nghi?m th?c t? v?i monitoring, networking, CLI v� NoSQL.
+* Hi?u r? h�n AWS kh�ng ch? ph?c v? tri?n khai m� c?n h? tr? b?o tr? v� v?n h�nh.
+* T�ng s? t? tin khi s? d?ng AWS CLI cho c�c t�c v? qu?n l? t�i nguy�n h�ng ng�y.
+* Ho�n th�nh c�c lab ch�nh v? Auto Scaling, CloudWatch, Route 53 Resolver, AWS CLI v� DynamoDB.

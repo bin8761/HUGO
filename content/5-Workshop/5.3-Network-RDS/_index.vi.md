@@ -1,16 +1,16 @@
-﻿---
-title: "Chuáº©n bá»‹ network vĂ  RDS"
+---
+title: "Chuẩn bị network và RDS"
 date: 2024-01-01
 weight: 3
 chapter: false
 pre: " <b> 5.3. </b> "
 ---
 
-## Chuáº©n bá»‹ network vĂ  RDS
+## Chuẩn bị network và RDS
 
-BÆ°á»›c nĂ y chuáº©n bá»‹ database MySQL cho backend. Vá»›i mĂ´i trÆ°á»ng demo, cĂ³ thá»ƒ dĂ¹ng VPC máº·c Ä‘á»‹nh hoáº·c VPC Ä‘Ă£ cĂ³ sáºµn, miá»…n lĂ  Elastic Beanstalk backend cĂ³ thá»ƒ káº¿t ná»‘i Ä‘áº¿n Amazon RDS qua port `3306`.
+Bước này chuẩn bị database MySQL cho backend. Với môi trường demo, có thể dùng VPC mặc định hoặc VPC đã có sẵn, miễn là Elastic Beanstalk backend có thể kết nối đến Amazon RDS qua port `3306`.
 
-## MĂ´ hĂ¬nh káº¿t ná»‘i má»¥c tiĂªu
+## Mô hình kết nối mục tiêu
 
 {{< mermaid >}}
 flowchart LR
@@ -20,111 +20,111 @@ flowchart LR
     RDS --> SGRDS["RDS Security Group"]
 {{< /mermaid >}}
 
-## BÆ°á»›c 1: Chá»n VPC
+## Bước 1: Chọn VPC
 
-DĂ¹ng má»™t VPC cá»‘ Ä‘á»‹nh cho Elastic Beanstalk vĂ  RDS. VPC nĂªn cĂ³:
+Dùng một VPC cố định cho Elastic Beanstalk và RDS. VPC nên có:
 
 - Subnet cho Elastic Beanstalk environment.
 - Subnet group cho RDS.
-- Route Internet phĂ¹ há»£p Ä‘á»ƒ backend cĂ³ thá»ƒ nháº­n request public qua Elastic Beanstalk.
-- Security group tĂ¡ch riĂªng cho backend vĂ  database.
+- Route Internet phù hợp để backend có thể nhận request public qua Elastic Beanstalk.
+- Security group tách riêng cho backend và database.
 
-Náº¿u workshop chá»‰ phá»¥c vá»¥ demo ngáº¯n háº¡n, cĂ³ thá»ƒ dĂ¹ng cáº¥u hĂ¬nh Ä‘Æ¡n giáº£n hÆ¡n so vá»›i kiáº¿n trĂºc production nhiá»u subnet.
+Nếu workshop chỉ phục vụ demo ngắn hạn, có thể dùng cấu hình đơn giản hơn so với kiến trúc production nhiều subnet.
 
-![VPC Ä‘Æ°á»£c sá»­ dá»¥ng cho Elastic Beanstalk vĂ  RDS](/HUGO/images/5-Workshop/5.3-Network-RDS/5.3.1-vpc-subnets.png)
+![VPC được sử dụng cho Elastic Beanstalk và RDS](/HUGO/images/5-Workshop/5.3-Network-RDS/5.3.1-vpc-subnets.png)
 
-*HĂ¬nh 5.3.1. VPC Ä‘Æ°á»£c sá»­ dá»¥ng cho Elastic Beanstalk vĂ  RDS.*
+*Hình 5.3.1. VPC được sử dụng cho Elastic Beanstalk và RDS.*
 
-VPC vĂ  CIDR trong áº£nh cáº§n khá»›p vá»›i mĂ´i trÆ°á»ng dĂ¹ng cho backend vĂ  database. Backend Elastic Beanstalk vĂ  RDS cáº§n náº±m trong cĂ¹ng VPC hoáº·c cĂ³ Ä‘á»‹nh tuyáº¿n phĂ¹ há»£p Ä‘á»ƒ káº¿t ná»‘i an toĂ n.
+VPC và CIDR trong ảnh cần khớp với môi trường dùng cho backend và database. Backend Elastic Beanstalk và RDS cần nằm trong cùng VPC hoặc có định tuyến phù hợp để kết nối an toàn.
 
-## BÆ°á»›c 2: Táº¡o security group
+## Bước 2: Tạo security group
 
-Táº¡o hoáº·c kiá»ƒm tra cĂ¡c security group sau:
+Tạo hoặc kiểm tra các security group sau:
 
-| Security group | Inbound rule | Má»¥c Ä‘Ă­ch |
+| Security group | Inbound rule | Mục đích |
 | --- | --- | --- |
-| `eam-backend-sg` | HTTP tá»« Internet hoáº·c tá»« cáº¥u hĂ¬nh Elastic Beanstalk Ä‘Æ°á»£c chá»n | Cho phĂ©p API Gateway gá»i backend endpoint. |
-| `eam-rds-sg` | MySQL `3306` tá»« `eam-backend-sg` | Chá»‰ cho backend káº¿t ná»‘i database. |
+| `eam-backend-sg` | HTTP từ Internet hoặc từ cấu hình Elastic Beanstalk được chọn | Cho phép API Gateway gọi backend endpoint. |
+| `eam-rds-sg` | MySQL `3306` từ `eam-backend-sg` | Chỉ cho backend kết nối database. |
 
-Äiá»ƒm quan trá»ng nháº¥t lĂ  RDS khĂ´ng nĂªn má»Ÿ `3306` cho toĂ n bá»™ Internet. Chá»‰ cho phĂ©p backend security group truy cáº­p database.
+Điểm quan trọng nhất là RDS không nên mở `3306` cho toàn bộ Internet. Chỉ cho phép backend security group truy cập database.
 
-![Security group cá»§a backend Elastic Beanstalk](/HUGO/images/5-Workshop/5.3-Network-RDS/5.3.2-backend-security-group.png)
+![Security group của backend Elastic Beanstalk](/HUGO/images/5-Workshop/5.3-Network-RDS/5.3.2-backend-security-group.png)
 
-*HĂ¬nh 5.3.2. Security group cá»§a backend Elastic Beanstalk.*
+*Hình 5.3.2. Security group của backend Elastic Beanstalk.*
 
-Security group ID cá»§a backend cáº§n Ä‘Æ°á»£c ghi láº¡i Ä‘á»ƒ dĂ¹ng lĂ m source cho rule inbound cá»§a RDS.
+Security group ID của backend cần được ghi lại để dùng làm source cho rule inbound của RDS.
 
-![Security group cá»§a RDS cho phĂ©p backend truy cáº­p MySQL](/HUGO/images/5-Workshop/5.3-Network-RDS/5.3.3-rds-security-group.png)
+![Security group của RDS cho phép backend truy cập MySQL](/HUGO/images/5-Workshop/5.3-Network-RDS/5.3.3-rds-security-group.png)
 
-*HĂ¬nh 5.3.3. Security group cá»§a RDS cho phĂ©p backend truy cáº­p port 3306.*
+*Hình 5.3.3. Security group của RDS cho phép backend truy cập port 3306.*
 
-Rule inbound MySQL/Aurora `3306` cá»§a RDS chá»‰ nĂªn cho phĂ©p source lĂ  security group cá»§a backend, khĂ´ng má»Ÿ `0.0.0.0/0`.
+Rule inbound MySQL/Aurora `3306` của RDS chỉ nên cho phép source là security group của backend, không mở `0.0.0.0/0`.
 
-## BÆ°á»›c 3: Táº¡o Amazon RDS for MySQL
+## Bước 3: Tạo Amazon RDS for MySQL
 
-Má»Ÿ Amazon RDS console vĂ  táº¡o database:
+Mở Amazon RDS console và tạo database:
 
-1. Chá»n **Create database**.
-2. Chá»n **Standard create**.
-3. Chá»n engine **MySQL**.
-4. Chá»n template **Dev/Test** hoáº·c cáº¥u hĂ¬nh chi phĂ­ tháº¥p.
-5. Äáº·t DB instance identifier, vĂ­ dá»¥ `eam-mysql-demo`.
-6. Äáº·t master username, vĂ­ dá»¥ `asset_app`.
-7. Äáº·t máº­t kháº©u máº¡nh vĂ  lÆ°u á»Ÿ nÆ¡i an toĂ n.
-8. Chá»n instance class nhá» cho mĂ´i trÆ°á»ng demo.
-9. Chá»n dung lÆ°á»£ng storage phĂ¹ há»£p Ä‘á»ƒ test.
-10. Trong **Connectivity**, chá»n VPC má»¥c tiĂªu.
-11. Chá»n DB subnet group phĂ¹ há»£p.
-12. Náº¿u cĂ³ thá»ƒ, Ä‘áº·t **Public access** lĂ  **No**.
-13. Gáº¯n `eam-rds-sg`.
-14. Báº­t storage encryption náº¿u cáº§n.
-15. Äáº·t initial database name:
+1. Chọn **Create database**.
+2. Chọn **Standard create**.
+3. Chọn engine **MySQL**.
+4. Chọn template **Dev/Test** hoặc cấu hình chi phí thấp.
+5. Đặt DB instance identifier, ví dụ `eam-mysql-demo`.
+6. Đặt master username, ví dụ `asset_app`.
+7. Đặt mật khẩu mạnh và lưu ở nơi an toàn.
+8. Chọn instance class nhỏ cho môi trường demo.
+9. Chọn dung lượng storage phù hợp để test.
+10. Trong **Connectivity**, chọn VPC mục tiêu.
+11. Chọn DB subnet group phù hợp.
+12. Nếu có thể, đặt **Public access** là **No**.
+13. Gắn `eam-rds-sg`.
+14. Bật storage encryption nếu cần.
+15. Đặt initial database name:
 
 ```text
 enterprise_asset_management
 ```
 
-Chá» database chuyá»ƒn sang tráº¡ng thĂ¡i **Available**.
+Chờ database chuyển sang trạng thái **Available**.
 
-![RDS database á»Ÿ tráº¡ng thĂ¡i Available](/HUGO/images/5-Workshop/5.3-Network-RDS/5.3.4-rds-available.png)
+![RDS database ở trạng thái Available](/HUGO/images/5-Workshop/5.3-Network-RDS/5.3.4-rds-available.png)
 
-*HĂ¬nh 5.3.4. RDS database á»Ÿ tráº¡ng thĂ¡i Available.*
+*Hình 5.3.4. RDS database ở trạng thái Available.*
 
-Khi tráº¡ng thĂ¡i database lĂ  `Available`, RDS Ä‘Ă£ sáºµn sĂ ng nháº­n káº¿t ná»‘i. Chá»‰ nĂªn tiáº¿p tá»¥c cáº¥u hĂ¬nh backend sau khi tráº¡ng thĂ¡i nĂ y hiá»ƒn thá»‹ á»•n Ä‘á»‹nh.
+Khi trạng thái database là `Available`, RDS đã sẵn sàng nhận kết nối. Chỉ nên tiếp tục cấu hình backend sau khi trạng thái này hiển thị ổn định.
 
-## BÆ°á»›c 4: Ghi láº¡i thĂ´ng tin káº¿t ná»‘i
+## Bước 4: Ghi lại thông tin kết nối
 
-Sau khi RDS available, ghi láº¡i:
+Sau khi RDS available, ghi lại:
 
 - RDS endpoint
-- Port, thÆ°á»ng lĂ  `3306`
+- Port, thường là `3306`
 - Database name
 - Username
 - Password
 
-Táº¡o backend `DATABASE_URL`:
+Tạo backend `DATABASE_URL`:
 
 ```env
 DATABASE_URL=mysql://asset_app:<password>@<rds-endpoint>:3306/enterprise_asset_management
 ```
 
-![ThĂ´ng tin káº¿t ná»‘i vĂ  security cá»§a RDS](/HUGO/images/5-Workshop/5.3-Network-RDS/5.3.5-rds-connectivity.png)
+![Thông tin kết nối và security của RDS](/HUGO/images/5-Workshop/5.3-Network-RDS/5.3.5-rds-connectivity.png)
 
-*HĂ¬nh 5.3.5. ThĂ´ng tin káº¿t ná»‘i vĂ  security cá»§a RDS.*
+*Hình 5.3.5. Thông tin kết nối và security của RDS.*
 
-Táº¡i pháº§n Connectivity & security, cáº§n láº¥y Ä‘Ăºng endpoint, port, VPC vĂ  security group. CĂ¡c giĂ¡ trá»‹ nĂ y Ä‘Æ°á»£c dĂ¹ng Ä‘á»ƒ táº¡o `DATABASE_URL` cho Elastic Beanstalk.
+Tại phần Connectivity & security, cần lấy đúng endpoint, port, VPC và security group. Các giá trị này được dùng để tạo `DATABASE_URL` cho Elastic Beanstalk.
 
-## BÆ°á»›c 5: Kiá»ƒm tra báº£o máº­t
+## Bước 5: Kiểm tra bảo mật
 
-TrÆ°á»›c khi tiáº¿p tá»¥c, kiá»ƒm tra:
+Trước khi tiếp tục, kiểm tra:
 
-- RDS khĂ´ng má»Ÿ database port cho toĂ n bá»™ Internet.
-- Inbound rule cá»§a RDS chá»‰ cho `3306` tá»« backend security group.
-- Backend vĂ  RDS náº±m trong cĂ¹ng VPC hoáº·c cĂ³ route phĂ¹ há»£p.
-- Username/password database Ä‘Ă£ Ä‘Æ°á»£c lÆ°u an toĂ n vĂ  khĂ´ng commit vĂ o source code.
+- RDS không mở database port cho toàn bộ Internet.
+- Inbound rule của RDS chỉ cho `3306` từ backend security group.
+- Backend và RDS nằm trong cùng VPC hoặc có route phù hợp.
+- Username/password database đã được lưu an toàn và không commit vào source code.
 
-## Káº¿t quáº£ mong Ä‘á»£i
+## Kết quả mong đợi
 
-Káº¿t thĂºc bÆ°á»›c nĂ y, project cĂ³ má»™t MySQL database sáºµn sĂ ng Ä‘á»ƒ backend Elastic Beanstalk káº¿t ná»‘i thĂ´ng qua `DATABASE_URL`.
+Kết thúc bước này, project có một MySQL database sẵn sàng để backend Elastic Beanstalk kết nối thông qua `DATABASE_URL`.
 
 

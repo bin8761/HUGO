@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Blog 1"
 date: 2026-06-25
 weight: 1
@@ -8,68 +8,68 @@ pre: " <b> 3.1. </b> "
 
 # Amazon EKS now supports control plane egress through your VPC
 
-**Nguá»“n:** [Amazon EKS now supports control plane egress through your VPC](https://aws.amazon.com/blogs/containers/amazon-eks-now-supports-control-plane-egress-through-your-vpc/)
+**Nguồn:** [Amazon EKS now supports control plane egress through your VPC](https://aws.amazon.com/blogs/containers/amazon-eks-now-supports-control-plane-egress-through-your-vpc/)
 
-Amazon EKS Ä‘Ă£ bá»• sung kháº£ nÄƒng customer-routed control plane egress, cho phĂ©p Ä‘á»‹nh tuyáº¿n má»™t sá»‘ lÆ°u lÆ°á»£ng outbound tá»« Kubernetes API Server Ä‘i qua chĂ­nh Amazon VPC cá»§a ngÆ°á»i dĂ¹ng. TĂ­nh nÄƒng nĂ y giĂºp doanh nghiá»‡p kiá»ƒm soĂ¡t tá»‘t hÆ¡n Ä‘Æ°á»ng Ä‘i cá»§a cĂ¡c request do control plane khá»Ÿi táº¡o, cháº³ng háº¡n nhÆ° admission webhook callback, truy váº¥n OIDC provider vĂ  aggregate API server request.
+Amazon EKS đã bổ sung khả năng customer-routed control plane egress, cho phép định tuyến một số lưu lượng outbound từ Kubernetes API Server đi qua chính Amazon VPC của người dùng. Tính năng này giúp doanh nghiệp kiểm soát tốt hơn đường đi của các request do control plane khởi tạo, chẳng hạn như admission webhook callback, truy vấn OIDC provider và aggregate API server request.
 
-Thay vĂ¬ Ä‘á»ƒ cĂ¡c luá»“ng nĂ y Ä‘i theo Ä‘Æ°á»ng máº¡ng do EKS quáº£n lĂ½, ngÆ°á»i dĂ¹ng cĂ³ thá»ƒ Ă¡p dá»¥ng cĂ¡c cÆ¡ cháº¿ kiá»ƒm soĂ¡t quen thuá»™c trong VPC nhÆ° route table, security group, VPC endpoint, AWS PrivateLink, NAT Gateway hoáº·c AWS Network Firewall. ÄĂ¢y lĂ  cáº£i tiáº¿n quan trá»ng Ä‘á»‘i vá»›i cĂ¡c há»‡ thá»‘ng Kubernetes yĂªu cáº§u báº£o máº­t cao, Ä‘áº·c biá»‡t trong mĂ´i trÆ°á»ng doanh nghiá»‡p, tĂ i chĂ­nh, y táº¿ hoáº·c cĂ¡c tá»• chá»©c cĂ³ yĂªu cáº§u tuĂ¢n thá»§ nghiĂªm ngáº·t.
-
-
-## CĂ¡c Ä‘iá»ƒm chĂ­nh cáº§n náº¯m
-
-- Customer-routed control plane egress cho phĂ©p cĂ¡c luá»“ng outbound "customer-controllable" tá»« Kubernetes API Server Ä‘i qua Elastic Network Interface (ENI) náº±m trong VPC cá»§a ngÆ°á»i dĂ¹ng.
-- CĂ¡c loáº¡i lÆ°u lÆ°á»£ng Ä‘Æ°á»£c há»— trá»£ bao gá»“m admission webhook callback, truy váº¥n tĂ i liá»‡u khĂ¡m phĂ¡ OIDC, yĂªu cáº§u Ä‘áº¿n aggregate API server vĂ  DNS resolution phá»¥c vá»¥ cho cĂ¡c luá»“ng nĂ y.
-- Khi báº­t tĂ­nh nÄƒng nĂ y, ngÆ°á»i dĂ¹ng cĂ³ thá»ƒ Ă¡p dá»¥ng route table, security group, endpoint policy, NAT Gateway, AWS PrivateLink, VPC endpoint, AWS Network Firewall vĂ  cĂ¡c quy táº¯c egress control sáºµn cĂ³ trong VPC.
-- TĂ­nh nÄƒng Ä‘áº·c biá»‡t há»¯u Ă­ch cho cĂ¡c há»‡ thá»‘ng cáº§n private networking, private OIDC provider hoáº·c admission webhook chá»‰ cĂ³ thá»ƒ truy cáº­p bĂªn trong máº¡ng riĂªng.
-- Control plane egress qua VPC khĂ¡c vá»›i EKS private endpoint: private endpoint kiá»ƒm soĂ¡t chiá»u inbound Ä‘áº¿n Kubernetes API Server, cĂ²n customer-routed egress kiá»ƒm soĂ¡t chiá»u outbound tá»« API Server ra cĂ¡c dá»‹ch vá»¥ liĂªn quan.
-- NgÆ°á»i dĂ¹ng cĂ³ thá»ƒ báº­t khi táº¡o cluster má»›i hoáº·c cáº­p nháº­t cluster hiá»‡n cĂ³ báº±ng cĂ¡ch Ä‘áº·t `controlPlaneEgressMode = CUSTOMER_ROUTED` trong `resourcesVpcConfig`.
-- Sau khi cluster chuyá»ƒn sang `CUSTOMER_ROUTED`, thiáº¿t láº­p nĂ y lĂ  cá»‘ Ä‘á»‹nh trong suá»‘t vĂ²ng Ä‘á»i cluster vĂ  khĂ´ng thá»ƒ chuyá»ƒn ngÆ°á»£c vá» `AWS_MANAGED`.
-- CĂ³ thá»ƒ dĂ¹ng IAM condition key `eks:controlPlaneEgressMode` káº¿t há»£p vá»›i AWS Organizations Service Control Policies Ä‘á»ƒ báº¯t buá»™c cĂ¡c cluster trong tá»• chá»©c pháº£i sá»­ dá»¥ng cháº¿ Ä‘á»™ `CUSTOMER_ROUTED`.
-- VPC Flow Logs cĂ³ thá»ƒ Ä‘Æ°á»£c sá»­ dá»¥ng Ä‘á»ƒ quan sĂ¡t vĂ  xĂ¡c minh cĂ¡c káº¿t ná»‘i tá»« EKS-managed cross-account ENI Ä‘áº¿n cĂ¡c endpoint ná»™i bá»™, há»— trá»£ kiá»ƒm toĂ¡n vĂ  tuĂ¢n thá»§.
-- Má»™t sá»‘ luá»“ng khĂ´ng thuá»™c Kubernetes API Server, vĂ­ dá»¥ EKS Capabilities hoáº·c AWS STS call tá»« IAM Authenticator, váº«n tiáº¿p tá»¥c Ä‘i theo Ä‘Æ°á»ng EKS-managed vĂ  khĂ´ng Ä‘i qua VPC cá»§a ngÆ°á»i dĂ¹ng.
-
-## HĂ¬nh áº£nh
-
-HĂ¬nh minh há»a kiáº¿n trĂºc khi Private Control Plane Networking Ä‘Æ°á»£c báº­t. LÆ°u lÆ°á»£ng customer-controllable tá»« `kube-apiserver` Ä‘i qua ENI trong VPC cá»§a ngÆ°á»i dĂ¹ng, sau Ä‘Ă³ chá»‹u sá»± kiá»ƒm soĂ¡t bá»Ÿi cĂ¡c thĂ nh pháº§n máº¡ng nhÆ° VPC endpoint, NAT Gateway, Transit Gateway hoáº·c AWS PrivateLink trÆ°á»›c khi Ä‘i Ä‘áº¿n customer destinations.
-
-![Control plane egress Ä‘i qua VPC cá»§a ngÆ°á»i dĂ¹ng khi báº­t Private Control Plane Networking](/HUGO/images/3-BlogsPosted/3.2-Blog2/CONTAINERS-269-1.png)
-
-*HĂ¬nh 1. Control plane egress Ä‘i qua VPC cá»§a ngÆ°á»i dĂ¹ng khi báº­t Private Control Plane Networking. Nguá»“n: AWS Blog.*
+Thay vì để các luồng này đi theo đường mạng do EKS quản lý, người dùng có thể áp dụng các cơ chế kiểm soát quen thuộc trong VPC như route table, security group, VPC endpoint, AWS PrivateLink, NAT Gateway hoặc AWS Network Firewall. Đây là cải tiến quan trọng đối với các hệ thống Kubernetes yêu cầu bảo mật cao, đặc biệt trong môi trường doanh nghiệp, tài chính, y tế hoặc các tổ chức có yêu cầu tuân thủ nghiêm ngặt.
 
 
-## HÆ°á»›ng dáº«n
+## Các điểm chính cần nắm
 
-Äá»ƒ tĂ¬m hiá»ƒu vĂ  Ă¡p dá»¥ng tĂ­nh nÄƒng nĂ y, cĂ³ thá»ƒ thá»±c hiá»‡n theo cĂ¡c bÆ°á»›c chĂ­nh sau:
+- Customer-routed control plane egress cho phép các luồng outbound "customer-controllable" từ Kubernetes API Server đi qua Elastic Network Interface (ENI) nằm trong VPC của người dùng.
+- Các loại lưu lượng được hỗ trợ bao gồm admission webhook callback, truy vấn tài liệu khám phá OIDC, yêu cầu đến aggregate API server và DNS resolution phục vụ cho các luồng này.
+- Khi bật tính năng này, người dùng có thể áp dụng route table, security group, endpoint policy, NAT Gateway, AWS PrivateLink, VPC endpoint, AWS Network Firewall và các quy tắc egress control sẵn có trong VPC.
+- Tính năng đặc biệt hữu ích cho các hệ thống cần private networking, private OIDC provider hoặc admission webhook chỉ có thể truy cập bên trong mạng riêng.
+- Control plane egress qua VPC khác với EKS private endpoint: private endpoint kiểm soát chiều inbound đến Kubernetes API Server, còn customer-routed egress kiểm soát chiều outbound từ API Server ra các dịch vụ liên quan.
+- Người dùng có thể bật khi tạo cluster mới hoặc cập nhật cluster hiện có bằng cách đặt `controlPlaneEgressMode = CUSTOMER_ROUTED` trong `resourcesVpcConfig`.
+- Sau khi cluster chuyển sang `CUSTOMER_ROUTED`, thiết lập này là cố định trong suốt vòng đời cluster và không thể chuyển ngược về `AWS_MANAGED`.
+- Có thể dùng IAM condition key `eks:controlPlaneEgressMode` kết hợp với AWS Organizations Service Control Policies để bắt buộc các cluster trong tổ chức phải sử dụng chế độ `CUSTOMER_ROUTED`.
+- VPC Flow Logs có thể được sử dụng để quan sát và xác minh các kết nối từ EKS-managed cross-account ENI đến các endpoint nội bộ, hỗ trợ kiểm toán và tuân thủ.
+- Một số luồng không thuộc Kubernetes API Server, ví dụ EKS Capabilities hoặc AWS STS call từ IAM Authenticator, vẫn tiếp tục đi theo đường EKS-managed và không đi qua VPC của người dùng.
 
-1. XĂ¡c Ä‘á»‹nh cluster EKS cáº§n sá»­ dá»¥ng private control plane networking vĂ  kiá»ƒm tra cĂ¡c subnet, security group, route table, DNS resolver trong VPC.
-2. Khi táº¡o cluster má»›i, cáº¥u hĂ¬nh `resources-vpc-config` vĂ  thĂªm `controlPlaneEgressMode=CUSTOMER_ROUTED` Ä‘á»ƒ báº­t Ä‘á»‹nh tuyáº¿n egress qua VPC.
-3. Vá»›i cluster hiá»‡n cĂ³, sá»­ dá»¥ng lá»‡nh `update-cluster-config` Ä‘á»ƒ chuyá»ƒn sang cháº¿ Ä‘á»™ `CUSTOMER_ROUTED`, Ä‘á»“ng thá»i lÆ°u Ă½ ráº±ng thiáº¿t láº­p nĂ y khĂ´ng thá»ƒ quay láº¡i `AWS_MANAGED`.
-4. Äáº£m báº£o cĂ¡c endpoint mĂ  Kubernetes API Server cáº§n gá»i, cháº³ng háº¡n admission webhook, OIDC provider hoáº·c aggregate API server, cĂ³ thá»ƒ truy cáº­p Ä‘Æ°á»£c tá»« subnet cá»§a cluster thĂ´ng qua private DNS, internal load balancer, VPC endpoint hoáº·c PrivateLink.
-5. Kiá»ƒm tra security group, route table vĂ  NAT/PrivateLink path Ä‘á»ƒ trĂ¡nh trÆ°á»ng há»£p API Server khĂ´ng gá»i Ä‘Æ°á»£c webhook hoáº·c OIDC endpoint.
-6. Sá»­ dá»¥ng `aws eks describe-cluster` Ä‘á»ƒ xĂ¡c minh giĂ¡ trá»‹ `controlPlaneEgressMode` vĂ  báº­t VPC Flow Logs Ä‘á»ƒ theo dĂµi Ä‘Æ°á»ng Ä‘i cá»§a lÆ°u lÆ°á»£ng phá»¥c vá»¥ kiá»ƒm toĂ¡n.
-7. Náº¿u quáº£n lĂ½ nhiá»u tĂ i khoáº£n AWS, cĂ³ thá»ƒ dĂ¹ng AWS Organizations SCP vá»›i condition key `eks:controlPlaneEgressMode` Ä‘á»ƒ yĂªu cáº§u cĂ¡c cluster pháº£i báº­t `CUSTOMER_ROUTED` theo chuáº©n báº£o máº­t cá»§a tá»• chá»©c.
+## Hình ảnh
 
-### VĂ­ dá»¥ lá»‡nh AWS CLI tham kháº£o
+Hình minh họa kiến trúc khi Private Control Plane Networking được bật. Lưu lượng customer-controllable từ `kube-apiserver` đi qua ENI trong VPC của người dùng, sau đó chịu sự kiểm soát bởi các thành phần mạng như VPC endpoint, NAT Gateway, Transit Gateway hoặc AWS PrivateLink trước khi đi đến customer destinations.
+
+![Control plane egress đi qua VPC của người dùng khi bật Private Control Plane Networking](/HUGO/images/3-BlogsPosted/3.2-Blog2/CONTAINERS-269-1.png)
+
+*Hình 1. Control plane egress đi qua VPC của người dùng khi bật Private Control Plane Networking. Nguồn: AWS Blog.*
+
+
+## Hướng dẫn
+
+Để tìm hiểu và áp dụng tính năng này, có thể thực hiện theo các bước chính sau:
+
+1. Xác định cluster EKS cần sử dụng private control plane networking và kiểm tra các subnet, security group, route table, DNS resolver trong VPC.
+2. Khi tạo cluster mới, cấu hình `resources-vpc-config` và thêm `controlPlaneEgressMode=CUSTOMER_ROUTED` để bật định tuyến egress qua VPC.
+3. Với cluster hiện có, sử dụng lệnh `update-cluster-config` để chuyển sang chế độ `CUSTOMER_ROUTED`, đồng thời lưu ý rằng thiết lập này không thể quay lại `AWS_MANAGED`.
+4. Đảm bảo các endpoint mà Kubernetes API Server cần gọi, chẳng hạn admission webhook, OIDC provider hoặc aggregate API server, có thể truy cập được từ subnet của cluster thông qua private DNS, internal load balancer, VPC endpoint hoặc PrivateLink.
+5. Kiểm tra security group, route table và NAT/PrivateLink path để tránh trường hợp API Server không gọi được webhook hoặc OIDC endpoint.
+6. Sử dụng `aws eks describe-cluster` để xác minh giá trị `controlPlaneEgressMode` và bật VPC Flow Logs để theo dõi đường đi của lưu lượng phục vụ kiểm toán.
+7. Nếu quản lý nhiều tài khoản AWS, có thể dùng AWS Organizations SCP với condition key `eks:controlPlaneEgressMode` để yêu cầu các cluster phải bật `CUSTOMER_ROUTED` theo chuẩn bảo mật của tổ chức.
+
+### Ví dụ lệnh AWS CLI tham khảo
 
 ```bash
-# Táº¡o cluster má»›i vá»›i customer-routed control plane egress
+# Tạo cluster mới với customer-routed control plane egress
 aws eks create-cluster \
   --name my-cluster \
   --kubernetes-version 1.36 \
   --role-arn arn:aws:iam::111122223333:role/eks-cluster-role \
   --resources-vpc-config subnetIds=subnet-aaa,subnet-bbb,securityGroupIds=sg-xxx,controlPlaneEgressMode=CUSTOMER_ROUTED
 
-# Báº­t trĂªn cluster hiá»‡n cĂ³
+# Bật trên cluster hiện có
 aws eks update-cluster-config \
   --name my-cluster \
   --resources-vpc-config controlPlaneEgressMode=CUSTOMER_ROUTED
 
-# Kiá»ƒm tra cáº¥u hĂ¬nh
+# Kiểm tra cấu hình
 aws eks describe-cluster --name my-cluster \
   --query "cluster.resourcesVpcConfig.controlPlaneEgressMode"
 ```
 
-## Káº¿t luáº­n 
+## Kết luận 
 
-TĂ­nh nÄƒng customer-routed control plane egress giĂºp Amazon EKS phĂ¹ há»£p hÆ¡n vá»›i cĂ¡c mĂ´i trÆ°á»ng yĂªu cáº§u kiá»ƒm soĂ¡t máº¡ng nghiĂªm ngáº·t. Thay vĂ¬ chá»‰ quáº£n lĂ½ lÆ°u lÆ°á»£ng cá»§a worker nodes vĂ  workloads, ngÆ°á»i dĂ¹ng cĂ³ thĂªm kháº£ nÄƒng kiá»ƒm soĂ¡t má»™t pháº§n lÆ°u lÆ°á»£ng outbound tá»« Kubernetes API Server. Äiá»u nĂ y giĂºp tÄƒng tĂ­nh riĂªng tÆ°, há»— trá»£ kiá»ƒm toĂ¡n, giáº£m rá»§i ro khi sá»­ dá»¥ng webhook hoáº·c OIDC provider ná»™i bá»™ vĂ  giĂºp triá»ƒn khai EKS trong cĂ¡c há»‡ thá»‘ng doanh nghiá»‡p cĂ³ yĂªu cáº§u báº£o máº­t cao.
+Tính năng customer-routed control plane egress giúp Amazon EKS phù hợp hơn với các môi trường yêu cầu kiểm soát mạng nghiêm ngặt. Thay vì chỉ quản lý lưu lượng của worker nodes và workloads, người dùng có thêm khả năng kiểm soát một phần lưu lượng outbound từ Kubernetes API Server. Điều này giúp tăng tính riêng tư, hỗ trợ kiểm toán, giảm rủi ro khi sử dụng webhook hoặc OIDC provider nội bộ và giúp triển khai EKS trong các hệ thống doanh nghiệp có yêu cầu bảo mật cao.
 

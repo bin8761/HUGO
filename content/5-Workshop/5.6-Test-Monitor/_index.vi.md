@@ -1,18 +1,18 @@
-﻿---
-title: "Kiá»ƒm thá»­, monitoring vĂ  xá»­ lĂ½ lá»—i"
+---
+title: "Kiểm thử, monitoring và xử lý lỗi"
 date: 2024-01-01
 weight: 6
 chapter: false
 pre: " <b> 5.6. </b> "
 ---
 
-## Kiá»ƒm thá»­, monitoring vĂ  xá»­ lĂ½ lá»—i
+## Kiểm thử, monitoring và xử lý lỗi
 
-Sau khi frontend, API Gateway vĂ  backend Ä‘Ă£ deploy, cáº§n kiá»ƒm thá»­ toĂ n bá»™ há»‡ thá»‘ng vĂ  kiá»ƒm tra log váº­n hĂ nh.
+Sau khi frontend, API Gateway và backend đã deploy, cần kiểm thử toàn bộ hệ thống và kiểm tra log vận hành.
 
 ## Test 1: Backend health
 
-Kiá»ƒm tra theo tá»«ng lá»›p:
+Kiểm tra theo từng lớp:
 
 ```text
 http://<elastic-beanstalk-domain>/api/health
@@ -20,7 +20,7 @@ https://<api-gateway-endpoint>/api/health
 https://<amplify-domain>/api/health
 ```
 
-Káº¿t quáº£ mong Ä‘á»£i:
+Kết quả mong đợi:
 
 ```json
 {
@@ -32,109 +32,109 @@ Káº¿t quáº£ mong Ä‘á»£i:
 }
 ```
 
-Náº¿u lá»—i, kiá»ƒm tra theo thá»© tá»±: Elastic Beanstalk logs, API Gateway route/integration/stage, rá»“i Amplify rewrite rule.
+Nếu lỗi, kiểm tra theo thứ tự: Elastic Beanstalk logs, API Gateway route/integration/stage, rồi Amplify rewrite rule.
 
 ## Test 2: Admin login
 
-Má»Ÿ URL Amplify vĂ  Ä‘Äƒng nháº­p báº±ng tĂ i khoáº£n admin tá»« seed data.
+Mở URL Amplify và đăng nhập bằng tài khoản admin từ seed data.
 
-![Trang Ä‘Äƒng nháº­p trĂªn Amplify domain](/HUGO/images/5-Workshop/5.6-Test-Monitor/5.6.1-login-page.png)
+![Trang đăng nhập trên Amplify domain](/HUGO/images/5-Workshop/5.6-Test-Monitor/5.6.1-login-page.png)
 
-*HĂ¬nh 5.6.1. Trang Ä‘Äƒng nháº­p trĂªn Amplify domain.*
+*Hình 5.6.1. Trang đăng nhập trên Amplify domain.*
 
-á»¨ng dá»¥ng frontend cáº§n má»Ÿ Ä‘Æ°á»£c tá»« domain Amplify vĂ  form Ä‘Äƒng nháº­p pháº£i hiá»ƒn thá»‹ Ä‘áº§y Ä‘á»§. ÄĂ¢y lĂ  Ä‘iá»ƒm báº¯t Ä‘áº§u Ä‘á»ƒ kiá»ƒm thá»­ luá»“ng ngÆ°á»i dĂ¹ng.
+Ứng dụng frontend cần mở được từ domain Amplify và form đăng nhập phải hiển thị đầy đủ. Đây là điểm bắt đầu để kiểm thử luồng người dùng.
 
-Káº¿t quáº£ mong Ä‘á»£i:
+Kết quả mong đợi:
 
-- User Ä‘Æ°á»£c redirect Ä‘áº¿n `/admin/dashboard`.
-- Dashboard metrics hiá»ƒn thá»‹.
-- Sidebar vĂ  navigation hoáº¡t Ä‘á»™ng.
-- API call tráº£ `200` hoáº·c response nghiá»‡p vá»¥ mong Ä‘á»£i.
+- User được redirect đến `/admin/dashboard`.
+- Dashboard metrics hiển thị.
+- Sidebar và navigation hoạt động.
+- API call trả `200` hoặc response nghiệp vụ mong đợi.
 
-![Admin dashboard sau khi Ä‘Äƒng nháº­p thĂ nh cĂ´ng](/HUGO/images/5-Workshop/5.6-Test-Monitor/5.6.2-admin-dashboard.png)
+![Admin dashboard sau khi đăng nhập thành công](/HUGO/images/5-Workshop/5.6-Test-Monitor/5.6.2-admin-dashboard.png)
 
-*HĂ¬nh 5.6.2. Admin dashboard sau khi Ä‘Äƒng nháº­p thĂ nh cĂ´ng.*
+*Hình 5.6.2. Admin dashboard sau khi đăng nhập thành công.*
 
-Sau khi Ä‘Äƒng nháº­p admin, dashboard cáº§n hiá»ƒn thá»‹ dá»¯ liá»‡u tá»•ng quan. Äiá»u nĂ y xĂ¡c nháº­n authentication, API backend vĂ  database Ä‘ang hoáº¡t Ä‘á»™ng cĂ¹ng nhau.
+Sau khi đăng nhập admin, dashboard cần hiển thị dữ liệu tổng quan. Điều này xác nhận authentication, API backend và database đang hoạt động cùng nhau.
 
-## Test 3: Workflow admin chĂ­nh
+## Test 3: Workflow admin chính
 
-Kiá»ƒm thá»­ Ă­t nháº¥t má»™t workflow tá»« má»—i module admin lá»›n:
+Kiểm thử ít nhất một workflow từ mỗi module admin lớn:
 
-| Module | HĂ nh Ä‘á»™ng kiá»ƒm thá»­ |
+| Module | Hành động kiểm thử |
 | --- | --- |
-| Categories | Táº¡o hoáº·c tĂ¬m kiáº¿m danh má»¥c tĂ i sáº£n. |
-| Assets | Táº¡o, cáº­p nháº­t hoáº·c tĂ¬m kiáº¿m tĂ i sáº£n. |
-| Employees | Xem danh sĂ¡ch nhĂ¢n viĂªn vĂ  chi tiáº¿t nhĂ¢n viĂªn. |
-| Departments | Xem hoáº·c cáº­p nháº­t thĂ´ng tin phĂ²ng ban. |
-| Assignments | BĂ n giao tĂ i sáº£n kháº£ dá»¥ng cho nhĂ¢n viĂªn. |
-| Maintenance | Táº¡o hoáº·c cáº­p nháº­t yĂªu cáº§u há»— trá»£/báº£o trĂ¬. |
-| Inventory | Xem hoáº·c táº¡o phiĂªn kiá»ƒm kĂª. |
-| Reports | Má»Ÿ bĂ¡o cĂ¡o tá»•ng quan hoáº·c bĂ¡o cĂ¡o tĂ i sáº£n. |
+| Categories | Tạo hoặc tìm kiếm danh mục tài sản. |
+| Assets | Tạo, cập nhật hoặc tìm kiếm tài sản. |
+| Employees | Xem danh sách nhân viên và chi tiết nhân viên. |
+| Departments | Xem hoặc cập nhật thông tin phòng ban. |
+| Assignments | Bàn giao tài sản khả dụng cho nhân viên. |
+| Maintenance | Tạo hoặc cập nhật yêu cầu hỗ trợ/bảo trì. |
+| Inventory | Xem hoặc tạo phiên kiểm kê. |
+| Reports | Mở báo cáo tổng quan hoặc báo cáo tài sản. |
 
-![MĂ n hĂ¬nh quáº£n lĂ½ tĂ i sáº£n](/HUGO/images/5-Workshop/5.6-Test-Monitor/5.6.3-admin-assets.png)
+![Màn hình quản lý tài sản](/HUGO/images/5-Workshop/5.6-Test-Monitor/5.6.3-admin-assets.png)
 
-*HĂ¬nh 5.6.3. MĂ n hĂ¬nh quáº£n lĂ½ tĂ i sáº£n.*
+*Hình 5.6.3. Màn hình quản lý tài sản.*
 
-Danh sĂ¡ch tĂ i sáº£n cáº§n hiá»ƒn thá»‹ Ä‘Ăºng, Ä‘á»“ng thá»i cĂ¡c thao tĂ¡c chĂ­nh nhÆ° xem, sá»­a, xĂ³a hoáº·c nháº­p Excel pháº£i xuáº¥t hiá»‡n theo Ä‘Ăºng quyá»n admin.
+Danh sách tài sản cần hiển thị đúng, đồng thời các thao tác chính như xem, sửa, xóa hoặc nhập Excel phải xuất hiện theo đúng quyền admin.
 
-![Workflow quáº£n lĂ½ bĂ n giao tĂ i sáº£n](/HUGO/images/5-Workshop/5.6-Test-Monitor/5.6.4-assignment-maintenance.png)
+![Workflow quản lý bàn giao tài sản](/HUGO/images/5-Workshop/5.6-Test-Monitor/5.6.4-assignment-maintenance.png)
 
-*HĂ¬nh 5.6.4. Workflow quáº£n lĂ½ bĂ n giao tĂ i sáº£n.*
+*Hình 5.6.4. Workflow quản lý bàn giao tài sản.*
 
-á» workflow bĂ n giao, cáº§n kiá»ƒm tra tráº¡ng thĂ¡i tĂ i sáº£n, nhĂ¢n viĂªn nháº­n tĂ i sáº£n vĂ  lá»‹ch sá»­ bĂ n giao. ÄĂ¢y lĂ  luá»“ng nghiá»‡p vá»¥ quan trá»ng cá»§a há»‡ thá»‘ng EAM Workspace.
+Ở workflow bàn giao, cần kiểm tra trạng thái tài sản, nhân viên nhận tài sản và lịch sử bàn giao. Đây là luồng nghiệp vụ quan trọng của hệ thống EAM Workspace.
 
-## Test 4: Workflow nhĂ¢n viĂªn
+## Test 4: Workflow nhân viên
 
-ÄÄƒng nháº­p báº±ng tĂ i khoáº£n nhĂ¢n viĂªn vĂ  kiá»ƒm tra:
+Đăng nhập bằng tài khoản nhân viên và kiểm tra:
 
 - Employee dashboard.
-- Trang tĂ i sáº£n Ä‘Æ°á»£c bĂ n giao.
-- Trang chi tiáº¿t tĂ i sáº£n.
-- Táº¡o yĂªu cáº§u há»— trá»£.
+- Trang tài sản được bàn giao.
+- Trang chi tiết tài sản.
+- Tạo yêu cầu hỗ trợ.
 - Trang FAQ.
-- Trang há»“ sÆ¡ vĂ  lá»‹ch sá»­.
+- Trang hồ sơ và lịch sử.
 
 ![Employee dashboard](/HUGO/images/5-Workshop/5.6-Test-Monitor/5.6.5-employee-dashboard.png)
 
-*HĂ¬nh 5.6.5. Employee dashboard sau khi Ä‘Äƒng nháº­p.*
+*Hình 5.6.5. Employee dashboard sau khi đăng nhập.*
 
-Táº¡i dashboard nhĂ¢n viĂªn, cáº§n kiá»ƒm tra dá»¯ liá»‡u hiá»ƒn thá»‹ theo Ä‘Ăºng quyá»n cá»§a tĂ i khoáº£n nhĂ¢n viĂªn. NgÆ°á»i dĂ¹ng chá»‰ nĂªn tháº¥y tĂ i sáº£n, yĂªu cáº§u há»— trá»£ vĂ  thĂ´ng tin cĂ¡ nhĂ¢n liĂªn quan Ä‘áº¿n mĂ¬nh.
+Tại dashboard nhân viên, cần kiểm tra dữ liệu hiển thị theo đúng quyền của tài khoản nhân viên. Người dùng chỉ nên thấy tài sản, yêu cầu hỗ trợ và thông tin cá nhân liên quan đến mình.
 
-## Test 5: Upload vĂ  tráº¡ng thĂ¡i tĂ i khoáº£n
+## Test 5: Upload và trạng thái tài khoản
 
-Kiá»ƒm tra thĂªm cĂ¡c case Ä‘Ă£ gáº·p trong quĂ¡ trĂ¬nh deploy:
+Kiểm tra thêm các case đã gặp trong quá trình deploy:
 
-- Upload áº£nh/avatar Ä‘i qua backend/API vĂ  áº£nh tráº£ `200`.
-- TĂ i khoáº£n inactive khĂ´ng thá»ƒ Ä‘Äƒng nháº­p.
-- Response lá»—i inactive tráº£ Ä‘Ăºng mĂ£ nghiá»‡p vá»¥, vĂ­ dá»¥ `AUTH_ACCOUNT_INACTIVE`.
-- Browser DevTools khĂ´ng cĂ³ lá»—i CORS.
+- Upload ảnh/avatar đi qua backend/API và ảnh trả `200`.
+- Tài khoản inactive không thể đăng nhập.
+- Response lỗi inactive trả đúng mã nghiệp vụ, ví dụ `AUTH_ACCOUNT_INACTIVE`.
+- Browser DevTools không có lỗi CORS.
 
-![DevTools Network hiá»ƒn thá»‹ API request thĂ nh cĂ´ng](/HUGO/images/5-Workshop/5.6-Test-Monitor/5.6.6-devtools-network.png)
+![DevTools Network hiển thị API request thành công](/HUGO/images/5-Workshop/5.6-Test-Monitor/5.6.6-devtools-network.png)
 
-*HĂ¬nh 5.6.6. DevTools Network hiá»ƒn thá»‹ cĂ¡c API request thĂ nh cĂ´ng.*
+*Hình 5.6.6. DevTools Network hiển thị các API request thành công.*
 
-Táº¡i tab Network, cáº§n lá»c cĂ¡c request `/api/...` vĂ  kiá»ƒm tra status tráº£ vá» `200` hoáº·c mĂ£ nghiá»‡p vá»¥ mong Ä‘á»£i. Náº¿u xuáº¥t hiá»‡n lá»—i CORS hoáº·c request tráº£ HTML, cáº§n kiá»ƒm tra láº¡i Amplify rewrite vĂ  backend CORS.
+Tại tab Network, cần lọc các request `/api/...` và kiểm tra status trả về `200` hoặc mã nghiệp vụ mong đợi. Nếu xuất hiện lỗi CORS hoặc request trả HTML, cần kiểm tra lại Amplify rewrite và backend CORS.
 
-![TĂ i khoáº£n inactive bá»‹ cháº·n Ä‘Äƒng nháº­p](/HUGO/images/5-Workshop/5.6-Test-Monitor/5.6.7-inactive-account.png)
+![Tài khoản inactive bị chặn đăng nhập](/HUGO/images/5-Workshop/5.6-Test-Monitor/5.6.7-inactive-account.png)
 
-*HĂ¬nh 5.6.7. TĂ i khoáº£n inactive bá»‹ cháº·n Ä‘Äƒng nháº­p.*
+*Hình 5.6.7. Tài khoản inactive bị chặn đăng nhập.*
 
-Khi Ä‘Äƒng nháº­p báº±ng tĂ i khoáº£n inactive, há»‡ thá»‘ng cáº§n tá»« chá»‘i truy cáº­p. Káº¿t quáº£ nĂ y xĂ¡c nháº­n backend cĂ³ kiá»ƒm tra tráº¡ng thĂ¡i tĂ i khoáº£n trÆ°á»›c khi cáº¥p quyá»n vĂ o há»‡ thá»‘ng.
+Khi đăng nhập bằng tài khoản inactive, hệ thống cần từ chối truy cập. Kết quả này xác nhận backend có kiểm tra trạng thái tài khoản trước khi cấp quyền vào hệ thống.
 
-## Monitoring vá»›i CloudWatch
+## Monitoring với CloudWatch
 
-Má»Ÿ CloudWatch Logs vĂ  kiá»ƒm tra log group cá»§a Elastic Beanstalk.
+Mở CloudWatch Logs và kiểm tra log group của Elastic Beanstalk.
 
-Cáº§n kiá»ƒm tra:
+Cần kiểm tra:
 
 - Log startup backend.
 - Request log.
-- Lá»—i authentication.
-- Lá»—i káº¿t ná»‘i database.
-- Exception chÆ°a Ä‘Æ°á»£c xá»­ lĂ½.
+- Lỗi authentication.
+- Lỗi kết nối database.
+- Exception chưa được xử lý.
 
-CĂ¡c endpoint há»¯u Ă­ch:
+Các endpoint hữu ích:
 
 ```text
 GET /api/health
@@ -143,43 +143,43 @@ GET /api/assets
 GET /api/reports/summary
 ```
 
-## Alarm Ä‘á» xuáº¥t
+## Alarm đề xuất
 
-Vá»›i mĂ´i trÆ°á»ng demo, cĂ³ thá»ƒ táº¡o cĂ¡c CloudWatch alarm Ä‘Æ¡n giáº£n:
+Với môi trường demo, có thể tạo các CloudWatch alarm đơn giản:
 
-| Alarm | Má»¥c Ä‘Ă­ch |
+| Alarm | Mục đích |
 | --- | --- |
-| EC2 high CPU | PhĂ¡t hiá»‡n backend instance quĂ¡ táº£i. |
-| Elastic Beanstalk health degraded | PhĂ¡t hiá»‡n environment khĂ´ng á»•n Ä‘á»‹nh. |
-| RDS CPU hoáº·c storage | PhĂ¡t hiá»‡n váº¥n Ä‘á» capacity cá»§a database. |
-| 5xx errors | PhĂ¡t hiá»‡n lá»—i application hoáº·c infrastructure. |
+| EC2 high CPU | Phát hiện backend instance quá tải. |
+| Elastic Beanstalk health degraded | Phát hiện environment không ổn định. |
+| RDS CPU hoặc storage | Phát hiện vấn đề capacity của database. |
+| 5xx errors | Phát hiện lỗi application hoặc infrastructure. |
 
-## HÆ°á»›ng dáº«n xá»­ lĂ½ lá»—i
+## Hướng dẫn xử lý lỗi
 
-| Váº¥n Ä‘á» | NguyĂªn nhĂ¢n thÆ°á»ng gáº·p | CĂ¡ch xá»­ lĂ½ |
+| Vấn đề | Nguyên nhân thường gặp | Cách xử lý |
 | --- | --- | --- |
-| `502` hoáº·c backend khĂ´ng pháº£n há»“i | Backend crash hoáº·c sai port | Kiá»ƒm tra `PORT=8080`, EB logs vĂ  health endpoint trá»±c tiáº¿p. |
-| API Gateway tráº£ `404` | Route, stage, integration hoáº·c path forwarding sai | Kiá»ƒm tra route proxy, endpoint integration, stage Ä‘Ă£ deploy vĂ  Ä‘áº£m báº£o backend nháº­n Ä‘Ăºng path `/api/...`. |
-| CORS error | `FRONTEND_ORIGIN` hoáº·c `FRONTEND_ORIGINS` sai | Set Ä‘Ăºng URL Amplify vĂ  redeploy backend. |
-| KhĂ´ng káº¿t ná»‘i Ä‘Æ°á»£c database | RDS endpoint hoáº·c security group sai | Kiá»ƒm tra `DATABASE_URL` vĂ  cho phĂ©p `3306` tá»« backend SG. |
-| `/api/...` tráº£ frontend HTML | Thá»© tá»± Amplify rewrite sai | ÄÆ°a `/api/<*>` lĂªn trĂªn SPA fallback rule. |
-| áº¢nh/avatar upload tráº£ `404` | Amplify chÆ°a rewrite `/uploads/<*>` hoáº·c backend chÆ°a phá»¥c vá»¥ Ä‘Ăºng thÆ° má»¥c upload | ThĂªm `/uploads/<*>` rewrite Ä‘áº¿n API Gateway, Ä‘áº·t trĂªn SPA fallback vĂ  kiá»ƒm tra URL áº£nh trá»±c tiáº¿p. |
-| Static JS/CSS lá»—i MIME type | Rewrite rule báº¯t nháº§m static assets | Chá»‰ rewrite `/api/<*>` vĂ  `/uploads/<*>` Ä‘áº¿n API Gateway, Ä‘á»ƒ SPA fallback xá»­ lĂ½ route frontend. |
-| Login fail | Seed data hoáº·c JWT config cĂ³ váº¥n Ä‘á» | Kiá»ƒm tra seed data, `JWT_SECRET` vĂ  backend logs. |
-| Upload khĂ´ng bá»n vá»¯ng | Äang dĂ¹ng local instance storage | Chuyá»ƒn nÆ¡i lÆ°u file upload sang S3 cho hÆ°á»›ng triá»ƒn khai sáºµn sĂ ng production. |
+| `502` hoặc backend không phản hồi | Backend crash hoặc sai port | Kiểm tra `PORT=8080`, EB logs và health endpoint trực tiếp. |
+| API Gateway trả `404` | Route, stage, integration hoặc path forwarding sai | Kiểm tra route proxy, endpoint integration, stage đã deploy và đảm bảo backend nhận đúng path `/api/...`. |
+| CORS error | `FRONTEND_ORIGIN` hoặc `FRONTEND_ORIGINS` sai | Set đúng URL Amplify và redeploy backend. |
+| Không kết nối được database | RDS endpoint hoặc security group sai | Kiểm tra `DATABASE_URL` và cho phép `3306` từ backend SG. |
+| `/api/...` trả frontend HTML | Thứ tự Amplify rewrite sai | Đưa `/api/<*>` lên trên SPA fallback rule. |
+| Ảnh/avatar upload trả `404` | Amplify chưa rewrite `/uploads/<*>` hoặc backend chưa phục vụ đúng thư mục upload | Thêm `/uploads/<*>` rewrite đến API Gateway, đặt trên SPA fallback và kiểm tra URL ảnh trực tiếp. |
+| Static JS/CSS lỗi MIME type | Rewrite rule bắt nhầm static assets | Chỉ rewrite `/api/<*>` và `/uploads/<*>` đến API Gateway, để SPA fallback xử lý route frontend. |
+| Login fail | Seed data hoặc JWT config có vấn đề | Kiểm tra seed data, `JWT_SECRET` và backend logs. |
+| Upload không bền vững | Đang dùng local instance storage | Chuyển nơi lưu file upload sang S3 cho hướng triển khai sẵn sàng production. |
 
-## Checklist xĂ¡c nháº­n
+## Checklist xác nhận
 
-- [ ] Frontend má»Ÿ Ä‘Æ°á»£c tá»« Amplify URL.
-- [ ] `GET /api/health` tráº£ success qua Elastic Beanstalk.
-- [ ] `GET /api/health` tráº£ success qua API Gateway.
-- [ ] `GET /api/health` tráº£ success qua Amplify rewrite.
-- [ ] Admin login hoáº¡t Ä‘á»™ng.
-- [ ] Employee login hoáº¡t Ä‘á»™ng.
-- [ ] Workflow CRUD chĂ­nh hoáº¡t Ä‘á»™ng.
-- [ ] Workflow bĂ n giao tĂ i sáº£n hoáº¡t Ä‘á»™ng.
-- [ ] Workflow yĂªu cáº§u há»— trá»£ hoáº¡t Ä‘á»™ng.
-- [ ] TĂ i khoáº£n inactive bá»‹ cháº·n Ä‘Äƒng nháº­p.
-- [ ] KhĂ´ng cĂ³ lá»—i CORS trong browser DevTools.
+- [ ] Frontend mở được từ Amplify URL.
+- [ ] `GET /api/health` trả success qua Elastic Beanstalk.
+- [ ] `GET /api/health` trả success qua API Gateway.
+- [ ] `GET /api/health` trả success qua Amplify rewrite.
+- [ ] Admin login hoạt động.
+- [ ] Employee login hoạt động.
+- [ ] Workflow CRUD chính hoạt động.
+- [ ] Workflow bàn giao tài sản hoạt động.
+- [ ] Workflow yêu cầu hỗ trợ hoạt động.
+- [ ] Tài khoản inactive bị chặn đăng nhập.
+- [ ] Không có lỗi CORS trong browser DevTools.
 
 
