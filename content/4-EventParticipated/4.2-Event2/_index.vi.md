@@ -1,122 +1,100 @@
-﻿---
-title: "Sự kiện 2"
+---
+title: "FCAJ Community Day"
 date: 2024-01-01
 weight: 1
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Báo cáo tóm tắt: “Hội thảo hiện đại hóa App-DB do GenAI cung cấp”
+# Event 2 - FC Community Day
 
-### Mục tiêu sự kiện
+## Thông tin sự kiện
 
-- Chia sẻ các phương pháp hay nhất trong thiết kế ứng dụng hiện đại
-- Giới thiệu Thiết kế hướng miền (DDD) và kiến ​​trúc hướng sự kiện
-- Cung cấp hướng dẫn về cách chọn dịch vụ điện toán phù hợp
-- Trình bày các công cụ AI để hỗ trợ vòng đời phát triển
+| Nội dung | Chi tiết |
+| --- | --- |
+| Tên sự kiện | FC Community Day |
+| Hình thức | Tổ chức trực tiếp kết hợp livestream |
+| Địa điểm | Tầng 26 và tầng 36, tòa nhà Bitexco Financial Tower |
+| Vai trò | Người tham dự |
+| Chủ đề chính | Cloud Computing, AI Agent, Voice AI, DevOps AI Agent, AI trong nhân sự và triển khai AI an toàn trong doanh nghiệp |
 
-### Loa
+## Tổng quan
 
-- **Jignesh Shah** â€“ Giám đốc, Cơ sở dữ liệu nguồn mở
-- **Erica Liu** â€“ Chuyên gia Sr. GTM, AppMod
-- **Fabrianne Effendi** â€“ PGS. Chuyên gia SA, Dịch vụ web Amazon không có máy chủ
+FC Community Day là sự kiện cộng đồng công nghệ với nhiều phần chia sẻ từ các diễn giả đang làm việc trong lĩnh vực cloud, trí tuệ nhân tạo và chuyển đổi số doanh nghiệp. Nội dung sự kiện tập trung vào cách các doanh nghiệp ứng dụng cloud computing và AI trong vận hành thực tế, từ xử lý sự cố hệ thống, tối ưu chi phí, tự động hóa DevOps, xây dựng voice agent tiếng Việt cho đến ứng dụng AI trong tuyển dụng và quản trị nhân sự.
 
-### Điểm nổi bật chính
+Sự kiện có ý nghĩa thực tiễn vì các phần trình bày không chỉ dừng lại ở khái niệm kỹ thuật, mà còn đưa ra bài toán doanh nghiệp, kiến trúc giải pháp, demo sản phẩm và các kinh nghiệm triển khai trong môi trường production.
 
-#### Xác định những hạn chế của kiến ​​trúc ứng dụng cũ
+## Nội dung chính
 
-- Chu kỳ phát hành sản phẩm dài †’ Mất doanh thu/bỏ lỡ cơ hội  
-- Hoạt động kém hiệu quả †’ Năng suất giảm, chi phí cao hơn  
-- Không tuân thủ các quy định về bảo mật †’ Vi phạm an ninh, mất uy tín  
+### Cloud Thinker và định hướng nghề nghiệp Cloud Engineering
 
-#### Chuyển sang kiến ​​trúc ứng dụng hiện đại – Microservices
+Phần chia sẻ của diễn giả Steve Trần tập trung vào hành trình phát triển nghề nghiệp trong lĩnh vực cloud. Diễn giả bắt đầu từ công việc liên quan đến quản lý server, sau đó chuyển sang học cloud và đạt các chứng chỉ AWS trong thời gian ngắn. Nội dung nhấn mạnh rằng thị trường cloud tại Việt Nam và khu vực ASEAN tăng trưởng mạnh nhờ nhu cầu chuyển đổi số, đặc biệt sau giai đoạn làm việc từ xa.
 
-Di chuyển sang hệ thống mô-đun — mỗi chức năng là một **dịch vụ độc lập** giao tiếp qua **sự kiện**, được xây dựng trên ba trụ cột cốt lõi:
+Một điểm nổi bật là cách AI đang thay đổi yêu cầu đối với kỹ sư phần mềm và kỹ sư cloud. Doanh nghiệp không chỉ cần người biết lập trình, mà cần nhân sự có khả năng sử dụng AI để tăng năng suất, hiểu hệ thống ở mức kiến trúc và xử lý vấn đề trong môi trường vận hành thực tế.
 
-- **Quản lý hàng đợi**: Xử lý các tác vụ không đồng bộ  
-- **Chiến lược bộ nhớ đệm**: Tối ưu hóa hiệu suất  
-- **Xử lý tin nhắn**: Giao tiếp giữa các dịch vụ linh hoạt  
+Cloud Thinker được giới thiệu như một nền tảng hỗ trợ vận hành cloud bằng AI, giúp tăng tốc quá trình điều tra sự cố, tối ưu chi phí FinOps, hỗ trợ kiểm thử bảo mật và giữ vai trò human-in-the-loop đối với các quyết định nhạy cảm trong production.
 
-#### Thiết kế hướng tên miền (DDD)
+### Voice AI cho tiếng Việt
 
-- **Phương pháp bốn bước**: Xác định các sự kiện trong miền â†' sắp xếp dòng thời gian â†' xác định các tác nhân â†' xác định bối cảnh bị giới hạn  
-- **Nghiên cứu điển hình về hiệu sách**: Trình bày ứng dụng DDD trong thế giới thực  
-- **Ánh xạ ngữ cảnh**: 7 mẫu để tích hợp các ngữ cảnh bị giới hạn  
+Phần trình bày về Voice AI giới thiệu kiến trúc cơ bản của một hệ thống voice agent, bao gồm audio input, speech-to-text, language model và text-to-speech. Với tiếng Việt, bài toán trở nên phức tạp hơn do sự đa dạng về vùng miền, dấu thanh, ngữ điệu, giới tính giọng nói và cách ngắt nhịp trong hội thoại.
 
-#### Kiến trúc hướng sự kiện
+Diễn giả trình bày cách hệ thống Voice AI được xây dựng theo pipeline speech-to-text rồi xử lý bằng language model trước khi chuyển ngược lại thành giọng nói. Cách tiếp cận này giúp kiểm soát tốt hơn độ chính xác, độ trễ và khả năng xử lý nghiệp vụ.
 
-- **3 mẫu tích hợp**: Xuất bản/Đăng ký, Điểm-điểm, Truyền phát  
-- **Lợi ích**: Khớp nối lỏng lẻo, khả năng mở rộng, khả năng phục hồi  
-- **So sánh đồng bộ hóa và không đồng bộ**: Tìm hiểu sự cân bằng  
+Một số ứng dụng thực tế được đề cập gồm trợ lý giọng nói cho ngân hàng, chatbot hỗ trợ khách hàng, tự động hóa các thao tác như khóa thẻ và tích hợp tool calling để AI không chỉ trả lời FAQ mà còn thực hiện được quy trình nghiệp vụ.
 
-#### Tính toán tiến hóa
+### DevOps AI Agent
 
-- **Mô hình chia sẻ trách nhiệm**: EC2 â†’ ECS â†’ Fargate â†’ Lambda  
-- **Lợi ích không cần máy chủ**: Không cần quản lý máy chủ, tự động mở rộng quy mô, trả theo giá trị  
-- **Chức năng và Vùng chứa**: Tiêu chí lựa chọn phù hợp  
+Phần DevOps AI Agent tập trung vào bài toán xử lý sự cố trong hệ thống cloud phức tạp. Khi hệ thống có nhiều service, nhiều nguồn log và nhiều đội vận hành, việc xác định nguyên nhân lỗi có thể mất nhiều thời gian, làm tăng MTTD và MTTR.
 
-#### Nhà phát triển Amazon Q
+Giải pháp AI Agent được trình bày theo quy trình: nhận alert, tổng hợp log, sinh giả thuyết nguyên nhân, kiểm chứng giả thuyết, đề xuất phương án giảm thiểu và đưa ra khuyến nghị cải thiện hệ thống. Điểm quan trọng là AI Agent không thay thế hoàn toàn con người, mà đóng vai trò tăng tốc phân tích và hỗ trợ kỹ sư đưa ra quyết định chính xác hơn.
 
-- **Tự động hóa SDLC**: Từ lập kế hoạch đến bảo trì  
-- **Chuyển đổi mã**: Nâng cấp Java, hiện đại hóa .NET  
-- **Tác nhân chuyển đổi AWS**: Di chuyển VMware, Mainframe, .NET  
+Các case study cho thấy AI có thể rút ngắn đáng kể thời gian xử lý sự cố, đặc biệt với các hệ thống có observability tốt, dữ liệu vận hành đầy đủ và cơ chế phân quyền rõ ràng.
 
-### Bài học chính
+### AI trong nhân sự doanh nghiệp
 
-#### Tư duy thiết kế
+Phần chia sẻ về AI trong nhân sự trình bày các khó khăn phổ biến của doanh nghiệp khi tuyển dụng, như sàng lọc CV thủ công, đánh giá ứng viên còn cảm tính, thời gian tuyển dụng kéo dài và rủi ro bảo mật dữ liệu ứng viên.
 
-- **Phương pháp tiếp cận ưu tiên doanh nghiệp**: Luôn bắt đầu từ lĩnh vực kinh doanh, không phải công nghệ  
-- **Ngôn ngữ phổ biến**: Tầm quan trọng của vốn từ vựng chung giữa các nhóm kinh doanh và công nghệ  
-- **Bối cảnh bị giới hạn**: Xác định và quản lý độ phức tạp trong các hệ thống lớn  
+AI có thể hỗ trợ tự động trích xuất thông tin CV, so khớp kỹ năng với mô tả công việc, tạo báo cáo đánh giá ứng viên và hỗ trợ điều phối lịch phỏng vấn. Các công cụ như Amazon Q có thể được tùy biến thành agent cho từng phòng ban, giúp xử lý tài liệu nội bộ, tạo báo cáo và tự động hóa workflow.
 
-#### Kiến trúc kỹ thuật
+Tuy nhiên, nội dung sự kiện cũng nhấn mạnh rằng AI chỉ nên hỗ trợ các tác vụ lặp lại hoặc phân tích ban đầu. Các quyết định chiến lược và đánh giá cuối cùng vẫn cần con người tham gia để đảm bảo tính công bằng và phù hợp với văn hóa doanh nghiệp.
 
-- **Kỹ thuật gây bão sự kiện**: Phương pháp thực tế để lập mô hình quy trình kinh doanh  
-- Sử dụng **giao tiếp theo sự kiện** thay vì cuộc gọi đồng bộ  
-- **Mẫu tích hợp**: Khi nào nên sử dụng đồng bộ hóa, không đồng bộ, pub/sub, phát trực tuyến  
-- **Tính toán phổ**: Tiêu chí để lựa chọn giữa VM, container và serverless  
+### Triển khai AI an toàn trong doanh nghiệp
 
-#### Chiến lược hiện đại hóa
+Phần cuối của sự kiện đề cập đến nhu cầu triển khai AI agent trong môi trường doanh nghiệp một cách an toàn. Với các tổ chức có dữ liệu nhạy cảm, AI không nên truy cập hệ thống nội bộ qua Internet công cộng nếu không có kiểm soát phù hợp.
 
-- **Phương pháp tiếp cận theo từng giai đoạn**: Không vội vàng - tuân theo lộ trình rõ ràng  
-- **Khung 7Rs**: Nhiều lộ trình hiện đại hóa tùy thuộc vào ứng dụng  
-- **Đo lường ROI**: Giảm chi phí + tính linh hoạt trong kinh doanh  
+Giải pháp được trình bày là sử dụng VPC Interface Endpoint, AWS PrivateLink và các MCP server để kết nối AI agent với hệ thống nội bộ qua mạng riêng. Cách thiết kế này giúp giảm rủi ro lộ dữ liệu, hạn chế tấn công man-in-the-middle, hỗ trợ kiểm soát truy cập và phù hợp hơn với yêu cầu bảo mật của doanh nghiệp.
 
-### Nộp đơn xin việc
+## Kiến thức rút ra
 
-- **Áp dụng DDD** cho các dự án hiện tại: Các buổi sự kiện gây bão với đội ngũ kinh doanh  
-- **Tái cấu trúc các vi dịch vụ**: Sử dụng ngữ cảnh giới hạn để xác định ranh giới dịch vụ  
-- **Triển khai các mẫu hướng sự kiện**: Thay thế một số cuộc gọi đồng bộ hóa bằng tin nhắn không đồng bộ  
-- **Áp dụng serverless**: Thí điểm AWS Lambda cho các trường hợp sử dụng phù hợp  
-- **Dùng thử Amazon Q Developer**: Tích hợp vào quy trình làm việc của nhà phát triển để tăng năng suất  
+- Cloud và AI đang hội tụ mạnh trong vận hành doanh nghiệp, đặc biệt ở các mảng incident management, FinOps, DevOps và chăm sóc khách hàng.
+- AI Agent cần được thiết kế theo hướng có kiểm soát quyền truy cập, phạm vi hành động rõ ràng và có human-in-the-loop cho các quyết định quan trọng.
+- Voice AI tiếng Việt cần xử lý nhiều thách thức riêng về dữ liệu, giọng vùng miền, ngữ điệu và độ trễ hội thoại.
+- DevOps AI Agent có thể giảm thời gian điều tra sự cố nếu hệ thống có log, metric và topology đầy đủ.
+- AI trong nhân sự giúp tăng tốc tuyển dụng nhưng vẫn cần con người kiểm duyệt để tránh thiên kiến và đảm bảo phù hợp với văn hóa tổ chức.
+- Các mô hình triển khai AI trong doanh nghiệp cần đặt bảo mật, phân quyền và kiểm soát dữ liệu lên hàng đầu.
 
-### Trải nghiệm sự kiện
+## Liên hệ với project EAM Workspace
 
-Việc tham dự hội thảo **“Hiện đại hóa App-DB do GenAI hỗ trợ”** là vô cùng quý giá, mang lại cho tôi cái nhìn toàn diện về việc hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ tiên tiến. Những kinh nghiệm chính bao gồm:
+Các nội dung trong FC Community Day có liên hệ trực tiếp với project EAM Workspace. Hệ thống quản lý tài sản doanh nghiệp cần backend ổn định, cơ chế logging rõ ràng, phân quyền người dùng, kiểm soát dữ liệu và khả năng mở rộng khi số lượng tài sản, nhân viên và workflow tăng lên.
 
-#### Học từ những diễn giả có tay nghề cao
-- Các chuyên gia từ AWS và các tổ chức công nghệ lớn đã chia sẻ **các biện pháp thực hành tốt nhất** trong thiết kế ứng dụng hiện đại.  
-- Thông qua các nghiên cứu điển hình trong thế giới thực, tôi đã hiểu sâu hơn về việc áp dụng **DDD** và **Kiến trúc hướng sự kiện** cho các dự án lớn.  
+Từ góc nhìn DevOps, project có thể cải thiện thêm bằng cách chuẩn hóa log, health check, monitoring và cảnh báo để giảm thời gian phát hiện lỗi. Từ góc nhìn AI, trong tương lai hệ thống có thể tích hợp các tính năng như trợ lý nội bộ hỗ trợ tra cứu tài sản, tự động phân loại yêu cầu hỗ trợ, gợi ý lịch bảo trì hoặc tạo báo cáo tài sản theo ngôn ngữ tự nhiên.
 
-#### Tiếp xúc kỹ thuật thực hành
-- Việc tham gia vào các phiên **tập trung sự kiện** đã giúp tôi hình dung ra cách **mô hình hóa quy trình kinh doanh** thành các sự kiện trong miền.  
-- Đã tìm hiểu cách **phân tách các vi dịch vụ** và xác định **ngữ cảnh bị giới hạn** để quản lý độ phức tạp của hệ thống lớn.  
-- Hiểu được sự cân bằng giữa **giao tiếp đồng bộ và không đồng bộ** và các mô hình tích hợp như **pub/sub, point-to-point, streaming**.  
+## Kết luận
 
-#### Tận dụng các công cụ hiện đại
-- Đã khám phá **Amazon Q Developer**, một công cụ AI hỗ trợ SDLC từ khâu lập kế hoạch đến bảo trì.  
-- Đã học cách **tự động chuyển đổi mã** và thí điểm serverless với **AWS Lambda** để cải thiện năng suất.  
+FC Community Day mang lại cái nhìn thực tế về cách cloud và AI đang được ứng dụng trong doanh nghiệp hiện đại. Sự kiện giúp củng cố nhận thức rằng việc xây dựng hệ thống không chỉ là triển khai chức năng, mà còn cần quan tâm đến vận hành, bảo mật, khả năng mở rộng, dữ liệu và trải nghiệm người dùng trong môi trường thực tế.
 
-#### Kết nối và thảo luận
-- Hội thảo mang đến cơ hội trao đổi ý tưởng với các chuyên gia, đồng nghiệp và nhóm kinh doanh, nâng cao **ngôn ngữ phổ biến** giữa kinh doanh và công nghệ.  
-- Các ví dụ thực tế đã củng cố tầm quan trọng của **cách tiếp cận ưu tiên doanh nghiệp** thay vì chỉ tập trung vào công nghệ.  
+## Hình ảnh sự kiện
 
-#### Bài học kinh nghiệm
-- Việc áp dụng DDD và các mẫu theo hướng sự kiện giúp giảm **khớp nối** đồng thời cải thiện **khả năng mở rộng** và **khả năng phục hồi**.  
-- Hiện đại hóa đòi hỏi **cách tiếp cận theo từng giai đoạn** với **đo lường ROI**; quá trình gấp rút có thể gặp rủi ro.  
-- Các công cụ AI như Amazon Q Developer có thể **tăng năng suất** đáng kể khi được tích hợp vào quy trình làm việc hiện tại.  
+Một số hình ảnh được ghi lại trong quá trình tham gia sự kiện:
 
-#### Một số hình ảnh sự kiện
-*Thêm ảnh sự kiện của bạn tại đây*  
+![FC Community Day](../../images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20090429.png)
 
-> Nhìn chung, sự kiện không chỉ cung cấp kiến ​​thức kỹ thuật mà còn giúp tôi định hình lại tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và hợp tác giữa các nhóm.
+![FC Community Day](../../images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20091254.png)
+
+![FC Community Day](../../images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20093533.png)
+
+![FC Community Day](../../images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20094353.png)
+
+![FC Community Day](../../images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20102958.png)
+
+![FC Community Day](../../images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20103819.png)

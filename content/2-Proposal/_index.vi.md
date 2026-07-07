@@ -1,152 +1,221 @@
-﻿---
-title: "Đề xuất"
+---
+title: "Bản đề xuất"
 date: 2024-01-01
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
 
-Trong phần này, bạn cần tóm tắt nội dung hội thảo mà bạn **dự định** tiến hành.
+# Triển khai hệ thống quản lý tài sản doanh nghiệp 
 
-# Đề xuất Enterprise Asset Management
-## Nền tảng AWS thống nhất cho theo dõi tài sản, phân công, bảo trì và báo cáo
+## Không gian làm việc cloud cho quản lý tài sản doanh nghiệp
 
-### 1. Tóm tắt điều hành
-Đề xuất Enterprise Asset Management mô tả một hệ thống nội bộ dành cho người quản trị và nhân viên để quản lý tài sản trong một luồng tập trung duy nhất. Nền tảng bao phủ các nghiệp vụ theo dõi tài sản, phân công, thu hồi, chuyển giao, bảo trì, báo cáo, tải tệp đính kèm, gửi email OTP và lưu lịch sử có kiểm toán ở một nơi.
+### 1. Tóm tắt đề xuất
 
-Giải pháp sử dụng React + Vite trên AWS Amplify Hosting cho frontend, Node.js + Express trên AWS Elastic Beanstalk phía sau Application Load Balancer cho backend, và Amazon RDS for MySQL thông qua Prisma cho dữ liệu bền vững. Các dịch vụ hỗ trợ gồm Amazon S3 private bucket cho tệp, Amazon SES cho OTP và thông báo, AWS Secrets Manager và Systems Manager Parameter Store cho cấu hình, cùng CloudWatch, CloudTrail và Session Manager cho vận hành và audit.
+Đề tài của project là xây dựng **EAM Workspace**, một hệ thống quản lý tài sản doanh nghiệp chạy trên nền tảng web và được triển khai lên AWS. Hệ thống hướng đến bài toán quản lý tài sản văn phòng trong doanh nghiệp, nơi thông tin về thiết bị, người sử dụng, bàn giao, bảo trì và kiểm kê cần được theo dõi rõ ràng, tập trung và dễ truy xuất.
 
-### 2. Tuyên bố vấn đề
-### Vấn đề là gì?
-Hoạt động quản lý tài sản hiện đang bị phân tán giữa quy trình thủ công, tệp rời rạc và nhiều kênh trao đổi khác nhau. Luồng công việc của quản trị viên và nhân viên cần phân quyền rõ ràng, nhưng khi không có một hệ thống tập trung thì rất khó biết tài sản đang thuộc về ai, đã bàn giao cho ai, đã thu hồi hay chưa, và hạng mục bảo trì nào vẫn còn treo.
+EAM Workspace hỗ trợ doanh nghiệp quản lý nhân viên, phòng ban, tài sản, bàn giao, yêu cầu bảo trì, phiên kiểm kê, báo cáo, góp ý, FAQ, chấm công, lịch sử đăng nhập, thông báo và support chat trong một không gian làm việc tập trung. Thay vì lưu thông tin rời rạc bằng Excel, tin nhắn hoặc file nội bộ, hệ thống gom các luồng nghiệp vụ chính vào một ứng dụng có phân quyền rõ ràng cho quản trị viên và nhân viên.
 
-### Giải pháp
-Nền tảng tập trung toàn bộ hồ sơ tài sản, phân công, thu hồi, chuyển giao, bảo trì, phản hồi, thông báo và tệp đính kèm trong một hệ thống nội bộ duy nhất. Các màn hình theo vai trò cho phép quản trị viên xử lý toàn bộ vòng đời tài sản, trong khi nhân viên chỉ cần thực hiện các tác vụ tự phục vụ như xem tài sản được giao, gửi yêu cầu và theo dõi trạng thái. Nhờ đó hệ thống loại bỏ trùng lặp dữ liệu và đảm bảo toàn bộ quy trình có thể kiểm toán từ đầu đến cuối.
+Hệ thống được phát triển theo nhóm 5 thành viên. Dự án bao gồm frontend React, backend Node.js/Express, cơ sở dữ liệu MySQL được quản lý bằng Prisma, và phương án triển khai trên AWS. Trong phạm vi báo cáo này, nội dung tập trung vào quá trình xây dựng giao diện, tích hợp API, tìm hiểu các dịch vụ AWS, triển khai demo full-stack và tài liệu hóa workshop trong giai đoạn thực tập từ **17/04/2026 đến 10/07/2026**.
 
-### Lợi ích và lợi tức đầu tư
-Kết quả là quy trình xử lý tài sản nhanh hơn, ít sai sót khi bàn giao hơn và có một nguồn dữ liệu duy nhất cho lịch sử vận hành. Hồ sơ tập trung giúp cải thiện chất lượng báo cáo, dễ truy xuất tệp đính kèm và vết kiểm toán hơn, đồng thời giảm thời gian đối soát các bảng tính hoặc tin nhắn rời rạc. Nhóm nội bộ cũng có một nền tảng MVP ổn định hơn để mở rộng về sau mà không phải thay đổi luồng nghiệp vụ cốt lõi.
+Ở bản demo, kiến trúc AWS sử dụng AWS Amplify Hosting cho frontend, Amazon API Gateway làm lớp API public, AWS Elastic Beanstalk cho backend Node.js, Amazon RDS for MySQL cho dữ liệu nghiệp vụ, Amazon SES cho gửi email và Amazon CloudWatch cho log/monitoring. Một số dịch vụ như Amazon S3, AWS Secrets Manager, AWS Systems Manager Parameter Store và AWS CloudTrail được đưa vào như định hướng mở rộng để hệ thống sẵn sàng hơn khi chuyển sang môi trường production.
 
-### 3. Kiến trúc giải pháp
-Giải pháp dùng kiến trúc AWS phân lớp cho nghiệp vụ quản lý tài sản nội bộ. React + Vite được host trên AWS Amplify Hosting, điểm vào công khai của API là Application Load Balancer, và backend chạy trên AWS Elastic Beanstalk với Node.js + Express. Dữ liệu nghiệp vụ bền vững được lưu trong Amazon RDS for MySQL và được truy cập thông qua Prisma. Kiến trúc được trình bày chi tiết dưới đây:
+### 2. Mục đích sử dụng của hệ thống
 
-![Tổng quan kiến trúc Enterprise Asset Management](/images/2-Proposal/enterprise-asset-management-architecture-overview.svg)
+EAM Workspace được dùng để hỗ trợ doanh nghiệp quản lý toàn bộ vòng đời tài sản từ lúc tạo mới, phân loại, bàn giao cho nhân viên, ghi nhận bảo trì, kiểm kê, thu hồi cho đến báo cáo tình trạng sử dụng. Hệ thống phù hợp với các doanh nghiệp có nhiều thiết bị văn phòng như laptop, màn hình, máy in, thiết bị ngoại vi hoặc tài sản cần theo dõi theo phòng ban và người sử dụng.
 
-![Luồng yêu cầu Enterprise Asset Management](/images/2-Proposal/enterprise-asset-management-request-flow.svg)
+Với quản trị viên, hệ thống giúp theo dõi danh sách tài sản, tình trạng tài sản, nhân viên đang sử dụng, lịch sử bàn giao, yêu cầu bảo trì, dữ liệu kiểm kê và báo cáo tổng quan. Với nhân viên, hệ thống cung cấp cổng tự phục vụ để xem tài sản được cấp, gửi yêu cầu hỗ trợ, xem thông tin cá nhân và theo dõi các hoạt động liên quan đến tài sản của mình.
 
-### Dịch vụ AWS đã sử dụng
-- **AWS Amplify Hosting**: Host frontend React + Vite.
-- **Application Load Balancer**: Nhận traffic API và chuyển tiếp vào backend.
-- **AWS Elastic Beanstalk**: Chạy ứng dụng Node.js + Express.
-- **Amazon RDS for MySQL Single-AZ**: Lưu tài sản, phân công, lịch sử bảo trì và báo cáo.
-- **Amazon S3 private bucket**: Lưu tệp đính kèm, file tải lên và tài liệu xuất ra.
-- **Amazon SES**: Gửi email OTP và thông báo nội bộ.
-- **AWS Secrets Manager**: Lưu secret nhạy cảm như thông tin kết nối CSDL và mail.
-- **AWS Systems Manager Parameter Store**: Lưu cấu hình theo môi trường.
-- **Amazon CloudWatch**: Thu thập log và cảnh báo về tình trạng hệ thống.
-- **AWS CloudTrail**: Ghi nhận hoạt động audit ở mức AWS.
-- **AWS Systems Manager Session Manager**: Hỗ trợ quản trị an toàn mà không cần SSH công khai.
+Mục tiêu chính của đề tài không chỉ là xây dựng một ứng dụng web có đầy đủ chức năng quản lý tài sản, mà còn là thực hành cách đưa một hệ thống full-stack lên AWS, cấu hình kết nối frontend-backend-database, kiểm thử môi trường public và kiểm soát chi phí sau khi triển khai.
 
-### Thiết kế thành phần
-- **Frontend**: React + Vite cung cấp màn hình cho quản trị viên và nhân viên.
-- **Điểm vào API**: Application Load Balancer chuyển request vào tầng backend.
-- **Tầng ứng dụng**: Node.js + Express xử lý xác thực, phân quyền và business rules.
-- **Lưu trữ dữ liệu**: Amazon RDS for MySQL lưu mô hình dữ liệu chính qua Prisma.
-- **Xử lý tệp**: Amazon S3 private bucket lưu tệp đính kèm, bằng chứng và file xuất ra.
-- **Thông báo**: Amazon SES gửi email OTP và email thông báo từ các tác vụ backend.
-- **Secret và cấu hình**: Secrets Manager và Parameter Store giữ giá trị runtime ngoài source code.
-- **Giám sát và vận hành**: CloudWatch, CloudTrail và Session Manager hỗ trợ giám sát, audit và vận hành.
+### 3. Vấn đề cần giải quyết
 
-### 4. Triển khai kỹ thuật
-**Các giai đoạn thực hiện**
-Dự án này đi qua bốn giai đoạn triển khai thực tế, phù hợp với luồng nghiệp vụ quản lý tài sản:
-- Nền tảng frontend và phân vai người dùng: thiết lập màn hình React + Vite cho quản trị viên và nhân viên, cấu trúc route, layout dùng chung và hành vi giao diện có nhận biết quyền.
-- Nền tảng backend, xác thực và lược đồ CSDL: triển khai API Node.js + Express, JWT authentication, phân quyền theo vai trò, mô hình Prisma và thiết lập schema MySQL.
-- Luồng nghiệp vụ vòng đời tài sản: xây dựng end-to-end các luồng tài sản, phân công, thu hồi, chuyển giao, bảo trì, kiểm kê, báo cáo, tệp đính kèm và thông báo.
-- Triển khai, QA, tài liệu và hoàn thiện demo: xác thực bản deploy AWS, ổn định xử lý lỗi, chuẩn bị seed data, viết tài liệu và làm mượt luồng demo.
+#### Vấn đề hiện tại
 
-**Yêu cầu kỹ thuật**
-- Stack frontend: React + Vite với các màn hình nhận biết vai trò admin và employee.
-- Stack backend: Node.js + Express với JWT, bcrypt, Prisma và MySQL.
-- Stack kiểm thử: Playwright cho kiểm tra end-to-end và Jest cho backend hoặc service-level test khi phù hợp.
-- Stack triển khai: AWS Amplify Hosting, AWS Elastic Beanstalk, Amazon RDS for MySQL, Amazon S3 private bucket, Amazon SES, AWS Secrets Manager, AWS Systems Manager Parameter Store, Amazon CloudWatch, AWS CloudTrail và AWS Systems Manager Session Manager.
-- Yêu cầu vận hành: giữ schema đồng bộ giữa local development và production, bảo toàn phân quyền theo vai trò và giữ luồng demo đủ ổn định cho buổi trình bày.
+Nhiều doanh nghiệp nhỏ và vừa vẫn quản lý tài sản văn phòng bằng bảng tính, tin nhắn hoặc các file nội bộ rời rạc. Cách làm này tạo ra nhiều vấn đề:
 
-### 5. Dòng thời gian & các cột mốc quan trọng
-**Dòng thời gian của dự án**
-Timeline được sắp theo thứ tự phụ thuộc trong 5 tuần để team xây nền tảng trước, sau đó mới ghép các luồng nghiệp vụ vòng đời tài sản lên trên.
+- Thông tin tài sản bị phân tán và khó cập nhật.
+- Quản trị viên khó theo dõi ai đang sử dụng tài sản nào.
+- Lịch sử bàn giao, thu hồi, chuyển giao, bảo trì và kiểm kê khó truy vết.
+- Nhân viên không có cổng tự phục vụ rõ ràng để xem tài sản được cấp hoặc gửi yêu cầu hỗ trợ.
+- Việc lập báo cáo chậm vì dữ liệu phải được gom và xử lý thủ công.
+- File đính kèm, hình ảnh tài sản và feedback khó được tổ chức tập trung.
 
-- Tuần 1: Nền tảng và hợp đồng
-  - Xây dựng nền tảng backend, schema cốt lõi, hợp đồng API, khung frontend và kế hoạch QA.
-  - Cột mốc: schema, API contract, app skeleton, login flow.
-- Tuần 2: Tính năng quản lý lõi
-  - Hoàn thiện JWT login, CRUD cốt lõi, nối các màn hình admin CRUD và chuẩn bị khung profile cho nhân viên.
-  - Cột mốc: core CRUD complete.
-- Tuần 3: Tính năng vòng đời tài sản
-  - Triển khai API và màn hình phân công, chi tiết tài sản cho nhân viên và luồng báo cáo tài sản hỏng.
-  - Cột mốc: assignment, employee views, broken asset report complete.
-- Tuần 4: Bảo trì, kiểm kê, báo cáo và thử nghiệm AWS
-  - Triển khai API bảo trì, kiểm kê và báo cáo, xây các màn hình admin còn lại và chạy thử bản deploy AWS đầu tiên.
-  - Cột mốc: maintenance, inventory, reports, first AWS deployment complete.
-- Tuần 5: Triển khai cuối, QA và thuyết trình
-  - Hoàn tất triển khai, kiểm tra ổn định dữ liệu và auth, chuẩn bị seed data, checklist QA, ảnh chụp màn hình và kịch bản demo.
-  - Cột mốc: final deployment, demo data, QA, presentation complete.
+#### Giải pháp đề xuất
 
-### 6. Dự toán ngân sách
-Ngân sách được tính theo kiến trúc AWS hiện tại và cần được tính lại bằng AWS Pricing Calculator khi chốt xong kích cỡ instance cuối cùng.
+EAM Workspace giải quyết các vấn đề trên bằng cách cung cấp một ứng dụng web tập trung với hai portal chính:
 
-### Chi phí cơ sở hạ tầng ước tính
-- Application Load Balancer + Elastic Beanstalk compute: UNCONFIRMED, khoảng 28-40 USD/tháng cho stack demo hiện tại.
-- Amazon RDS for MySQL Single-AZ: UNCONFIRMED, khoảng 12-19 USD/tháng gồm lưu trữ và backup ở mức vừa phải.
-- Amazon S3 private bucket: UNCONFIRMED, thường là chi phí hàng tháng rất thấp cho tệp đính kèm và file xuất ra.
-- Amazon SES: UNCONFIRMED, thường là chi phí hàng tháng rất thấp cho OTP và email nội bộ.
-- Amazon CloudWatch: UNCONFIRMED, thường là chi phí hàng tháng rất thấp cho log và alarm.
-- AWS Secrets Manager, Systems Manager Parameter Store, CloudTrail và Session Manager: UNCONFIRMED hoặc gần như bằng 0 ở mức dùng cơ bản.
+- **Admin Portal**: dành cho quản trị viên để quản lý nhân viên, phòng ban, danh mục tài sản, tài sản, bàn giao, yêu cầu bảo trì, phiên kiểm kê, vị trí, báo cáo, feedback, FAQ, lịch sử chấm công, lịch sử đăng nhập và support chat.
+- **Employee Portal**: dành cho nhân viên để xem tài sản được bàn giao, xem chi tiết tài sản, gửi yêu cầu hỗ trợ, xem FAQ, cập nhật hồ sơ, đổi mật khẩu, xem lịch sử cá nhân và trao đổi hỗ trợ.
 
-### Tổng ước tính
-- Chi phí vận hành hàng tháng ước tính: UNCONFIRMED, khoảng 46-60 USD/tháng cho kiến trúc hiện tại.
-- Chi phí vận hành hàng năm ước tính: UNCONFIRMED, khoảng 552-720 USD/năm.
-- Chi phí phần cứng một lần: không cần mua phần cứng riêng ngoài thiết bị phát triển sẵn có.
+Ứng dụng được triển khai lên AWS để frontend, backend, database và các dịch vụ hỗ trợ có thể chạy trong môi trường cloud, dễ truy cập, dễ giám sát và dễ mở rộng hơn. Trong giai đoạn thực tập, quá trình tự học AWS được thực hiện song song với phát triển sản phẩm, tập trung vào các chủ đề tài khoản AWS, IAM, networking, compute, database, storage, deployment, monitoring và tối ưu chi phí.
 
-### 7. Đánh giá rủi ro
-#### Ma trận rủi ro
-- Rủi ro chỉ chạy được một instance: Tác động trung bình, xác suất trung bình.
-- Rủi ro độ bền của file tải lên: Tác động cao, xác suất trung bình.
-- Rủi ro rò rỉ auth hoặc phân quyền: Tác động cao, xác suất thấp.
-- Rủi ro backup và restore cơ sở dữ liệu: Tác động cao, xác suất thấp.
-- Rủi ro trạng thái SSE hoặc thông báo realtime: Tác động trung bình, xác suất trung bình.
-- Rủi ro vượt ngân sách: Tác động trung bình, xác suất trung bình.
-- Rủi ro deploy hoặc rollback: Tác động trung bình, xác suất trung bình.
-- Rủi ro toàn vẹn lịch sử và audit: Tác động cao, xác suất thấp.
+#### Lợi ích
 
-#### Chiến lược giảm thiểu
-- Chỉ chạy một instance ở giai đoạn đầu và ghi rõ giả định này, sau đó mới nâng cấp khi luồng nghiệp vụ đã ổn định.
-- Lưu tệp đính kèm vào S3 private bucket và kiểm tra validation ở backend trước khi ghi.
-- Bắt buộc JWT, kiểm tra vai trò và authorization server-side cho mọi route được bảo vệ.
-- Giữ backup CSDL và ghi rõ quy trình restore trước khi đưa vào production.
-- Xem trạng thái notification in-memory của SSE như một giới hạn baseline và chỉ mở rộng sau khi đánh giá phương án multi-instance.
-- Kiểm soát chi phí bằng cảnh báo ngân sách, kích cỡ instance nhỏ và rà soát chi phí hàng tháng.
-- Giữ ghi chú deploy, version release và đường rollback sẵn sàng trước ngày demo.
-- Giữ lịch sử vận hành trong MySQL và ghi audit AWS qua CloudTrail và CloudWatch.
+- Quản lý tập trung vòng đời tài sản từ tạo mới, bàn giao, bảo trì, kiểm kê đến báo cáo.
+- Tách rõ luồng làm việc của quản trị viên và nhân viên.
+- Tăng tính bảo mật thông qua xác thực, phân quyền theo role, database private và kiểm soát biến môi trường.
+- Dễ demo và triển khai nhờ các dịch vụ managed của AWS.
+- Có lộ trình nâng cấp rõ ràng từ môi trường demo nội bộ lên môi trường production.
 
-#### Kế hoạch dự phòng
-- Chuyển sang quy trình thủ công tạm thời nếu bản deploy AWS không sẵn sàng cho giai đoạn chuẩn bị demo.
-- Khôi phục từ bản backup CSDL nếu dữ liệu bị hỏng hoặc deploy lỗi ảnh hưởng đến bộ dữ liệu chính.
-- Roll back về version trước nếu release mới gây bug chặn luồng chính.
-- Xem lại thiết kế notification nếu mở rộng multi-instance làm hỏng giả định SSE in-memory.
+### 4. Kiến trúc giải pháp
 
-### 8. Kết quả mong đợi
-#### Cải tiến kỹ thuật:
-Tầm nhìn tài sản được tập trung thay cho các bảng tính rời rạc và việc nhắc việc thủ công.
-Luồng phân công, thu hồi và chuyển giao nhanh hơn giúp giảm độ trễ khi bàn giao.
-Xử lý bảo trì tốt hơn giúp trạng thái yêu cầu, chi phí sửa chữa và lịch sử nằm chung một nơi.
-Các màn hình tự phục vụ cho nhân viên cho phép theo dõi tài sản và yêu cầu mà không phải hỏi quản trị viên cho từng cập nhật.
-Báo cáo và khả năng kiểm toán tốt hơn giúp việc xem tổng hợp, tệp đính kèm và lịch sử dễ dàng hơn.
-#### Giá trị lâu dài
-Nền tảng MVP nội bộ ổn định hỗ trợ mở rộng trong tương lai mà không phải đổi luồng nghiệp vụ cốt lõi.
-Dữ liệu tài sản, bảo trì và kiểm kê có thể tái sử dụng cho các báo cáo và cải tiến quy trình sau này.
-Nhóm có thể tiếp tục dùng dự án như một hệ thống nội bộ sẵn sàng demo cho các vòng lặp tiếp theo.
+Kiến trúc triển khai AWS được đề xuất theo mô hình ứng dụng web full-stack đơn giản cho môi trường demo nội bộ. Chế độ triển khai hiện tại không yêu cầu Route 53 hoặc custom domain. Người dùng truy cập URL mặc định của AWS Amplify Hosting, và các request API từ frontend được rewrite qua `/api/*` đến Amazon API Gateway. API Gateway tiếp tục chuyển request đến backend chạy trên AWS Elastic Beanstalk, backend kết nối đến Amazon RDS for MySQL.`r`n`r`n![Tổng quan kiến trúc giải pháp](/HUGO/images/app.png)
 
-### 9. Kết luận tổng quan
-Giải pháp Enterprise Asset Management được đề xuất là một MVP nội bộ thực tế, bám đúng phạm vi team và đúng stack AWS đang dùng.
-React + Vite trên Amplify, Node.js + Express trên Elastic Beanstalk và MySQL qua Prisma tạo ra lộ trình rõ ràng từ local development đến một bản demo có thể triển khai.
-Các dịch vụ AWS hỗ trợ đủ cho theo dõi tài sản, bảo trì, báo cáo, xử lý tệp, thông báo, audit và vận hành an toàn mà không làm hệ thống phức tạp quá mức.
+{{< mermaid >}}
+flowchart LR
+    User["Trình duyệt người dùng"] --> Amplify["AWS Amplify Hosting\nReact Frontend"]
+    Amplify --> Rewrite["Amplify Rewrite Rule\n/api/*"]
+    Rewrite --> APIGW["Amazon API Gateway\nHTTP API"]
+    APIGW --> EB["AWS Elastic Beanstalk\nNode.js Backend"]
+    EB --> RDS["Amazon RDS for MySQL\nPrivate Subnet"]
+    EB --> S3["Amazon S3\nProduction Extension"]
+    EB --> SES["Amazon SES\nEmail / OTP"]
+    EB --> SSM["SSM Parameter Store\nProduction Extension"]
+    EB --> Secrets["AWS Secrets Manager\nProduction Extension"]
+    EB --> CW["Amazon CloudWatch\nLogs and Alarms"]
+    CloudTrail["AWS CloudTrail\nProduction Extension"] --> Audit["Audit Trail"]
+{{< /mermaid >}}
+
+#### Dịch vụ AWS sử dụng
+
+- **AWS Amplify Hosting**: host và build frontend React từ nhánh triển khai.
+- **Amazon API Gateway HTTP API**: nhận request `/api/*` từ Amplify và chuyển tiếp đến backend.
+- **AWS Elastic Beanstalk**: chạy backend Node.js/Express với quy trình deploy được AWS quản lý.
+- **Amazon EC2**: cung cấp compute instance do Elastic Beanstalk quản lý.
+- **Amazon RDS for MySQL**: lưu dữ liệu như user, nhân viên, tài sản, bàn giao, yêu cầu bảo trì, phiên kiểm kê và báo cáo.
+- **Amazon S3**: lưu ảnh tài sản và file upload trong thiết kế mở rộng cho môi trường production.
+- **Amazon SES**: gửi OTP và email của ứng dụng.
+- **AWS Secrets Manager**: định hướng lưu các giá trị nhạy cảm như application secret hoặc thông tin database khi nâng cấp khỏi chế độ demo.
+- **AWS Systems Manager Parameter Store**: định hướng lưu các giá trị cấu hình runtime.
+- **Amazon CloudWatch Logs and Alarms**: thu thập log backend và hỗ trợ monitoring.
+- **AWS CloudTrail**: định hướng ghi nhận hoạt động trong AWS account để phục vụ audit.
+- **AWS Systems Manager Session Manager**: định hướng hỗ trợ quản trị instance an toàn hơn mà không cần mở SSH public.
+
+#### Thành phần ứng dụng
+
+- **Frontend**: React, Vite, Tailwind CSS, React Router, component UI tái sử dụng, Admin Portal và Employee Portal.
+- **Backend**: Node.js, Express.js, Prisma ORM, JWT authentication, validation, centralized error handling, request logging và các REST API module.
+- **Database**: schema MySQL cho users, employees, departments, assets, assignments, maintenance requests, inventory sessions, notifications, feedback, attendance, login history và support chat.
+- **Deployment**: AWS Amplify cho frontend hosting, API Gateway cho API entrypoint, Elastic Beanstalk cho backend hosting, RDS cho database và CloudWatch cho log.
+
+### 5. Kế hoạch triển khai kỹ thuật
+
+#### Giai đoạn 1: Phân tích yêu cầu và lập kế hoạch UI
+
+- Phân tích bài toán quản lý tài sản và xác định các module chính.
+- Xác định hai nhóm người dùng: quản trị viên và nhân viên.
+- Thiết kế các luồng chính cho tạo tài sản, bàn giao, thu hồi, bảo trì, kiểm kê, báo cáo và self-service của nhân viên.
+- Xây dựng các mẫu UI tái sử dụng cho Admin Portal.
+- Tự học nền tảng AWS về tài khoản, quản lý chi phí, IAM, Region/AZ và các khái niệm cloud cơ bản.
+
+#### Giai đoạn 2: Nền tảng backend và database
+
+- Thiết kế schema MySQL bằng Prisma.
+- Triển khai authentication, authorization, kiểm tra trạng thái tài khoản và xử lý mật khẩu.
+- Xây dựng REST API cho nhân viên, phòng ban, danh mục, tài sản, bàn giao, yêu cầu bảo trì, kiểm kê, báo cáo, notification, feedback, FAQ, chấm công, lịch sử đăng nhập và support chat.
+- Thêm seed data cho tài khoản demo và dữ liệu nghiệp vụ mẫu.
+
+#### Giai đoạn 3: Phát triển frontend
+
+- Xây dựng các màn hình Admin Portal cho quản lý tài sản và tổ chức.
+- Xây dựng các màn hình Employee Portal cho luồng self-service.
+- Tích hợp API với backend.
+- Thêm loading, empty, error và toast state.
+- Rà soát responsive behavior và dark/light mode.
+- Tự học thêm các dịch vụ AWS liên quan đến compute, storage, database, networking và deployment để chuẩn bị cho giai đoạn triển khai.
+
+#### Giai đoạn 4: Triển khai AWS
+
+- Tạo hoặc sử dụng Amazon RDS for MySQL cho database của ứng dụng.
+- Cấu hình security group để backend có thể truy cập RDS qua port `3306`.
+- Deploy backend lên AWS Elastic Beanstalk và tạo source bundle phù hợp với môi trường Linux.
+- Cấu hình biến môi trường như `DATABASE_URL`, `JWT_SECRET`, `PORT`, `FRONTEND_ORIGIN` và mail settings.
+- Chạy Prisma migration và seed data nếu cần.
+- Deploy frontend lên AWS Amplify Hosting.
+- Cấu hình Amazon API Gateway HTTP API để proxy request đến backend Elastic Beanstalk.
+- Cấu hình Amplify rewrite rule từ `/api/*` đến endpoint API Gateway và SPA fallback về `index.html`.
+
+#### Giai đoạn 5: Kiểm thử và xác nhận
+
+- Kiểm tra `GET /api/health`.
+- Kiểm thử đăng nhập admin và nhân viên.
+- Kiểm thử các luồng CRUD chính.
+- Kiểm thử bàn giao tài sản, thu hồi, yêu cầu bảo trì, kiểm kê và báo cáo.
+- Kiểm tra CloudWatch Logs để phát hiện lỗi backend.
+- Xác nhận CORS, API Gateway route/stage/integration và Amplify rewrite rule hoạt động đúng.
+- Kiểm tra upload ảnh/avatar, trạng thái tài khoản inactive và các flow demo chính.
+
+### 6. Lộ trình và mốc triển khai
+
+| Thời gian | Mốc triển khai | Kết quả kỳ vọng |
+| --- | --- | --- |
+| Tuần 1 | Định hướng dự án và nền tảng AWS | Xác định vai trò frontend, chuẩn bị môi trường và học các khái niệm AWS cơ bản. |
+| Tuần 2 | Khởi tạo React app và layout admin | Dựng cấu trúc route, sidebar, layout và component cơ bản. |
+| Tuần 3 | Login, token và API layer | Hoàn thiện protected route, xử lý token và service layer để tích hợp backend. |
+| Tuần 4 | CRUD admin cơ bản | Hoàn thiện màn hình tài sản, nhân viên, phòng ban và các form/table chính. |
+| Tuần 5 | Workflow tài sản | Phát triển bàn giao, thu hồi, điều chuyển và bảo trì tài sản. |
+| Tuần 6 | Kiểm kê, báo cáo và dữ liệu | Hoàn thiện inventory, report, biểu đồ và trạng thái dữ liệu. |
+| Tuần 7 | Hoàn thiện trải nghiệm giao diện | Nâng cấp responsive, dark mode, loading, toast và xử lý lỗi UI. |
+| Tuần 8 | User portal và module mở rộng | Hoàn thiện employee dashboard, tài sản được bàn giao, FAQ, feedback, import Excel và floor map. |
+| Tuần 9 | Chuẩn bị triển khai AWS | Rà soát production build, cấu hình môi trường, tài liệu deploy và xử lý lỗi tích hợp. |
+| Tuần 10 | Deploy AWS | Triển khai với RDS, Elastic Beanstalk, API Gateway và Amplify; kiểm thử health endpoint và luồng đăng nhập. |
+| Tuần 11 | Kiểm thử production và tài liệu workshop | Sửa lỗi tích hợp, kiểm tra các màn hình chính, chụp ảnh workshop và bổ sung hướng dẫn triển khai. |
+| Tuần 12 | Hoàn thiện báo cáo cuối kỳ | Rà soát Hugo site, hoàn thiện self-evaluation, sharing/feedback, cleanup và chuẩn bị nộp báo cáo. |
+
+### 7. Ước tính ngân sách
+
+Dự án được thiết kế cho môi trường demo nội bộ, vì vậy lần triển khai đầu tiên ưu tiên chi phí thấp thay vì độ sẵn sàng cao. Chi phí cuối cùng cần được kiểm tra bằng AWS Pricing Calculator trước khi triển khai vì giá AWS thay đổi theo Region, loại instance, dung lượng lưu trữ và traffic.
+
+| Dịch vụ | Lựa chọn tối ưu chi phí |
+| --- | --- |
+| AWS Amplify Hosting | Dùng domain mặc định của Amplify và chỉ deploy branch cần thiết. |
+| Amazon API Gateway | Dùng HTTP API đơn giản cho route `/api/*`. |
+| AWS Elastic Beanstalk / EC2 | Dùng một instance nhỏ cho môi trường demo. |
+| Amazon RDS for MySQL | Dùng Single-AZ và instance class nhỏ cho dev/test. |
+| Amazon S3 | Chỉ lưu các file upload cần thiết và áp dụng clean-up policy khi cần. |
+| Amazon SES | Chỉ dùng cho OTP và email flow của ứng dụng. |
+| CloudWatch | Giới hạn thời gian lưu log cho môi trường demo. |
+
+Các hành động kiểm soát chi phí:
+
+- Dùng một AWS Region cho toàn bộ resource.
+- Không bật RDS Multi-AZ trong giai đoạn demo.
+- Không dùng Route 53 và custom domain cho đến khi cần production.
+- Clean up Elastic Beanstalk, API Gateway, RDS, S3 và CloudWatch sau workshop.
+- Không giữ các môi trường deploy không còn sử dụng.
+
+### 8. Đánh giá rủi ro
+
+| Rủi ro | Ảnh hưởng | Xác suất | Cách giảm thiểu |
+| --- | --- | --- | --- |
+| Amplify rewrite rule sai | Frontend không gọi được backend API hoặc static assets bị lỗi MIME type | Trung bình | Đặt rule `/api/*` phía trên SPA fallback, giữ static assets không bị rewrite sai và test `/api/health`. |
+| API Gateway route hoặc stage sai | API trả 404 dù backend vẫn chạy | Trung bình | Kiểm tra route, integration, stage và parameter mapping trước khi test frontend. |
+| Sai port Elastic Beanstalk | Backend bị unhealthy | Trung bình | Set `PORT=8080` và đảm bảo backend đọc port từ biến môi trường. |
+| Cấu hình security group RDS sai | Backend không kết nối được MySQL | Trung bình | Chỉ mở port `3306` từ backend security group. |
+| Lỗi CORS | Browser chặn API call | Trung bình | Set `FRONTEND_ORIGIN` hoặc `FRONTEND_ORIGINS` đúng URL Amplify. |
+| Thiếu hoặc sai biến môi trường production | Login, upload hoặc health check bị lỗi | Trung bình | Chuẩn hóa `DATABASE_URL`, `JWT_SECRET`, `FRONTEND_ORIGIN`, OTP/mail config và kiểm tra từng lớp sau deploy. |
+| File upload không bền vững | File upload có thể mất khi instance bị thay thế | Trung bình | Dùng S3 private bucket cho production-ready storage hoặc ghi rõ giới hạn local upload trong demo. |
+| Phát sinh chi phí ngoài dự kiến | Tốn chi phí AWS không cần thiết | Thấp đến trung bình | Dùng resource nhỏ nhất cho demo, đặt budget alert và clean up sau khi kiểm thử. |
+| Thiếu dữ liệu test | Không demo được các luồng chính | Trung bình | Chạy Prisma seed trước demo và tài liệu hóa tài khoản demo riêng. |
+
+### 9. Kết quả kỳ vọng
+
+Sau khi hoàn thành project và workshop, các kết quả kỳ vọng gồm:
+
+- Một ứng dụng Enterprise Asset Management hoạt động với Admin Portal và Employee Portal.
+- Backend API hỗ trợ authentication, authorization, asset lifecycle workflow, reporting, notification, feedback, attendance và support chat.
+- Schema MySQL lưu trữ dữ liệu nghiệp vụ cốt lõi của hệ thống.
+- Mô hình triển khai AWS thực tế sử dụng Amplify, API Gateway, Elastic Beanstalk, RDS, SES và CloudWatch, kèm định hướng mở rộng với S3, Secrets Manager và Parameter Store.
+- Một workshop step-by-step để người học khác có thể làm theo, triển khai và kiểm thử hệ thống.
+- Hiểu rõ hơn về triển khai full-stack, cloud networking, biến môi trường, CORS, kết nối database, monitoring và clean-up trên AWS.
+
+### 10. Hướng phát triển trong tương lai
+
+- Chuyển toàn bộ file upload từ local instance storage sang Amazon S3.
+- Thêm Route 53 và AWS Certificate Manager khi cần custom production domain.
+- Bật RDS Multi-AZ để tăng độ sẵn sàng.
+- Thêm Auto Scaling cho backend khi traffic tăng.
+- Thêm Amazon ElastiCache for Redis nếu ứng dụng cần shared state cho nhiều backend instance.
+- Thêm AWS WAF khi ứng dụng mở public-facing.
+- Cải thiện CI/CD và automated testing cho cả frontend và backend.

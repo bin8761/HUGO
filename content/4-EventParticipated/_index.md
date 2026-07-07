@@ -1,41 +1,49 @@
-﻿---
+---
 title: "Events Participated"
-date: 2024-01-01
+date: 2026-06-25
 weight: 4
 chapter: false
 pre: " <b> 4. </b> "
 ---
 
-> In this section, you should list and describe in detail the events you have participated in during your internship or work experience.  
-> 
-> Each event should be presented in the format Event 1, Event 2, Event 3â€¦, along with the following details:
-> * Event name
-> * Date and time
-> * Location (if applicable)
-> * Your role in the event (attendee, event support, speaker, etc.)
-> * A brief description of the eventâ€™s content and main activities
-> * Outcomes or value gained (lessons learned, new skills, contribution to the team/project)
-> * This listing helps demonstrate your actual participation as well as the soft skills and experience you have gained from each event.
+During the internship period, I participated in professional events related to AWS, cloud computing, DevOps, security, artificial intelligence, and career orientation in information technology. Each event was an opportunity to learn practical knowledge, observe how speakers share real industry experience, and connect what I learned with enterprise environments.
 
-During my internship, I participated in two events. Each one was a memorable experience that provided new, interesting, and useful knowledge, along with gifts and wonderful moments.
+### [Event 1 - AWS First Cloud Journey Community Day](4.1-Event1/)
 
-### [Event 1](4.1-Event1/)  
-&emsp;**Event Name:** FCAJ Community Day SG  
+&emsp;**Event name:** AWS First Cloud Journey Community Day
 
-&emsp;**Date & Time:** May 30, 2026  
+&emsp;**Date:** June 6, 2026
 
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
+&emsp;**Location:** 26th Floor, Bitexco Financial Tower
 
-&emsp;**Role:** Attendee  
+&emsp;**Role:** Participant in the First Cloud Journey program
+
+&emsp;**Main content:** Cloud Computing, DevOps, Security, AI, WebSocket, Teamwork, and career orientation in information technology.
 
 ---
 
-### [Event 2](4.2-Event2/)  
-&emsp;**Event Name:** GenAI-powered App-DB Modernization workshop  
+### [Event 2 - FCAJ Community Day](4.2-Event2/)
 
-&emsp;**Date & Time:** 09:00, August 13, 2025  
+&emsp;**Event name:** FC Community Day
 
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
+&emsp;**Date & time:** June 27, 2026
 
-&emsp;**Role:** Attendee  
+&emsp;**Location:** 26th floor, Bitexco Financial Tower, with livestream
 
+&emsp;**Role:** Participant in the First Cloud Journey program
+
+&emsp;**Main content:** Cloud Computing, AI Agents, Voice AI, DevOps AI Agents, AI in Human Resources, and secure enterprise AI deployment.
+
+---
+
+### [Event 3 - AWS & Swinburne Vietnam Cloud Computing Study Tour](4.3-Event3/)
+
+&emsp;**Event name:** AWS & Swinburne Vietnam Cloud Computing Study Tour
+
+&emsp;**Time:** Not specified in the provided material
+
+&emsp;**Format:** Video/knowledge-sharing and career orientation session
+
+&emsp;**Role:** Event content viewer
+
+&emsp;**Main content:** Cloud Computing, cloud job market, career skills, data engineering, AI, communication, networking, and growth mindset.

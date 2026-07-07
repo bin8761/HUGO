@@ -1,123 +1,73 @@
-﻿---
+---
 title: "Blog 1"
-date: 2024-01-01
+date: 2026-06-25
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
-# Getting Started with Healthcare Data Lakes: Using Microservices
+# Amazon EKS now supports control plane egress through your VPC
 
-Data lakes can help hospitals and healthcare facilities turn data into business insights, maintain business continuity, and protect patient privacy. A **data lake** is a centralized, managed, and secure repository to store all your data, both in its raw and processed forms for analysis. Data lakes allow you to break down data silos and combine different types of analytics to gain insights and make better business decisions.
+**Source:** [Amazon EKS now supports control plane egress through your VPC](https://aws.amazon.com/blogs/containers/amazon-eks-now-supports-control-plane-egress-through-your-vpc/)
 
-This blog post is part of a larger series on getting started with setting up a healthcare data lake. In my final post of the series, *â€œGetting Started with Healthcare Data Lakes: Diving into Amazon Cognitoâ€*, I focused on the specifics of using Amazon Cognito and Attribute Based Access Control (ABAC) to authenticate and authorize users in the healthcare data lake solution. In this blog, I detail how the solution evolved at a foundational level, including the design decisions I made and the additional features used. You can access the code samples for the solution in this Git repo for reference.
+Amazon EKS has added customer-routed control plane egress, which allows certain outbound traffic from the Kubernetes API Server to be routed through the user's own Amazon VPC. This feature helps enterprises gain better control over the path of requests initiated by the control plane, such as admission webhook callbacks, OIDC provider lookups, and aggregate API server requests.
 
----
+Instead of allowing these flows to use the EKS-managed network path, users can apply familiar VPC controls such as route tables, security groups, VPC endpoints, AWS PrivateLink, NAT Gateway, or AWS Network Firewall. This is an important improvement for Kubernetes systems that require strong security, especially in enterprise, financial, healthcare, or compliance-heavy environments.
 
-## Architecture Guidance
 
-The main change since the last presentation of the overall architecture is the decomposition of a single service into a set of smaller services to improve maintainability and flexibility. Integrating a large volume of diverse healthcare data often requires specialized connectors for each format; by keeping them encapsulated separately as microservices, we can add, remove, and modify each connector without affecting the others. The microservices are loosely coupled via publish/subscribe messaging centered in what I call the â€œpub/sub hub.â€
+## Key points
 
-This solution represents what I would consider another reasonable sprint iteration from my last post. The scope is still limited to the ingestion and basic parsing of **HL7v2 messages** formatted in **Encoding Rules 7 (ER7)** through a REST interface.
+- Customer-routed control plane egress allows "customer-controllable" outbound flows from the Kubernetes API Server to pass through an Elastic Network Interface (ENI) located in the user's VPC.
+- Supported traffic types include admission webhook callbacks, OIDC discovery document lookups, requests to aggregate API servers, and DNS resolution that supports these flows.
+- When this feature is enabled, users can apply route tables, security groups, endpoint policies, NAT Gateway, AWS PrivateLink, VPC endpoints, AWS Network Firewall, and existing egress control rules in the VPC.
+- The feature is especially useful for systems that need private networking, private OIDC providers, or admission webhooks that are only reachable inside a private network.
+- Control plane egress through VPC is different from the EKS private endpoint. The private endpoint controls inbound access to the Kubernetes API Server, while customer-routed egress controls outbound traffic from the API Server to related services.
+- Users can enable it when creating a new cluster or updating an existing cluster by setting `controlPlaneEgressMode = CUSTOMER_ROUTED` in `resourcesVpcConfig`.
+- After a cluster is moved to `CUSTOMER_ROUTED`, this setting is fixed for the cluster lifecycle and cannot be changed back to `AWS_MANAGED`.
+- IAM condition key `eks:controlPlaneEgressMode` can be combined with AWS Organizations Service Control Policies to require clusters in an organization to use `CUSTOMER_ROUTED`.
+- VPC Flow Logs can be used to observe and verify connections from EKS-managed cross-account ENIs to internal endpoints, supporting auditing and compliance.
+- Some flows that are not part of the Kubernetes API Server, such as EKS Capabilities or AWS STS calls from IAM Authenticator, continue to use the EKS-managed path and do not go through the user's VPC.
 
-**The solution architecture is now as follows:**
+## Image
 
-> *Figure 1. Overall architecture; colored boxes represent distinct services.*
+The diagram below illustrates the architecture when Private Control Plane Networking is enabled. Customer-controllable traffic from `kube-apiserver` passes through an ENI in the user's VPC, then is controlled by network components such as VPC endpoints, NAT Gateway, Transit Gateway, or AWS PrivateLink before reaching customer destinations.
 
----
+![Control plane egress through the user's VPC when Private Control Plane Networking is enabled](../../images/3-BlogsPosted/3.2-Blog2/CONTAINERS-269-1.png)
 
-While the term *microservices* has some inherent ambiguity, certain traits are common:  
-- Small, autonomous, loosely coupled  
-- Reusable, communicating through well-defined interfaces  
-- Specialized to do one thing well  
-- Often implemented in an **event-driven architecture**
+*Figure 1. Control plane egress through the user's VPC when Private Control Plane Networking is enabled. Source: AWS Blog.*
 
-When determining where to draw boundaries between microservices, consider:  
-- **Intrinsic**: technology used, performance, reliability, scalability  
-- **Extrinsic**: dependent functionality, rate of change, reusability  
-- **Human**: team ownership, managing *cognitive load*
 
----
+## Guide
 
-## Technology Choices and Communication Scope
+To learn and apply this feature, the main steps are:
 
-| Communication scope                       | Technologies / patterns to consider                                                        |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Within a single microservice              | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Between microservices in a single service | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Between services                          | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
+1. Identify the EKS cluster that needs private control plane networking and check the subnets, security groups, route tables, and DNS resolver in the VPC.
+2. When creating a new cluster, configure `resources-vpc-config` and add `controlPlaneEgressMode=CUSTOMER_ROUTED` to route egress through the VPC.
+3. For an existing cluster, use the `update-cluster-config` command to move it to `CUSTOMER_ROUTED`, while noting that this setting cannot be changed back to `AWS_MANAGED`.
+4. Make sure the endpoints that the Kubernetes API Server needs to call, such as admission webhooks, OIDC providers, or aggregate API servers, are reachable from the cluster subnets through private DNS, an internal load balancer, a VPC endpoint, or PrivateLink.
+5. Check security groups, route tables, and NAT or PrivateLink paths to avoid situations where the API Server cannot call a webhook or OIDC endpoint.
+6. Use `aws eks describe-cluster` to verify the `controlPlaneEgressMode` value and enable VPC Flow Logs to monitor the traffic path for auditing.
+7. If managing multiple AWS accounts, use AWS Organizations SCP with condition key `eks:controlPlaneEgressMode` to require clusters to enable `CUSTOMER_ROUTED` according to the organization's security standard.
 
----
+### AWS CLI reference commands
 
-## The Pub/Sub Hub
+```bash
+# Create a new cluster with customer-routed control plane egress
+aws eks create-cluster \
+  --name my-cluster \
+  --kubernetes-version 1.36 \
+  --role-arn arn:aws:iam::111122223333:role/eks-cluster-role \
+  --resources-vpc-config subnetIds=subnet-aaa,subnet-bbb,securityGroupIds=sg-xxx,controlPlaneEgressMode=CUSTOMER_ROUTED
 
-Using a **hub-and-spoke** architecture (or message broker) works well with a small number of tightly related microservices.  
-- Each microservice depends only on the *hub*  
-- Inter-microservice connections are limited to the contents of the published message  
-- Reduces the number of synchronous calls since pub/sub is a one-way asynchronous *push*
+# Enable on an existing cluster
+aws eks update-cluster-config \
+  --name my-cluster \
+  --resources-vpc-config controlPlaneEgressMode=CUSTOMER_ROUTED
 
-Drawback: **coordination and monitoring** are needed to avoid microservices processing the wrong message.
+# Verify configuration
+aws eks describe-cluster --name my-cluster \
+  --query "cluster.resourcesVpcConfig.controlPlaneEgressMode"
+```
 
----
+## Conclusion
 
-## Core Microservice
-
-Provides foundational data and communication layer, including:  
-- **Amazon S3** bucket for data  
-- **Amazon DynamoDB** for data catalog  
-- **AWS Lambda** to write messages into the data lake and catalog  
-- **Amazon SNS** topic as the *hub*  
-- **Amazon S3** bucket for artifacts such as Lambda code
-
-> Only allow indirect write access to the data lake through a Lambda function â†’ ensures consistency.
-
----
-
-## Front Door Microservice
-
-- Provides an API Gateway for external REST interaction  
-- Authentication & authorization based on **OIDC** via **Amazon Cognito**  
-- Self-managed *deduplication* mechanism using DynamoDB instead of SNS FIFO because:  
-  1. SNS deduplication TTL is only 5 minutes  
-  2. SNS FIFO requires SQS FIFO  
-  3. Ability to proactively notify the sender that the message is a duplicate  
-
----
-
-## Staging ER7 Microservice
-
-- Lambda â€œtriggerâ€ subscribed to the pub/sub hub, filtering messages by attribute  
-- Step Functions Express Workflow to convert ER7 â†’ JSON  
-- Two Lambdas:  
-  1. Fix ER7 formatting (newline, carriage return)  
-  2. Parsing logic  
-- Result or error is pushed back into the pub/sub hub  
-
----
-
-## New Features in the Solution
-
-### 1. AWS CloudFormation Cross-Stack References
-Example *outputs* in the core microservice:
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
-
+Customer-routed control plane egress makes Amazon EKS more suitable for environments that require strict network control. Instead of only managing traffic from worker nodes and workloads, users gain additional control over part of the outbound traffic from the Kubernetes API Server. This improves privacy, supports auditing, reduces risk when using internal webhooks or OIDC providers, and helps deploy EKS in enterprise systems with high security requirements.

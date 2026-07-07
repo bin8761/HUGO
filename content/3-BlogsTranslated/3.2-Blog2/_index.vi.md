@@ -1,122 +1,78 @@
-﻿---
+---
 title: "Blog 2"
-date: 2024-01-01
-weight: 1
+date: 2026-06-25
+weight: 2
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-# Bắt đầu với Hồ dữ liệu chăm sóc sức khỏe: Sử dụng vi dịch vụ
+# Amazon EKS Auto Mode và Istio Ambient Mesh
 
-Hồ dữ liệu có thể giúp các bệnh viện và cơ sở chăm sóc sức khỏe biến dữ liệu thành thông tin chi tiết về doanh nghiệp, duy trì tính liên tục trong kinh doanh và bảo vệ quyền riêng tư của bệnh nhân. **Hồ dữ liệu** là kho lưu trữ tập trung, được quản lý và bảo mật để lưu trữ tất cả dữ liệu của bạn, cả ở dạng thô và đã xử lý để phân tích. Hồ dữ liệu cho phép bạn chia nhỏ các kho dữ liệu và kết hợp các loại phân tích khác nhau để hiểu rõ hơn và đưa ra quyết định kinh doanh tốt hơn.
+**Nguồn:** [AWS Containers Blog - Better Together: Amazon EKS Auto Mode and Istio Ambient Mesh](https://aws.amazon.com/blogs/containers/better-together-amazon-eks-auto-mode-and-istio-ambient-mesh/)
 
-Bài đăng trên blog này là một phần của loạt bài lớn hơn về cách bắt đầu thiết lập hồ dữ liệu chăm sóc sức khỏe. Trong bài đăng cuối cùng của loạt bài này, *“Bắt đầu với Hồ dữ liệu chăm sóc sức khỏe: Đi sâu vào Amazon Cognito”*, tôi tập trung vào các chi tiết cụ thể về việc sử dụng Amazon Cognito và Kiểm soát truy cập dựa trên thuộc tính (ABAC) để xác thực và ủy quyền cho người dùng trong giải pháp hồ dữ liệu chăm sóc sức khỏe. Trong blog này, tôi trình bày chi tiết cách giải pháp phát triển ở cấp độ cơ bản, bao gồm các quyết định thiết kế mà tôi đã đưa ra và các tính năng bổ sung được sử dụng. Bạn có thể truy cập các mẫu mã cho giải pháp trong kho Git này để tham khảo.
+## Amazon EKS Auto Mode và Istio Ambient Mesh
 
----
+Bài blog giới thiệu cách kết hợp Amazon EKS Auto Mode với Istio Ambient Mesh nhằm giảm gánh nặng vận hành Kubernetes và service mesh trong môi trường cloud-native. EKS Auto Mode hỗ trợ tự động hóa nhiều thành phần vận hành của cluster, trong khi Istio Ambient Mesh cung cấp khả năng bảo mật, quan sát và kiểm soát lưu lượng mà không cần triển khai sidecar proxy cho từng pod.
 
-## Hướng dẫn kiến ​​trúc
+Điểm nổi bật của bài viết là mô hình này cho phép doanh nghiệp triển khai service mesh theo hướng nhẹ hơn, dễ mở rộng hơn và phù hợp với các hệ thống microservices trên Amazon EKS. Thay vì phải quản lý nhiều node, sidecar và cấu hình phức tạp, đội ngũ vận hành có thể tận dụng EKS Auto Mode kết hợp ambient mode để tập trung vào ứng dụng và chính sách bảo mật.
 
-Thay đổi chính kể từ lần trình bày cuối cùng về kiến ​​trúc tổng thể là việc phân tách một dịch vụ thành một tập hợp các dịch vụ nhỏ hơn để cải thiện khả năng bảo trì và tính linh hoạt. Việc tích hợp một khối lượng lớn dữ liệu chăm sóc sức khỏe đa dạng thường yêu cầu các trình kết nối chuyên dụng cho từng định dạng; bằng cách đóng gói chúng riêng biệt dưới dạng vi dịch vụ, chúng ta có thể thêm, xóa và sửa đổi từng trình kết nối mà không ảnh hưởng đến các trình kết nối khác. Các vi dịch vụ được liên kết lỏng lẻo thông qua tin nhắn xuất bản/đăng ký tập trung vào cái mà tôi gọi là “trung tâm pub/sub”.
+## Các điểm chính cần nắm
 
-Giải pháp này thể hiện những gì tôi cho là một lần lặp nước rút hợp lý khác từ bài đăng trước của tôi. Phạm vi vẫn bị giới hạn ở việc nhập và phân tích cú pháp cơ bản của **thông báo HL7v2** được định dạng trong **Quy tắc mã hóa 7 (ER7)** thông qua giao diện REST.
+- EKS Auto Mode tự động hóa nhiều công việc vận hành cluster như node provisioning, autoscaling, patching và quản lý hạ tầng, giúp giảm operational overhead cho đội ngũ DevOps.
+- Các node trong EKS Auto Mode chạy trên EC2 managed instances, sử dụng hệ điều hành container-optimized và được AWS quản lý nhiều phần nền tảng, giúp việc vận hành cluster ổn định và đơn giản hơn.
+- Istio Ambient Mesh là mô hình service mesh không sử dụng sidecar truyền thống. Thay vì gắn proxy vào từng pod, ambient mesh dùng thành phần ztunnel chạy ở cấp node để xử lý bảo mật và lưu lượng Layer 4.
+- Khi cần các tính năng ở Layer 7 như HTTP routing, retries, timeouts, circuit breaking hoặc authorization policy chi tiết hơn, hệ thống có thể triển khai thêm waypoint proxy cho service hoặc namespace cụ thể.
+- ztunnel tạo secure overlay giữa các workload thông qua HBONE, giúp lưu lượng service-to-service được bảo vệ bằng mTLS mà không cần sửa đổi mã nguồn ứng dụng.
+- Việc bật Ambient Mesh có thể thực hiện bằng cách gắn nhãn `istio.io/dataplane-mode=ambient` cho namespace, từ đó các workload trong namespace sẽ tự động tham gia vào mesh.
+- Mô hình này giúp giảm operational overhead vì không cần quản lý sidecar cho từng pod, đồng thời vẫn giữ được các lợi ích quan trọng của service mesh như encryption, observability và traffic policy.
+- Bài blog cũng minh họa cách sử dụng Kiali và Prometheus để quan sát traffic graph, xác minh mTLS thông qua ztunnel và kiểm tra luồng giao tiếp giữa các service trong ứng dụng mẫu.
+- Trong phần thực hành, bài viết hướng dẫn tạo EKS Auto Mode cluster, cài đặt Istio Ambient Mesh, triển khai ứng dụng mẫu retail store, bật ambient mode, kiểm tra mTLS và áp dụng AuthorizationPolicy ở cả Layer 4 và Layer 7.
+- Đối với môi trường production, cần lưu ý chi phí tài nguyên AWS, quyền IAM phù hợp, bảo mật ingress gateway, chính sách phân quyền giữa các service và quy trình cleanup tài nguyên sau khi thử nghiệm.
 
-**Cấu trúc giải pháp hiện tại như sau:**
+## Hình ảnh
 
-> *Hình 1. Kiến trúc tổng thể; các hộp màu tượng trưng cho các dịch vụ riêng biệt.*
+Dưới đây là hai hình minh họa kiến trúc gốc từ bài AWS Blog, thể hiện cách Istio Ambient Mesh hoạt động trên Amazon EKS Auto Mode ở hai mức Layer 4 và Layer 7.
 
----
+![Kiến trúc Istio Ambient Mesh Layer 4 trên Amazon EKS Auto Mode](../../images/3-BlogsPosted/3.1-Blog1/c-170-1.jpg)
 
-Mặc dù thuật ngữ *microservices* có một số điểm mơ hồ cố hữu nhưng có một số đặc điểm chung sau:  
-- Nhỏ, tự chủ, liên kết lỏng lẻo  
-- Có thể tái sử dụng, giao tiếp thông qua các giao diện được xác định rõ ràng  
-- Chuyên làm tốt một việc  
-- Thường được triển khai theo **kiến trúc hướng sự kiện**
+*Hình 1. Kiến trúc Istio Ambient Mesh với các tính năng Layer 4 trên Amazon EKS Auto Mode. Nguồn: AWS Blog, Figure 1.*
 
-Khi xác định nơi cần vạch ra ranh giới giữa các vi dịch vụ, hãy cân nhắc:  
-- **Nội tại**: công nghệ được sử dụng, hiệu suất, độ tin cậy, khả năng mở rộng  
-- **Bên ngoài**: chức năng phụ thuộc, tốc độ thay đổi, khả năng sử dụng lại  
-- **Con người**: quyền sở hữu nhóm, quản lý *tải nhận thức*
+![Kiến trúc Istio Ambient Mesh Layer 7 với waypoint proxy](../../images/3-BlogsPosted/3.1-Blog1/c-170-2.jpg)
 
----
+*Hình 2. Kiến trúc Istio Ambient Mesh với waypoint proxy cho các tính năng Layer 7. Nguồn: AWS Blog, Figure 2.*
 
-## Lựa chọn công nghệ và phạm vi truyền thông
+## Hướng dẫn
 
-| Phạm vi giao tiếp                       | Công nghệ/mô hình cần xem xét                                                        |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Trong một microservice duy nhất              | Dịch vụ xếp hàng đơn giản của Amazon (Amazon SQS), AWS Step Functions                               |
-| Giữa các vi dịch vụ trong một dịch vụ | Tài liệu tham khảo xếp chồng chéo AWS CloudFormation, Dịch vụ thông báo đơn giản của Amazon (Amazon SNS) |
-| Giữa các dịch vụ                          | Amazon EventBridge, Bản đồ đám mây AWS, Cổng API Amazon                                      |
+Có thể tái hiện nội dung bài blog theo các bước tổng quát sau:
 
----
+- Chuẩn bị môi trường: cài đặt AWS CLI, `kubectl`, Helm, Terraform và `envsubst`. Tài khoản AWS cần có quyền tạo EKS, EC2, IAM, VPC và các tài nguyên liên quan.
+- Clone repository mẫu của AWS và chuyển vào thư mục Terraform dùng cho ambient mode.
+- Chạy `terraform init`, `terraform plan` và `terraform apply --auto-approve` để tạo EKS Auto Mode cluster, node pool, Istio control plane và các thành phần cần thiết.
+- Cấu hình `kubectl` bằng lệnh `aws eks update-kubeconfig`, sau đó kiểm tra các pod trong namespace `istio-system` để bảo đảm Istio đã hoạt động.
+- Cài đặt Prometheus và Kiali để quan sát traffic trong mesh, sau đó port-forward Kiali về máy local để theo dõi service graph.
+- Triển khai ứng dụng retail store mẫu bằng Helm, bao gồm các service như cart, catalog, checkout, orders và ui.
+- Cài Gateway API CRDs nếu cluster chưa có sẵn, sau đó tạo Gateway và HTTPRoute để cho phép truy cập ứng dụng từ bên ngoài.
+- Bật ambient mode cho namespace `default` bằng cách gắn nhãn `istio.io/dataplane-mode=ambient`, sau đó tải lại workload để các pod tham gia mesh.
+- Áp PeerAuthentication ở chế độ `STRICT` để bắt buộc mTLS trong mesh và kiểm tra request từ pod ngoài mesh để xác minh chính sách bảo mật.
+- Tạo AuthorizationPolicy ở Layer 4 để giới hạn service nào được phép gọi service catalog.
+- Triển khai waypoint proxy cho service catalog nếu cần kiểm soát Layer 7, sau đó dùng `targetRefs` trong AuthorizationPolicy để giới hạn truy cập theo HTTP method hoặc path.
+- Sau khi thực hành xong, cần cleanup các tài nguyên AWS để tránh phát sinh chi phí không cần thiết.
 
-## Trung tâm quán rượu/phụ
+## Một số lệnh tham khảo
 
-Việc sử dụng kiến ​​trúc **trung tâm và nan hoa** (hoặc trình trung chuyển tin nhắn) hoạt động hiệu quả với một số lượng nhỏ vi dịch vụ có liên quan chặt chẽ.  
-- Mỗi microservice chỉ phụ thuộc vào *hub*  
-- Kết nối giữa các dịch vụ vi mô được giới hạn ở nội dung của tin nhắn được xuất bản  
-- Giảm số lượng cuộc gọi đồng bộ vì pub/sub là không đồng bộ một chiều *đẩy*
+```bash
+git clone https://github.com/aws-samples/sample-istio-ambient-eks-automode.git
+cd sample-istio-ambient-eks-automode/terraform-blueprint/ambient
 
-Nhược điểm: **cần phối hợp và giám sát** để tránh vi dịch vụ xử lý sai thông báo.
+terraform init
+terraform plan
+terraform apply --auto-approve
 
----
+aws eks --region us-west-2 update-kubeconfig --name ambient
+kubectl get pods -A
+kubectl label namespace default istio.io/dataplane-mode=ambient
+kubectl port-forward svc/kiali 20001:20001 -n istio-system
+```
 
-## Dịch vụ vi mô cốt lõi
+## Kết luận
 
-Cung cấp dữ liệu nền tảng và lớp giao tiếp, bao gồm:  
-- **Nhóm Amazon S3** dành cho dữ liệu  
-- **Amazon DynamoDB** cho danh mục dữ liệu  
-- **AWS Lambda** để ghi thông báo vào hồ dữ liệu và danh mục  
-- **Chủ đề Amazon SNS** là *trung tâm*  
-- **Bộ chứa Amazon S3** dành cho các thành phần lạ như mã Lambda
-
-> Chỉ cho phép quyền truy cập ghi gián tiếp vào hồ dữ liệu thông qua hàm Lambda â†’ để đảm bảo tính nhất quán.
-
----
-
-## Dịch vụ vi mô cửa trước
-
-- Cung cấp Cổng API để tương tác REST bên ngoài  
-- Xác thực và ủy quyền dựa trên **OIDC** qua **Amazon Cognito**  
-- Cơ chế *loại bỏ trùng lặp* tự quản lý bằng DynamoDB thay vì SNS FIFO vì:  
-  1. Chống trùng lặp SNS TTL chỉ trong 5 phút  
-  2. SNS FIFO yêu cầu SQS FIFO  
-  3. Khả năng chủ động thông báo cho người gửi rằng tin nhắn bị trùng lặp  
-
----
-
-## Dàn dựng microservice ER7
-
-- Lambda “trigger” đã đăng ký vào pub/sub hub, lọc tin nhắn theo thuộc tính  
-- Step Functions Express Workflow để chuyển đổi ER7 â†’ JSON  
-- Hai Lambda:  
-  1. Sửa định dạng ER7 (dòng mới, xuống dòng)  
-  2. Logic phân tích cú pháp  
-- Kết quả hoặc lỗi được đẩy trở lại trung tâm pub/sub  
-
----
-
-## Các tính năng mới trong giải pháp
-
-### 1. Tài liệu tham khảo ngăn xếp chéo AWS CloudFormation
-Ví dụ *đầu ra* trong vi dịch vụ cốt lõi:
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
+Bài blog cho thấy EKS Auto Mode và Istio Ambient Mesh là hai công nghệ bổ trợ tốt cho nhau trong quá trình triển khai Kubernetes hiện đại trên AWS. EKS Auto Mode giúp đơn giản hóa vận hành hạ tầng, còn Istio Ambient Mesh cung cấp khả năng bảo mật và kiểm soát lưu lượng theo hướng nhẹ hơn so với mô hình sidecar truyền thống. Đây là một hướng tiếp cận phù hợp cho các hệ thống microservices cần tính bảo mật, khả năng quan sát và khả năng mở rộng cao trong môi trường cloud-native.

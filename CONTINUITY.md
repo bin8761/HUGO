@@ -1,48 +1,33 @@
 ﻿# CONTINUITY
 
 - Goal (incl. success criteria):
-  - Chinh worklog tuan theo noi dung `format-worklog.yaml`, dung `all-ui-tree.txt` de xac dinh dung file dich.
-  - Success: file tuan hien tai va entry danh sach Worklog khop voi du lieu authoritative trong `format-worklog.yaml` o ca VI/EN neu file ton tai.
+  - Push commit `da6ab00` to `origin/main`.
+  - Success: remote `origin/main` contains the proposal-only commit.
 
 - Constraints/Assumptions:
-  - Chi dung thong tin da xac nhan trong ngu canh hien tai; thieu thong tin thi ghi `UNCONFIRMED`.
-  - Ledger canonical nam tai `CONTINUITY.md`.
-  - Khong dua vao lich su chat neu chua duoc phan anh trong ledger.
+  - Luon doc `CONTINUITY.md` o dau moi luot truoc khi lam viec tiep.
+  - Chi ghi facts ngan gon; khong ghi transcript.
+  - Thong tin chua xac nhan phai ghi `UNCONFIRMED`.
+  - Do not revert unrelated user changes.
 
 - Key decisions:
-  - Doc `CONTINUITY.md` va cap nhat no o dau moi luot.
-  - Uu tien sua content worklog truoc, roi dong bo entry tren trang danh sach.
+  - Keep the proposal commit isolated; do not include unrelated files in the push.
+  - Leave the other modified/untracked files in the worktree untouched.
 
 - State:
   - Done:
+    - Da doc `ui-ux-pro-max` skill instructions.
     - Da doc `rule/continuity-ledger-rule.mdc`.
-    - Da doc `format-worklog.yaml`.
-    - Da doc `all-ui-tree.txt`.
-    - Da xac dinh authoritative hien tai la `Week: 8`.
-    - Da cap nhat `content/1-Worklog/1.8-Week8/_index.vi.md`.
-    - Da cap nhat `content/1-Worklog/1.8-Week8/_index.md`.
-    - Da cap nhat entry tuan 8 trong `content/1-Worklog/_index.vi.md`.
-    - Da cap nhat entry tuan 8 trong `content/1-Worklog/_index.md`.
-    - Da xac minh lai noi dung va bang tuan 8 bang doc file va grep.
-    - Da commit thay doi tuan 8 voi `08e4556`.
-    - Da push `08e4556` len `origin/main`.
-    - Da chinh worklog week 9 theo `format-worklog.yaml` cho ca VI/EN.
-    - Da dong bo nhan week 9 tren trang Worklog tong.
-    - Da xac minh lai bang `rg` va `git diff` rang khong con nhan week 9 cu trong file lien quan.
+    - Da tao commit proposal-only `da6ab00`.
+    - Da xac nhan commit nay chi chua 4 file proposal.
   - Now:
-    - Cho xac nhan cuoi cung / hoan tat cac buoc theo goal hien tai.
+    - Push `da6ab00` len `origin/main`.
   - Next:
-    - Neu khong co gi can sua them, dong goal va cap nhat trang thai hoan tat.
+    - UNCONFIRMED: xac nhan remote accepted commit proposal-only.
 
 - Open questions (`UNCONFIRMED` if needed):
-  - Khong.
+  - UNCONFIRMED: khong.
 
 - Working set (files/ids/commands):
-  - `rule/continuity-ledger-rule.mdc`
-  - `CONTINUITY.md`
-  - `format-worklog.yaml`
-  - `all-ui-tree.txt`
-  - `content/1-Worklog/1.9-Week9/_index.vi.md`
-  - `content/1-Worklog/1.9-Week9/_index.md`
-  - `content/1-Worklog/_index.vi.md`
-  - `content/1-Worklog/_index.md`
+  - commit `da6ab00`
+  - `git push origin main`

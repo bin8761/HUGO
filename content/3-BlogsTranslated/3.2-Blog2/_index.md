@@ -1,123 +1,79 @@
-﻿---
+---
 title: "Blog 2"
-date: 2024-01-01
-weight: 1
+date: 2026-06-25
+weight: 2
 chapter: false
 pre: " <b> 3.2. </b> "
 ---
-# Getting Started with Healthcare Data Lakes: Using Microservices
 
-Data lakes can help hospitals and healthcare facilities turn data into business insights, maintain business continuity, and protect patient privacy. A **data lake** is a centralized, managed, and secure repository to store all your data, both in its raw and processed forms for analysis. Data lakes allow you to break down data silos and combine different types of analytics to gain insights and make better business decisions.
+# Amazon EKS Auto Mode and Istio Ambient Mesh
 
-This blog post is part of a larger series on getting started with setting up a healthcare data lake. In my final post of the series, *â€œGetting Started with Healthcare Data Lakes: Diving into Amazon Cognitoâ€*, I focused on the specifics of using Amazon Cognito and Attribute Based Access Control (ABAC) to authenticate and authorize users in the healthcare data lake solution. In this blog, I detail how the solution evolved at a foundational level, including the design decisions I made and the additional features used. You can access the code samples for the solution in this Git repo for reference.
+**Source:** [AWS Containers Blog - Better Together: Amazon EKS Auto Mode and Istio Ambient Mesh](https://aws.amazon.com/blogs/containers/better-together-amazon-eks-auto-mode-and-istio-ambient-mesh/)
 
----
 
-## Architecture Guidance
+This blog post introduces how Amazon EKS Auto Mode can be combined with Istio Ambient Mesh to reduce the operational burden of Kubernetes and service mesh adoption in a cloud-native environment. EKS Auto Mode automates many operational parts of the cluster, while Istio Ambient Mesh provides security, observability, and traffic control without requiring a sidecar proxy for every pod.
 
-The main change since the last presentation of the overall architecture is the decomposition of a single service into a set of smaller services to improve maintainability and flexibility. Integrating a large volume of diverse healthcare data often requires specialized connectors for each format; by keeping them encapsulated separately as microservices, we can add, remove, and modify each connector without affecting the others. The microservices are loosely coupled via publish/subscribe messaging centered in what I call the â€œpub/sub hub.â€
+The main highlight of the article is that this model allows enterprises to adopt service mesh in a lighter, more scalable way that fits microservices systems on Amazon EKS. Instead of managing many nodes, sidecars, and complex configurations, operation teams can use EKS Auto Mode together with ambient mode to focus more on applications and security policies.
 
-This solution represents what I would consider another reasonable sprint iteration from my last post. The scope is still limited to the ingestion and basic parsing of **HL7v2 messages** formatted in **Encoding Rules 7 (ER7)** through a REST interface.
+## Key points
 
-**The solution architecture is now as follows:**
+- EKS Auto Mode automates many cluster operations such as node provisioning, autoscaling, patching, and infrastructure management, helping reduce operational overhead for DevOps teams.
+- Nodes in EKS Auto Mode run on EC2 managed instances, use a container-optimized operating system, and are managed by AWS across many platform responsibilities, making cluster operations more stable and simpler.
+- Istio Ambient Mesh is a service mesh model that does not use traditional sidecars. Instead of attaching a proxy to each pod, ambient mesh uses the `ztunnel` component at the node level to handle security and Layer 4 traffic.
+- When Layer 7 features are needed, such as HTTP routing, retries, timeouts, circuit breaking, or more detailed authorization policies, the system can add a waypoint proxy for a specific service or namespace.
+- `ztunnel` creates a secure overlay between workloads through HBONE, helping service-to-service traffic stay protected with mTLS without requiring application code changes.
+- Ambient Mesh can be enabled by adding the `istio.io/dataplane-mode=ambient` label to a namespace. Workloads in that namespace then automatically join the mesh.
+- This model reduces operational overhead because teams do not need to manage a sidecar for every pod, while still keeping important service mesh benefits such as encryption, observability, and traffic policy.
+- The blog also demonstrates how to use Kiali and Prometheus to observe the traffic graph, verify mTLS through `ztunnel`, and inspect communication between services in the sample application.
+- In the hands-on section, the post shows how to create an EKS Auto Mode cluster, install Istio Ambient Mesh, deploy a sample retail store application, enable ambient mode, verify mTLS, and apply AuthorizationPolicy at both Layer 4 and Layer 7.
+- For production environments, teams should consider AWS resource costs, proper IAM permissions, ingress gateway security, service-to-service authorization policies, and resource cleanup after testing.
 
-> *Figure 1. Overall architecture; colored boxes represent distinct services.*
+## Images
 
----
+The following two diagrams from the AWS Blog show how Istio Ambient Mesh works on Amazon EKS Auto Mode at Layer 4 and Layer 7.
 
-While the term *microservices* has some inherent ambiguity, certain traits are common:  
-- Small, autonomous, loosely coupled  
-- Reusable, communicating through well-defined interfaces  
-- Specialized to do one thing well  
-- Often implemented in an **event-driven architecture**
+![Istio Ambient Mesh Layer 4 architecture on Amazon EKS Auto Mode](../../images/3-BlogsPosted/3.1-Blog1/c-170-1.jpg)
 
-When determining where to draw boundaries between microservices, consider:  
-- **Intrinsic**: technology used, performance, reliability, scalability  
-- **Extrinsic**: dependent functionality, rate of change, reusability  
-- **Human**: team ownership, managing *cognitive load*
+*Figure 1. Istio Ambient Mesh architecture with Layer 4 features on Amazon EKS Auto Mode. Source: AWS Blog, Figure 1.*
 
----
+![Istio Ambient Mesh Layer 7 architecture with waypoint proxy](../../images/3-BlogsPosted/3.1-Blog1/c-170-2.jpg)
 
-## Technology Choices and Communication Scope
+*Figure 2. Istio Ambient Mesh architecture with waypoint proxy for Layer 7 features. Source: AWS Blog, Figure 2.*
 
-| Communication scope                       | Technologies / patterns to consider                                                        |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Within a single microservice              | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Between microservices in a single service | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Between services                          | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
 
----
+## Guide
 
-## The Pub/Sub Hub
+The content of the blog can be reproduced through the following general steps:
 
-Using a **hub-and-spoke** architecture (or message broker) works well with a small number of tightly related microservices.  
-- Each microservice depends only on the *hub*  
-- Inter-microservice connections are limited to the contents of the published message  
-- Reduces the number of synchronous calls since pub/sub is a one-way asynchronous *push*
+- Prepare the environment: install AWS CLI, `kubectl`, Helm, Terraform, and `envsubst`. The AWS account needs permission to create EKS, EC2, IAM, VPC, and related resources.
+- Clone the AWS sample repository and move into the Terraform directory used for ambient mode.
+- Run `terraform init`, `terraform plan`, and `terraform apply --auto-approve` to create the EKS Auto Mode cluster, node pool, Istio control plane, and required components.
+- Configure `kubectl` with `aws eks update-kubeconfig`, then check pods in the `istio-system` namespace to make sure Istio is running.
+- Install Prometheus and Kiali to observe mesh traffic, then port-forward Kiali to the local machine to inspect the service graph.
+- Deploy the sample retail store application with Helm, including services such as cart, catalog, checkout, orders, and ui.
+- Install Gateway API CRDs if the cluster does not already have them, then create a Gateway and HTTPRoute to allow external access to the application.
+- Enable ambient mode for the `default` namespace by adding the `istio.io/dataplane-mode=ambient` label, then restart workloads so that pods join the mesh.
+- Apply PeerAuthentication in `STRICT` mode to require mTLS in the mesh and test requests from a pod outside the mesh to validate the security policy.
+- Create a Layer 4 AuthorizationPolicy to limit which service is allowed to call the catalog service.
+- Deploy a waypoint proxy for the catalog service when Layer 7 control is needed, then use `targetRefs` in AuthorizationPolicy to limit access by HTTP method or path.
+- After completing the practice, clean up AWS resources to avoid unnecessary costs.
 
-Drawback: **coordination and monitoring** are needed to avoid microservices processing the wrong message.
+## Reference commands
 
----
+```bash
+git clone https://github.com/aws-samples/sample-istio-ambient-eks-automode.git
+cd sample-istio-ambient-eks-automode/terraform-blueprint/ambient
 
-## Core Microservice
+terraform init
+terraform plan
+terraform apply --auto-approve
 
-Provides foundational data and communication layer, including:  
-- **Amazon S3** bucket for data  
-- **Amazon DynamoDB** for data catalog  
-- **AWS Lambda** to write messages into the data lake and catalog  
-- **Amazon SNS** topic as the *hub*  
-- **Amazon S3** bucket for artifacts such as Lambda code
+aws eks --region us-west-2 update-kubeconfig --name ambient
+kubectl get pods -A
+kubectl label namespace default istio.io/dataplane-mode=ambient
+kubectl port-forward svc/kiali 20001:20001 -n istio-system
+```
 
-> Only allow indirect write access to the data lake through a Lambda function â†’ ensures consistency.
+## Conclusion
 
----
-
-## Front Door Microservice
-
-- Provides an API Gateway for external REST interaction  
-- Authentication & authorization based on **OIDC** via **Amazon Cognito**  
-- Self-managed *deduplication* mechanism using DynamoDB instead of SNS FIFO because:  
-  1. SNS deduplication TTL is only 5 minutes  
-  2. SNS FIFO requires SQS FIFO  
-  3. Ability to proactively notify the sender that the message is a duplicate  
-
----
-
-## Staging ER7 Microservice
-
-- Lambda â€œtriggerâ€ subscribed to the pub/sub hub, filtering messages by attribute  
-- Step Functions Express Workflow to convert ER7 â†’ JSON  
-- Two Lambdas:  
-  1. Fix ER7 formatting (newline, carriage return)  
-  2. Parsing logic  
-- Result or error is pushed back into the pub/sub hub  
-
----
-
-## New Features in the Solution
-
-### 1. AWS CloudFormation Cross-Stack References
-Example *outputs* in the core microservice:
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
-
+The blog shows that EKS Auto Mode and Istio Ambient Mesh complement each other well when deploying modern Kubernetes workloads on AWS. EKS Auto Mode simplifies infrastructure operations, while Istio Ambient Mesh provides security and traffic control in a lighter way than the traditional sidecar model. This is a suitable approach for microservices systems that require security, observability, and scalability in a cloud-native environment.

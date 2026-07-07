@@ -1,27 +1,29 @@
-﻿---
-title: "Blog được dịch"
-date: 2024-01-01
+---
+title: "Các bài blog đã đăng"
+date: 2026-06-25
 weight: 3
 chapter: false
 pre: " <b> 3. </b> "
 ---
 
-Phần này sẽ liệt kê và giới thiệu các blog bạn đã dịch. Ví dụ:
+Phần này tổng hợp các bài blog kỹ thuật mình đã đọc và chia sẻ trong quá trình thực tập. Các chủ đề được chọn tập trung vào Amazon EKS, vận hành Kubernetes, bảo mật service mesh, private networking và ứng dụng AI trong cloud security trên AWS.
 
-###  [Blog 1 - Bắt đầu với hồ dữ liệu chăm sóc sức khỏe: Sử dụng microservice](3.1-Blog1/)
-Blog này giới thiệu cách bắt đầu xây dựng hồ dữ liệu trong lĩnh vực chăm sóc sức khỏe bằng cách áp dụng kiến ​​trúc vi dịch vụ. Bạn sẽ tìm hiểu lý do tại sao hồ dữ liệu lại quan trọng trong việc lưu trữ và phân tích dữ liệu chăm sóc sức khỏe đa dạng (hồ sơ y tế điện tử, dữ liệu xét nghiệm trong phòng thí nghiệm, thiết bị IoT y tế...), cách vi dịch vụ giúp hệ thống linh hoạt hơn, có thể mở rộng và dễ bảo trì hơn. Bài viết cũng hướng dẫn bạn các bước để thiết lập môi trường, tổ chức quy trình xử lý dữ liệu và đảm bảo tuân thủ các tiêu chuẩn bảo mật & quyền riêng tư như HIPAA.
+### [Blog 1 - Better Together: Amazon EKS Auto Mode and Istio Ambient Mesh](3.1-Blog1/)
 
-###  [Blog 2 - ...](3.2-Blog2/)
-Blog này giới thiệu cách bắt đầu xây dựng hồ dữ liệu trong lĩnh vực chăm sóc sức khỏe bằng cách áp dụng kiến ​​trúc vi dịch vụ. Bạn sẽ tìm hiểu lý do tại sao hồ dữ liệu lại quan trọng trong việc lưu trữ và phân tích dữ liệu chăm sóc sức khỏe đa dạng (hồ sơ y tế điện tử, dữ liệu xét nghiệm trong phòng thí nghiệm, thiết bị IoT y tế...), cách vi dịch vụ giúp hệ thống linh hoạt hơn, có thể mở rộng và dễ bảo trì hơn. Bài viết cũng hướng dẫn bạn các bước để thiết lập môi trường, tổ chức quy trình xử lý dữ liệu và đảm bảo tuân thủ các tiêu chuẩn bảo mật & quyền riêng tư như HIPAA.
+Nguồn: [AWS Containers Blog - Better Together: Amazon EKS Auto Mode and Istio Ambient Mesh](https://aws.amazon.com/blogs/containers/better-together-amazon-eks-auto-mode-and-istio-ambient-mesh/)
 
-###  [Blog 3 - ...](3.3-Blog3/)
-Blog này giới thiệu cách bắt đầu xây dựng hồ dữ liệu trong lĩnh vực chăm sóc sức khỏe bằng cách áp dụng kiến ​​trúc vi dịch vụ. Bạn sẽ tìm hiểu lý do tại sao hồ dữ liệu lại quan trọng trong việc lưu trữ và phân tích dữ liệu chăm sóc sức khỏe đa dạng (hồ sơ y tế điện tử, dữ liệu xét nghiệm trong phòng thí nghiệm, thiết bị IoT y tế...), cách vi dịch vụ giúp hệ thống linh hoạt hơn, có thể mở rộng và dễ bảo trì hơn. Bài viết cũng hướng dẫn bạn các bước để thiết lập môi trường, tổ chức quy trình xử lý dữ liệu và đảm bảo tuân thủ các tiêu chuẩn bảo mật & quyền riêng tư như HIPAA.
+Bài viết giải thích cách kết hợp Amazon EKS Auto Mode và Istio Ambient Mesh để giảm khối lượng vận hành Kubernetes, đồng thời tăng cường bảo mật giao tiếp giữa các microservices. EKS Auto Mode tự động hóa các tác vụ ở tầng compute, trong khi Istio Ambient Mesh cung cấp service mesh không cần sidecar.
 
-###  [Blog 4 - ...](3.4-Blog4/)
-Blog này giới thiệu cách bắt đầu xây dựng hồ dữ liệu trong lĩnh vực chăm sóc sức khỏe bằng cách áp dụng kiến ​​trúc vi dịch vụ. Bạn sẽ tìm hiểu lý do tại sao hồ dữ liệu lại quan trọng trong việc lưu trữ và phân tích dữ liệu chăm sóc sức khỏe đa dạng (hồ sơ y tế điện tử, dữ liệu xét nghiệm trong phòng thí nghiệm, thiết bị IoT y tế...), cách vi dịch vụ giúp hệ thống linh hoạt hơn, có thể mở rộng và dễ bảo trì hơn. Bài viết cũng hướng dẫn bạn các bước để thiết lập môi trường, tổ chức quy trình xử lý dữ liệu và đảm bảo tuân thủ các tiêu chuẩn bảo mật & quyền riêng tư như HIPAA.
+### [Blog 2 - Amazon EKS now supports control plane egress through your VPC](3.2-Blog2/)
 
-###  [Blog 5 - ...](3.5-Blog5/)
-Blog này giới thiệu cách bắt đầu xây dựng hồ dữ liệu trong lĩnh vực chăm sóc sức khỏe bằng cách áp dụng kiến ​​trúc vi dịch vụ. Bạn sẽ tìm hiểu lý do tại sao hồ dữ liệu lại quan trọng trong việc lưu trữ và phân tích dữ liệu chăm sóc sức khỏe đa dạng (hồ sơ y tế điện tử, dữ liệu xét nghiệm trong phòng thí nghiệm, thiết bị IoT y tế...), cách vi dịch vụ giúp hệ thống linh hoạt hơn, có thể mở rộng và dễ bảo trì hơn. Bài viết cũng hướng dẫn bạn các bước để thiết lập môi trường, tổ chức quy trình xử lý dữ liệu và đảm bảo tuân thủ các tiêu chuẩn bảo mật & quyền riêng tư như HIPAA.
+Nguồn: [AWS Containers Blog - Amazon EKS now supports control plane egress through your VPC](https://aws.amazon.com/blogs/containers/amazon-eks-now-supports-control-plane-egress-through-your-vpc/)
 
-###  [Blog 6 - ...](3.6-Blog6/)
-Blog này giới thiệu cách bắt đầu xây dựng hồ dữ liệu trong lĩnh vực chăm sóc sức khỏe bằng cách áp dụng kiến ​​trúc vi dịch vụ. Bạn sẽ tìm hiểu lý do tại sao hồ dữ liệu lại quan trọng trong việc lưu trữ và phân tích dữ liệu chăm sóc sức khỏe đa dạng (hồ sơ y tế điện tử, dữ liệu xét nghiệm trong phòng thí nghiệm, thiết bị IoT y tế...), cách vi dịch vụ giúp hệ thống linh hoạt hơn, có thể mở rộng và dễ bảo trì hơn. Bài viết cũng hướng dẫn bạn các bước để thiết lập môi trường, tổ chức quy trình xử lý dữ liệu và đảm bảo tuân thủ các tiêu chuẩn bảo mật & quyền riêng tư như HIPAA.
+Bài viết giới thiệu customer-routed control plane egress cho Amazon EKS. Tính năng này cho phép outbound traffic do Kubernetes API Server khởi tạo được định tuyến qua VPC của người dùng, giúp tăng khả năng kiểm soát mạng, audit và tuân thủ.
+
+### [Blog 3 - Introducing AWS Continuum: Security at machine speed](3.3-Blog3/)
+
+Nguồn: [AWS Security Blog - Introducing AWS Continuum: Security at machine speed](https://aws.amazon.com/blogs/security/introducing-aws-continuum-security-at-machine-speed/)
+
+Bài viết giới thiệu AWS Continuum, một hướng tiếp cận mới giúp đội ngũ bảo mật xử lý lỗ hổng mã nguồn nhanh hơn bằng AI. Nội dung tập trung vào vòng đời xử lý lỗ hổng gồm discovery, prioritization, validation, mitigation và remediation.
+
+Mình chọn các chủ đề này vì chúng liên quan trực tiếp đến vận hành cloud-native, bảo mật networking trong Kubernetes, quản trị hạ tầng hiện đại và xu hướng Agentic AI trong cloud security trên AWS.

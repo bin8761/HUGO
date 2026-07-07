@@ -1,123 +1,100 @@
-﻿---
-title: "Event 2"
+---
+title: "FCAJ Community Day"
 date: 2024-01-01
 weight: 1
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Summary Report: â€œGenAI-powered App-DB Modernization workshopâ€
+# Event 2 - FC Community Day
 
-### Event Objectives
+## Event Information
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+| Item | Details |
+| --- | --- |
+| Event name | FC Community Day |
+| Format | In-person event with livestream |
+| Location | 26th and 36th floors, Bitexco Financial Tower |
+| Role | Attendee |
+| Main topics | Cloud Computing, AI Agents, Voice AI, DevOps AI Agents, AI in Human Resources, and secure enterprise AI deployment |
 
-### Speakers
+## Overview
 
-- **Jignesh Shah** â€“ Director, Open Source Databases
-- **Erica Liu** â€“ Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** â€“ Assc. Specialist SA, Serverless Amazon Web Services
+FC Community Day is a technology community event featuring multiple speakers from cloud, artificial intelligence, and enterprise digital transformation backgrounds. The event focused on how organizations apply cloud computing and AI in real operations, including incident management, cost optimization, DevOps automation, Vietnamese voice agents, HR automation, and secure AI deployment.
 
-### Key Highlights
+The event was practical because the sessions did not only introduce technical concepts. They also presented enterprise problems, solution architectures, product demos, and deployment lessons from production environments.
 
-#### Identifying the drawbacks of legacy application architecture
+## Key Topics
 
-- Long product release cycles â†’ Lost revenue/missed opportunities  
-- Inefficient operations â†’ Reduced productivity, higher costs  
-- Non-compliance with security regulations â†’ Security breaches, loss of reputation  
+### Cloud Thinker and the Cloud Engineering Career Path
 
-#### Transitioning to modern application architecture â€“ Microservices
+Steve Tran shared his career journey in cloud engineering, starting from server-related work and then moving into cloud learning and AWS certifications. The session emphasized that the cloud market in Vietnam and ASEAN has grown strongly due to digital transformation, especially after the shift toward remote work.
 
-Migrating to a modular system â€” each function is an **independent service** communicating via **events**, built on three core pillars:
+A key point was that AI is changing the expectations for software and cloud engineers. Enterprises increasingly need people who can use AI tools to improve productivity, understand system architecture, and solve operational problems in real environments.
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+Cloud Thinker was introduced as an AI-powered cloud operations platform that helps accelerate incident investigation, optimize FinOps processes, support security testing, and keep human-in-the-loop decisions for sensitive production environments.
 
-#### Domain-Driven Design (DDD)
+### Voice AI for Vietnamese Users
 
-- **Four-step method**: Identify domain events â†’ arrange timeline â†’ identify actors â†’ define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+The Voice AI session introduced the core architecture of a voice agent, including audio input, speech-to-text, language model processing, and text-to-speech output. For Vietnamese, the problem is more challenging because of regional accents, tones, speech rhythm, gender recognition, and natural turn-taking.
 
-#### Event-Driven Architecture
+The speakers explained why a speech-to-text, language model, and text-to-speech pipeline provides better control for Vietnamese use cases. This approach helps improve accuracy, latency, and business workflow handling.
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
+Real-world use cases included voice assistants for banking, customer support automation, card-blocking workflows, and tool calling so the AI can perform business processes instead of only answering FAQ questions.
 
-#### Compute Evolution
+### DevOps AI Agent
 
-- **Shared Responsibility Model**: EC2 â†’ ECS â†’ Fargate â†’ Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
+The DevOps AI Agent session focused on incident response in complex cloud systems. When a system includes many services, log sources, and operations teams, root-cause analysis can take a long time and increase MTTD and MTTR.
 
-#### Amazon Q Developer
+The AI Agent workflow includes receiving alerts, aggregating logs, generating hypotheses, validating hypotheses, suggesting mitigation steps, and recommending system improvements. The important idea is that the AI Agent does not fully replace engineers; it accelerates investigation and supports better decision-making.
 
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+The case studies showed that AI can significantly reduce troubleshooting time, especially in systems with good observability, complete operational data, and clear permission boundaries.
 
-### Key Takeaways
+### AI in Enterprise Human Resources
 
-#### Design Mindset
+The HR session discussed common recruitment challenges, such as manual CV screening, subjective evaluation, long time-to-hire, and sensitive candidate data protection.
 
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
+AI can support CV parsing, skill matching, candidate evaluation reports, and interview scheduling workflows. Tools such as Amazon Q can be customized into agents for specific departments, helping teams process internal documents, generate reports, and automate workflows.
 
-#### Technical Architecture
+However, the event also emphasized that AI should support repetitive and analytical tasks. Strategic and final hiring decisions still require human review to ensure fairness and cultural fit.
 
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
+### Secure Enterprise AI Deployment
 
-#### Modernization Strategy
+The final topic covered the need to deploy AI agents securely in enterprise environments. For organizations with sensitive data, AI should not access internal systems through the public Internet without proper controls.
 
-- **Phased approach**: No rushing â€” follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
+The proposed approach uses VPC Interface Endpoints, AWS PrivateLink, and MCP servers to connect AI agents to internal systems through private networking. This design reduces data exposure risk, limits man-in-the-middle attacks, supports access control, and better fits enterprise security requirements.
 
-### Applying to Work
+## Key Takeaways
 
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
+- Cloud and AI are becoming tightly connected in enterprise operations, especially in incident management, FinOps, DevOps, and customer support.
+- AI Agents should be designed with clear permission boundaries, controlled action scope, and human-in-the-loop decisions for critical operations.
+- Vietnamese Voice AI requires special handling for data, regional accents, tones, and conversation latency.
+- DevOps AI Agents can reduce investigation time when systems have strong logs, metrics, and topology data.
+- AI in HR can speed up recruitment, but human review is still needed to reduce bias and maintain organizational fit.
+- Enterprise AI deployment must prioritize security, access control, and data governance.
 
-### Event Experience
+## Connection to the EAM Workspace Project
 
-Attending the **â€œGenAI-powered App-DB Modernizationâ€** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
+The FC Community Day topics are directly related to the EAM Workspace project. An enterprise asset management system needs stable backend services, clear logging, user authorization, data control, and scalability as the number of assets, employees, and workflows increases.
 
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
+From a DevOps perspective, the project can be improved with standardized logs, health checks, monitoring, and alerts to reduce issue detection time. From an AI perspective, future versions could include internal assistants for asset lookup, automatic support request classification, maintenance suggestions, or natural-language asset reports.
 
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
+## Conclusion
 
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
+FC Community Day provided a practical view of how cloud and AI are being applied in modern enterprises. The event reinforced that building a system is not only about implementing features, but also about operations, security, scalability, data governance, and user experience in real environments.
 
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
+## Event Images
 
-#### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
+Some images recorded during the event:
 
-#### Some event photos
-*Add your event photos here*  
+![FC Community Day](../../images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20090429.png)
 
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+![FC Community Day](../../images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20091254.png)
 
+![FC Community Day](../../images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20093533.png)
+
+![FC Community Day](../../images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20094353.png)
+
+![FC Community Day](../../images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20102958.png)
+
+![FC Community Day](../../images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20103819.png)

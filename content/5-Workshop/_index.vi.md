@@ -1,27 +1,51 @@
-﻿---
-title: "Xưởng"
+---
+title: "Workshop"
 date: 2024-01-01
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
-# Bảo mật quyền truy cập kết hợp vào S3 bằng cách sử dụng Điểm cuối VPC
+
+# Triển khai EAM Workspace trên AWS
 
 #### Tổng quan
 
-**AWS PrivateLink** cung cấp kết nối riêng tư tới các dịch vụ AWS từ VPC và mạng tại chỗ của bạn mà không làm lộ lưu lượng truy cập của bạn ra Internet Công cộng.
+Workshop này hướng dẫn triển khai **EAM Workspace**, hệ thống quản lý tài sản doanh nghiệp, lên AWS theo mô hình demo full-stack. Ứng dụng gồm giao diện React/Vite, backend Node.js/Express, Prisma ORM và database MySQL.
 
-Trong phòng thực hành này, bạn sẽ tìm hiểu cách tạo, đặt cấu hình và kiểm tra các điểm cuối VPC cho phép khối lượng công việc của bạn tiếp cận các dịch vụ AWS mà không cần truyền qua Internet công cộng.
+Luồng triển khai được thiết kế để phù hợp với project đã thực hiện trong kỳ thực tập: frontend chạy trên AWS Amplify Hosting, API public đi qua Amazon API Gateway, backend chạy trên AWS Elastic Beanstalk và dữ liệu lưu trong Amazon RDS for MySQL.
 
-Bạn sẽ tạo hai loại điểm cuối để truy cập Amazon S3: điểm cuối Gateway VPC và điểm cuối Interface VPC. Hai loại điểm cuối VPC này mang lại những lợi ích khác nhau tùy thuộc vào việc bạn đang truy cập Amazon S3 từ đám mây hay vị trí tại chỗ của mình
-+ **Cổng** - Tạo điểm cuối cổng để gửi lưu lượng truy cập đến Amazon S3 hoặc DynamoDB bằng địa chỉ IP riêng. Bạn định tuyến lưu lượng truy cập từ VPC đến điểm cuối cổng bằng bảng lộ trình.
-+ **Giao diện** - Tạo điểm cuối giao diện để gửi lưu lượng truy cập đến các dịch vụ điểm cuối sử dụng Network Load Balancer để phân phối lưu lượng truy cập. Lưu lượng truy cập dành cho dịch vụ điểm cuối được giải quyết bằng DNS.
+Các dịch vụ chính:
+
+- **AWS Amplify Hosting** cho frontend React.
+- **Amazon API Gateway HTTP API** cho route `/api/*`.
+- **AWS Elastic Beanstalk** cho backend Node.js/Express.
+- **Amazon RDS for MySQL** cho dữ liệu ứng dụng.
+- **Amazon S3** cho hướng lưu trữ file sẵn sàng production.
+- **Amazon SES** cho OTP và email flow.
+- **Amazon CloudWatch** cho log và kiểm tra lỗi.
+
+Workshop này dùng hướng demo: không dùng Route 53, không dùng custom domain và không dùng Amazon Cognito. Xác thực được backend xử lý bằng JWT.
+
+#### Kiến trúc
+
+{{< mermaid >}}
+flowchart LR
+    User["Trình duyệt người dùng"] --> Amplify["AWS Amplify Hosting\nReact Frontend"]
+    Amplify --> Rewrite["Rewrite /api/*"]
+    Rewrite --> APIGW["Amazon API Gateway\nHTTP API"]
+    APIGW --> EB["AWS Elastic Beanstalk\nNode.js Backend"]
+    EB --> RDS["Amazon RDS MySQL"]
+    EB --> S3["Amazon S3\nProduction-ready File Storage"]
+    EB --> SES["Amazon SES"]
+    EB --> CW["CloudWatch Logs"]
+{{< /mermaid >}}
 
 #### Nội dung
 
-1. [Tổng quan về hội thảo](5.1-Tổng quan về hội thảo)
-2. [Điều kiện tiên quyết](5.2-Điều kiện tiên quyết/)
-3. [Truy cập S3 từ VPC](5.3-S3-vpc/)
-4. [Truy cập S3 từ tại chỗ](5.4-S3-onprem/)
-5. [Chính sách điểm cuối VPC (Tiền thưởng)](5.5-Chính sách/)
-6. [Dọn dẹp](5.6-Dọn dẹp/)
+1. [Tổng quan workshop](5.1-Workshop-overview/)
+2. [Chuẩn bị](5.2-Prerequisites/)
+3. [Chuẩn bị network và RDS](5.3-Network-RDS/)
+4. [Triển khai backend bằng Elastic Beanstalk](5.4-Backend-Elastic-Beanstalk/)
+5. [Kết nối API Gateway và Amplify Hosting](5.5-Frontend-Amplify/)
+6. [Kiểm thử, monitoring và xử lý lỗi](5.6-Test-Monitor/)
+7. [Dọn dẹp tài nguyên](5.7-Cleanup/)

@@ -1,123 +1,51 @@
-﻿---
+---
 title: "Blog 3"
-date: 2024-01-01
-weight: 1
+date: 2026-06-25
+weight: 3
 chapter: false
 pre: " <b> 3.3. </b> "
 ---
-# Getting Started with Healthcare Data Lakes: Using Microservices
 
-Data lakes can help hospitals and healthcare facilities turn data into business insights, maintain business continuity, and protect patient privacy. A **data lake** is a centralized, managed, and secure repository to store all your data, both in its raw and processed forms for analysis. Data lakes allow you to break down data silos and combine different types of analytics to gain insights and make better business decisions.
+# AWS Continuum: Security at Machine Speed
 
-This blog post is part of a larger series on getting started with setting up a healthcare data lake. In my final post of the series, *â€œGetting Started with Healthcare Data Lakes: Diving into Amazon Cognitoâ€*, I focused on the specifics of using Amazon Cognito and Attribute Based Access Control (ABAC) to authenticate and authorize users in the healthcare data lake solution. In this blog, I detail how the solution evolved at a foundational level, including the design decisions I made and the additional features used. You can access the code samples for the solution in this Git repo for reference.
+**Source:** [AWS Security Blog - Introducing AWS Continuum: Security at machine speed](https://aws.amazon.com/vi/blogs/security/introducing-aws-continuum-security-at-machine-speed/)
 
----
+This blog post introduces AWS Continuum, a new AWS approach designed to help security teams handle code vulnerabilities at machine speed. Instead of only collecting telemetry, storing it, querying it, and building dashboards for monitoring, AWS emphasizes a new model built around telemetry, context, reasoning, and actions.
 
-## Architecture Guidance
+AWS Continuum for code vulnerabilities is currently announced as a gated preview. It focuses on the full vulnerability lifecycle, from discovery and prioritization to validation, mitigation, and remediation. A notable point is that the system can combine multiple AI models, analyze business context, and provide grounded recommendations instead of applying the same generic rule set to every environment.
 
-The main change since the last presentation of the overall architecture is the decomposition of a single service into a set of smaller services to improve maintainability and flexibility. Integrating a large volume of diverse healthcare data often requires specialized connectors for each format; by keeping them encapsulated separately as microservices, we can add, remove, and modify each connector without affecting the others. The microservices are loosely coupled via publish/subscribe messaging centered in what I call the â€œpub/sub hub.â€
+## Key points
 
-This solution represents what I would consider another reasonable sprint iteration from my last post. The scope is still limited to the ingestion and basic parsing of **HL7v2 messages** formatted in **Encoding Rules 7 (ER7)** through a REST interface.
+- AWS Continuum for code vulnerabilities was announced by AWS as a gated preview, aiming to handle the code vulnerability lifecycle from discovery to action.
+- Continuum does not only detect vulnerabilities. It also analyzes the real context of the environment, including AWS infrastructure, access permissions, network topology, source code, internal documentation, operating processes, and the organization's risk profile.
+- The workflow includes 4 continuous stages: Discovery, Prioritization, Validation, Mitigation and Remediation.
+- In the Discovery stage, the system receives the existing vulnerability backlog and can scan the environment to build a more complete view of vulnerabilities and related attack paths.
+- In the Prioritization stage, Continuum evaluates importance based on questions such as whether the component is deployed, whether it is reachable, whether it is on a production path, and what the business impact would be if it were exploited.
+- In the Validation stage, the system helps reduce false positives by validating vulnerabilities against environmental context and can generate exploit examples in a sandbox environment to provide reproducible evidence.
+- In the Mitigation and Remediation stage, Continuum suggests actions such as network changes, policy adjustments, or code patches. It also considers blast radius and rollback paths when possible.
+- AWS Continuum follows a "graduated trust" approach: it initially runs in learn mode with human-in-the-loop review, then can gradually move toward enforce mode when the organization has enough trust in the recommendations.
+- In addition to code vulnerabilities, AWS also brings capabilities such as Continuum pen testing, Continuum code scanning, and Continuum threat modeling into the same security loop.
+- This capability is especially useful for organizations with large vulnerability backlogs, complex systems, and a need to prioritize remediation based on real risk instead of generic severity alone.
 
-**The solution architecture is now as follows:**
+## Image
 
-> *Figure 1. Overall architecture; colored boxes represent distinct services.*
+The following diagram illustrates the AWS Continuum operating loop based on the stages described in the blog: Discovery, Prioritization, Validation, Mitigation and Remediation.
 
----
+![AWS Continuum vulnerability lifecycle diagram](../../images/3-BlogsPosted/3.3-Blog3/aws-continuum-1.png)
 
-While the term *microservices* has some inherent ambiguity, certain traits are common:  
-- Small, autonomous, loosely coupled  
-- Reusable, communicating through well-defined interfaces  
-- Specialized to do one thing well  
-- Often implemented in an **event-driven architecture**
+*Figure 1. Diagram illustrating the vulnerability lifecycle handled by AWS Continuum. Content source: AWS Security Blog.*
 
-When determining where to draw boundaries between microservices, consider:  
-- **Intrinsic**: technology used, performance, reliability, scalability  
-- **Extrinsic**: dependent functionality, rate of change, reusability  
-- **Human**: team ownership, managing *cognitive load*
 
----
+## Guide
 
-## Technology Choices and Communication Scope
+1. Read the "What we believe" section to understand why traditional security models that rely heavily on telemetry and dashboards are no longer fast enough compared with the speed of AI-assisted vulnerability discovery.
+2. Remember the 4 main stages of AWS Continuum: Discovery, Prioritization, Validation, Mitigation and Remediation.
+3. When analyzing a real system, connect the blog's ideas with data sources such as code repositories, IAM permissions, network topology, system design documents, and workload criticality.
+4. AWS Continuum should be highlighted as an example of the Agentic AI trend in security: AI does not only detect issues, but also supports reasoning, prioritization, and remediation actions.
+5. Because AWS Continuum for code vulnerabilities is still in gated preview, hands-on practice can remain at the level of understanding its architecture, workflow, and request-access process if an organization wants to evaluate it.
 
-| Communication scope                       | Technologies / patterns to consider                                                        |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Within a single microservice              | Amazon Simple Queue Service (Amazon SQS), AWS Step Functions                               |
-| Between microservices in a single service | AWS CloudFormation cross-stack references, Amazon Simple Notification Service (Amazon SNS) |
-| Between services                          | Amazon EventBridge, AWS Cloud Map, Amazon API Gateway                                      |
+## Short conclusion
 
----
+AWS Continuum reflects a new direction in cloud security, where AI is used to accelerate vulnerability discovery, assessment, and remediation. Instead of only providing information for humans to observe, the system aims to produce grounded, verifiable actions and gradually automate them under the control of security teams.
 
-## The Pub/Sub Hub
-
-Using a **hub-and-spoke** architecture (or message broker) works well with a small number of tightly related microservices.  
-- Each microservice depends only on the *hub*  
-- Inter-microservice connections are limited to the contents of the published message  
-- Reduces the number of synchronous calls since pub/sub is a one-way asynchronous *push*
-
-Drawback: **coordination and monitoring** are needed to avoid microservices processing the wrong message.
-
----
-
-## Core Microservice
-
-Provides foundational data and communication layer, including:  
-- **Amazon S3** bucket for data  
-- **Amazon DynamoDB** for data catalog  
-- **AWS Lambda** to write messages into the data lake and catalog  
-- **Amazon SNS** topic as the *hub*  
-- **Amazon S3** bucket for artifacts such as Lambda code
-
-> Only allow indirect write access to the data lake through a Lambda function â†’ ensures consistency.
-
----
-
-## Front Door Microservice
-
-- Provides an API Gateway for external REST interaction  
-- Authentication & authorization based on **OIDC** via **Amazon Cognito**  
-- Self-managed *deduplication* mechanism using DynamoDB instead of SNS FIFO because:  
-  1. SNS deduplication TTL is only 5 minutes  
-  2. SNS FIFO requires SQS FIFO  
-  3. Ability to proactively notify the sender that the message is a duplicate  
-
----
-
-## Staging ER7 Microservice
-
-- Lambda â€œtriggerâ€ subscribed to the pub/sub hub, filtering messages by attribute  
-- Step Functions Express Workflow to convert ER7 â†’ JSON  
-- Two Lambdas:  
-  1. Fix ER7 formatting (newline, carriage return)  
-  2. Parsing logic  
-- Result or error is pushed back into the pub/sub hub  
-
----
-
-## New Features in the Solution
-
-### 1. AWS CloudFormation Cross-Stack References
-Example *outputs* in the core microservice:
-```yaml
-Outputs:
-  Bucket:
-    Value: !Ref Bucket
-    Export:
-      Name: !Sub ${AWS::StackName}-Bucket
-  ArtifactBucket:
-    Value: !Ref ArtifactBucket
-    Export:
-      Name: !Sub ${AWS::StackName}-ArtifactBucket
-  Topic:
-    Value: !Ref Topic
-    Export:
-      Name: !Sub ${AWS::StackName}-Topic
-  Catalog:
-    Value: !Ref Catalog
-    Export:
-      Name: !Sub ${AWS::StackName}-Catalog
-  CatalogArn:
-    Value: !GetAtt Catalog.Arn
-    Export:
-      Name: !Sub ${AWS::StackName}-CatalogArn
 
