@@ -90,9 +90,3 @@ After the event, I adjusted my learning plan. The sessions made it clear that I 
 ## 5. Closing note
 
 AWS First Cloud Journey Community Day gave me a practical view of how cloud, DevOps, security, and AI fit together in real work. It also showed that career growth in technology comes from more than technical knowledge. It requires consistency, communication, and the habit of learning from people who are already doing the job.
-
-## Event Images
-
-Some images recorded during the event:
-
-![AWS First Cloud Journey Community Day](../../images/4-EventParticipated/4.1-Event1/z7976498940486_4005b6c6d8361abe3f1b76bdf4dd74ef.jpg)
