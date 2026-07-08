@@ -56,37 +56,37 @@ chapter: false
 ### Nội dung báo cáo
 
 <div class="report-content-grid">
-  <a class="report-content-card" href="1-Worklog/">
+  <a class="report-content-card" href="1-worklog/">
     <div class="report-content-card__index">01</div>
     <div class="report-content-card__title">Nhật kí làm việc</div>
     <p class="report-content-card__desc">Nhật kí tiến độ hằng tuần từ tuần 1 đến tuần 12.</p>
   </a>
-  <a class="report-content-card" href="2-Proposal/">
+  <a class="report-content-card" href="2-proposal/">
     <div class="report-content-card__index">02</div>
     <div class="report-content-card__title">Bản đề xuất</div>
     <p class="report-content-card__desc">Ý tưởng dự án, kiến trúc và kế hoạch triển khai.</p>
   </a>
-  <a class="report-content-card" href="3-BlogsTranslated/">
+  <a class="report-content-card" href="3-blogstranslated/">
     <div class="report-content-card__index">03</div>
     <div class="report-content-card__title">Các bài blog đã dịch</div>
     <p class="report-content-card__desc">Các bài blog kỹ thuật được dịch và minh hoạ.</p>
   </a>
-  <a class="report-content-card" href="4-EventParticipated/">
+  <a class="report-content-card" href="4-eventparticipated/">
     <div class="report-content-card__index">04</div>
     <div class="report-content-card__title">Các sự kiện đã tham gia</div>
     <p class="report-content-card__desc">Các workshop và sự kiện đã tham gia trong kỳ thực tập.</p>
   </a>
-  <a class="report-content-card" href="5-Workshop/">
+  <a class="report-content-card" href="5-workshop/">
     <div class="report-content-card__index">05</div>
     <div class="report-content-card__title">Workshop</div>
     <p class="report-content-card__desc">Hướng dẫn triển khai và kiểm tra theo từng bước.</p>
   </a>
-  <a class="report-content-card" href="6-Self-evaluation/">
+  <a class="report-content-card" href="6-self-evaluation/">
     <div class="report-content-card__index">06</div>
     <div class="report-content-card__title">Tự đánh giá</div>
     <p class="report-content-card__desc">Nhìn lại quá trình học tập và kết quả đạt được.</p>
   </a>
-  <a class="report-content-card" href="7-Feedback/">
+  <a class="report-content-card" href="7-feedback/">
     <div class="report-content-card__index">07</div>
     <div class="report-content-card__title">Chia sẻ và phản hồi</div>
     <p class="report-content-card__desc">Phản hồi, cảm nhận và bài học rút ra từ kỳ thực tập.</p>

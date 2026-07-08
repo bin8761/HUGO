@@ -57,37 +57,37 @@ chapter: false
 ### Report Content
 
 <div class="report-content-grid">
-  <a class="report-content-card" href="1-Worklog/">
+  <a class="report-content-card" href="1-worklog/">
     <div class="report-content-card__index">01</div>
     <div class="report-content-card__title">Worklog</div>
     <p class="report-content-card__desc">Weekly progress log from Week 1 to Week 12.</p>
   </a>
-  <a class="report-content-card" href="2-Proposal/">
+  <a class="report-content-card" href="2-proposal/">
     <div class="report-content-card__index">02</div>
     <div class="report-content-card__title">Proposal</div>
     <p class="report-content-card__desc">Project idea, architecture, and deployment plan.</p>
   </a>
-  <a class="report-content-card" href="3-BlogsTranslated/">
+  <a class="report-content-card" href="3-blogstranslated/">
     <div class="report-content-card__index">03</div>
     <div class="report-content-card__title">Translated Blogs</div>
     <p class="report-content-card__desc">Selected technical blogs translated and illustrated.</p>
   </a>
-  <a class="report-content-card" href="4-EventParticipated/">
+  <a class="report-content-card" href="4-eventparticipated/">
     <div class="report-content-card__index">04</div>
     <div class="report-content-card__title">Events Participated</div>
     <p class="report-content-card__desc">Workshops and events joined during the internship.</p>
   </a>
-  <a class="report-content-card" href="5-Workshop/">
+  <a class="report-content-card" href="5-workshop/">
     <div class="report-content-card__index">05</div>
     <div class="report-content-card__title">Workshop</div>
     <p class="report-content-card__desc">Step-by-step deployment and validation guide.</p>
   </a>
-  <a class="report-content-card" href="6-Self-evaluation/">
+  <a class="report-content-card" href="6-self-evaluation/">
     <div class="report-content-card__index">06</div>
     <div class="report-content-card__title">Self-Assessment</div>
     <p class="report-content-card__desc">Personal review of learning progress and outcomes.</p>
   </a>
-  <a class="report-content-card" href="7-Feedback/">
+  <a class="report-content-card" href="7-feedback/">
     <div class="report-content-card__index">07</div>
     <div class="report-content-card__title">Sharing and Feedback</div>
     <p class="report-content-card__desc">Reflection, feedback, and lessons learned.</p>
