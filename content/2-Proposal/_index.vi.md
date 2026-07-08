@@ -62,7 +62,7 @@ EAM Workspace giải quyết các vấn đề trên bằng cách cung cấp mộ
 
 Kiến trúc triển khai AWS được đề xuất theo mô hình ứng dụng web full-stack đơn giản cho môi trường demo nội bộ. Chế độ triển khai hiện tại không yêu cầu Route 53 hoặc custom domain. Người dùng truy cập URL mặc định của AWS Amplify Hosting, và các request API từ frontend được rewrite qua `/api/*` đến Amazon API Gateway. API Gateway tiếp tục chuyển request đến backend chạy trên AWS Elastic Beanstalk, backend kết nối đến Amazon RDS for MySQL.
 
-![Sơ đồ kiến trúc giải pháp EAM Workspace trên AWS](/HUGO/images/2-Proposal/enterprise-asset-management-architecture-overview.svg)
+![Sơ đồ kiến trúc giải pháp EAM Workspace trên AWS](/HUGO/images/app.png)
 
 *Sơ đồ kiến trúc giải pháp EAM Workspace trên AWS. Luồng chính đi từ người dùng đến Amplify Hosting, API Gateway, Elastic Beanstalk và RDS; các dịch vụ như SES, S3, Secrets Manager, Parameter Store và CloudWatch hỗ trợ email, lưu trữ, cấu hình, bảo mật và giám sát.*
 

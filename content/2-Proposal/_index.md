@@ -62,7 +62,7 @@ The application is proposed to be deployed on AWS so that the frontend, backend,
 
 The proposed AWS deployment architecture follows a simple full-stack web application model for an internal demo environment. The current deployment mode does not require Route 53 or a custom domain. Users access the default AWS Amplify Hosting URL, and frontend API calls are rewritten through `/api/*` to Amazon API Gateway. API Gateway then forwards requests to the backend running on AWS Elastic Beanstalk, and the backend connects to Amazon RDS for MySQL.
 
-![EAM Workspace solution architecture on AWS](/HUGO/images/2-Proposal/enterprise-asset-management-architecture-overview.svg)
+![EAM Workspace solution architecture on AWS](/HUGO/images/app.png)
 
 *EAM Workspace solution architecture on AWS. The main flow goes from users to Amplify Hosting, API Gateway, Elastic Beanstalk, and RDS; services such as SES, S3, Secrets Manager, Parameter Store, and CloudWatch support email, storage, configuration, security, and monitoring.*
 
