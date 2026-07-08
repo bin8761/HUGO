@@ -10,7 +10,7 @@ chapter: false
 ### Thông tin sinh viên:
 <div class="student-card">
   <figure class="student-card__portrait">
-    <img src="/HUGO/images/avatar.png" alt="Ảnh hồ sơ của bạn" />
+    <img src="/HUGO/images/app.png" alt="Ảnh hồ sơ của bạn" />
   </figure>
 
   <dl class="student-card__meta">

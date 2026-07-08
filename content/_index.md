@@ -11,7 +11,7 @@ chapter: false
 ### Student Information:
 <div class="student-card">
   <figure class="student-card__portrait">
-    <img src="/HUGO/images/avatar.png" alt="Your profile picture" />
+    <img src="/HUGO/images/app.png" alt="Your profile picture" />
   </figure>
 
   <dl class="student-card__meta">
