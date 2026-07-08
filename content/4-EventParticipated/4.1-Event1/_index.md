@@ -6,90 +6,90 @@ chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-# Event 1 - AWS First Cloud Journey Community Day
+## Event Information
 
 | Information | Details |
 | --- | --- |
 | Date | June 6, 2026 |
 | Location | 26th Floor, Bitexco Financial Tower |
-| Role | Participant in the First Cloud Journey program |
 | Participation format | On-site participation |
+| Role | Attendee |
 | Main topics | Cloud Computing, DevOps, Security, AI, WebSocket, Teamwork, and career orientation in information technology |
 | Speakers | Tran Trung Vinh - System Administrator at Central Retail Group; Bao Huynh - Junior Cloud Native Developer, Endava Vietnam; Le Hoang Gia Dai; Nguyen Quoc Bao; Truong Huy Phuoc; Viet Phat |
 
-## 1. Why I joined this event
+## 1. Purpose of participating in the event
 
-AWS First Cloud Journey Community Day brought together speakers who were already working with cloud systems, so the event felt practical from the start. Instead of staying at the level of theory, it showed how AWS, Docker, machine learning, WebSocket, GraphRAG, and DevOps show up in real projects and real operations.
+AWS First Cloud Journey Community Day was a good opportunity to hear practical experience from speakers who are working directly in cloud-related roles. Instead of focusing only on theory, the event connected AWS, Docker, Machine Learning, WebSocket, GraphRAG, and DevOps with actual engineering use cases.
 
-I joined to get a clearer picture of what lies beyond classroom material. In particular, I wanted to hear how practitioners talk about cloud deployment, security, real-time systems, and career growth. The event was also useful because it showed how professionals explain tradeoffs, break down problems, and connect technology choices to day-to-day work.
+I joined the event to widen my view beyond classroom learning. What I wanted most was to understand how people in the industry talk about deployment, security, real-time systems, and career development in Cloud and DevOps. It was also helpful to see how they approach tradeoffs, explain technical decisions, and relate those decisions to enterprise work.
 
-## 2. What the sessions covered
+## 2. Main content of the event
 
-The program was split into several talks, and each one covered a different angle of the cloud journey. Taken together, they formed a useful map of the skills a cloud learner needs, from deployment basics and security to collaboration and career mindset.
+The event was divided into several sessions, and each one covered a different part of the cloud learning path. Together, they gave a useful picture of the skills that matter for AWS learners, from deployment basics and security to teamwork and career growth.
 
-### 2.1. Docker as a packaging layer
+### 2.1. Docker - A Containerization Technology
 
-The Docker session focused on containerization and why it has become a standard part of modern software delivery. The speaker contrasted containers with traditional virtualization and made a simple point: containers are lighter, easier to move, and a better fit for cloud-native workflows.
+The Docker session explained containerization and why Docker has become a core part of modern software delivery. The speaker compared containers with virtual machines and highlighted that containers are lighter, more portable, and more suitable for cloud-native systems.
 
-What I took from this session was that Docker is not just a runtime tool. It also helps teams package code, dependencies, configuration, and execution environment together, which reduces the “it works on my machine” problem. That is one of the reasons Docker shows up so often in DevOps and deployment pipelines.
+What stood out to me was that Docker is not only a runtime tool. It also helps bundle application code, libraries, configuration, and runtime dependencies together, which reduces the familiar problem of an application working on one machine but failing in another environment. That is why Docker appears so often in DevOps pipelines.
 
-From an AWS perspective, this matters because services like Amazon ECS, Amazon EKS, and CI/CD flows all connect naturally to container-based delivery. Understanding Docker gives me a more stable base for those services later.
+For AWS learning, Docker matters because many modern services, including Amazon ECS, Amazon EKS, and CI/CD workflows, rely heavily on containers. Understanding Docker gives a stronger base before moving on to those services.
 
-### 2.2. AWS WAF and machine-learning-based NIDS
+### 2.2. Machine Learning-based Network Intrusion Detection System (NIDS) on AWS
 
-The security session looked at web application protection and network intrusion detection. AWS WAF was introduced as a first layer of defense for HTTP and HTTPS applications, with the ability to block common threats such as SQL injection, cross-site scripting, brute-force attempts, bots, and unusual request patterns.
+The security session focused on web protection and network intrusion detection. AWS WAF was introduced as a defense layer for HTTP and HTTPS applications, able to block common threats such as SQL injection, cross-site scripting, bot traffic, brute-force attempts, and abnormal requests.
 
-The speaker also pointed out the weakness of rule-only protection. Static rules work well for known attack patterns, but they are less useful when the threat is new or behaves differently from the patterns already defined. That led into the machine-learning-based NIDS approach, where network data is used to detect behavior that does not look normal.
+The speaker also showed the limitation of fixed rule-based security. Traditional rules work well for known attack patterns, but they struggle when threats are new, behave differently, or fall outside existing definitions. That led into the Machine Learning-based NIDS idea, where network data can be analyzed to detect signals that do not look normal.
 
-This session stood out because it made cloud security feel layered rather than single-purpose. It was not just “set a firewall and move on.” The stronger model combines rules, monitoring, and behavior-based detection.
+The main lesson from this session was that cloud security is layered. It is not enough to configure a firewall and stop there. A stronger approach combines rules, monitoring, and behavior-based detection.
 
-### 2.3. The road from helpdesk to sysadmin
+### 2.3. From IT Helpdesk to Senior Sysadmin
 
-One of the most practical sessions traced a career path from IT Helpdesk to Senior Sysadmin. The speaker showed how support work can grow into Linux administration, networking, infrastructure management, home lab practice, and eventually system administration.
+The career session about moving from IT Helpdesk to Senior Sysadmin was very practical. The speaker described how support work can lead into Linux administration, networking, infrastructure management, home lab practice, and eventually system administration.
 
-The part that stayed with me was the emphasis on operating discipline. Infrastructure roles require more than technical knowledge. They need calm troubleshooting, documentation, monitoring habits, and a habit of checking before touching production. The shift from on-premise to cloud also changes how you think about scale, cost, managed services, and Infrastructure as Code.
+One important point was the discipline required in infrastructure roles. These roles need calm troubleshooting, documentation, monitoring habits, and a careful mindset that avoids testing directly in production without a safe plan. The transition from on-premise to cloud also changes the way you think about scale, cost, managed services, and Infrastructure as Code.
 
-For me, this session connected the dots between Sysadmin, Cloud, and DevOps. The cloud path is not built only on service names. It also depends on operating systems, networking, security, and automation fundamentals.
+For me, this session connected Sysadmin, Cloud, and DevOps more clearly. Growth in cloud is not only about knowing service names. It also depends on operating systems, networking, security, and automation fundamentals.
 
-### 2.4. Multiplayer systems in the cloud
+### 2.4. Multiplayer in the Cloud
 
-The multiplayer session showed how Godot clients can stay connected through AWS WebSockets. The speaker compared several communication models, including UDP/ENet, WebSocket, and HTTP polling, and explained when each one makes sense.
+The Multiplayer in the Cloud session showed how Godot clients can stay connected through AWS WebSockets. The speaker compared different communication methods such as UDP/ENet, WebSocket, and HTTP Polling, and explained when each one is appropriate.
 
-The architecture used API Gateway WebSocket to manage client connections, AWS Lambda to process events, DynamoDB to store connection state, and CloudWatch for logs and monitoring. That example made serverless feel concrete rather than abstract, because it showed how a system can handle real-time communication without a traditional always-on server.
+The proposed architecture used API Gateway WebSocket to manage client connections, AWS Lambda to process events, DynamoDB to store connection state, and CloudWatch for logging and monitoring. That made serverless architecture feel more concrete because it showed how a real-time system can work without a traditional always-on server.
 
-This section was useful because it linked backend systems, cloud design, and real-time application patterns. I left with a better understanding of where AWS fits in chat systems, game lobbies, matchmaking, and other always-connected use cases.
+This session helped me understand where AWS fits in chat systems, game lobbies, matchmaking, and other applications that need continuous data exchange.
 
-### 2.5. Teamwork as an engineering skill
+### 2.5. The Art of Effective Teamwork
 
-The teamwork session focused on the habits that make collaboration work in practice. The speaker highlighted four essentials: shared goals, putting the right person on the right task, open communication with active listening, and personal accountability.
+The teamwork session focused on practical habits that improve collaboration inside a team. The speaker emphasized four important factors: shared goals, assigning the right work to the right person, open communication with active listening, and personal accountability.
 
-The tools mentioned, such as ClickUp, Trello, Slack, Google Workspace, and Discord, were not the main story. They were examples of how teams keep work visible, divide tasks, exchange updates, and store information without relying on memory alone.
+The tools mentioned, such as ClickUp, Trello, Slack, Google Workspace, and Discord, were examples of how teams can keep tasks visible, exchange updates, and store information more systematically.
 
-That session felt relevant to internship work because technical projects are rarely solo efforts. Good results usually depend on how well the team communicates and how clearly people handle responsibility.
+For internship and project work, this session was relevant because technology projects usually require cooperation among several members. I realized that technical skill matters, but communication, work management, and responsibility also have a direct impact on results.
 
-### 2.6. GraphRAG with Bedrock and Neptune
+### 2.6. GraphRAG - Build GraphRAG Applications Using Amazon Bedrock and Amazon Neptune
 
-The final technical session introduced GraphRAG, which extends Retrieval-Augmented Generation with graph structures. Traditional RAG improves answer quality by pulling information from external sources, but GraphRAG goes further when the problem requires reasoning over connected entities and relationships.
+The final session introduced GraphRAG, which combines Retrieval-Augmented Generation with graph data. Traditional RAG helps language models retrieve information from external sources to produce better answers. GraphRAG goes further when questions require reasoning over multiple entities and their relationships.
 
-The speaker showed how Amazon Bedrock and Amazon Neptune can be combined to build this kind of system. Bedrock provides the generative AI layer, while Neptune stores and processes graph data. Together they let the system search by content and by relationship, which makes reasoning more useful for complex questions.
+The speaker presented how GraphRAG applications can be built using Amazon Bedrock and Amazon Neptune. Bedrock provides the generative AI layer, while Neptune stores and processes graph data. Together they allow systems to search by content and by relationship, which makes reasoning more effective for complex questions.
 
-This was a strong reminder that AWS is not only for infrastructure. It also provides building blocks for intelligent systems, knowledge search, and applications that need more than simple keyword retrieval.
+This session reminded me that AWS is not only about infrastructure. It also provides building blocks for intelligent systems, knowledge search, and more advanced AI applications.
 
 ## 3. What I took away
 
-The event left me with both technical and career lessons. On the technical side, I came away with a clearer view of Docker in delivery pipelines, layered cloud security, serverless real-time systems, and the way AWS is moving into AI-enabled use cases. On the career side, the helpdesk-to-sysadmin talk reinforced the need for a strong foundation in Linux, networking, troubleshooting, monitoring, and documentation.
+The event gave me lessons on both technical knowledge and career development. On the technical side, I better understood Docker in deployment pipelines, layered cloud security, serverless real-time systems, and the role AWS is taking in AI-enabled use cases. On the career side, the helpdesk-to-sysadmin session reinforced the need for a strong base in Linux, networking, troubleshooting, monitoring, and documentation.
 
-The teamwork session also made an obvious point that is easy to ignore: communication is not a soft extra, it is part of how technical work succeeds. The better a team communicates, the easier it is to move work forward without confusion.
+The teamwork session also made a simple but important point: communication is not an extra skill, it is part of how technical work succeeds. Good communication makes it much easier for a team to move work forward without confusion.
 
 ## 4. How I used the event
 
-I took notes during the sessions and focused on the parts that were relevant to my internship report: AWS, Docker, security, serverless systems, AI, and teamwork. I also compared the speakers’ examples with what I had already learned in AWS Study Group sessions so I could connect the talk content to my own study path.
+I took notes during the sessions and focused on the parts that were relevant to my internship report: AWS, Docker, security, serverless systems, AI, and teamwork. I also compared the examples from the speakers with what I had already learned in AWS Study Group sessions so I could connect the event content with my own study path.
 
-After the event, I adjusted my learning plan a bit. The topics made it clear that I should keep practicing Docker, deepen my AWS serverless knowledge, strengthen cloud security basics, and keep looking at real deployment patterns rather than only isolated services.
+After the event, I adjusted my learning plan. The sessions made it clear that I should keep practicing Docker, deepen my AWS serverless knowledge, strengthen cloud security basics, and continue studying real deployment patterns instead of only isolated services.
 
 ## 5. Closing note
 
-AWS First Cloud Journey Community Day gave me a practical look at how cloud, DevOps, security, and AI fit together in real work. It also showed that career growth in tech comes from more than technical knowledge alone. You need consistency, communication, and a habit of learning from people who are already doing the job.
+AWS First Cloud Journey Community Day gave me a practical view of how cloud, DevOps, security, and AI fit together in real work. It also showed that career growth in technology comes from more than technical knowledge. It requires consistency, communication, and the habit of learning from people who are already doing the job.
 
 ## Event Images
 
