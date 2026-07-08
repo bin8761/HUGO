@@ -6,7 +6,7 @@ chapter: false
 pre: " <b> 2. </b> "
 ---
 
-# Triển khai hệ thống quản lý tài sản doanh nghiệp 
+# Triển khai hệ thống quản lý tài sản doanh nghiệp
 
 ## Không gian làm việc cloud cho quản lý tài sản doanh nghiệp
 
@@ -16,7 +16,7 @@ pre: " <b> 2. </b> "
 
 EAM Workspace hỗ trợ doanh nghiệp quản lý nhân viên, phòng ban, tài sản, bàn giao, yêu cầu bảo trì, phiên kiểm kê, báo cáo, góp ý, FAQ, chấm công, lịch sử đăng nhập, thông báo và support chat trong một không gian làm việc tập trung. Thay vì lưu thông tin rời rạc bằng Excel, tin nhắn hoặc file nội bộ, hệ thống gom các luồng nghiệp vụ chính vào một ứng dụng có phân quyền rõ ràng cho quản trị viên và nhân viên.
 
-Hệ thống được phát triển theo nhóm 5 thành viên. Dự án bao gồm frontend React, backend Node.js/Express, cơ sở dữ liệu MySQL được quản lý bằng Prisma, và phương án triển khai trên AWS. Trong phạm vi báo cáo này, nội dung tập trung vào quá trình xây dựng giao diện, tích hợp API, tìm hiểu các dịch vụ AWS, triển khai demo full-stack và tài liệu hóa workshop trong giai đoạn thực tập từ **17/04/2026 đến 10/07/2026**.
+Hệ thống được phát triển theo nhóm 5 thành viên. Dự án bao gồm frontend React, backend Node.js/Express, cơ sở dữ liệu MySQL được quản lý bằng Prisma và phương án triển khai trên AWS. Đề xuất này trình bày bối cảnh hình thành đề tài, mục đích sử dụng, vấn đề cần giải quyết, giải pháp đề xuất, kiến trúc triển khai, kế hoạch thực hiện, rủi ro và kết quả kỳ vọng của toàn bộ project.
 
 Ở bản demo, kiến trúc AWS sử dụng AWS Amplify Hosting cho frontend, Amazon API Gateway làm lớp API public, AWS Elastic Beanstalk cho backend Node.js, Amazon RDS for MySQL cho dữ liệu nghiệp vụ, Amazon SES cho gửi email và Amazon CloudWatch cho log/monitoring. Một số dịch vụ như Amazon S3, AWS Secrets Manager, AWS Systems Manager Parameter Store và AWS CloudTrail được đưa vào như định hướng mở rộng để hệ thống sẵn sàng hơn khi chuyển sang môi trường production.
 
@@ -26,7 +26,7 @@ EAM Workspace được dùng để hỗ trợ doanh nghiệp quản lý toàn b�
 
 Với quản trị viên, hệ thống giúp theo dõi danh sách tài sản, tình trạng tài sản, nhân viên đang sử dụng, lịch sử bàn giao, yêu cầu bảo trì, dữ liệu kiểm kê và báo cáo tổng quan. Với nhân viên, hệ thống cung cấp cổng tự phục vụ để xem tài sản được cấp, gửi yêu cầu hỗ trợ, xem thông tin cá nhân và theo dõi các hoạt động liên quan đến tài sản của mình.
 
-Mục tiêu chính của đề tài không chỉ là xây dựng một ứng dụng web có đầy đủ chức năng quản lý tài sản, mà còn là thực hành cách đưa một hệ thống full-stack lên AWS, cấu hình kết nối frontend-backend-database, kiểm thử môi trường public và kiểm soát chi phí sau khi triển khai.
+Mục tiêu chính của đề tài là xây dựng một ứng dụng web có đầy đủ chức năng quản lý tài sản, đồng thời đề xuất được mô hình triển khai cloud phù hợp để hệ thống có thể chạy ổn định, dễ truy cập, dễ giám sát và có khả năng mở rộng trong tương lai.
 
 ### 3. Vấn đề cần giải quyết
 
@@ -48,7 +48,7 @@ EAM Workspace giải quyết các vấn đề trên bằng cách cung cấp mộ
 - **Admin Portal**: dành cho quản trị viên để quản lý nhân viên, phòng ban, danh mục tài sản, tài sản, bàn giao, yêu cầu bảo trì, phiên kiểm kê, vị trí, báo cáo, feedback, FAQ, lịch sử chấm công, lịch sử đăng nhập và support chat.
 - **Employee Portal**: dành cho nhân viên để xem tài sản được bàn giao, xem chi tiết tài sản, gửi yêu cầu hỗ trợ, xem FAQ, cập nhật hồ sơ, đổi mật khẩu, xem lịch sử cá nhân và trao đổi hỗ trợ.
 
-Ứng dụng được triển khai lên AWS để frontend, backend, database và các dịch vụ hỗ trợ có thể chạy trong môi trường cloud, dễ truy cập, dễ giám sát và dễ mở rộng hơn. Trong giai đoạn thực tập, quá trình tự học AWS được thực hiện song song với phát triển sản phẩm, tập trung vào các chủ đề tài khoản AWS, IAM, networking, compute, database, storage, deployment, monitoring và tối ưu chi phí.
+Ứng dụng được đề xuất triển khai lên AWS để frontend, backend, database và các dịch vụ hỗ trợ có thể chạy trong môi trường cloud, dễ truy cập, dễ giám sát và dễ mở rộng hơn. Kiến trúc cloud giúp nhóm kiểm thử hệ thống trong môi trường gần với thực tế hơn so với chỉ chạy local, đồng thời tạo nền tảng để bổ sung các thành phần như lưu trữ file, quản lý secrets, monitoring và kiểm soát chi phí.
 
 #### Lợi ích
 
@@ -62,22 +62,9 @@ EAM Workspace giải quyết các vấn đề trên bằng cách cung cấp mộ
 
 Kiến trúc triển khai AWS được đề xuất theo mô hình ứng dụng web full-stack đơn giản cho môi trường demo nội bộ. Chế độ triển khai hiện tại không yêu cầu Route 53 hoặc custom domain. Người dùng truy cập URL mặc định của AWS Amplify Hosting, và các request API từ frontend được rewrite qua `/api/*` đến Amazon API Gateway. API Gateway tiếp tục chuyển request đến backend chạy trên AWS Elastic Beanstalk, backend kết nối đến Amazon RDS for MySQL.
 
-![Tổng quan kiến trúc giải pháp](/HUGO/images/app.png)
+![Sơ đồ kiến trúc giải pháp EAM Workspace trên AWS](../../images/2-Proposal/enterprise-asset-management-architecture-overview.svg)
 
-{{< mermaid >}}
-flowchart LR
-    User["Trình duyệt người dùng"] --> Amplify["AWS Amplify Hosting\nReact Frontend"]
-    Amplify --> Rewrite["Amplify Rewrite Rule\n/api/*"]
-    Rewrite --> APIGW["Amazon API Gateway\nHTTP API"]
-    APIGW --> EB["AWS Elastic Beanstalk\nNode.js Backend"]
-    EB --> RDS["Amazon RDS for MySQL\nPrivate Subnet"]
-    EB --> S3["Amazon S3\nProduction Extension"]
-    EB --> SES["Amazon SES\nEmail / OTP"]
-    EB --> SSM["SSM Parameter Store\nProduction Extension"]
-    EB --> Secrets["AWS Secrets Manager\nProduction Extension"]
-    EB --> CW["Amazon CloudWatch\nLogs and Alarms"]
-    CloudTrail["AWS CloudTrail\nProduction Extension"] --> Audit["Audit Trail"]
-{{< /mermaid >}}
+*Sơ đồ kiến trúc giải pháp EAM Workspace trên AWS. Luồng chính đi từ người dùng đến Amplify Hosting, API Gateway, Elastic Beanstalk và RDS; các dịch vụ như SES, S3, Secrets Manager, Parameter Store và CloudWatch hỗ trợ email, lưu trữ, cấu hình, bảo mật và giám sát.*
 
 #### Dịch vụ AWS sử dụng
 
@@ -103,13 +90,13 @@ flowchart LR
 
 ### 5. Kế hoạch triển khai kỹ thuật
 
-#### Giai đoạn 1: Phân tích yêu cầu và lập kế hoạch UI
+#### Giai đoạn 1: Phân tích yêu cầu và lập kế hoạch hệ thống
 
 - Phân tích bài toán quản lý tài sản và xác định các module chính.
 - Xác định hai nhóm người dùng: quản trị viên và nhân viên.
 - Thiết kế các luồng chính cho tạo tài sản, bàn giao, thu hồi, bảo trì, kiểm kê, báo cáo và self-service của nhân viên.
-- Xây dựng các mẫu UI tái sử dụng cho Admin Portal.
-- Tự học nền tảng AWS về tài khoản, quản lý chi phí, IAM, Region/AZ và các khái niệm cloud cơ bản.
+- Xác định kiến trúc tổng thể gồm frontend, backend, database và môi trường triển khai.
+- Chuẩn bị quy ước làm việc nhóm, cấu trúc repository, nhánh phát triển và kế hoạch tích hợp.
 
 #### Giai đoạn 2: Nền tảng backend và database
 
@@ -125,7 +112,7 @@ flowchart LR
 - Tích hợp API với backend.
 - Thêm loading, empty, error và toast state.
 - Rà soát responsive behavior và dark/light mode.
-- Tự học thêm các dịch vụ AWS liên quan đến compute, storage, database, networking và deployment để chuẩn bị cho giai đoạn triển khai.
+- Chuẩn bị cấu hình build frontend để có thể triển khai lên môi trường cloud.
 
 #### Giai đoạn 4: Triển khai AWS
 
@@ -152,18 +139,18 @@ flowchart LR
 
 | Thời gian | Mốc triển khai | Kết quả kỳ vọng |
 | --- | --- | --- |
-| Tuần 1 | Định hướng dự án và nền tảng AWS | Xác định vai trò frontend, chuẩn bị môi trường và học các khái niệm AWS cơ bản. |
-| Tuần 2 | Khởi tạo React app và layout admin | Dựng cấu trúc route, sidebar, layout và component cơ bản. |
-| Tuần 3 | Login, token và API layer | Hoàn thiện protected route, xử lý token và service layer để tích hợp backend. |
-| Tuần 4 | CRUD admin cơ bản | Hoàn thiện màn hình tài sản, nhân viên, phòng ban và các form/table chính. |
-| Tuần 5 | Workflow tài sản | Phát triển bàn giao, thu hồi, điều chuyển và bảo trì tài sản. |
-| Tuần 6 | Kiểm kê, báo cáo và dữ liệu | Hoàn thiện inventory, report, biểu đồ và trạng thái dữ liệu. |
-| Tuần 7 | Hoàn thiện trải nghiệm giao diện | Nâng cấp responsive, dark mode, loading, toast và xử lý lỗi UI. |
-| Tuần 8 | User portal và module mở rộng | Hoàn thiện employee dashboard, tài sản được bàn giao, FAQ, feedback, import Excel và floor map. |
-| Tuần 9 | Chuẩn bị triển khai AWS | Rà soát production build, cấu hình môi trường, tài liệu deploy và xử lý lỗi tích hợp. |
-| Tuần 10 | Deploy AWS | Triển khai với RDS, Elastic Beanstalk, API Gateway và Amplify; kiểm thử health endpoint và luồng đăng nhập. |
-| Tuần 11 | Kiểm thử production và tài liệu workshop | Sửa lỗi tích hợp, kiểm tra các màn hình chính, chụp ảnh workshop và bổ sung hướng dẫn triển khai. |
-| Tuần 12 | Hoàn thiện báo cáo cuối kỳ | Rà soát Hugo site, hoàn thiện self-evaluation, sharing/feedback, cleanup và chuẩn bị nộp báo cáo. |
+| Tuần 1 | Khởi động dự án | Xác định đề tài, phạm vi chức năng, nhóm người dùng, công nghệ sử dụng và kế hoạch làm việc. |
+| Tuần 2 | Thiết kế nền tảng frontend | Dựng cấu trúc React app, routing, layout, sidebar và các component giao diện cơ bản. |
+| Tuần 3 | Thiết kế authentication và API layer | Hoàn thiện luồng đăng nhập, token, protected route và service layer để kết nối backend. |
+| Tuần 4 | Xây dựng module quản trị cốt lõi | Hoàn thiện các màn hình quản lý tài sản, nhân viên, phòng ban, form và bảng dữ liệu chính. |
+| Tuần 5 | Xây dựng workflow vòng đời tài sản | Phát triển các luồng bàn giao, thu hồi, điều chuyển và bảo trì tài sản. |
+| Tuần 6 | Hoàn thiện kiểm kê và báo cáo | Bổ sung inventory, report, biểu đồ, thống kê và trạng thái dữ liệu. |
+| Tuần 7 | Cải thiện trải nghiệm người dùng | Nâng cấp responsive, dark mode, loading state, toast notification và xử lý lỗi giao diện. |
+| Tuần 8 | Hoàn thiện employee portal và module mở rộng | Bổ sung dashboard nhân viên, tài sản được bàn giao, FAQ, feedback, import Excel và floor map. |
+| Tuần 9 | Chuẩn bị triển khai cloud | Rà soát production build, biến môi trường, cấu hình kết nối và tài liệu triển khai AWS. |
+| Tuần 10 | Triển khai AWS demo | Triển khai hệ thống với RDS, Elastic Beanstalk, API Gateway và Amplify; kiểm thử endpoint và luồng đăng nhập. |
+| Tuần 11 | Kiểm thử tích hợp và ổn định hệ thống | Sửa lỗi tích hợp, kiểm tra các chức năng chính, xác nhận upload, CORS, API routing và trạng thái tài khoản. |
+| Tuần 12 | Hoàn thiện tài liệu và bàn giao | Rà soát nội dung báo cáo, workshop, cleanup, kết quả kiểm thử và chuẩn bị sản phẩm cuối kỳ. |
 
 ### 7. Ước tính ngân sách
 
@@ -210,7 +197,7 @@ Sau khi hoàn thành project và workshop, các kết quả kỳ vọng gồm:
 - Schema MySQL lưu trữ dữ liệu nghiệp vụ cốt lõi của hệ thống.
 - Mô hình triển khai AWS thực tế sử dụng Amplify, API Gateway, Elastic Beanstalk, RDS, SES và CloudWatch, kèm định hướng mở rộng với S3, Secrets Manager và Parameter Store.
 - Một workshop step-by-step để người học khác có thể làm theo, triển khai và kiểm thử hệ thống.
-- Hiểu rõ hơn về triển khai full-stack, cloud networking, biến môi trường, CORS, kết nối database, monitoring và clean-up trên AWS.
+- Một đề xuất giải pháp rõ ràng để nhóm có thể trình bày cách hệ thống giải quyết bài toán quản lý tài sản doanh nghiệp và cách triển khai hệ thống trên AWS.
 
 ### 10. Hướng phát triển trong tương lai
 
