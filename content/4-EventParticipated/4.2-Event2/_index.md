@@ -1,92 +1,99 @@
 ---
-title: "FCAJ Community Day"
-date: 2024-01-01
-weight: 1
+title: "Event 2: FCAJ Community Day"
+date: 2026-06-27
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Event 2 - FC Community Day
 
 ## Event Information
 
 | Item | Details |
 | --- | --- |
-| Event name | FC Community Day |
-| Format | In-person event with livestream |
-| Location | 26th and 36th floors, Bitexco Financial Tower |
+| Date | June 27, 2026 |
+| Location | 26th floor, Bitexco Financial Tower |
+| Participation format | Online participation |
 | Role | Attendee |
 | Main topics | Cloud Computing, AI Agents, Voice AI, DevOps AI Agents, AI in Human Resources, and secure enterprise AI deployment |
 
 ## Overview
 
-FC Community Day was less like a lecture and more like a practical conversation about how cloud and AI show up in real enterprises. The sessions moved between operations, cost, automation, customer support, HR, and deployment security, so the event covered both the technical side and the business side of the same problem.
+FC Community Day is a technology community event featuring multiple speakers from cloud, artificial intelligence, and enterprise digital transformation backgrounds. The event focused on how organizations apply cloud computing and AI in real operations, including incident management, cost optimization, DevOps automation, Vietnamese voice agents, HR automation, and secure AI deployment.
 
-What made it useful was the mix of production stories and architecture decisions. The speakers did not stay at the level of “what this service is.” They showed how organizations actually use it, what breaks, what scales, and where human judgment still matters.
+The event was practical because the sessions did not only introduce technical concepts. They also presented enterprise problems, solution architectures, product demos, and deployment lessons from production environments.
 
 ## Key Topics
 
 ### Cloud Thinker and the Cloud Engineering Career Path
 
-Steve Tran opened with a cloud engineering career story that started from server work and gradually moved toward cloud certifications and cloud-native practice. The message was straightforward: the cloud market in Vietnam and ASEAN is expanding because businesses keep pushing digital transformation, and that shift has made cloud literacy more valuable than ever.
+Steve Tran shared his career journey in cloud engineering, starting from server-related work and then moving into cloud learning and AWS certifications. The session emphasized that the cloud market in Vietnam and ASEAN has grown strongly due to digital transformation, especially after the shift toward remote work.
 
-The talk also connected AI to the expectations of cloud engineers. The bar is rising. It is no longer enough to know service names; engineers are now expected to use AI tools, understand architecture, and solve operational problems with better speed and judgment.
+A key point was that AI is changing the expectations for software and cloud engineers. Enterprises increasingly need people who can use AI tools to improve productivity, understand system architecture, and solve operational problems in real environments.
 
-Cloud Thinker was presented as an AI-assisted cloud operations platform that can help with incident investigation, FinOps, security testing, and controlled decisions in sensitive production systems.
+Cloud Thinker was introduced as an AI-powered cloud operations platform that helps accelerate incident investigation, optimize FinOps processes, support security testing, and keep human-in-the-loop decisions for sensitive production environments.
 
 ### Voice AI for Vietnamese Users
 
-The Voice AI session described the basic voice-agent pipeline: audio input, speech-to-text, language model processing, and text-to-speech output. The Vietnamese angle made the topic feel more real because accents, tones, rhythm, and conversational timing create extra complexity.
+The Voice AI session introduced the core architecture of a voice agent, including audio input, speech-to-text, language model processing, and text-to-speech output. For Vietnamese, the problem is more challenging because of regional accents, tones, speech rhythm, gender recognition, and natural turn-taking.
 
-The speakers made the case for a staged pipeline instead of a single black box. That structure gives better control over accuracy, latency, and the business rules that the voice assistant must respect.
+The speakers explained why a speech-to-text, language model, and text-to-speech pipeline provides better control for Vietnamese use cases. This approach helps improve accuracy, latency, and business workflow handling.
 
-Examples included banking assistants, customer support automation, card-blocking flows, and tool calling so the system can perform a workflow instead of just giving a generic answer.
+Real-world use cases included voice assistants for banking, customer support automation, card-blocking workflows, and tool calling so the AI can perform business processes instead of only answering FAQ questions.
 
 ### DevOps AI Agent
 
-The DevOps AI Agent talk addressed a problem every operations team knows well: when a cloud system has too many services, too many logs, and too many possible failure points, root-cause analysis gets slow. That slowness pushes MTTD and MTTR up.
+The DevOps AI Agent session focused on incident response in complex cloud systems. When a system includes many services, log sources, and operations teams, root-cause analysis can take a long time and increase MTTD and MTTR.
 
-The proposed workflow was to receive an alert, collect logs, form hypotheses, test those hypotheses, suggest mitigation steps, and recommend follow-up improvements. The key point was that the AI Agent is not there to replace engineers. It is there to reduce the manual work that slows them down.
+The AI Agent workflow includes receiving alerts, aggregating logs, generating hypotheses, validating hypotheses, suggesting mitigation steps, and recommending system improvements. The important idea is that the AI Agent does not fully replace engineers; it accelerates investigation and supports better decision-making.
 
-The examples showed that AI becomes much more useful when observability is good, the operational data is complete, and permissions are designed with clear boundaries.
+The case studies showed that AI can significantly reduce troubleshooting time, especially in systems with good observability, complete operational data, and clear permission boundaries.
 
 ### AI in Enterprise Human Resources
 
-The HR session shifted the focus to hiring. It described the usual pain points: screening too many CVs manually, slow hiring cycles, subjective review, and the need to protect candidate data carefully.
+The HR session discussed common recruitment challenges, such as manual CV screening, subjective evaluation, long time-to-hire, and sensitive candidate data protection.
 
-AI can help by extracting CV data, matching skills to job descriptions, generating candidate summaries, and supporting interview scheduling. Amazon Q-style agents can also be tailored to a department so teams can process internal documents and automate repetitive tasks.
+AI can support CV parsing, skill matching, candidate evaluation reports, and interview scheduling workflows. Tools such as Amazon Q can be customized into agents for specific departments, helping teams process internal documents, generate reports, and automate workflows.
 
-The important warning was not to over-automate strategic decisions. AI can assist with filtering and analysis, but the final decision still belongs to people who can judge fairness, context, and cultural fit.
+However, the event also emphasized that AI should support repetitive and analytical tasks. Strategic and final hiring decisions still require human review to ensure fairness and cultural fit.
 
 ### Secure Enterprise AI Deployment
 
-The last topic looked at security. If an organization has sensitive internal data, AI should not reach those systems through the public Internet without strong controls.
+The final topic covered the need to deploy AI agents securely in enterprise environments. For organizations with sensitive data, AI should not access internal systems through the public Internet without proper controls.
 
-The suggested design used VPC Interface Endpoints, AWS PrivateLink, and MCP servers to connect AI agents to internal systems through private networking. That approach reduces exposure, limits man-in-the-middle risk, and gives enterprises the access control they need.
+The proposed approach uses VPC Interface Endpoints, AWS PrivateLink, and MCP servers to connect AI agents to internal systems through private networking. This design reduces data exposure risk, limits man-in-the-middle attacks, supports access control, and better fits enterprise security requirements.
 
 ## Key Takeaways
 
-- Cloud and AI are becoming intertwined in everyday enterprise work, especially in incident response, FinOps, DevOps, and customer support.
-- AI Agents should operate inside clear permission boundaries and support human review for critical actions.
-- Vietnamese Voice AI has extra challenges around accents, tone, and latency.
-- DevOps AI Agents work best when the system already has logs, metrics, and topology data in place.
-- AI can speed up recruitment, but human judgment is still necessary.
-- Enterprise AI deployments need security and governance first, not last.
+- Cloud and AI are becoming tightly connected in enterprise operations, especially in incident management, FinOps, DevOps, and customer support.
+- AI Agents should be designed with clear permission boundaries, controlled action scope, and human-in-the-loop decisions for critical operations.
+- Vietnamese Voice AI requires special handling for data, regional accents, tones, and conversation latency.
+- DevOps AI Agents can reduce investigation time when systems have strong logs, metrics, and topology data.
+- AI in HR can speed up recruitment, but human review is still needed to reduce bias and maintain organizational fit.
+- Enterprise AI deployment must prioritize security, access control, and data governance.
 
 ## Connection to the EAM Workspace Project
 
-The event content lines up well with the EAM Workspace project. An enterprise asset management system needs reliable backend services, logging, authorization, data control, and room to grow as users and assets increase.
+The FC Community Day topics are directly related to the EAM Workspace project. An enterprise asset management system needs stable backend services, clear logging, user authorization, data control, and scalability as the number of assets, employees, and workflows increases.
 
-From the DevOps side, the project can benefit from better logs, health checks, monitoring, and alerts. From the AI side, future versions could include internal assistants for asset lookup, support request classification, maintenance suggestions, or natural-language reporting.
+From a DevOps perspective, the project can be improved with standardized logs, health checks, monitoring, and alerts to reduce issue detection time. From an AI perspective, future versions could include internal assistants for asset lookup, automatic support request classification, maintenance suggestions, or natural-language asset reports.
 
 ## Conclusion
 
-FC Community Day showed how cloud and AI are being used in production-minded ways. The common thread across the sessions was simple: technology only matters when it is secure, observable, and useful in a real business context.
+FC Community Day provided a practical view of how cloud and AI are being applied in modern enterprises. The event reinforced that building a system is not only about implementing features, but also about operations, security, scalability, data governance, and user experience in real environments.
 
 ## Event Images
 
 Some images recorded during the event:
 
-![FC Community Day](../../images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20234244.png)
+![FC Community Day](/HUGO/images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20090429.png)
 
-![FC Community Day](../../images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20234457.png)
+![FC Community Day](/HUGO/images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20091254.png)
+
+![FC Community Day](/HUGO/images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20093533.png)
+
+![FC Community Day](/HUGO/images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20094353.png)
+
+![FC Community Day](/HUGO/images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20102958.png)
+
+![FC Community Day](/HUGO/images/4-EventParticipated/4.2-Event2/Screenshot%202026-06-27%20103819.png)

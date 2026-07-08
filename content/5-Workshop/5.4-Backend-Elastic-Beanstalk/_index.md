@@ -56,7 +56,7 @@ backend-eb-source.zip
 
 Do not include `.env`, `node_modules`, or real secrets in the ZIP file.
 
-![Backend source bundle with the correct Elastic Beanstalk deployment structure](../../images/5-Workshop/5.4-Backend-Elastic-Beanstalk/5.4.1-source-bundle.png)
+![Backend source bundle with the correct Elastic Beanstalk deployment structure](/HUGO/images/5-Workshop/5.4-Backend-Elastic-Beanstalk/5.4.1-source-bundle.png)
 
 *Figure 5.4.1. Backend source bundle with the correct Elastic Beanstalk deployment structure.*
 
@@ -77,7 +77,7 @@ Open the Elastic Beanstalk console:
 
 If an old environment is stuck in `Severe`, `No Data`, `CREATE_FAILED`, or `DELETE_FAILED`, creating a new environment and pointing it to the same RDS database can save time.
 
-![Elastic Beanstalk environment creation page for the backend](../../images/5-Workshop/5.4-Backend-Elastic-Beanstalk/5.4.2-create-eb-environment.png)
+![Elastic Beanstalk environment creation page for the backend](/HUGO/images/5-Workshop/5.4-Backend-Elastic-Beanstalk/5.4.2-create-eb-environment.png)
 
 *Figure 5.4.2. Elastic Beanstalk environment creation page for the backend.*
 
@@ -111,7 +111,7 @@ FRONTEND_ORIGINS=https://<amplify-domain>
 
 `FRONTEND_ORIGIN` and `FRONTEND_ORIGINS` can be updated after Amplify creates the frontend URL.
 
-![Elastic Beanstalk environment properties](../../images/5-Workshop/5.4-Backend-Elastic-Beanstalk/5.4.4-eb-env-properties.png)
+![Elastic Beanstalk environment properties](/HUGO/images/5-Workshop/5.4-Backend-Elastic-Beanstalk/5.4.4-eb-env-properties.png)
 
 *Figure 5.4.4. Elastic Beanstalk environment properties with sensitive values hidden.*
 
@@ -137,13 +137,13 @@ Expected response:
 }
 ```
 
-![Elastic Beanstalk environment in OK status](../../images/5-Workshop/5.4-Backend-Elastic-Beanstalk/5.4.3-eb-health-ok.png)
+![Elastic Beanstalk environment in OK status](/HUGO/images/5-Workshop/5.4-Backend-Elastic-Beanstalk/5.4.3-eb-health-ok.png)
 
 *Figure 5.4.3. Elastic Beanstalk environment in OK status.*
 
 This screen should show the environment health as OK. It indicates that Elastic Beanstalk has provisioned the resources and the backend has no critical startup failure.
 
-![Backend health endpoint on Elastic Beanstalk](../../images/5-Workshop/5.4-Backend-Elastic-Beanstalk/5.4.5-eb-health-endpoint.png)
+![Backend health endpoint on Elastic Beanstalk](/HUGO/images/5-Workshop/5.4-Backend-Elastic-Beanstalk/5.4.5-eb-health-endpoint.png)
 
 *Figure 5.4.5. Backend health endpoint on Elastic Beanstalk returning a successful response.*
 
@@ -192,4 +192,3 @@ Record these values:
 - Backend security group.
 - RDS endpoint.
 - `/api/health` health check result.
-

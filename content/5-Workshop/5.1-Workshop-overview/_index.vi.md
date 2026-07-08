@@ -38,7 +38,7 @@ Luồng triển khai của workshop được xây dựng theo thứ tự từ h�
 Sau khi backend hoạt động ổn định và endpoint `/api/health` trả kết quả thành công, Amazon API Gateway được tạo để làm điểm truy cập public cho backend. Frontend React/Vite được triển khai lên AWS Amplify Hosting, sau đó cấu hình rewrite để các request `/api/*` và `/uploads/*` từ Amplify domain được chuyển tiếp đến API Gateway. Cuối cùng, hệ thống được kiểm thử bằng các luồng chính như đăng nhập admin, đăng nhập nhân viên, quản lý tài sản, bàn giao tài sản, kiểm tra API request trên DevTools và xác nhận tài khoản inactive bị chặn đăng nhập.
 
 {{< mermaid >}}
-flowchart TD
+graph TD
     A["Chuẩn bị AWS account, source code và biến môi trường"] --> B["Tạo hoặc cấu hình RDS MySQL"]
     B --> C["Đóng gói backend source bundle"]
     C --> D["Deploy backend lên Elastic Beanstalk"]
@@ -91,5 +91,3 @@ Workshop này được giới hạn cho môi trường demo:
 - Amplify dùng domain mặc định.
 - Không yêu cầu custom domain với Route 53.
 - File upload có thể đi qua backend trong demo; S3 được định hướng cho bản sẵn sàng production.
-
-

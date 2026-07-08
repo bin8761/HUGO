@@ -229,5 +229,3 @@ Ghi lại:
 *Hình 5.5.9. Health endpoint qua Amplify domain trả kết quả thành công.*
 
 Tại bước kiểm thử cuối, gọi `https://<amplify-domain>/api/health`. Request sẽ đi qua Amplify rewrite, API Gateway và Elastic Beanstalk trước khi trả về response thành công.
-
-

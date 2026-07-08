@@ -1,99 +1,84 @@
 ---
-title: "Chia sẻ và phản hồi"
-date: 2024-01-01
+title: "Chia sẻ và góp ý"
+date: 2026-07-06
 weight: 7
 chapter: false
 pre: " <b> 7. </b> "
 ---
 
-Chương trình First Cloud AI Journey cho tôi một góc nhìn rất thực tế về AWS, đặc biệt là ở phần backend. Điều tôi cảm nhận rõ nhất trong suốt quá trình tham gia là chương trình không dừng ở việc học dịch vụ riêng lẻ, mà luôn kéo người học đi theo toàn bộ luồng của một hệ thống: request đi như thế nào, backend xử lý ra sao, database kết nối thế nào, log được xem ở đâu và lỗi được kiểm tra bằng cách nào sau khi deploy.
+## 1. Đánh giá chung
 
-Với tôi, đây là điểm giá trị nhất của chương trình. Nó khiến việc học AWS gắn chặt hơn với cách một hệ thống backend thực sự vận hành trên cloud.
+### 1.1. Môi trường thực tập
 
-## 1. Đánh giá tổng thể
+Chương trình tạo cho em một môi trường học tập khá chuyên nghiệp và có định hướng rõ ràng. Thay vì chỉ học lý thuyết về cloud, em được yêu cầu ghi lại worklog, đọc tài liệu AWS, tham gia event, tìm hiểu AWS Blog, triển khai project thật và trình bày lại quy trình theo dạng workshop.
 
-Tổng thể, tôi đánh giá chương trình rất hữu ích. Điểm mạnh của chương trình là giúp tôi hiểu rằng backend trên AWS không chỉ là viết API hay tạo database, mà còn phải biết cách deploy, quan sát, kiểm tra và xử lý lỗi trong môi trường thật.
+Cách tổ chức này giúp em hiểu rằng khi làm việc với cloud, việc biết tên dịch vụ là chưa đủ. Người học cần hiểu dịch vụ đó giải quyết vấn đề gì, nằm ở đâu trong kiến trúc, cấu hình như thế nào và kiểm tra kết quả ra sao.
 
-Nhờ đó, tôi thấy kiến thức mình học được không còn nằm rời rạc nữa. Mỗi phần đều có vị trí riêng trong một kiến trúc backend hoàn chỉnh.
+### 1.2. Sự hỗ trợ của mentor và team
 
-## 2. Trải nghiệm học backend trên AWS
+Trong quá trình thực tập, em nhận được sự hỗ trợ cần thiết từ mentor và team admin. Mentor giúp em định hướng cách chia nội dung báo cáo, cách trình bày kiến trúc AWS, cách viết workshop, cách vẽ kiến trúc project sao cho hợp lý, giúp em và các bạn nhận ra các lỗi sai mà mình mắc phải.
 
-Từ góc nhìn backend, điều hữu ích nhất là tôi bắt đầu nhìn rõ luồng xử lý của hệ thống:
 
-- client gửi request
-- API Gateway nhận và chuyển tiếp request
-- Elastic Beanstalk chạy backend Node.js/Express
-- RDS lưu dữ liệu của hệ thống
-- SES hỗ trợ gửi email và OTP
-- CloudWatch giúp xem log và kiểm tra trạng thái
+### 1.3. Mức độ phù hợp với chuyên ngành
 
-Khi hiểu được luồng này, tôi thấy AWS dễ học hơn rất nhiều. Tôi không còn xem từng dịch vụ là những khái niệm riêng lẻ nữa, mà nhìn chúng như các lớp hỗ trợ cho backend ở các khâu khác nhau.
+Chương trình phù hợp với chuyên ngành Công nghệ thông tin vì các nội dung thực tập gắn trực tiếp với phát triển và triển khai ứng dụng web. Thông qua project EAM Workspace, em được tiếp cận các phần như frontend, backend, cơ sở dữ liệu, xác thực, email OTP, API, cloud hosting và monitoring.
 
-Chính chương trình cũng giúp tôi hiểu tại sao backend luôn cần environment variables, database credentials, network rules và health check. Đây không phải là phần phụ, mà là một phần của backend.
+Trước đây, khi chạy project local, em chủ yếu quan tâm ứng dụng có chạy được trên máy hay không. Sau khi triển khai lên AWS, em hiểu thêm rằng một hệ thống hoàn chỉnh cần có nhiều lớp khác nhau: hạ tầng mạng, compute, database, API gateway, email service, monitoring, bảo mật và kiểm soát chi phí.
 
-## 3. Trải nghiệm triển khai
+### 1.4. Cơ hội học hỏi và phát triển kỹ năng
 
-Phần tôi nhớ nhất là giai đoạn triển khai. Khi deploy lên AWS, tôi phải kiểm tra rất nhiều thứ mà khi chạy local thường không nhìn thấy:
+Trong chương trình, em có cơ hội tìm hiểu và thực hành nhiều dịch vụ AWS quan trọng, bao gồm:
 
-- backend có đọc đúng biến môi trường hay không
-- API Gateway có trỏ đúng sang backend hay không
-- chuỗi kết nối database có hợp lệ hay không
-- thông tin SMTP của SES có khớp hay không
-- endpoint health có trả kết quả đúng hay không
-- CloudWatch logs đang cho biết lỗi nằm ở đâu
+- **IAM** để hiểu về tài khoản, quyền truy cập và credential.
+- **VPC, subnet và Security Group** để hiểu cách kiểm soát kết nối mạng.
+- **Amazon RDS** để triển khai cơ sở dữ liệu MySQL cho backend.
+- **Elastic Beanstalk** để triển khai backend Node.js.
+- **API Gateway** để tạo lớp trung gian cho frontend gọi backend.
+- **AWS Amplify Hosting** để triển khai frontend.
+- **Amazon SES/SMTP** để gửi email OTP.
+- **CloudWatch** để theo dõi trạng thái và hỗ trợ kiểm tra lỗi.
+- **Billing and Cost Management** để theo dõi chi phí phát sinh.
 
-Từ những việc đó, tôi học được rằng lỗi triển khai backend hiếm khi chỉ nằm ở một chỗ. Thường nó là kết quả của nhiều cấu hình nhỏ ghép lại. Muốn xử lý tốt thì phải kiểm tra theo từng lớp thay vì đoán mò.
+Ngoài kỹ năng kỹ thuật, em cũng rèn luyện thêm kỹ năng viết tài liệu, trình bày quy trình, mô tả kiến trúc, chụp ảnh minh họa và giải thích kết quả thực hành. Đây là những kỹ năng quan trọng khi làm việc với project thật.
 
-Tôi cũng nhận ra rằng debug backend trên AWS cần sự kiên nhẫn. Có lúc lỗi nằm trong code, nhưng cũng có lúc nó nằm ở route, ở môi trường, ở database, ở security group hoặc ở cấu hình service. Chương trình giúp tôi hình thành cách kiểm tra có hệ thống hơn.
+### 1.5. Văn hóa học tập và tinh thần cộng đồng
 
-## 4. Hỗ trợ từ mentor và team
+Một điểm em đánh giá cao là chương trình không chỉ yêu cầu làm project, mà còn khuyến khích sinh viên đọc blog, tham gia event và chia sẻ nội dung đã học. Việc tiếp cận AWS Blog và các buổi chia sẻ giúp em nhìn AWS ở phạm vi rộng hơn, không chỉ dừng lại ở việc deploy một web app.
 
-Điều tôi đánh giá cao là cách mentor và team hỗ trợ. Thay vì đưa ngay đáp án, mọi người thường hướng dẫn tôi tự kiểm tra từng bước để hiểu nguyên nhân. Cách làm này rất phù hợp với backend, vì backend không thể xử lý tốt nếu chỉ dựa vào đoán lỗi.
+Các chủ đề như Amazon EKS, Istio Ambient Mesh, security automation, AI và cloud operations giúp em hiểu rằng AWS là một hệ sinh thái lớn, được sử dụng trong nhiều bài toán thực tế khác nhau. Điều này tạo động lực để em tiếp tục học sâu hơn sau kỳ thực tập.
 
-Nhờ cách hỗ trợ đó, tôi học được cách kiểm tra request flow, đối chiếu cấu hình và xác định lỗi theo từng lớp của hệ thống.
+## 2. Một số cảm nhận cá nhân
 
-Team cũng cung cấp bối cảnh kiến trúc và quy trình triển khai khá rõ ràng, nên tôi dễ liên hệ phần báo cáo với hệ thống thật hơn. Điều này rất hữu ích khi viết workshop và phần mô tả triển khai.
+### 2.1. Điều em hài lòng nhất
 
-## 5. Phần hài lòng nhất
+Điều em hài lòng nhất là sau chương trình, em có thể nhìn project theo góc độ triển khai thực tế hơn. EAM Workspace không chỉ là một ứng dụng web chạy local, mà đã được đưa lên AWS với mô hình:
 
-Phần tôi hài lòng nhất là khi tôi hiểu rõ hơn cách một backend có thể hoạt động đầy đủ trên AWS, thay vì chỉ chạy được ở máy local. Lúc đó tôi thấy rõ sự khác nhau giữa một project đã code xong và một hệ thống đã deploy, kiểm tra và giám sát được.
+**Amplify Hosting -> API Gateway -> Elastic Beanstalk -> Amazon RDS**
 
-Điểm tôi nhớ nhất là luồng:
+Kèm theo đó là **Amazon SES** cho email OTP và các bước kiểm tra health endpoint để xác nhận hệ thống hoạt động. Quá trình này giúp em hiểu rõ hơn vai trò của từng dịch vụ AWS trong một kiến trúc ứng dụng full-stack.
 
-`API Gateway -> Elastic Beanstalk -> RDS -> SES / CloudWatch`
+### 2.2. Điều em thấy còn khó khăn
 
-Với tôi, đó là lúc kiến thức AWS thực sự “khớp” lại thành một hệ thống hoàn chỉnh.
+Khó khăn lớn nhất của em là ban đầu có quá nhiều phần cần xử lý cùng lúc. Khi deploy lên AWS, lỗi có thể đến từ code, biến môi trường, security group, endpoint, rewrite rule, SES credential hoặc cấu hình database. Nếu chưa quen, rất dễ kiểm tra sai hướng.
 
-## 6. Khó khăn trong chương trình
+Ngoài ra, việc viết báo cáo theo dạng workshop cũng mất nhiều thời gian hơn em nghĩ. Mỗi bước không chỉ cần làm được, mà còn phải chụp ảnh đúng, mô tả rõ mục đích, giải thích kết quả và đảm bảo người khác có thể đọc lại quy trình.
 
-Khó khăn lớn nhất của tôi không phải là thiếu thông tin, mà là có quá nhiều phần phải kiểm tra cùng lúc. Backend deploy trên AWS đòi hỏi phải chú ý đồng thời đến:
+### 2.3. Có nên giới thiệu chương trình cho bạn bè không?
 
-- routing
-- environment variables
-- database connection
-- email credentials
-- logging
-- health check
+Em sẽ giới thiệu chương trình này cho các bạn muốn bắt đầu học AWS hoặc muốn hiểu cách triển khai một project web lên cloud. Chương trình phù hợp với những bạn đã có nền tảng lập trình cơ bản và muốn bước sang phần triển khai, vận hành, kiểm tra lỗi và viết tài liệu kỹ thuật.
 
-Ban đầu điều đó khiến tôi hơi rối, nhưng sau một thời gian, nó buộc tôi phải học cách kiểm tra cẩn thận và có trình tự hơn. Tôi cũng thấy rõ rằng tài liệu viết tốt sẽ giúp việc debug và làm lại quy trình dễ hơn rất nhiều.
+Tuy nhiên, để học hiệu quả, người tham gia cần chủ động đọc tài liệu, tự thực hành và ghi chú lại lỗi gặp phải. AWS có nhiều dịch vụ và khái niệm mới, nên nếu chỉ làm theo từng bước mà không hiểu mục đích thì sẽ khó áp dụng lại cho project khác.
 
-## 7. Đề xuất cho chương trình
+## 3. Mong muốn sau chương trình
 
-Nếu có thể góp ý, tôi nghĩ chương trình sẽ còn hữu ích hơn nếu có thêm checklist riêng cho backend deployment. Một danh sách ngắn cho API Gateway, Elastic Beanstalk, RDS, SES và CloudWatch sẽ giúp người học tự kiểm tra nhanh hơn.
+Sau kỳ thực tập, em muốn tiếp tục học AWS theo hướng thực hành nhiều hơn. Một số chủ đề em muốn tìm hiểu tiếp gồm:
 
-Tôi cũng thấy một tài liệu hướng dẫn troubleshoot ngắn cho các lỗi thường gặp như sai biến môi trường, lỗi health check, routing sai hoặc không kết nối được database sẽ rất thực tế.
+- Infrastructure as Code với AWS CDK, CloudFormation hoặc Terraform.
+- VPC nâng cao, private subnet, NAT Gateway và VPC Endpoint.
+- CloudWatch Logs, metrics, alarms và dashboard.
+- S3, CloudFront, custom domain và HTTPS.
+- IAM policy, Secrets Manager và best practices về bảo mật.
+- Tối ưu chi phí AWS cho môi trường demo và production nhỏ.
+- Container và Kubernetes trên AWS, đặc biệt là Amazon EKS.
 
-Ngoài ra, một flow mẫu thể hiện rõ cần kiểm tra gì trước và sau khi deploy backend sẽ giúp sinh viên mới dễ hình dung hơn, nhất là khi lần đầu làm việc với AWS.
-
-## 8. Kỳ vọng sau chương trình
-
-Sau chương trình, tôi muốn tiếp tục đi sâu hơn theo hướng backend và cloud. Những phần tôi muốn học thêm gồm:
-
-- AWS CDK hoặc Terraform
-- CloudWatch Logs và alert
-- VPC, private subnet, NAT Gateway, VPC Endpoint
-- IAM policy và quản lý secrets
-- backup/restore cho RDS
-- các pattern deploy backend gần với production hơn
-
-Nhìn chung, chương trình cho tôi một cái nhìn thực tế hơn về backend trên AWS. Tôi không chỉ học từng dịch vụ riêng lẻ, mà còn hiểu cách kết hợp chúng để tạo thành một hệ thống có thể deploy, theo dõi, debug và vận hành rõ ràng hơn.
+Nhìn chung, First Cloud AI Journey là một chương trình hữu ích đối với sinh viên muốn bắt đầu với AWS. Chương trình giúp em hiểu rằng cloud không chỉ là nơi deploy ứng dụng, mà còn là nền tảng để thiết kế, vận hành, giám sát và cải thiện hệ thống một cách chuyên nghiệp hơn.

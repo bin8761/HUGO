@@ -35,19 +35,19 @@ The API Gateway endpoint will look like:
 https://<api-id>.execute-api.<region>.amazonaws.com
 ```
 
-![Amazon API Gateway HTTP API overview](../../images/5-Workshop/5.5-Frontend-Amplify/5.5.1-api-gateway-overview.png)
+![Amazon API Gateway HTTP API overview](/HUGO/images/5-Workshop/5.5-Frontend-Amplify/5.5.1-api-gateway-overview.png)
 
 *Figure 5.5.1. Amazon API Gateway HTTP API overview.*
 
 The API should have the correct name and a public endpoint. This endpoint will be used by Amplify rewrite rules for `/api/*` and `/uploads/*`.
 
-![API Gateway proxy route](../../images/5-Workshop/5.5-Frontend-Amplify/5.5.2-api-gateway-route.png)
+![API Gateway proxy route](/HUGO/images/5-Workshop/5.5-Frontend-Amplify/5.5.2-api-gateway-route.png)
 
 *Figure 5.5.2. API Gateway `ANY /{proxy+}` route.*
 
 In the Routes section, confirm that `ANY /{proxy+}` exists. This route allows API Gateway to receive paths such as `/api/health`, `/api/assets`, and `/uploads/...`.
 
-![API Gateway integration pointing to Elastic Beanstalk](../../images/5-Workshop/5.5-Frontend-Amplify/5.5.3-api-gateway-integration.png)
+![API Gateway integration pointing to Elastic Beanstalk](/HUGO/images/5-Workshop/5.5-Frontend-Amplify/5.5.3-api-gateway-integration.png)
 
 *Figure 5.5.3. API Gateway integration pointing to the Elastic Beanstalk backend.*
 
@@ -69,7 +69,7 @@ If it returns 404, check:
 - Parameter mapping or path forwarding does not remove the `/api` prefix.
 - The integration URI can use `http://<elastic-beanstalk-domain>/{proxy}` when the route has the `{proxy+}` path variable.
 
-![Health endpoint through API Gateway](../../images/5-Workshop/5.5-Frontend-Amplify/5.5.4-api-gateway-health.png)
+![Health endpoint through API Gateway](/HUGO/images/5-Workshop/5.5-Frontend-Amplify/5.5.4-api-gateway-health.png)
 
 *Figure 5.5.4. Health endpoint through API Gateway returning a successful response.*
 
@@ -113,7 +113,7 @@ applications:
           - '**/*'
 ```
 
-![Amplify build settings](../../images/5-Workshop/5.5-Frontend-Amplify/5.5.6-amplify-build-settings.png)
+![Amplify build settings](/HUGO/images/5-Workshop/5.5-Frontend-Amplify/5.5.6-amplify-build-settings.png)
 
 *Figure 5.5.6. Amplify build settings with app root and output directory.*
 
@@ -139,13 +139,13 @@ npm ci && npm run build
 dist
 ```
 
-![Amplify app connected to the aws-architecture branch](../../images/5-Workshop/5.5-Frontend-Amplify/5.5.5-amplify-branch.png)
+![Amplify app connected to the aws-architecture branch](/HUGO/images/5-Workshop/5.5-Frontend-Amplify/5.5.5-amplify-branch.png)
 
 *Figure 5.5.5. Amplify app connected to the deployment branch.*
 
 On the Amplify app screen, verify that the deployment branch is the branch that contains the latest frontend source. Amplify will automatically build and publish the frontend from this branch.
 
-![Successful Amplify deployment](../../images/5-Workshop/5.5-Frontend-Amplify/5.5.8-amplify-build-success.png)
+![Successful Amplify deployment](/HUGO/images/5-Workshop/5.5-Frontend-Amplify/5.5.8-amplify-build-success.png)
 
 *Figure 5.5.8. Successful Amplify deployment.*
 
@@ -184,7 +184,7 @@ Then keep the SPA fallback rule for React Router:
 
 If the `/api/<*>` or `/uploads/<*>` rule is in the wrong order, API and upload requests may return frontend HTML or static assets may fail with MIME type errors.
 
-![Amplify rewrite rules](../../images/5-Workshop/5.5-Frontend-Amplify/5.5.7-amplify-rewrite-rules.png)
+![Amplify rewrite rules](/HUGO/images/5-Workshop/5.5-Frontend-Amplify/5.5.7-amplify-rewrite-rules.png)
 
 *Figure 5.5.7. Amplify rewrite rules forwarding `/api/<*>` and `/uploads/<*>` to API Gateway.*
 
@@ -217,9 +217,8 @@ Record:
 - Frontend build status.
 - Result of `https://<amplify-domain>/api/health`.
 
-![Health endpoint through the Amplify domain](../../images/5-Workshop/5.5-Frontend-Amplify/5.5.9-amplify-health.png)
+![Health endpoint through the Amplify domain](/HUGO/images/5-Workshop/5.5-Frontend-Amplify/5.5.9-amplify-health.png)
 
 *Figure 5.5.9. Health endpoint through the Amplify domain returning a successful response.*
 
 For the final validation, call `https://<amplify-domain>/api/health`. The request passes through Amplify rewrite, API Gateway, and Elastic Beanstalk before returning a successful response.
-

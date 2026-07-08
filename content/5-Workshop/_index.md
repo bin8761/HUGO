@@ -28,12 +28,8 @@ This workshop follows the demo deployment path: no Route 53, no custom domain, a
 
 #### Architecture
 
-![Workshop architecture overview for EAM Workspace](/HUGO/images/5-Workshop/5.1-Workshop-overview/5.1.1-architecture-overview.png)
-
-*Figure 5.0.1. Workshop architecture overview.*
-
 {{< mermaid >}}
-flowchart LR
+graph TB
     User["User Browser"] --> Amplify["AWS Amplify Hosting\nReact Frontend"]
     Amplify --> Rewrite["Rewrite /api/*"]
     Rewrite --> APIGW["Amazon API Gateway\nHTTP API"]

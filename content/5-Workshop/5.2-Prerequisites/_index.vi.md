@@ -34,6 +34,16 @@ Sau khi chọn Region, kiểm tra lại góc phải trên của AWS Console đ�
 
 Region đang chọn phải là Region được dùng xuyên suốt workshop. Việc thống nhất Region giúp tránh lỗi kết nối giữa Elastic Beanstalk, API Gateway, RDS và SES.
 
+## Kiểm tra branch triển khai
+
+Trước khi kết nối AWS Amplify, cần xác định branch GitHub được dùng để triển khai frontend.
+
+![GitHub branch dùng để triển khai frontend bằng Amplify](/HUGO/images/5-Workshop/5.2-Prerequisites/5.2.2-github-branch.png)
+
+*Hình 5.2.2. GitHub branch dùng để triển khai frontend bằng Amplify.*
+
+Cần ghi lại đúng branch deploy, ví dụ `aws-architecture`, vì Amplify sẽ lấy source code từ branch này để build và deploy frontend.
+
 ## Công cụ local
 
 Cài đặt và kiểm tra các công cụ sau:
@@ -82,16 +92,6 @@ Output build của frontend:
 ```text
 frontend/dist
 ```
-
-## Kiểm tra branch triển khai
-
-Trước khi kết nối AWS Amplify, cần xác định branch GitHub được dùng để triển khai frontend.
-
-![GitHub branch dùng để triển khai frontend bằng Amplify](/HUGO/images/5-Workshop/5.2-Prerequisites/5.2.2-github-branch.png)
-
-*Hình 5.2.2. GitHub branch dùng để triển khai frontend bằng Amplify.*
-
-Cần ghi lại đúng branch deploy, ví dụ `aws-architecture`, vì Amplify sẽ lấy source code từ branch này để build và deploy frontend.
 
 ## Biến môi trường backend
 
@@ -174,12 +174,10 @@ Không nên đưa vào:
 
 ## Checklist sẵn sàng
 
-- [ ] Đã chọn AWS Region.
-- [ ] AWS account có quyền phù hợp.
-- [ ] Đã có source code backend và frontend.
-- [ ] Đã chuẩn bị biến môi trường backend.
-- [ ] Đã chuẩn bị `VITE_API_BASE_URL=/api` cho Amplify.
-- [ ] Đã xác định endpoint RDS hoặc kế hoạch tạo RDS.
-- [ ] Thống nhất dùng hướng demo không có Route 53 hoặc custom domain.
-
-
+- Đã chọn AWS Region.
+- AWS account có quyền phù hợp.
+- Đã có source code backend và frontend.
+- Đã chuẩn bị biến môi trường backend.
+- Đã chuẩn bị `VITE_API_BASE_URL=/api` cho Amplify.
+- Đã xác định endpoint RDS hoặc kế hoạch tạo RDS.
+- Thống nhất dùng hướng demo không có Route 53 hoặc custom domain.

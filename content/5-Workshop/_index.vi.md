@@ -28,12 +28,8 @@ Workshop này dùng hướng demo: không dùng Route 53, không dùng custom do
 
 #### Kiến trúc
 
-![Sơ đồ kiến trúc tổng quan của workshop EAM Workspace](/HUGO/images/5-Workshop/5.1-Workshop-overview/5.1.1-architecture-overview.png)
-
-*Hình 5.0.1. Sơ đồ kiến trúc tổng quan của workshop.*
-
 {{< mermaid >}}
-flowchart LR
+graph TB
     User["Trình duyệt người dùng"] --> Amplify["AWS Amplify Hosting\nReact Frontend"]
     Amplify --> Rewrite["Rewrite /api/*"]
     Rewrite --> APIGW["Amazon API Gateway\nHTTP API"]

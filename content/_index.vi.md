@@ -68,8 +68,8 @@ chapter: false
   </a>
   <a class="report-content-card" href="3-blogstranslated/">
     <div class="report-content-card__index">03</div>
-    <div class="report-content-card__title">Các bài blog đã dịch</div>
-    <p class="report-content-card__desc">Các bài blog kỹ thuật được dịch và minh hoạ.</p>
+    <div class="report-content-card__title">Các bài blog đã đăng</div>
+    <p class="report-content-card__desc">Các bài blog kỹ thuật được chọn, tổng hợp và chia sẻ trong kỳ thực tập.</p>
   </a>
   <a class="report-content-card" href="4-eventparticipated/">
     <div class="report-content-card__index">04</div>

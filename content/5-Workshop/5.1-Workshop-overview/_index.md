@@ -38,7 +38,7 @@ First, the AWS environment, source code, and required configuration variables ar
 After the backend is healthy and the `/api/health` endpoint returns a successful response, Amazon API Gateway is created as the public entry point for the backend. The React/Vite frontend is deployed to AWS Amplify Hosting, and rewrite rules are configured so `/api/*` and `/uploads/*` requests from the Amplify domain are forwarded to API Gateway. Finally, the system is validated through the main workflows, including admin login, employee login, asset management, asset assignment, API requests in DevTools, and inactive account login blocking.
 
 {{< mermaid >}}
-flowchart TD
+graph TD
     A["Prepare AWS account, source code, and environment variables"] --> B["Create or configure RDS MySQL"]
     B --> C["Package the backend source bundle"]
     C --> D["Deploy backend to Elastic Beanstalk"]
@@ -66,7 +66,7 @@ flowchart TD
 
 Before configuring each service, review the overall connection flow of the system.
 
-![Workshop architecture overview for EAM Workspace](../../images/5-Workshop/5.1-Workshop-overview/5.1.1-architecture-overview.png)
+![Workshop architecture overview for EAM Workspace](/HUGO/images/5-Workshop/5.1-Workshop-overview/5.1.1-architecture-overview.png)
 
 *Figure 5.1.1. Workshop architecture overview.*
 
@@ -76,7 +76,7 @@ This diagram confirms the main architecture components: the frontend is served t
 
 After reviewing the architecture, map each component in the diagram to the AWS services used in the workshop.
 
-![AWS services overview used in the workshop](../../images/5-Workshop/5.1-Workshop-overview/5.1.2-aws-services-overview.png)
+![AWS services overview used in the workshop](/HUGO/images/5-Workshop/5.1-Workshop-overview/5.1.2-aws-services-overview.png)
 
 *Figure 5.1.2. AWS services overview used in the workshop.*
 
@@ -91,4 +91,3 @@ This workshop is scoped for a demo environment:
 - Amplify uses the default domain.
 - Route 53 custom domain is not required.
 - File upload can go through the backend for the demo; S3 is documented as the production-ready direction.
-

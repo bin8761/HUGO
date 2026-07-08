@@ -38,7 +38,7 @@ If it fails, check in this order: Elastic Beanstalk logs, API Gateway route/inte
 
 Open the Amplify URL and sign in with the seeded admin account.
 
-![Login page on the Amplify domain](../../images/5-Workshop/5.6-Test-Monitor/5.6.1-login-page.png)
+![Login page on the Amplify domain](/HUGO/images/5-Workshop/5.6-Test-Monitor/5.6.1-login-page.png)
 
 *Figure 5.6.1. Login page on the Amplify domain.*
 
@@ -51,7 +51,7 @@ Expected results:
 - Sidebar and navigation work.
 - API calls return `200` or the expected business response.
 
-![Admin dashboard after successful login](../../images/5-Workshop/5.6-Test-Monitor/5.6.2-admin-dashboard.png)
+![Admin dashboard after successful login](/HUGO/images/5-Workshop/5.6-Test-Monitor/5.6.2-admin-dashboard.png)
 
 *Figure 5.6.2. Admin dashboard after successful login.*
 
@@ -72,13 +72,13 @@ Test at least one workflow from each major admin module:
 | Inventory | View or create an inventory session. |
 | Reports | Open summary or asset reports. |
 
-![Asset management screen](../../images/5-Workshop/5.6-Test-Monitor/5.6.3-admin-assets.png)
+![Asset management screen](/HUGO/images/5-Workshop/5.6-Test-Monitor/5.6.3-admin-assets.png)
 
 *Figure 5.6.3. Asset management screen.*
 
 On the asset management screen, check that the asset list loads correctly and that core actions such as view, edit, delete, or Excel import appear according to admin permissions.
 
-![Asset assignment workflow](../../images/5-Workshop/5.6-Test-Monitor/5.6.4-assignment-maintenance.png)
+![Asset assignment workflow](/HUGO/images/5-Workshop/5.6-Test-Monitor/5.6.4-assignment-maintenance.png)
 
 *Figure 5.6.4. Asset assignment workflow.*
 
@@ -95,7 +95,7 @@ Sign in with an employee account and check:
 - FAQ page.
 - Profile and history pages.
 
-![Employee dashboard](../../images/5-Workshop/5.6-Test-Monitor/5.6.5-employee-dashboard.png)
+![Employee dashboard](/HUGO/images/5-Workshop/5.6-Test-Monitor/5.6.5-employee-dashboard.png)
 
 *Figure 5.6.5. Employee dashboard after sign-in.*
 
@@ -110,13 +110,13 @@ Also test the cases encountered during deployment:
 - Inactive account errors return the expected business code, for example `AUTH_ACCOUNT_INACTIVE`.
 - Browser DevTools shows no CORS errors.
 
-![DevTools Network showing successful API requests](../../images/5-Workshop/5.6-Test-Monitor/5.6.6-devtools-network.png)
+![DevTools Network showing successful API requests](/HUGO/images/5-Workshop/5.6-Test-Monitor/5.6.6-devtools-network.png)
 
 *Figure 5.6.6. DevTools Network showing successful API requests.*
 
 In the Network tab, filter `/api/...` requests and check that the status is `200` or an expected business response. If CORS errors or HTML responses appear, recheck Amplify rewrites and backend CORS settings.
 
-![Inactive account blocked from signing in](../../images/5-Workshop/5.6-Test-Monitor/5.6.7-inactive-account.png)
+![Inactive account blocked from signing in](/HUGO/images/5-Workshop/5.6-Test-Monitor/5.6.7-inactive-account.png)
 
 *Figure 5.6.7. Inactive account blocked from signing in.*
 
@@ -169,15 +169,14 @@ For a demo environment, simple CloudWatch alarms can be created:
 
 ## Validation Checklist
 
-- [ ] Frontend opens from the Amplify URL.
-- [ ] `GET /api/health` succeeds through Elastic Beanstalk.
-- [ ] `GET /api/health` succeeds through API Gateway.
-- [ ] `GET /api/health` succeeds through Amplify rewrite.
-- [ ] Admin login works.
-- [ ] Employee login works.
-- [ ] Main CRUD workflows work.
-- [ ] Asset assignment workflow works.
-- [ ] Support request workflow works.
-- [ ] Inactive accounts are blocked from signing in.
-- [ ] Browser DevTools shows no CORS errors.
-
+- Frontend opens from the Amplify URL.
+- `GET /api/health` succeeds through Elastic Beanstalk.
+- `GET /api/health` succeeds through API Gateway.
+- `GET /api/health` succeeds through Amplify rewrite.
+- Admin login works.
+- Employee login works.
+- Main CRUD workflows work.
+- Asset assignment workflow works.
+- Support request workflow works.
+- Inactive accounts are blocked from signing in.
+- Browser DevTools shows no CORS errors.

@@ -7,6 +7,8 @@ pre: " <b> 3.2. </b> "
 ---
 # Amazon EKS Auto Mode và Istio Ambient Mesh
 
+> Đã đăng trên [AWS Study Group VN](https://www.facebook.com/groups/660548818043427/) vào ngày 24/06/2026.
+
 **Nguồn:** [AWS Containers Blog - Better Together: Amazon EKS Auto Mode and Istio Ambient Mesh](https://aws.amazon.com/blogs/containers/better-together-amazon-eks-auto-mode-and-istio-ambient-mesh/)
 
 ## Amazon EKS Auto Mode và Istio Ambient Mesh
@@ -32,11 +34,11 @@ Bài blog giới thiệu cách kết hợp Amazon EKS Auto Mode với Istio Ambi
 
 Dưới đây là hai hình minh họa kiến trúc gốc từ bài AWS Blog, thể hiện cách Istio Ambient Mesh hoạt động trên Amazon EKS Auto Mode ở hai mức Layer 4 và Layer 7.
 
-![Kiến trúc Istio Ambient Mesh Layer 4 trên Amazon EKS Auto Mode](/HUGO/images/3-BlogsPosted/3.1-Blog1/c-170-1.jpg)
+![Kiến trúc Istio Ambient Mesh Layer 4 trên Amazon EKS Auto Mode](/HUGO/images/3-BlogsTranslated/3.1-Blog1/c-170-1.jpg)
 
 *Hình 1. Kiến trúc Istio Ambient Mesh với các tính năng Layer 4 trên Amazon EKS Auto Mode. Nguồn: AWS Blog, Figure 1.*
 
-![Kiến trúc Istio Ambient Mesh Layer 7 với waypoint proxy](/HUGO/images/3-BlogsPosted/3.1-Blog1/c-170-2.jpg)
+![Kiến trúc Istio Ambient Mesh Layer 7 với waypoint proxy](/HUGO/images/3-BlogsTranslated/3.1-Blog1/c-170-2.jpg)
 
 *Hình 2. Kiến trúc Istio Ambient Mesh với waypoint proxy cho các tính năng Layer 7. Nguồn: AWS Blog, Figure 2.*
 
@@ -77,3 +79,7 @@ kubectl port-forward svc/kiali 20001:20001 -n istio-system
 
 Bài blog cho thấy EKS Auto Mode và Istio Ambient Mesh là hai công nghệ bổ trợ tốt cho nhau trong quá trình triển khai Kubernetes hiện đại trên AWS. EKS Auto Mode giúp đơn giản hóa vận hành hạ tầng, còn Istio Ambient Mesh cung cấp khả năng bảo mật và kiểm soát lưu lượng theo hướng nhẹ hơn so với mô hình sidecar truyền thống. Đây là một hướng tiếp cận phù hợp cho các hệ thống microservices cần tính bảo mật, khả năng quan sát và khả năng mở rộng cao trong môi trường cloud-native.
 
+<figure class="blog-group-post">
+  <img src="/HUGO/images/3-BlogsTranslated/3.2-Blog2/z8015011259315_7c6dbb49988bf6d90190842f5ae5b0ba.jpg" alt="Bài đăng blog 2 trên group AWS">
+  <figcaption>Bài đăng đã chia sẻ trong group AWS.</figcaption>
+</figure>

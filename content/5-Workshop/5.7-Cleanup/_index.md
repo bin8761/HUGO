@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 5.7. </b> "
 ---
 
-## Clean Up Resources
-
 After completing the workshop for deploying **EAM Workspace** on AWS, unused resources should be cleaned up to avoid unexpected AWS charges. In this workshop, the main resources include **AWS Amplify Hosting**, **Amazon API Gateway**, **AWS Elastic Beanstalk**, **Amazon RDS for MySQL**, **Amazon SES**, security groups, and related logs/metrics.
 
 Before deleting resources, capture the important screens for the report. These screenshots show that the project was deployed, tested, and has a clear cleanup plan.
@@ -56,7 +54,7 @@ Steps:
 
 If the frontend is still needed for presentation, Amplify can be kept temporarily, but this should be noted in the report.
 
-![Amplify app cleanup](../../images/5-Workshop/5.7-Cleanup/5.7.1-amplify-cleanup.png)
+![Amplify app cleanup](/HUGO/images/5-Workshop/5.7-Cleanup/5.7.1-amplify-cleanup.png)
 
 *Figure 5.7.1. AWS Amplify app `quanlidoanhnghiep` and branch `aws-architecture` before cleanup. This screenshot records that the frontend was deployed successfully, had an active Amplify domain, and should be handled if the demo is no longer maintained.*
 
@@ -82,7 +80,7 @@ Steps:
 
 After API Gateway is deleted, URLs in the form `https://...execute-api.ap-southeast-1.amazonaws.com/...` will no longer work.
 
-![API Gateway cleanup](../../images/5-Workshop/5.7-Cleanup/5.7.2-api-gateway-cleanup.png)
+![API Gateway cleanup](/HUGO/images/5-Workshop/5.7-Cleanup/5.7.2-api-gateway-cleanup.png)
 
 *Figure 5.7.2. HTTP API `eam-backend-http-api` in Amazon API Gateway before deletion. This screen confirms the correct public backend API endpoint and helps avoid deleting an API that does not belong to the project.*
 
@@ -110,7 +108,7 @@ Steps:
 
 If Elastic Beanstalk cannot terminate because of dependencies, check related security groups, load balancers, or EC2 resources.
 
-![Elastic Beanstalk cleanup](../../images/5-Workshop/5.7-Cleanup/5.7.3-eb-cleanup.png)
+![Elastic Beanstalk cleanup](/HUGO/images/5-Workshop/5.7-Cleanup/5.7.3-eb-cleanup.png)
 
 *Figure 5.7.3. Elastic Beanstalk environment `eam-backend-prod-v8` before termination. The screenshot shows that the backend environment was healthy, had its own domain, and could continue generating cost if left running.*
 
@@ -138,7 +136,7 @@ Steps:
 
 If the RDS database is not deleted immediately, stop it if appropriate and continue monitoring cost in Billing.
 
-![RDS cleanup](../../images/5-Workshop/5.7-Cleanup/5.7.4-rds-cleanup.png)
+![RDS cleanup](/HUGO/images/5-Workshop/5.7-Cleanup/5.7.4-rds-cleanup.png)
 
 *Figure 5.7.4. Amazon RDS database `eam-mysql` before cleanup. This resource needs careful attention because a database instance can still incur cost while it remains available.*
 
@@ -164,7 +162,7 @@ Steps:
 
 If SES is kept for further demo, store credentials carefully and do not commit them to GitHub.
 
-![SES cleanup](../../images/5-Workshop/5.7-Cleanup/5.7.5-ses-cleanup.png)
+![SES cleanup](/HUGO/images/5-Workshop/5.7-Cleanup/5.7.5-ses-cleanup.png)
 
 *Figure 5.7.5. Verified Amazon SES email identity in the Singapore region. This screenshot records the email/OTP sending configuration for the backend while keeping SMTP credentials out of the report.*
 
@@ -204,7 +202,7 @@ Steps:
 
 The resources that should be checked most carefully for cost are RDS databases, EC2/Elastic Beanstalk, load balancers, NAT Gateways, Elastic IPs, and CloudWatch Logs.
 
-![Billing check](../../images/5-Workshop/5.7-Cleanup/5.7.6-billing-check.png)
+![Billing check](/HUGO/images/5-Workshop/5.7-Cleanup/5.7.6-billing-check.png)
 
 *Figure 5.7.6. Billing and Cost Management used to review costs after the AWS deployment. The Cost summary and Cost breakdown help check charges by service, such as RDS, EC2, VPC, and Amplify.*
 
@@ -218,13 +216,12 @@ After cleaning up the main resources, verify cost status:
 
 ## Final Cleanup Checklist
 
-- [ ] Resource list recorded.
-- [ ] Amplify app/branch screenshot captured before deletion or disconnect.
-- [ ] Unused API Gateway deleted.
-- [ ] Elastic Beanstalk environment terminated.
-- [ ] RDS database deleted or stopped according to demo needs.
-- [ ] SES identity and SMTP credential checked.
-- [ ] Security groups without dependencies deleted.
-- [ ] CloudWatch log groups checked.
-- [ ] Billing/Cost Explorer checked after cleanup.
-
+- Resource list recorded.
+- Amplify app/branch screenshot captured before deletion or disconnect.
+- Unused API Gateway deleted.
+- Elastic Beanstalk environment terminated.
+- RDS database deleted or stopped according to demo needs.
+- SES identity and SMTP credential checked.
+- Security groups without dependencies deleted.
+- CloudWatch log groups checked.
+- Billing/Cost Explorer checked after cleanup.

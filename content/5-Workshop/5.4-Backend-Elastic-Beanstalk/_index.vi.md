@@ -192,5 +192,3 @@ Ghi lại các giá trị:
 - Backend security group.
 - RDS endpoint.
 - Kết quả health check `/api/health`.
-
-

@@ -8,6 +8,8 @@ pre: " <b> 3.3. </b> "
 
 # AWS Continuum: Bảo mật ở tốc độ máy
 
+> Đã đăng trên [AWS Study Group VN](https://www.facebook.com/groups/660548818043427/) vào ngày 30/06/2026.
+
 **Nguồn:** [AWS Security Blog - Introducing AWS Continuum: Security at machine speed](https://aws.amazon.com/vi/blogs/security/introducing-aws-continuum-security-at-machine-speed/)
 
 Bài blog giới thiệu AWS Continuum, một hướng tiếp cận mới của AWS nhằm hỗ trợ các đội ngũ bảo mật xử lý lỗ hổng mã nguồn ở tốc độ máy. Thay vì chỉ thu thập telemetry, lưu trữ, truy vấn và xây dựng dashboard để theo dõi, AWS nhấn mạnh mô hình mới gồm telemetry, context, reasoning và actions.
@@ -31,7 +33,7 @@ AWS Continuum for code vulnerabilities hiện được công bố ở dạng gat
 
 Hình minh họa vòng lặp hoạt động của AWS Continuum, dựa trên các giai đoạn Discovery, Prioritization, Validation, Mitigation and Remediation được mô tả trong bài blog.
 
-![Sơ đồ minh họa vòng đời xử lý lỗ hổng của AWS Continuum](/HUGO/images/3-BlogsPosted/3.3-Blog3/aws-continuum-1.png)
+![Sơ đồ minh họa vòng đời xử lý lỗ hổng của AWS Continuum](/HUGO/images/3-BlogsTranslated/3.3-Blog3/aws-continuum-1.png)
 
 *Hình 1. Sơ đồ minh họa vòng đời xử lý lỗ hổng của AWS Continuum. Nguồn nội dung: AWS Security Blog.*
 
@@ -48,4 +50,7 @@ Hình minh họa vòng lặp hoạt động của AWS Continuum, dựa trên cá
 
 AWS Continuum thể hiện định hướng mới trong lĩnh vực cloud security, nơi AI được sử dụng để tăng tốc quá trình phát hiện, đánh giá và khắc phục lỗ hổng. Thay vì chỉ cung cấp thông tin cho con người quan sát, hệ thống hướng đến việc tạo ra các hành động có căn cứ, có thể kiểm chứng và từng bước tự động hóa dưới sự kiểm soát của đội ngũ bảo mật.
 
-
+<figure class="blog-group-post">
+  <img src="/HUGO/images/3-BlogsTranslated/3.3-Blog3/z8015011261961_733583f041bf45f21cbc876601b453b1.jpg" alt="Bài đăng blog 3 trên group AWS">
+  <figcaption>Bài đăng đã chia sẻ trong group AWS.</figcaption>
+</figure>

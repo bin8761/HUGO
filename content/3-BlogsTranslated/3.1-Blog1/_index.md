@@ -7,6 +7,8 @@ pre: " <b> 3.1. </b> "
 ---
 # Amazon EKS now supports control plane egress through your VPC
 
+> Posted on [AWS Study Group VN](https://www.facebook.com/groups/660548818043427/) on June 23, 2026.
+
 **Source:** [Amazon EKS now supports control plane egress through your VPC](https://aws.amazon.com/blogs/containers/amazon-eks-now-supports-control-plane-egress-through-your-vpc/)
 
 Amazon EKS has added customer-routed control plane egress, which allows certain outbound traffic from the Kubernetes API Server to be routed through the user's own Amazon VPC. This feature helps enterprises gain better control over the path of requests initiated by the control plane, such as admission webhook callbacks, OIDC provider lookups, and aggregate API server requests.
@@ -31,7 +33,7 @@ Instead of allowing these flows to use the EKS-managed network path, users can a
 
 The diagram below illustrates the architecture when Private Control Plane Networking is enabled. Customer-controllable traffic from `kube-apiserver` passes through an ENI in the user's VPC, then is controlled by network components such as VPC endpoints, NAT Gateway, Transit Gateway, or AWS PrivateLink before reaching customer destinations.
 
-![Control plane egress through the user's VPC when Private Control Plane Networking is enabled](../../images/3-BlogsPosted/3.2-Blog2/CONTAINERS-269-1.png)
+![Control plane egress through the user's VPC when Private Control Plane Networking is enabled](/HUGO/images/3-BlogsTranslated/3.2-Blog2/CONTAINERS-269-1.png)
 
 *Figure 1. Control plane egress through the user's VPC when Private Control Plane Networking is enabled. Source: AWS Blog.*
 
@@ -71,3 +73,8 @@ aws eks describe-cluster --name my-cluster \
 ## Conclusion
 
 Customer-routed control plane egress makes Amazon EKS more suitable for environments that require strict network control. Instead of only managing traffic from worker nodes and workloads, users gain additional control over part of the outbound traffic from the Kubernetes API Server. This improves privacy, supports auditing, reduces risk when using internal webhooks or OIDC providers, and helps deploy EKS in enterprise systems with high security requirements.
+
+<figure class="blog-group-post">
+  <img src="/HUGO/images/3-BlogsTranslated/3.1-Blog1/z8015011259421_45011c103e179a80db527ae8099b0baa.jpg" alt="Blog post 1 shared in the AWS group">
+  <figcaption>Blog post shared in the AWS group.</figcaption>
+</figure>

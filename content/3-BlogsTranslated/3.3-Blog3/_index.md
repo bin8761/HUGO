@@ -8,6 +8,8 @@ pre: " <b> 3.3. </b> "
 
 # AWS Continuum: Security at Machine Speed
 
+> Posted on [AWS Study Group VN](https://www.facebook.com/groups/660548818043427/) on June 30, 2026.
+
 **Source:** [AWS Security Blog - Introducing AWS Continuum: Security at machine speed](https://aws.amazon.com/vi/blogs/security/introducing-aws-continuum-security-at-machine-speed/)
 
 This blog post introduces AWS Continuum, a new AWS approach designed to help security teams handle code vulnerabilities at machine speed. Instead of only collecting telemetry, storing it, querying it, and building dashboards for monitoring, AWS emphasizes a new model built around telemetry, context, reasoning, and actions.
@@ -31,7 +33,7 @@ AWS Continuum for code vulnerabilities is currently announced as a gated preview
 
 The following diagram illustrates the AWS Continuum operating loop based on the stages described in the blog: Discovery, Prioritization, Validation, Mitigation and Remediation.
 
-![AWS Continuum vulnerability lifecycle diagram](../../images/3-BlogsPosted/3.3-Blog3/aws-continuum-1.png)
+![AWS Continuum vulnerability lifecycle diagram](/HUGO/images/3-BlogsTranslated/3.3-Blog3/aws-continuum-1.png)
 
 *Figure 1. Diagram illustrating the vulnerability lifecycle handled by AWS Continuum. Content source: AWS Security Blog.*
 
@@ -48,4 +50,7 @@ The following diagram illustrates the AWS Continuum operating loop based on the 
 
 AWS Continuum reflects a new direction in cloud security, where AI is used to accelerate vulnerability discovery, assessment, and remediation. Instead of only providing information for humans to observe, the system aims to produce grounded, verifiable actions and gradually automate them under the control of security teams.
 
-
+<figure class="blog-group-post">
+  <img src="/HUGO/images/3-BlogsTranslated/3.3-Blog3/z8015011261961_733583f041bf45f21cbc876601b453b1.jpg" alt="Blog post 3 shared in the AWS group">
+  <figcaption>Blog post shared in the AWS group.</figcaption>
+</figure>

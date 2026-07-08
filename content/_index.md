@@ -69,8 +69,8 @@ chapter: false
   </a>
   <a class="report-content-card" href="3-blogstranslated/">
     <div class="report-content-card__index">03</div>
-    <div class="report-content-card__title">Translated Blogs</div>
-    <p class="report-content-card__desc">Selected technical blogs translated and illustrated.</p>
+    <div class="report-content-card__title">Blogs Posted</div>
+    <p class="report-content-card__desc">Technical blog posts reviewed and shared during the internship.</p>
   </a>
   <a class="report-content-card" href="4-eventparticipated/">
     <div class="report-content-card__index">04</div>

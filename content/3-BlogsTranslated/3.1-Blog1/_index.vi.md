@@ -8,6 +8,8 @@ pre: " <b> 3.1. </b> "
 
 # Amazon EKS now supports control plane egress through your VPC
 
+> Đã đăng trên [AWS Study Group VN](https://www.facebook.com/groups/660548818043427/) vào ngày 23/06/2026.
+
 **Nguồn:** [Amazon EKS now supports control plane egress through your VPC](https://aws.amazon.com/blogs/containers/amazon-eks-now-supports-control-plane-egress-through-your-vpc/)
 
 Amazon EKS đã bổ sung khả năng customer-routed control plane egress, cho phép định tuyến một số lưu lượng outbound từ Kubernetes API Server đi qua chính Amazon VPC của người dùng. Tính năng này giúp doanh nghiệp kiểm soát tốt hơn đường đi của các request do control plane khởi tạo, chẳng hạn như admission webhook callback, truy vấn OIDC provider và aggregate API server request.
@@ -32,7 +34,7 @@ Thay vì để các luồng này đi theo đường mạng do EKS quản lý, ng
 
 Hình minh họa kiến trúc khi Private Control Plane Networking được bật. Lưu lượng customer-controllable từ `kube-apiserver` đi qua ENI trong VPC của người dùng, sau đó chịu sự kiểm soát bởi các thành phần mạng như VPC endpoint, NAT Gateway, Transit Gateway hoặc AWS PrivateLink trước khi đi đến customer destinations.
 
-![Control plane egress đi qua VPC của người dùng khi bật Private Control Plane Networking](/HUGO/images/3-BlogsPosted/3.2-Blog2/CONTAINERS-269-1.png)
+![Control plane egress đi qua VPC của người dùng khi bật Private Control Plane Networking](/HUGO/images/3-BlogsTranslated/3.2-Blog2/CONTAINERS-269-1.png)
 
 *Hình 1. Control plane egress đi qua VPC của người dùng khi bật Private Control Plane Networking. Nguồn: AWS Blog.*
 
@@ -73,3 +75,7 @@ aws eks describe-cluster --name my-cluster \
 
 Tính năng customer-routed control plane egress giúp Amazon EKS phù hợp hơn với các môi trường yêu cầu kiểm soát mạng nghiêm ngặt. Thay vì chỉ quản lý lưu lượng của worker nodes và workloads, người dùng có thêm khả năng kiểm soát một phần lưu lượng outbound từ Kubernetes API Server. Điều này giúp tăng tính riêng tư, hỗ trợ kiểm toán, giảm rủi ro khi sử dụng webhook hoặc OIDC provider nội bộ và giúp triển khai EKS trong các hệ thống doanh nghiệp có yêu cầu bảo mật cao.
 
+<figure class="blog-group-post">
+  <img src="/HUGO/images/3-BlogsTranslated/3.1-Blog1/z8015011259421_45011c103e179a80db527ae8099b0baa.jpg" alt="Bài đăng blog 1 trên group AWS">
+  <figcaption>Bài đăng đã chia sẻ trong group AWS.</figcaption>
+</figure>

@@ -8,6 +8,8 @@ pre: " <b> 3.2. </b> "
 
 # Amazon EKS Auto Mode and Istio Ambient Mesh
 
+> Posted on [AWS Study Group VN](https://www.facebook.com/groups/660548818043427/) on June 24, 2026
+
 **Source:** [AWS Containers Blog - Better Together: Amazon EKS Auto Mode and Istio Ambient Mesh](https://aws.amazon.com/blogs/containers/better-together-amazon-eks-auto-mode-and-istio-ambient-mesh/)
 
 
@@ -32,11 +34,11 @@ The main highlight of the article is that this model allows enterprises to adopt
 
 The following two diagrams from the AWS Blog show how Istio Ambient Mesh works on Amazon EKS Auto Mode at Layer 4 and Layer 7.
 
-![Istio Ambient Mesh Layer 4 architecture on Amazon EKS Auto Mode](../../images/3-BlogsPosted/3.1-Blog1/c-170-1.jpg)
+![Istio Ambient Mesh Layer 4 architecture on Amazon EKS Auto Mode](/HUGO/images/3-BlogsTranslated/3.1-Blog1/c-170-1.jpg)
 
 *Figure 1. Istio Ambient Mesh architecture with Layer 4 features on Amazon EKS Auto Mode. Source: AWS Blog, Figure 1.*
 
-![Istio Ambient Mesh Layer 7 architecture with waypoint proxy](../../images/3-BlogsPosted/3.1-Blog1/c-170-2.jpg)
+![Istio Ambient Mesh Layer 7 architecture with waypoint proxy](/HUGO/images/3-BlogsTranslated/3.1-Blog1/c-170-2.jpg)
 
 *Figure 2. Istio Ambient Mesh architecture with waypoint proxy for Layer 7 features. Source: AWS Blog, Figure 2.*
 
@@ -77,3 +79,8 @@ kubectl port-forward svc/kiali 20001:20001 -n istio-system
 ## Conclusion
 
 The blog shows that EKS Auto Mode and Istio Ambient Mesh complement each other well when deploying modern Kubernetes workloads on AWS. EKS Auto Mode simplifies infrastructure operations, while Istio Ambient Mesh provides security and traffic control in a lighter way than the traditional sidecar model. This is a suitable approach for microservices systems that require security, observability, and scalability in a cloud-native environment.
+
+<figure class="blog-group-post">
+  <img src="/HUGO/images/3-BlogsTranslated/3.2-Blog2/z8015011259315_7c6dbb49988bf6d90190842f5ae5b0ba.jpg" alt="Blog post 2 shared in the AWS group">
+  <figcaption>Blog post shared in the AWS group.</figcaption>
+</figure>

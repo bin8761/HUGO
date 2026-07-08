@@ -13,7 +13,7 @@ Bước này chuẩn bị database MySQL cho backend. Với môi trường demo,
 ## Mô hình kết nối mục tiêu
 
 {{< mermaid >}}
-flowchart LR
+graph TB
     APIGW["Amazon API Gateway"] --> EB["Elastic Beanstalk Backend"]
     EB --> SGBackend["Backend Security Group"]
     SGBackend --> RDS["Amazon RDS MySQL"]
@@ -126,5 +126,3 @@ Trước khi tiếp tục, kiểm tra:
 ## Kết quả mong đợi
 
 Kết thúc bước này, project có một MySQL database sẵn sàng để backend Elastic Beanstalk kết nối thông qua `DATABASE_URL`.
-
-

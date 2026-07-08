@@ -1,99 +1,84 @@
 ---
 title: "Sharing and Feedback"
-date: 2024-01-01
+date: 2026-07-06
 weight: 7
 chapter: false
 pre: " <b> 7. </b> "
 ---
 
-The First Cloud AI Journey program gave me a backend-oriented view of AWS that I did not get from classroom learning alone. What stood out most was that the program did not treat deployment as a final step. Instead, it forced me to think about the full backend path: how the API is routed, how the database is connected, how runtime variables are managed, how logs are checked, and how the system is verified after deployment.
 
-That approach made the internship feel practical. I was not only learning AWS service names. I was learning how those services behave together in a real architecture.
+## 1. Overall Evaluation
 
-## 1. Overall Impression
+### 1.1. Internship Environment
 
-My overall impression of the program is very positive. The program helped me understand that backend work on AWS is not only about writing code. It also includes deployment setup, access control, service integration, monitoring, and troubleshooting.
+The program provided a professional learning environment with a clear direction. Instead of only learning cloud concepts in theory, I had to write weekly worklogs, study AWS materials, join events, read AWS Blogs, deploy a real project, and document the process in workshop format.
 
-For me, that was the biggest value of the internship. It connected the technical concepts I had learned before with the reality of running an application on cloud infrastructure.
+This structure helped me understand that working with cloud is not only about knowing service names. A learner also needs to understand what problem each service solves, where it belongs in the architecture, how it should be configured, and how to verify the result.
 
-## 2. Backend Learning Experience
+### 1.2. Mentor and Team Support
 
-From a backend perspective, the most useful part of the program was learning how a request flows through the system.
+During the internship, I received useful support from the mentor and team admin. The mentor helped me organize the report content, present the AWS architecture, write workshop steps, draw the project architecture in a more reasonable way, and identify mistakes that my team and I had made during the process.
 
-- The client sends a request.
-- API Gateway receives and forwards it.
-- Elastic Beanstalk runs the backend service.
-- RDS stores the application data.
-- SES handles email and OTP delivery.
-- CloudWatch helps with inspection and debugging.
+### 1.3. Relevance to My Major
 
-This flow made AWS much easier to understand. I no longer saw each service as an isolated tool. Instead, I saw how they support the backend in different layers.
+The program was relevant to my Information Technology major because the internship tasks were directly connected to web application development and deployment. Through the EAM Workspace project, I worked with frontend, backend, database, authentication, OTP email, APIs, cloud hosting, and monitoring.
 
-The program also helped me understand why backend systems need environment variables, database credentials, network rules, and runtime checks. These are not optional details. They are part of the backend itself.
+Before this program, when I ran a project locally, I mainly cared about whether the application worked on my machine. After deploying the project to AWS, I understood that a complete system requires many layers, including networking, compute, database, API gateway, email service, monitoring, security, and cost control.
 
-## 3. Deployment Experience
+### 1.4. Learning and Skill Development
 
-The most practical part of the internship was deployment. I had to care about details that do not appear in local development, such as:
+During the program, I had the opportunity to study and practice several important AWS services, including:
 
-- whether the backend reads environment variables correctly
-- whether the API Gateway route points to the right service
-- whether the database connection string is valid
-- whether SES credentials match the SMTP setup
-- whether the health endpoint responds as expected
-- whether logs in CloudWatch show the real cause of an issue
+- **IAM** for accounts, permissions, and credentials.
+- **VPC, subnets, and Security Groups** for network access control.
+- **Amazon RDS** for the MySQL database used by the backend.
+- **Elastic Beanstalk** for deploying the Node.js backend.
+- **API Gateway** as the intermediate layer between frontend and backend.
+- **AWS Amplify Hosting** for deploying the frontend.
+- **Amazon SES/SMTP** for sending OTP emails.
+- **CloudWatch** for checking operational status and troubleshooting.
+- **Billing and Cost Management** for tracking cloud spending.
 
-This made me more careful when working on backend systems. I learned that a deployment problem is often not a single error, but a chain of small configuration issues.
+Besides technical skills, I also practiced documentation, architecture explanation, screenshot annotation, and result verification. These are important skills when working on real projects.
 
-Another useful lesson was that backend debugging on AWS requires patience. Sometimes the issue is in the code, but sometimes it is in the route, the environment, the database, the security group, or the service configuration. The internship helped me build a more systematic way of checking those layers.
+### 1.5. Learning Culture and Community Spirit
 
-## 4. Support From Mentor and Team
+One point I appreciated is that the program did not only focus on the project. It also encouraged students to read blogs, join events, and share what they learned. Reading AWS Blogs and joining technical sessions helped me see AWS from a broader perspective, beyond deploying a single web application.
 
-The support from the mentor and the team was one of the strongest parts of the program. I appreciated that I was not simply given the final answer. I was usually guided to inspect the problem step by step so I could understand the cause myself.
+Topics such as Amazon EKS, Istio Ambient Mesh, security automation, AI, and cloud operations helped me understand that AWS is a large ecosystem used in many real-world scenarios. This gave me more motivation to continue learning after the internship.
 
-That style of support was useful for backend learning because backend issues are rarely solved well by guessing. I needed to inspect the flow, validate assumptions, and verify each service one by one.
+## 2. Personal Reflections
 
-The team also helped by sharing context around the project architecture and the deployment workflow. That made it easier for me to connect the report content with the actual system behavior.
+### 2.1. What I Was Most Satisfied With
 
-## 5. Most Valuable Part
+The part I was most satisfied with was being able to view the project from a more practical deployment perspective. EAM Workspace was not only a local web application, but was deployed on AWS using the model:
 
-The most valuable part for me was understanding how a backend system becomes operational on AWS. I could see the difference between a project that only runs locally and a project that is ready to be deployed, monitored, and checked in a cloud environment.
+**Amplify Hosting -> API Gateway -> Elastic Beanstalk -> Amazon RDS**
 
-The model that stayed in my mind most clearly was:
+It also used **Amazon SES** for OTP email and health endpoint testing to confirm that the system worked correctly. This process helped me understand the role of each AWS service in a full-stack application architecture.
 
-`API Gateway -> Elastic Beanstalk -> RDS -> SES / CloudWatch`
+### 2.2. Challenges I Faced
 
-That is the point where the internship became truly meaningful for me. It was no longer just about learning AWS features. It was about understanding backend architecture as a working system.
+The biggest challenge was that many parts had to be handled at the same time. When deploying to AWS, an issue could come from code, environment variables, security groups, endpoints, rewrite rules, SES credentials, or database configuration. Without experience, it was easy to debug in the wrong direction.
 
-## 6. Difficulties During the Program
+Writing the report in workshop format also took more time than I expected. Each step did not only need to work; it also needed a clear screenshot, a clear purpose, an explanation of the result, and enough detail for another reader to follow the process.
 
-The main difficulty I faced was not the lack of information, but the number of moving parts. Backend deployment on AWS requires attention to many details at the same time:
+### 2.3. Would I Recommend This Program?
 
-- backend routing
-- environment configuration
-- database access
-- email credentials
-- logging
-- health checks
+I would recommend this program to students who want to start learning AWS or understand how to deploy a web project to the cloud. It is suitable for students who already have basic programming knowledge and want to move toward deployment, operations, troubleshooting, and technical documentation.
 
-At first, this was overwhelming. But over time, it trained me to think more carefully and troubleshoot more methodically. I also realized that writing clear documentation is part of the solution, because it makes the system easier to reproduce and debug later.
+However, to learn effectively, participants should be proactive in reading documentation, practicing by themselves, and noting the issues they encounter. AWS has many services and new concepts, so following steps without understanding the purpose would make it difficult to apply the knowledge to another project.
 
-## 7. Suggestions for the Program
+## 3. Expectations After the Program
 
-If I were to suggest one improvement, it would be to provide more backend-focused deployment checklists. A short checklist for API Gateway, Elastic Beanstalk, RDS, SES, and CloudWatch would help students verify their setup faster.
+After the internship, I want to continue learning AWS through more hands-on practice. Some topics I would like to study further include:
 
-I also think a small troubleshooting guide would be useful, especially for common issues such as environment variables, health checks, routing, and database connectivity. Those are the places where beginners usually spend the most time.
+- Infrastructure as Code with AWS CDK, CloudFormation, or Terraform.
+- Advanced VPC, private subnets, NAT Gateway, and VPC Endpoints.
+- CloudWatch Logs, metrics, alarms, and dashboards.
+- S3, CloudFront, custom domains, and HTTPS.
+- IAM policies, Secrets Manager, and security best practices.
+- AWS cost optimization for demo and small production environments.
+- Containers and Kubernetes on AWS, especially Amazon EKS.
 
-Another helpful addition would be a sample backend deployment flow that clearly shows what should be checked before and after deployment. That would make the learning path more practical for future interns.
-
-## 8. Expectations After the Program
-
-After the program, I would like to keep moving in a backend and cloud direction. The areas I want to study further include:
-
-- AWS CDK or Terraform for infrastructure as code
-- CloudWatch Logs and alerting
-- VPC, private subnets, NAT Gateway, and VPC Endpoints
-- IAM policies and secrets management
-- RDS backup and restore workflows
-- more production-like backend deployment patterns
-
-Overall, the program gave me a more realistic view of backend engineering on AWS. It showed me that a backend system is not complete until it can be deployed, monitored, debugged, and maintained with confidence.
+Overall, First Cloud AI Journey is a useful program for students who want to begin their AWS learning journey. It helped me understand that cloud is not only a place to deploy applications, but also a foundation for designing, operating, monitoring, and improving systems in a more professional way.
