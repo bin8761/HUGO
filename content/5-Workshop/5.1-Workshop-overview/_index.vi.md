@@ -66,9 +66,9 @@ graph TD
 
 Trước khi bắt đầu cấu hình từng dịch vụ, cần nắm được luồng kết nối tổng thể của hệ thống.
 
-![Sơ đồ kiến trúc tổng quan của workshop EAM Workspace](/HUGO/images/5-Workshop/5.1-Workshop-overview/5.1.1-architecture-overview.png)
+![Kiến trúc giải pháp EAM Workspace trên AWS](/HUGO/images/app.png)
 
-*Hình 5.1.1. Sơ đồ kiến trúc tổng quan của workshop.*
+*Hình 5.1.1. Kiến trúc giải pháp EAM Workspace trên AWS.*
 
 Ảnh này giúp xác nhận các thành phần chính trong kiến trúc: frontend được phục vụ qua Amplify, request API đi qua API Gateway, backend chạy trên Elastic Beanstalk và dữ liệu được lưu trong Amazon RDS MySQL.
 

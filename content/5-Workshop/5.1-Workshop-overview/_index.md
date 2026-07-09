@@ -66,9 +66,9 @@ graph TD
 
 Before configuring each service, review the overall connection flow of the system.
 
-![Workshop architecture overview for EAM Workspace](/HUGO/images/5-Workshop/5.1-Workshop-overview/5.1.1-architecture-overview.png)
+![EAM Workspace solution architecture on AWS](/HUGO/images/app.png)
 
-*Figure 5.1.1. Workshop architecture overview.*
+*Figure 5.1.1. EAM Workspace solution architecture on AWS.*
 
 This diagram confirms the main architecture components: the frontend is served through Amplify, API requests go through API Gateway, the backend runs on Elastic Beanstalk, and data is stored in Amazon RDS for MySQL.
 
