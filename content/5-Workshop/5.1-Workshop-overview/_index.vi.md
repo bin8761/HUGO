@@ -66,7 +66,7 @@ graph TD
 
 Trước khi bắt đầu cấu hình từng dịch vụ, cần nắm được luồng kết nối tổng thể của hệ thống.
 
-![Kiến trúc giải pháp EAM Workspace trên AWS](/HUGO/images/app.png)
+![Sơ đồ kiến trúc tổng quan của workshop EAM Workspace](/HUGO/images/5-Workshop/5.1-Workshop-overview/5.1.1-architecture-overview.png)
 
 *Hình 5.1.1. Kiến trúc giải pháp EAM Workspace trên AWS.*
 

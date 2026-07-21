@@ -66,7 +66,7 @@ graph TD
 
 Before configuring each service, review the overall connection flow of the system.
 
-![EAM Workspace solution architecture on AWS](/HUGO/images/app.png)
+![Workshop architecture overview for EAM Workspace](/HUGO/images/5-Workshop/5.1-Workshop-overview/5.1.1-architecture-overview.png)
 
 *Figure 5.1.1. EAM Workspace solution architecture on AWS.*
 
