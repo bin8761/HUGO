@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Enterprise Asset Management Request Flow</title>
+  <desc id="desc">Request flow showing how the frontend, backend, database, storage, email, and operational AWS services interact for the asset management workflow.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <style>
+      .label { font: 700 22px Arial, sans-serif; fill: #f8fafc; }
+      .small { font: 400 17px Arial, sans-serif; fill: #cbd5e1; }
+      .micro { font: 400 15px Arial, sans-serif; fill: #94a3b8; }
+      .box { fill: #111827; stroke: #334155; stroke-width: 2; rx: 18; ry: 18; }
+      .blue { fill: #38bdf8; }
+      .amber { fill: #f59e0b; }
+      .green { fill: #22c55e; }
+      .violet { fill: #a78bfa; }
+      .rose { fill: #fb7185; }
+      .line { stroke: #94a3b8; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+      .line2 { stroke: #64748b; stroke-width: 3; fill: none; marker-end: url(#arrow); stroke-dasharray: 10 10; }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <text x="80" y="80" class="label">Enterprise Asset Management - Request and Operations Flow</text>
+  <text x="80" y="112" class="micro">Frontend screens for admins and employees send requests through the backend, with data, files, and notifications routed to AWS services</text>
+
+  <rect x="80" y="180" width="250" height="150" class="box"/>
+  <circle cx="125" cy="235" r="10" class="blue"/>
+  <text x="150" y="242" class="small">Employee or Admin</text>
+  <text x="115" y="280" class="micro">Use asset, maintenance,</text>
+  <text x="115" y="304" class="micro">transfer, or report screens</text>
+
+  <rect x="390" y="180" width="250" height="150" class="box"/>
+  <circle cx="435" cy="235" r="10" class="amber"/>
+  <text x="460" y="242" class="small">Amplify UI</text>
+  <text x="420" y="280" class="micro">React + Vite frontend</text>
+  <text x="420" y="304" class="micro">Handles route and form state</text>
+
+  <rect x="700" y="160" width="300" height="190" class="box"/>
+  <circle cx="745" cy="215" r="10" class="green"/>
+  <text x="770" y="222" class="small">ALB + Elastic Beanstalk</text>
+  <text x="730" y="262" class="micro">Validate role and payload</text>
+  <text x="730" y="288" class="micro">Apply asset lifecycle rules</text>
+  <text x="730" y="314" class="micro">Write or read business data</text>
+
+  <rect x="1080" y="170" width="220" height="150" class="box"/>
+  <circle cx="1125" cy="225" r="10" class="violet"/>
+  <text x="1150" y="232" class="small">RDS MySQL</text>
+  <text x="1110" y="270" class="micro">Source of truth for</text>
+  <text x="1110" y="294" class="micro">assets and history</text>
+
+  <rect x="1080" y="360" width="220" height="150" class="box"/>
+  <circle cx="1125" cy="415" r="10" class="rose"/>
+  <text x="1150" y="422" class="small">S3 + SES</text>
+  <text x="1110" y="460" class="micro">Files and notifications</text>
+
+  <rect x="1080" y="550" width="220" height="150" class="box"/>
+  <circle cx="1125" cy="605" r="10" class="blue"/>
+  <text x="1150" y="612" class="small">Secrets and Config</text>
+  <text x="1110" y="650" class="micro">Secrets Manager</text>
+  <text x="1110" y="674" class="micro">Parameter Store</text>
+
+  <rect x="1080" y="740" width="220" height="110" class="box"/>
+  <circle cx="1125" cy="785" r="10" class="green"/>
+  <text x="1150" y="792" class="small">Ops and Audit</text>
+  <text x="1110" y="826" class="micro">CloudWatch / CloudTrail / SSM</text>
+
+  <line x1="330" y1="255" x2="390" y2="255" class="line"/>
+  <line x1="640" y1="255" x2="700" y2="255" class="line"/>
+  <line x1="1000" y1="255" x2="1080" y2="255" class="line"/>
+
+  <path d="M 850 350 C 850 420, 1010 430, 1080 430" class="line2"/>
+  <path d="M 850 350 C 850 560, 1010 600, 1080 625" class="line2"/>
+  <path d="M 850 350 C 850 760, 1010 770, 1080 795" class="line2"/>
+
+  <text x="80" y="410" class="small">Main interactions</text>
+  <text x="100" y="450" class="micro">- Admin assigns, returns, or transfers an asset.</text>
+  <text x="100" y="480" class="micro">- Employee reports a broken asset or checks request status.</text>
+  <text x="100" y="510" class="micro">- Backend updates asset records, attachments, notifications, and audit history.</text>
+  <text x="100" y="540" class="micro">- CloudWatch captures logs while CloudTrail records AWS-level activity.</text>
+</svg>
